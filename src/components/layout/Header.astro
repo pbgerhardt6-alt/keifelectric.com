@@ -58,7 +58,11 @@ import { siteContent } from '../../content/site';
   toggle?.addEventListener('click', () => {
     const isOpen = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!isOpen));
-    menu?.setAttribute('aria-hidden', String(isOpen));
+    if (!isOpen) {
+      menu?.removeAttribute('aria-hidden');
+    } else {
+      menu?.setAttribute('aria-hidden', 'true');
+    }
     toggle.classList.toggle('is-open', !isOpen);
     menu?.classList.toggle('is-open', !isOpen);
     document.body.style.overflow = isOpen ? '' : 'hidden';

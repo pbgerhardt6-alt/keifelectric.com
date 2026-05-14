@@ -25,7 +25,7 @@ import { siteContent } from '../../content/site';
             <div class="service-card__body">
               <h3 id={`svc-${service.id}`} class="service-card__title">{service.title}</h3>
               <p>{service.description}</p>
-              <a href={`/services/${service.id}`} class="service-card__more">
+              <a href={`/services/${service.id}`} class="service-card__more" aria-label={`Learn more about ${service.title}`}>
                 Learn more
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
               </a>
@@ -123,7 +123,7 @@ import { siteContent } from '../../content/site';
     font-size: 12px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--ke-orange);
+    color: var(--ke-clay);
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -134,7 +134,7 @@ import { siteContent } from '../../content/site';
     content: '';
     width: 24px;
     height: 2px;
-    background: var(--ke-orange);
+    background: var(--ke-clay);
   }
 
   .services-visual {
