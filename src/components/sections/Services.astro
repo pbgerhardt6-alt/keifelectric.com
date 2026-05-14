@@ -1,0 +1,374 @@
+---
+import { siteContent } from '../../content/site';
+---
+
+<section class="section" id="services" style="padding-top:48px" aria-labelledby="services-title">
+  <div class="section__head">
+    <div>
+      <span class="eyebrow">What we do</span>
+      <h2 id="services-title" class="section__title">Residential Electrical Services</h2>
+    </div>
+    <p class="section__lead">
+      From a single ceiling fan to a full new-build wire, we handle the electrical services homeowners and builders across San Luis Obispo, Atascadero, Paso Robles, and SLO County rely on. Permits pulled, panels left tidier than we found them.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="services-visual">
+      {siteContent.services.map((service, i) => {
+        const mediaClasses = ['media--ev', 'media--panel', 'media--lighting', 'media--newbuild'];
+        return (
+          <article class="service-card" aria-labelledby={`svc-${service.id}`}>
+            <div class={`service-card__media ${mediaClasses[i]}`}>
+              <span class="service-card__media-label">{service.imageLabel}</span>
+            </div>
+            <div class="service-card__body">
+              <h3 id={`svc-${service.id}`} class="service-card__title">{service.title}</h3>
+              <p>{service.description}</p>
+              <a href={`/services/${service.id}`} class="service-card__more">
+                Learn more
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <div class="services-text">
+      {siteContent.servicesText.map((service) => (
+        <article class="service-row" aria-labelledby={`svc-text-${service.id}`}>
+          <div class="service-row__icon">
+            {service.icon === 'power' && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2v10M18.32 3.68a8 8 0 0 1 0 11.31M5.68 3.68a8 8 0 0 0 0 11.31M4 11a8 8 0 0 0 8 8M4 7h16" />
+              </svg>
+            )}
+            {service.icon === 'fan' && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2v8M12 14v8M4.22 4.22l5.66 5.66M13.12 13.12l5.66 5.66M4.22 19.78l5.66-5.66M13.12 10.88l5.66-5.66" />
+              </svg>
+            )}
+            {service.icon === 'magnifying-glass' && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+            )}
+            {service.icon === 'clock' && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            )}
+          </div>
+          <div>
+            <h4 id={`svc-text-${service.id}`} class="service-row__title">{service.title}</h4>
+            <p>{service.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: 120px 0;
+    background: var(--ke-bone);
+  }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+
+  .section__head {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    align-items: end;
+    margin-bottom: 56px;
+    max-width: var(--max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+
+  .section__title {
+    font-weight: 900;
+    font-size: clamp(34px, 4vw, 54px);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin: 14px 0 0;
+    color: var(--ke-ink);
+    max-width: 18ch;
+  }
+
+  .section__lead {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--fg-2);
+    max-width: 48ch;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ke-orange);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--ke-orange);
+  }
+
+  .services-visual {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .service-card {
+    background: var(--ke-paper);
+    border: 1px solid var(--border-1);
+    border-radius: var(--radius-3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out);
+    cursor: pointer;
+    color: var(--ke-ink);
+  }
+
+  .service-card:hover {
+    box-shadow: var(--shadow-3);
+    border-color: var(--ke-orange);
+  }
+
+  .service-card__media {
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: flex-end;
+    padding: 14px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-1);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .media--ev {
+    background-color: var(--ke-ink);
+    background-image: url("https://images.unsplash.com/photo-1704474618942-ae933a8edd86?auto=format&fit=crop&w=800&q=80");
+    background-size: cover;
+    background-position: center 40%;
+  }
+
+  .media--ev::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.45) 100%);
+  }
+
+  .media--panel {
+    background-color: var(--ke-clay);
+    background-image: url("https://plus.unsplash.com/premium_photo-1682928136660-8cbeaf4941b2?auto=format&fit=crop&w=800&q=80");
+    background-size: cover;
+    background-position: center 30%;
+  }
+
+  .media--panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.45) 100%);
+  }
+
+  .media--lighting {
+    background-color: var(--ke-amber);
+    background-image: url("https://images.unsplash.com/photo-1609280070598-e1770c80b75c?auto=format&fit=crop&w=800&q=80");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .media--lighting::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.45) 100%);
+  }
+
+  .media--newbuild {
+    background-color: var(--ke-orange);
+    background-image: url("https://images.unsplash.com/photo-1556156653-e5a7c69cc263?auto=format&fit=crop&w=800&q=80");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .media--newbuild::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.45) 100%);
+  }
+
+  .service-card__media-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(246, 241, 232, 0.78);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 5px 8px;
+    border-radius: var(--radius-1);
+    backdrop-filter: blur(2px);
+    position: relative;
+    z-index: 2;
+  }
+
+  .service-card__body {
+    padding: 20px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .service-card__title {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .service-card__body > p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--fg-2);
+    margin: 0;
+    flex: 1;
+  }
+
+  .service-card__more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ke-orange);
+    margin-top: 6px;
+    text-decoration: none;
+  }
+
+  .service-card__more svg {
+    width: 14px;
+    height: 14px;
+    transition: transform var(--dur-1) var(--ease-out);
+  }
+
+  .service-card:hover .service-card__more svg {
+    transform: translateX(3px);
+  }
+
+  .services-text {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .service-row {
+    background: var(--ke-paper);
+    border: 1px solid var(--border-1);
+    border-radius: var(--radius-3);
+    padding: 22px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    transition: border-color var(--dur-1) var(--ease-out), box-shadow var(--dur-2) var(--ease-out);
+  }
+
+  .service-row:hover {
+    border-color: var(--ke-orange);
+    box-shadow: var(--shadow-2);
+  }
+
+  .service-row__icon {
+    width: 36px;
+    height: 36px;
+    flex: none;
+    background: var(--ke-orange-soft);
+    color: var(--ke-orange-dark);
+    border-radius: var(--radius-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service-row__icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .service-row__title {
+    font-size: 15px;
+    font-weight: 800;
+    margin: 0 0 4px;
+    letter-spacing: -0.005em;
+  }
+
+  .service-row p {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--fg-2);
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .services-visual {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section__head {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-text {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .services-visual {
+      grid-template-columns: 1fr;
+    }
+
+    .services-text {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

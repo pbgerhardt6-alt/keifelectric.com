@@ -1,0 +1,19 @@
+{
+  "name": "keif-electric-website",
+  "version": "1.0.0",
+  "description": "Keif Electric website - residential electrician in Atascadero, CA",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "astro": "^5.0.0",
+    "@astrojs/tailwind": "^5.0.0",
+    "tailwindcss": "^3.4.0"
+  }
+}

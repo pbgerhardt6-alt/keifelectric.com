@@ -1,0 +1,262 @@
+---
+import { siteContent } from '../../content/site';
+---
+
+<section class="final-cta" id="contact" aria-labelledby="cta-title">
+  <div class="final-cta__inner">
+    <div>
+      <span class="eyebrow" style="color:var(--ke-amber)">Need an electrician?</span>
+      <h2 id="cta-title" class="final-cta__title">
+        Call Adam.<br/>
+        <em>Get it done.</em>
+      </h2>
+      <p class="final-cta__lead">
+        Free estimates. California C-10 licensed and insured. Owner-operated. Most non-emergency scheduling within a few business days.
+      </p>
+      <div class="final-cta__ctas">
+        <a class="btn btn--primary btn--lg" href="tel:+18052860477">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          Call (805) 286-0477
+        </a>
+        <a class="btn btn--outline-light btn--lg" href="mailto:adam@keifelectric.com?subject=Quote%20request">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Email a quote request
+        </a>
+      </div>
+    </div>
+
+    <div class="final-cta__phone">
+      <p class="final-cta__phone-eyebrow">Free estimate</p>
+      <a href="tel:+18052860477" class="final-cta__phone-num">(805) 286-0477</a>
+      <div class="final-cta__phone-meta">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <strong>California C-10 licensed</strong>
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <strong>Fully insured</strong>
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Mon–Fri, 9am–5pm
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .final-cta {
+    background: var(--ke-ink);
+    color: var(--ke-bone);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(233, 91, 45, 0.20), transparent 50%),
+      radial-gradient(circle at 15% 80%, rgba(243, 152, 31, 0.10), transparent 50%);
+    pointer-events: none;
+  }
+
+  .final-cta__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 56px;
+    align-items: center;
+    padding: 120px var(--gutter);
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: currentColor;
+  }
+
+  .final-cta__title {
+    font-family: var(--font-display);
+    font-variation-settings: 'YEAR' 2050;
+    font-size: clamp(56px, 8vw, 124px);
+    line-height: 0.9;
+    color: var(--ke-bone);
+    margin: 18px 0 22px;
+    letter-spacing: -0.005em;
+  }
+
+  .final-cta__title em {
+    font-style: normal;
+    color: var(--ke-orange);
+  }
+
+  .final-cta__lead {
+    font-size: 18px;
+    line-height: 1.55;
+    color: rgba(246, 241, 232, 0.78);
+    max-width: 46ch;
+    margin: 0 0 32px;
+    font-weight: 500;
+  }
+
+  .final-cta__ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .final-cta__phone {
+    background: var(--ke-bone);
+    color: var(--ke-ink);
+    border-radius: var(--radius-4);
+    padding: 32px 30px;
+    border: 1px solid rgba(246, 241, 232, 0.18);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta__phone-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ke-orange);
+    margin-bottom: 14px;
+  }
+
+  .final-cta__phone-num {
+    font-family: var(--font-display);
+    font-variation-settings: 'YEAR' 2030;
+    font-size: clamp(40px, 4.4vw, 56px);
+    line-height: 1;
+    color: var(--ke-ink);
+    letter-spacing: -0.005em;
+    margin: 0 0 16px;
+    display: block;
+    text-decoration: none;
+    transition: color var(--dur-1) var(--ease-out);
+  }
+
+  .final-cta__phone-num:hover {
+    color: var(--ke-orange);
+  }
+
+  .final-cta__phone-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--fg-2);
+    font-weight: 500;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-1);
+    margin-top: 4px;
+  }
+
+  .final-cta__phone-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .final-cta__phone-meta svg {
+    width: 14px;
+    height: 14px;
+    color: var(--ke-orange);
+    flex: none;
+  }
+
+  .btn {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 13px 18px;
+    border-radius: var(--radius-2);
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    line-height: 1;
+    min-height: 48px;
+    transition: all var(--dur-1) var(--ease-out);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+  }
+
+  .btn--primary {
+    background: var(--ke-orange);
+    color: #fff;
+  }
+
+  .btn--primary:hover {
+    background: #E95B2D;
+  }
+
+  .btn--primary:active {
+    transform: translateY(1px);
+  }
+
+  .btn--outline-light {
+    background: transparent;
+    color: var(--ke-bone);
+    border-color: var(--ke-bone);
+  }
+
+  .btn--outline-light:hover {
+    background: var(--ke-bone);
+    color: var(--ke-ink);
+  }
+
+  .btn--lg {
+    padding: 16px 22px;
+    font-size: 16px;
+    border-radius: var(--radius-3);
+    min-height: 54px;
+  }
+
+  @media (max-width: 768px) {
+    .final-cta__inner {
+      padding: 80px var(--gutter);
+      gap: 40px;
+    }
+
+    .final-cta__ctas {
+      flex-direction: column;
+    }
+
+    .btn--lg {
+      width: 100%;
+    }
+  }
+</style>

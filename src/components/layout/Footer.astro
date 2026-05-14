@@ -1,0 +1,199 @@
+---
+import { siteContent } from '../../content/site';
+---
+
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div class="footer-brand">
+      <img src="/assets/logos/logo-primary.svg" alt="Keif Electric" />
+      <p>Licensed electrician serving San Luis Obispo, Atascadero, and the Central Coast. Owner-operated by Adam Keif.</p>
+      <address class="nap">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          <a href={`tel:+18052860477`}>{siteContent.phone}</a>
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href={`mailto:${siteContent.email}`}>{siteContent.email}</a>
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          San Luis Obispo, CA 93401
+        </span>
+        <span>License: {siteContent.license}</span>
+      </address>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col__title">Services</p>
+      <ul>
+        {siteContent.services.map(s => (
+          <li><a href={`/services/${s.id}`}>{s.title}</a></li>
+        ))}
+        {siteContent.servicesText.map(s => (
+          <li><a href={`/services/${s.id}`}>{s.title}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col__title">Service Area</p>
+      <ul>
+        <li>Atascadero</li>
+        <li>Paso Robles</li>
+        <li>Templeton</li>
+        <li>Santa Margarita</li>
+        <li>San Luis Obispo</li>
+        <li>Morro Bay</li>
+        <li>Cambria</li>
+        <li>Los Osos</li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-hours">
+      <p class="footer-col__title">Hours</p>
+      <ul>
+        <li><span>Mon–Fri</span><span>9am–5pm</span></li>
+        <li><span>Saturday</span><span>By request</span></li>
+        <li><span>Sunday</span><span>Closed</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__base">
+    <span>&copy; {new Date().getFullYear()} Keif Electric. All rights reserved.</span>
+    <span>California C-10 Electrical Contractor · <strong>License {siteContent.license}</strong></span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--ke-soot);
+    color: var(--ke-bone);
+  }
+
+  .site-footer__top {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding: 80px var(--gutter) 56px;
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+
+  .footer-brand img {
+    height: 56px;
+    width: auto;
+    margin-bottom: 18px;
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+    color: rgba(246, 241, 232, 0.65);
+    margin: 0 0 18px;
+    max-width: 36ch;
+    line-height: 1.55;
+  }
+
+  .nap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13.5px;
+    color: rgba(246, 241, 232, 0.78);
+    font-style: normal;
+  }
+
+  .nap span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nap svg {
+    width: 14px;
+    height: 14px;
+    color: var(--ke-orange);
+    flex: none;
+  }
+
+  .nap a:hover {
+    color: var(--ke-orange);
+  }
+
+  .footer-col__title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ke-orange);
+    margin: 0 0 16px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-col a,
+  .footer-col li {
+    color: rgba(246, 241, 232, 0.78);
+    font-size: 14px;
+  }
+
+  .footer-col a:hover {
+    color: var(--ke-orange);
+  }
+
+  .footer-hours li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .footer-hours li span:last-child {
+    color: rgba(246, 241, 232, 0.55);
+  }
+
+  .site-footer__base {
+    border-top: 1px solid rgba(246, 241, 232, 0.10);
+    padding: 20px var(--gutter);
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 12px;
+    color: rgba(246, 241, 232, 0.55);
+  }
+
+  .site-footer__base strong {
+    color: rgba(246, 241, 232, 0.78);
+    font-weight: 600;
+  }
+
+  @media (max-width: 1080px) {
+    .site-footer__top {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      padding: 64px var(--gutter) 40px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .site-footer__top {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .site-footer__base {
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+</style>

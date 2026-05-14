@@ -1,0 +1,78 @@
+---
+const items = [
+  'California C-10 Licensed',
+  'Fully Insured',
+  'Free Estimates',
+  'Permits Pulled',
+  'Same-Week Scheduling',
+  'Owner-Operated',
+  'Serving SLO County',
+  'Flat-Rate Pricing',
+  'No Surprise Invoices',
+  'Inspections Passed First Try',
+];
+const doubled = [...items, ...items];
+---
+
+<div class="trust-strip" aria-hidden="true">
+  <div class="trust-strip__track">
+    {doubled.map((item) => (
+      <span class="trust-item">
+        <span class="trust-item__dot"></span>
+        {item}
+      </span>
+    ))}
+  </div>
+</div>
+
+<style>
+  .trust-strip {
+    background: var(--ke-ink);
+    border-top: 1px solid rgba(246, 241, 232, 0.06);
+    border-bottom: 1px solid rgba(246, 241, 232, 0.06);
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .trust-strip__track {
+    display: flex;
+    width: max-content;
+    animation: ticker 32s linear infinite;
+  }
+
+  .trust-strip__track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 40px 16px 0;
+    white-space: nowrap;
+    flex: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: rgba(246, 241, 232, 0.82);
+  }
+
+  .trust-item__dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--ke-orange);
+    flex: none;
+    margin-right: 8px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .trust-strip__track {
+      animation: none;
+    }
+  }
+</style>

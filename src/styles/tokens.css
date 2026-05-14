@@ -1,0 +1,47 @@
+:root {
+  /* core palette */
+  --ke-ink: #242021;
+  --ke-clay: #884B26;
+  --ke-amber: #F3981F;
+  --ke-orange: #E95B2D;
+  --ke-bone: #F6F1E8;
+  --ke-paper: #FBF7EF;
+  --ke-sand: #EDE5D5;
+  --ke-stone: #C9BFAB;
+  --ke-shadow: #6B5C4A;
+  --ke-soot: #1A1718;
+  --ke-orange-dark: #C44621;
+  --ke-orange-soft: #FBE3D6;
+  --ke-amber-soft: #FCEBC9;
+  --ke-clay-soft: #E8D6C4;
+
+  --fg-1: var(--ke-ink);
+  --fg-2: var(--ke-shadow);
+  --fg-3: #8A7C68;
+  --border-1: rgba(36, 32, 33, 0.12);
+  --border-2: rgba(36, 32, 33, 0.22);
+  --border-on-dark: rgba(246, 241, 232, 0.18);
+
+  --font-display: 'Climate Crisis', 'Times New Roman', serif;
+  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-1: 4px;
+  --radius-2: 8px;
+  --radius-3: 12px;
+  --radius-4: 18px;
+  --radius-pill: 999px;
+
+  --shadow-1: 0 1px 0 rgba(36, 32, 33, 0.06), 0 1px 2px rgba(36, 32, 33, 0.05);
+  --shadow-2: 0 1px 0 rgba(36, 32, 33, 0.06), 0 6px 14px -4px rgba(36, 32, 33, 0.12);
+  --shadow-3: 0 1px 0 rgba(36, 32, 33, 0.07), 0 18px 30px -10px rgba(36, 32, 33, 0.18);
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-emph: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --dur-1: 120ms;
+  --dur-2: 220ms;
+
+  --max: 1280px;
+  --gutter: 48px;
+  --header-h: 72px;
+  --bottom-bar-h: 0px;
+}

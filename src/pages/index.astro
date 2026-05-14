@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import Services from '../components/sections/Services.astro';
+import ServiceArea from '../components/sections/ServiceArea.astro';
+import OwnerStory from '../components/sections/OwnerStory.astro';
+import Reviews from '../components/sections/Reviews.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+const title = 'Electrician in San Luis Obispo, CA | Keif Electric';
+const description = 'San Luis Obispo and SLO County electrician. EV chargers, panel upgrades, lighting, new builds. Licensed, insured, owner-operated. Free estimates.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main id="main">
+    <Hero />
+    <Services />
+    <ServiceArea />
+    <OwnerStory />
+    <Reviews />
+    <FAQ />
+    <FinalCTA />
+  </main>
+  <Footer />
+</BaseLayout>

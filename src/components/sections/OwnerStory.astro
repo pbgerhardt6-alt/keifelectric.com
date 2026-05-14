@@ -1,0 +1,245 @@
+---
+---
+
+<section class="section story" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="story__inner">
+      <div class="story__photo" role="img" aria-label="Photo of Adam Keif, owner and electrician">
+        <img src="/assets/adam-keif-job-site.png" alt="Adam Keif" />
+        <span class="story__photo-label">Adam Keif · San Luis Obispo, CA</span>
+        <span class="story__photo-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Owner-operated
+        </span>
+      </div>
+
+      <div class="story__content">
+        <span class="eyebrow">Hi, I'm Adam.</span>
+        <h2 id="about-title" class="story__title">
+          Every job is done by <em>me</em>, personally.
+        </h2>
+        <div class="story__bio">
+          <p>
+            I started Keif Electric to prioritize care and craftsmanship. No surprises.
+          </p>
+          <p>
+            No subs, no handoffs. When you hire Keif Electric, you hire me. I'm based in San Luis Obispo and I serve homeowners and builders across SLO County. The work gets done to code, on time, and at the price we agreed on.
+          </p>
+          <p>
+            I keep the truck stocked, I pull the permits, I clean up after myself. If something doesn't sit right with you when I'm done, I'll come back and make it right.
+          </p>
+        </div>
+
+        <blockquote class="story__quote">
+          <p>The work gets done to code, on time, and at the price we agreed on. No subs, no surprises.</p>
+        </blockquote>
+
+        <div class="story__sign">
+          <span class="story__sign-line" aria-hidden="true"></span>
+          <span>Adam Keif, Owner · CA# 1152084</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: 120px 0;
+    background: var(--ke-bone);
+  }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+
+  .story__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 72px;
+    align-items: center;
+  }
+
+  .story__photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: var(--ke-clay);
+    border-radius: var(--radius-4);
+    overflow: hidden;
+    box-shadow: var(--shadow-3);
+  }
+
+  .story__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  .story__photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 50% 35%, rgba(243, 152, 31, 0.25), transparent 55%),
+      linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.25) 100%);
+    z-index: 1;
+  }
+
+  .story__photo-tag {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--ke-orange);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .story__photo-tag svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .story__photo-label {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(246, 241, 232, 0.85);
+    background: rgba(0, 0, 0, 0.45);
+    padding: 6px 10px;
+    border-radius: var(--radius-1);
+    backdrop-filter: blur(3px);
+  }
+
+  .story__content {
+    max-width: 560px;
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ke-orange);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--ke-orange);
+  }
+
+  .story__title {
+    margin: 14px 0 22px;
+    font-size: clamp(34px, 3.6vw, 50px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--ke-ink);
+  }
+
+  .story__title em {
+    font-style: normal;
+    color: var(--ke-orange);
+  }
+
+  .story__bio {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ke-ink);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-weight: 500;
+  }
+
+  .story__bio p {
+    font-size: 17px;
+    margin: 0;
+  }
+
+  .story__quote {
+    margin: 32px 0 0;
+    padding: 24px 28px;
+    background: var(--ke-paper);
+    border: 1px solid var(--border-1);
+    border-radius: var(--radius-3);
+    position: relative;
+  }
+
+  .story__quote::before {
+    content: '\201C';
+    position: absolute;
+    top: -22px;
+    left: 18px;
+    font-family: var(--font-display);
+    font-variation-settings: 'YEAR' 2050;
+    font-size: 80px;
+    line-height: 1;
+    color: var(--ke-orange);
+  }
+
+  .story__quote p {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: var(--ke-ink);
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  .story__sign {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--fg-2);
+    font-weight: 600;
+  }
+
+  .story__sign-line {
+    width: 32px;
+    height: 2px;
+    background: var(--ke-orange);
+  }
+
+  @media (max-width: 768px) {
+    .story__inner {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .story__photo {
+      aspect-ratio: 3 / 2;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+  }
+</style>
