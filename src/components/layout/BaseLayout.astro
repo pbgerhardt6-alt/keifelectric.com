@@ -56,6 +56,11 @@ const faqSchema = {
     <meta name="geo.position" content="35.2828;-120.6596" />
     <meta name="ICBM" content="35.2828, -120.6596" />
 
+    <!-- Preload above-fold fonts -->
+    <link rel="preload" href="/fonts/ClimateCrisis-2050.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Geist-Medium.ttf" as="font" type="font/truetype" crossorigin>
+    <link rel="preload" href="/fonts/Geist-Bold.ttf" as="font" type="font/truetype" crossorigin>
+
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
 
@@ -85,7 +90,8 @@ const faqSchema = {
         },
         "areaServed": [
           "San Luis Obispo", "Atascadero", "Paso Robles", "Templeton",
-          "Santa Margarita", "Arroyo Grande", "Santa Maria"
+          "Santa Margarita", "Arroyo Grande", "Santa Maria",
+          "Morro Bay", "Los Osos", "Cayucos", "Cambria", "Pismo Beach"
         ],
         "employee": {
           "@type": "Person",

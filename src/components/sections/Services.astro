@@ -25,8 +25,8 @@ import { siteContent } from '../../content/site';
             <div class="service-card__body">
               <h3 id={`svc-${service.id}`} class="service-card__title">{service.title}</h3>
               <p>{service.description}</p>
-              <a href={`/services/${service.id}`} class="service-card__more" aria-label={`Learn more about ${service.title}`}>
-                Learn more
+              <a href={`/services/${service.id}`} class="service-card__more">
+                <span class="sr-only">{service.title} — </span>Learn more
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
               </a>
             </div>
