@@ -19,7 +19,7 @@ export const siteContent = {
     cta2: { label: 'Get a free quote', href: '#contact' },
     trust: [
       { icon: 'shield-check', label: 'California C-10 licensed' },
-      { icon: 'lock', label: 'Fully insured' },
+      { icon: 'lock', label: 'Liability insured' },
       { icon: 'star', label: 'Free estimates' },
     ],
   },
@@ -118,7 +118,7 @@ export const siteContent = {
   faqs: [
     {
       question: 'Are you a licensed and insured electrician in California?',
-      answer: 'Yes. Keif Electric holds a California C-10 electrical contractor license (CA# 1152084) and carries full liability and workers\' compensation insurance. The license number is displayed on every quote and invoice — happy to email it before any visit.',
+      answer: 'Yes. Keif Electric holds a California C-10 electrical contractor license (CA# 1152084) and carries general liability insurance. The license number is displayed on every quote and invoice — happy to email it before any visit.',
     },
     {
       question: 'What areas do you serve in SLO County?',
