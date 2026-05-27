@@ -116,6 +116,15 @@ const faqSchema = {
 
     <!-- Meta Pixel placeholder (uncomment on launch) -->
     <!-- <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=XXXXXXXXXXXXX&ev=PageView&noscript=1" /> -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-46WM4RFWW4"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-46WM4RFWW4');
+    </script>
   </head>
   <body>
     <slot />
