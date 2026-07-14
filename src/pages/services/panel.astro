@@ -3,8 +3,8 @@ import BaseLayout from '../../components/layout/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
 
-const title = 'Electrical Panel Upgrades in San Luis Obispo County | Keif Electric';
-const description = '100-amp to 200-amp panel upgrades and replacements for older homes, remodels, and added loads. Permitted, inspected, owner-operated by Adam Keif. Serving SLO County.';
+const title = 'Electrical Panel Upgrade San Luis Obispo | 200 Amp Panel Replacement';
+const description = 'Need an electrical panel upgrade in San Luis Obispo County? Keif Electric installs 100A to 200A panel upgrades, replacements, and EV charger-ready electrical systems. Licensed, permitted, owner-operated.';
 const canonical = 'https://keifelectric.com/services/panel';
 
 const serviceSchema = {
@@ -29,17 +29,32 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'How much does a 200-amp panel upgrade cost?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Most residential service upgrades in SLO County run $3,500 to $5,500 depending on your current service, wiring condition, and whether the meter or mast needs work. You get a written quote before anything starts.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'A typical 100-amp to 200-amp residential panel upgrade in SLO County runs $3,500 to $5,500 depending on your current service, wiring condition, and whether the meter or mast needs work. You get a written quote before anything starts.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What\'s the difference between a panel upgrade and a panel replacement?',
+      acceptedAnswer: { '@type': 'Answer', text: 'An upgrade increases your service capacity, for example 100 amps to 200 amps. A replacement swaps an old or unsafe panel for a modern, code-compliant one at the same capacity. Some jobs are both. I\'ll tell you which yours is.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What size panel should I upgrade to?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Most homeowners upgrade from 100 amps to 200 amps, which provides enough capacity for modern loads like EV chargers, heat pumps, and updated appliances. The right size depends on your home\'s actual usage and what you\'re planning to add.' },
     },
     {
       '@type': 'Question',
       name: 'Do I need a permit to upgrade my electrical panel?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Service upgrades require a permit and usually a PG&E disconnect and reconnect. I handle the permit, utility coordination, and inspection.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Service upgrades require a permit and typically PG&E coordination for the disconnect and reconnect. I handle the permit, utility process, and inspection.' },
     },
     {
       '@type': 'Question',
-      name: 'How long does a panel upgrade take?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Most standard upgrades are a one-day job, though power is off for part of it and the utility coordination can affect scheduling. I\'ll give you a realistic timeline with the quote.' },
+      name: 'Does PG&E need to be involved in a panel upgrade?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Often yes, especially when the service equipment or meter connection changes. I handle that coordination and explain what to expect before work begins.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you replace a Federal Pacific or Zinsco panel?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. I\'ll evaluate your panel\'s condition and your home\'s needs and walk you through whether replacement makes sense and what it involves.' },
     },
     {
       '@type': 'Question',
@@ -48,8 +63,8 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'What\'s the difference between a panel upgrade and a panel replacement?',
-      acceptedAnswer: { '@type': 'Answer', text: 'An upgrade increases your service capacity, for example 100 amps to 200 amps. A replacement swaps an old or unsafe panel for a modern, code-compliant one at the same capacity. Some jobs are both. I\'ll tell you which yours is.' },
+      name: 'How long does a panel upgrade take?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Most standard upgrades are a one-day job, though power is off for part of it and utility coordination can affect scheduling. I\'ll give you a realistic timeline with the quote.' },
     },
     {
       '@type': 'Question',
@@ -88,11 +103,11 @@ const faqSchema = {
             Panel Upgrades
           </p>
           <h1 id="page-h1" class="svc-hero__title">
-            <span class="svc-hero__line">Electrical panel</span>
-            <span class="svc-hero__line svc-hero__line--accent">upgrades<span class="svc-hero__dot" aria-hidden="true"></span></span>
+            <span class="svc-hero__line">Panel upgrades</span>
+            <span class="svc-hero__line svc-hero__line--accent">&amp; replacements<span class="svc-hero__dot" aria-hidden="true"></span></span>
             <span class="svc-hero__place">in San Luis Obispo County</span>
           </h1>
-          <p class="svc-hero__sub">100-amp to 200-amp service upgrades and panel replacements for older homes, remodels, and added loads like EV chargers. Permitted, inspected, owner-operated by Adam Keif.</p>
+          <p class="svc-hero__sub">100-amp to 200-amp panel upgrades, replacements, and service upgrades for older homes, remodels, EV chargers, and new electrical loads. Permitted, inspected, and installed by owner Adam Keif.</p>
           <div class="svc-hero__ctas">
             <a class="btn btn--primary btn--lg" href="tel:+18052860477">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
@@ -114,12 +129,12 @@ const faqSchema = {
 
     <section class="content-section" aria-labelledby="signs-title">
       <div class="container container--prose">
-        <h2 id="signs-title" class="section-title">Signs you need a panel upgrade</h2>
+        <h2 id="signs-title" class="section-title">Signs you need a panel upgrade or replacement</h2>
         <p class="lead-copy">You might need a service upgrade or panel replacement if:</p>
         <ul class="feature-list">
           <li>Your breakers trip regularly, or the panel feels warm or buzzes</li>
-          <li>You have a fuse box or an outdated panel brand known for problems</li>
-          <li>You're adding a big load — EV charger, heat pump, hot tub, AC, or a remodel</li>
+          <li>You have a fuse box or an older panel brand with known reliability issues</li>
+          <li>You're adding a major electrical load — EV charger, heat pump, air conditioning, hot tub, solar, battery backup, or a remodel</li>
           <li>Your insurance company or PG&amp;E flagged your panel</li>
           <li>Your home still runs on a 100-amp service and you're out of room</li>
           <li>The panel is 25 to 30-plus years old and has never been touched</li>
@@ -128,36 +143,76 @@ const faqSchema = {
       </div>
     </section>
 
-    <section class="content-section content-section--alt" aria-labelledby="cost-title">
+    <section class="content-section content-section--alt" aria-labelledby="vs-title">
       <div class="container container--prose">
-        <h2 id="cost-title" class="section-title">What a panel upgrade costs in SLO County</h2>
-        <p class="lead-copy">Straight answer: a residential service upgrade in San Luis Obispo County typically runs <strong>$3,500 to $5,500</strong>, with most standard 200-amp upgrades landing in that range.</p>
+        <h2 id="vs-title" class="section-title">Do you need a panel upgrade or a panel replacement?</h2>
+        <p>Not every home needs more electrical capacity. Some homeowners need a larger service, upgrading from 100 amps to 200 amps to support added loads. Others need an old or unsafe panel replaced at the same capacity because the existing equipment is worn out or no longer serviceable.</p>
+        <p>Some jobs are both.</p>
+        <p>I'll evaluate your existing system and tell you exactly what yours needs and why, before any work starts.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="cost-title">
+      <div class="container container--prose">
+        <h2 id="cost-title" class="section-title">How much does a 200-amp panel upgrade cost in San Luis Obispo?</h2>
+        <p class="lead-copy">A typical 100-amp to 200-amp residential electrical panel upgrade in San Luis Obispo County often falls in the <strong>$3,500 to $5,500 range</strong>.</p>
         <p>What moves the price:</p>
         <ul class="feature-list">
-          <li><strong>Current vs. new service size</strong> — 100-amp to 200-amp is the common jump</li>
+          <li><strong>Current vs. new service size</strong> — 100-amp to 200-amp is the most common upgrade</li>
           <li><strong>Whether the meter and mast need work</strong> — sometimes the utility side needs upgrading too</li>
           <li><strong>Panel location and access</strong> — a tight or awkward spot adds labor</li>
           <li><strong>Condition of existing wiring</strong> — older homes sometimes need a few circuits brought up to code</li>
-          <li><strong>Permit and utility coordination</strong> — included in the quote, not tacked on later</li>
+          <li><strong>Permit and utility coordination</strong> — included in the quote, not added later</li>
         </ul>
         <p>You get a written quote before any work begins. If something unexpected turns up behind the wall, we talk about it before I touch it.</p>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="ev-title">
+    <section class="content-section content-section--alt" aria-labelledby="ev-title">
       <div class="container container--prose">
-        <h2 id="ev-title" class="section-title">Upgrading your panel for an EV charger</h2>
-        <p>One of the most common reasons homeowners upgrade a panel is to add an EV charger. A Level 2 charger is a big continuous load, and a lot of older 100-amp panels in this area simply don't have room for it.</p>
+        <h2 id="ev-title" class="section-title">Do you need a panel upgrade for an EV charger?</h2>
+        <p>One of the most common reasons homeowners upgrade a panel is to add an EV charger. A Level 2 charger is a big continuous load, and a lot of older 100-amp panels in this area don't have room for it.</p>
         <p>If that's why you're here, I can quote the panel upgrade and the charger install together so you see the full picture and only schedule one project.</p>
         <a href="/services/ev-charger" class="cta-link">See EV charger installation &rarr;</a>
       </div>
     </section>
 
-    <section class="content-section content-section--alt" aria-labelledby="permits-title">
+    <section class="content-section" aria-labelledby="loads-title">
       <div class="container container--prose">
-        <h2 id="permits-title" class="section-title">Permits, inspection, and PG&amp;E</h2>
-        <p>A service upgrade always requires a permit, and it usually involves coordinating with PG&amp;E to disconnect and reconnect power. That's a lot of moving parts if you're doing it yourself. It's routine for me.</p>
-        <p>I pull the permit, schedule the utility disconnect and reconnect, coordinate the inspection, and make sure the new panel is signed off to code. Unpermitted electrical work can void your insurance and create headaches at resale, so this part isn't optional and I don't skip it.</p>
+        <h2 id="loads-title" class="section-title">Other loads that often trigger a panel upgrade</h2>
+        <p class="lead-copy">Beyond EV chargers, the panel conversation comes up whenever a home adds a major electrical load:</p>
+        <ul class="feature-list">
+          <li><strong>Heat pumps and air conditioning</strong> — high-demand HVAC draws more than an older panel often has available</li>
+          <li><strong>Solar and battery backup</strong> — connecting solar or a home battery system typically requires panel evaluation and sometimes an upgrade</li>
+          <li><strong>Hot tubs and pools</strong> — dedicated high-amperage circuits</li>
+          <li><strong>Kitchen and appliance remodels</strong> — new appliances and added circuits on an already-loaded panel</li>
+        </ul>
+        <p>If you're planning a project that touches any of these, it's worth starting with a panel assessment.</p>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="older-title">
+      <div class="container container--prose">
+        <h2 id="older-title" class="section-title">Older or problem panels</h2>
+        <p>Some older homes have panels from manufacturers such as Federal Pacific or Zinsco. If you're not sure what you have, or your panel is showing any of the symptoms above, send me a photo or schedule an inspection and I'll help you understand your options.</p>
+        <p>I evaluate older panels based on their actual condition and your home's electrical needs, not a one-size-fits-all answer.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="permits-title">
+      <div class="container container--prose">
+        <h2 id="permits-title" class="section-title">Permits, PG&amp;E, and utility coordination</h2>
+        <p>A service upgrade always requires a permit. Many upgrades also require coordination with PG&amp;E, especially when the service equipment or meter connection changes, depending on the existing service and property setup.</p>
+        <p>I pull the permit, schedule the utility disconnect and reconnect, coordinate the inspection, and make sure the new panel is signed off to code. I'll explain what to expect from PG&amp;E before we start so there are no scheduling surprises.</p>
+        <p>Unpermitted electrical work can void your homeowner's insurance and create problems at resale. This part isn't optional and I don't cut corners on it.</p>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="geo-title">
+      <div class="container container--prose">
+        <h2 id="geo-title" class="section-title">Serving older homes across SLO County</h2>
+        <p>Many homes throughout San Luis Obispo County, including communities like Los Osos, Morro Bay, Atascadero, Paso Robles, and San Luis Obispo, were built with smaller electrical services that don't meet today's demands. Homes from the 1960s and 70s especially were wired for a fraction of what a modern household runs.</p>
+        <p>If your home is in that range and you've never had the panel looked at, it's usually worth knowing what you have.</p>
       </div>
     </section>
 
@@ -194,23 +249,35 @@ const faqSchema = {
           <div class="faq-list">
             <details class="faq-item" open>
               <summary class="faq-item__btn"><span>How much does a 200-amp panel upgrade cost?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Most residential service upgrades in SLO County run $3,500 to $5,500 depending on your current service, wiring condition, and whether the meter or mast needs work. You get a written quote before anything starts.</p></div>
+              <div class="faq-item__body"><p>A typical 100-amp to 200-amp residential panel upgrade in SLO County runs $3,500 to $5,500 depending on your current service, wiring condition, and whether the meter or mast needs work. You get a written quote before anything starts.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>What's the difference between a panel upgrade and a panel replacement?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>An upgrade increases your service capacity, for example 100 amps to 200 amps. A replacement swaps an old or unsafe panel for a modern, code-compliant one at the same capacity. Some jobs are both. I'll tell you which yours is.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>What size panel should I upgrade to?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Most homeowners upgrade from 100 amps to 200 amps, which provides enough capacity for modern loads like EV chargers, heat pumps, and updated appliances. The right size depends on your home's actual usage and what you're planning to add.</p></div>
             </details>
             <details class="faq-item">
               <summary class="faq-item__btn"><span>Do I need a permit to upgrade my electrical panel?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes. Service upgrades require a permit and usually a PG&amp;E disconnect and reconnect. I handle the permit, utility coordination, and inspection.</p></div>
+              <div class="faq-item__body"><p>Yes. Service upgrades require a permit and typically PG&amp;E coordination for the disconnect and reconnect. I handle the permit, utility process, and inspection.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>How long does a panel upgrade take?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Most standard upgrades are a one-day job, though power is off for part of it and the utility coordination can affect scheduling. I'll give you a realistic timeline with the quote.</p></div>
+              <summary class="faq-item__btn"><span>Does PG&amp;E need to be involved in a panel upgrade?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Often yes, especially when the service equipment or meter connection changes. I handle that coordination and explain what to expect before work begins.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>Can you replace a Federal Pacific or Zinsco panel?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Yes. I'll evaluate your panel's condition and your home's needs and walk you through whether replacement makes sense and what it involves.</p></div>
             </details>
             <details class="faq-item">
               <summary class="faq-item__btn"><span>Do I need to upgrade my panel to install an EV charger?</span><span class="faq-icon" aria-hidden="true"></span></summary>
               <div class="faq-item__body"><p>Sometimes. Older 100-amp panels often can't handle a Level 2 charger's load. I check capacity before quoting, and if an upgrade is needed I'll quote both together.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>What's the difference between a panel upgrade and a panel replacement?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>An upgrade increases your service capacity, for example 100 amps to 200 amps. A replacement swaps an old or unsafe panel for a modern, code-compliant one at the same capacity. Some jobs are both. I'll tell you which yours is.</p></div>
+              <summary class="faq-item__btn"><span>How long does a panel upgrade take?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Most standard upgrades are a one-day job, though power is off for part of it and utility coordination can affect scheduling. I'll give you a realistic timeline with the quote.</p></div>
             </details>
             <details class="faq-item">
               <summary class="faq-item__btn"><span>What areas do you serve for panel upgrades?</span><span class="faq-icon" aria-hidden="true"></span></summary>
