@@ -4,11 +4,20 @@ export const siteContent = {
   license: 'CA# 1152084',
 
   nav: [
-    { label: 'Services', href: '#services' },
-    { label: 'Areas', href: '#service-area' },
-    { label: 'About', href: '#about' },
-    { label: 'Reviews', href: '#reviews' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Areas', href: '/#service-area' },
+    { label: 'About', href: '/#about' },
+    { label: 'Reviews', href: '/#reviews' },
+    { label: 'FAQ', href: '/#faq' },
+  ],
+
+  // Service pages that appear in the Services nav dropdown
+  serviceNav: [
+    { label: 'EV charger installation', href: '/services/ev-charger' },
+    { label: 'Panel upgrades', href: '/services/panel' },
+    { label: 'Recessed & custom lighting', href: '/services/lighting' },
+    { label: 'Troubleshooting & repair', href: '/services/troubleshooting' },
+    { label: 'New construction & remodels', href: '/services/newbuild' },
   ],
 
   hero: {

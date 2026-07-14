@@ -16,7 +16,21 @@ import { siteContent } from '../../content/site';
 
     <nav class="site-nav" id="site-nav" aria-label="Main navigation">
       {siteContent.nav.map(item => (
-        <a href={item.href}>{item.label}</a>
+        item.label === 'Services' ? (
+          <div class="nav-dd">
+            <a href={item.href} class="nav-dd__trigger" aria-haspopup="true" aria-expanded="false">
+              {item.label}
+              <svg class="nav-dd__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nav-dd__menu" role="menu">
+              {siteContent.serviceNav.map(s => (
+                <a href={s.href} class="nav-dd__link" role="menuitem">{s.label}</a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a href={item.href}>{item.label}</a>
+        )
       ))}
     </nav>
 
@@ -41,7 +55,18 @@ import { siteContent } from '../../content/site';
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
   <nav class="mobile-menu__nav" aria-label="Mobile navigation">
     {siteContent.nav.map(item => (
-      <a href={item.href} class="mobile-menu__link">{item.label}</a>
+      item.label === 'Services' ? (
+        <div class="mobile-menu__group">
+          <a href={item.href} class="mobile-menu__link">{item.label}</a>
+          <div class="mobile-menu__sublinks">
+            {siteContent.serviceNav.map(s => (
+              <a href={s.href} class="mobile-menu__sublink">{s.label}</a>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <a href={item.href} class="mobile-menu__link">{item.label}</a>
+      )
     ))}
   </nav>
   <div class="mobile-menu__ctas">
@@ -133,6 +158,77 @@ import { siteContent } from '../../content/site';
   .site-nav a:hover {
     color: var(--ke-bone);
     border-bottom-color: var(--ke-orange);
+  }
+
+  /* Services dropdown */
+  .nav-dd {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-dd__trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .nav-dd__chevron {
+    width: 13px;
+    height: 13px;
+    transition: transform var(--dur-2) var(--ease-out);
+  }
+
+  .nav-dd:hover .nav-dd__chevron,
+  .nav-dd:focus-within .nav-dd__chevron {
+    transform: rotate(180deg);
+  }
+
+  .nav-dd__menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    min-width: 248px;
+    background: var(--ke-ink);
+    border: 1px solid rgba(246, 241, 232, 0.12);
+    border-radius: var(--radius-3);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    box-shadow: var(--shadow-3);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+    z-index: 70;
+  }
+
+  .nav-dd:hover .nav-dd__menu,
+  .nav-dd:focus-within .nav-dd__menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .site-nav .nav-dd__link {
+    display: block;
+    padding: 10px 14px;
+    border-radius: var(--radius-2);
+    color: rgba(246, 241, 232, 0.82);
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: none;
+    white-space: nowrap;
+    transition: background var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out);
+  }
+
+  .site-nav .nav-dd__link:hover {
+    background: rgba(246, 241, 232, 0.06);
+    color: var(--ke-bone);
+    border-bottom: none;
   }
 
   .site-header__cta {
@@ -258,6 +354,34 @@ import { siteContent } from '../../content/site';
   }
 
   .mobile-menu__link:hover {
+    color: var(--ke-orange);
+  }
+
+  .mobile-menu__group {
+    border-bottom: 1px solid rgba(246, 241, 232, 0.08);
+  }
+
+  .mobile-menu__group .mobile-menu__link {
+    border-bottom: none;
+    padding-bottom: 8px;
+  }
+
+  .mobile-menu__sublinks {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0 0 14px 14px;
+  }
+
+  .mobile-menu__sublink {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(246, 241, 232, 0.68);
+    padding: 8px 0;
+    transition: color var(--dur-1) var(--ease-out);
+  }
+
+  .mobile-menu__sublink:hover {
     color: var(--ke-orange);
   }
 
