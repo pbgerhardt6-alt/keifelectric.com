@@ -133,6 +133,7 @@ p {
 @media (max-width: 768px) {
   :root {
     --gutter: 20px;
+    --bottom-bar-h: calc(72px + env(safe-area-inset-bottom, 0px));
   }
 }
 
