@@ -1,0 +1,738 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+
+const title = 'EV Charger Installation in San Luis Obispo County | Keif Electric';
+const description = 'Level 2 EV charger installation for Tesla, Rivian, Ford, and all electric vehicles. Permitted, inspected, owner-operated by Adam Keif. Serving SLO County.';
+const canonical = 'https://keifelectric.com/services/ev-charger';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'EV Charger Installation',
+  description: 'Level 2 home EV charger installation including panel assessment, dedicated 240V circuit, permit, inspection, and charger mounting. Serving San Luis Obispo County.',
+  provider: {
+    '@type': 'Electrician',
+    name: 'Keif Electric',
+    telephone: '+18052860477',
+    areaServed: 'San Luis Obispo County, CA',
+  },
+  areaServed: 'San Luis Obispo County, CA',
+  serviceType: 'EV Charger Installation',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do you install Tesla Wall Connectors?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. I install Tesla Wall Connectors along with chargers for Rivian, Ford, and every other EV. If you\'ve already bought your unit, I\'ll install it. If not, I\'ll help you pick the right one.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does an EV charger installation take?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Most standard installs are done in a few hours to most of a day, depending on the run from your panel and whether any panel work is needed. If a panel upgrade is required first, that adds time and I\'ll lay it out in the quote.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a permit to install an EV charger?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes, in SLO County these installs require a permit. I handle the permit, inspection, and utility coordination so it\'s code-compliant and signed off.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can my home\'s electrical panel handle an EV charger?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Sometimes yes, sometimes it needs an upgrade first, especially on older 100-amp panels common in this area. I check your panel capacity before quoting so there are no surprises.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What areas do you cover for EV charger installation?',
+      acceptedAnswer: { '@type': 'Answer', text: 'San Luis Obispo, Atascadero, Paso Robles, and the surrounding SLO County area. If you\'re not sure I reach you, call and ask.' },
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} includeFaqSchema={false}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <Header />
+
+  <main id="main">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/#services">Services</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">EV Charger Installation</span>
+      </div>
+    </nav>
+
+    <section class="page-hero" id="top" aria-labelledby="page-h1">
+      <div class="container">
+        <h1 id="page-h1" class="page-hero__title">Tesla &amp; EV Charger Installation in San Luis Obispo County</h1>
+        <p class="page-hero__sub">Level 2 home charging for Tesla, Rivian, Ford, and every EV. Permitted, inspected, and installed clean by a licensed local electrician. Owner-operated by Adam Keif.</p>
+        <div class="hero-ctas">
+          <a class="btn btn--primary btn--lg" href="tel:+18052860477">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+            Call (805) 286-0477
+          </a>
+          <a class="btn btn--outline-light btn--lg" href="#contact">Get a free quote</a>
+        </div>
+        <p class="trust-line">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="includes-title">
+      <div class="container container--prose">
+        <h2 id="includes-title" class="section-title">What the install includes</h2>
+        <p class="lead-copy">Most EV charger installs are more than mounting a box on the wall. Here's what a Keif Electric install actually covers:</p>
+        <ul class="feature-list">
+          <li><strong>Panel assessment</strong> — I check whether your electrical panel and service can handle the added load before quoting. No surprises mid-job.</li>
+          <li><strong>Dedicated 240V circuit</strong> — a properly sized dedicated circuit run for your charger, not a shared line that trips under load.</li>
+          <li><strong>Clean conduit runs</strong> — conduit routed neatly along the garage or exterior, not slapped across the wall.</li>
+          <li><strong>Permit and inspection</strong> — I pull the permit, coordinate the inspection, and make sure the install is signed off to code.</li>
+          <li><strong>Charger mounting and testing</strong> — hardware mounted, wired, energized, and tested before I leave.</li>
+        </ul>
+        <p>Whether you already have your Tesla Wall Connector in hand or you want a recommendation on which charger fits your setup, I handle the full job from permit to first charge.</p>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="cost-title">
+      <div class="container container--prose">
+        <h2 id="cost-title" class="section-title">What an EV charger installation costs</h2>
+        <p class="lead-copy">Straight answer: most home Level 2 installs land in the <strong>$700 to $1,500</strong> range for a standard job where your panel has capacity and the run to the garage is reasonable.</p>
+        <p>What moves the price:</p>
+        <ul class="feature-list">
+          <li><strong>Distance from your panel to the charger</strong> — longer conduit runs cost more in materials and labor.</li>
+          <li><strong>Panel capacity</strong> — if your panel is full or under-sized, you may need a panel upgrade first. <a href="/services/panel" class="inline-link">If your panel can't support the added load, we may need to upgrade your electrical panel first.</a></li>
+          <li><strong>Indoor vs. outdoor mounting</strong> — exterior installs need weatherproofing.</li>
+          <li><strong>Charger type</strong> — hardwired vs. plug-in, and whether you've already bought the unit.</li>
+        </ul>
+        <p>You get a written quote before any work starts. No hidden fees, no add-ons that weren't discussed.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="panel-title">
+      <div class="container container--prose">
+        <h2 id="panel-title" class="section-title">Will your panel handle it?</h2>
+        <p>An EV charger is one of the biggest loads you can add to a home. Older SLO County homes especially, many built in the 60s and 70s, often run 100-amp panels that are already close to full.</p>
+        <p>Before I install a charger, I check your panel and service capacity. If there's room, we install and you're charging the same day. If there isn't, I'll walk you through what a panel upgrade involves and quote both together so you can decide.</p>
+        <a href="/services/panel" class="cta-link">Learn more about electrical panel upgrades &rarr;</a>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="permits-title">
+      <div class="container container--prose">
+        <h2 id="permits-title" class="section-title">Permits and inspection</h2>
+        <p>EV charger installations require a permit in San Luis Obispo County. That's not red tape to dodge. An unpermitted install can void your homeowner's insurance and cause problems at resale.</p>
+        <p>I pull the permit, coordinate with the utility where needed, schedule the inspection, and make sure everything is signed off. You don't chase any of it.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="rebates-title">
+      <div class="container container--prose">
+        <h2 id="rebates-title" class="section-title">Rebates and tax credits</h2>
+        <p>Worth knowing before you budget:</p>
+        <ul class="feature-list">
+          <li><strong>Federal EV charger tax credit (30C):</strong> This federal credit expired June 30, 2026. If you're seeing older articles that mention it, they're out of date.</li>
+          <li><strong>PG&amp;E and California programs:</strong> Rebate availability changes. I'll tell you what's currently active when I quote — I'd rather you hear the honest answer from me than find out later something was stale.</li>
+        </ul>
+        <p>I'll tell you honestly what's available when I quote. I'd rather you hear "there's no rebate right now" from me than find out later.</p>
+      </div>
+    </section>
+
+    <section class="why-section" aria-labelledby="why-title">
+      <div class="container container--prose">
+        <h2 id="why-title" class="section-title">Why homeowners hire Keif Electric</h2>
+        <ul class="why-list">
+          <li><strong>You hire me, not a crew.</strong> Every job is done by me, personally. The person who quotes it is the person who installs it.</li>
+          <li><strong>Licensed and insured.</strong> California C-10 electrical contractor, CA# 1152084, with liability insurance.</li>
+          <li><strong>Permitted and inspected, every time.</strong> I don't cut corners on code to shave a quote.</li>
+          <li><strong>Clean work.</strong> Conduit run straight, panel labeled, garage left the way I found it.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="proof-placeholder" aria-label="Recent EV charger installs">
+      <div class="container">
+        <p class="proof-placeholder__label">Recent EV installs: photos coming soon</p>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="faq-inner">
+          <aside class="faq-sidebar">
+            <span class="eyebrow">Questions</span>
+            <h2 id="faq-title" class="faq-sidebar__title">EV charger FAQ</h2>
+            <p>Have something else? Call and ask.</p>
+            <a href="tel:+18052860477" class="btn btn--outline-dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              (805) 286-0477
+            </a>
+          </aside>
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary class="faq-item__btn"><span>Do you install Tesla Wall Connectors?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Yes. I install Tesla Wall Connectors along with chargers for Rivian, Ford, and every other EV. If you've already bought your unit, I'll install it. If not, I'll help you pick the right one.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>How long does an EV charger installation take?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Most standard installs are done in a few hours to most of a day, depending on the run from your panel and whether any panel work is needed. If a panel upgrade is required first, that adds time and I'll lay it out in the quote.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>Do I need a permit to install an EV charger?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Yes, in SLO County these installs require a permit. I handle the permit, inspection, and utility coordination so it's code-compliant and signed off.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>Can my home's electrical panel handle an EV charger?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Sometimes yes, sometimes it needs an upgrade first, especially on older 100-amp panels common in this area. I check your panel capacity before quoting so there are no surprises.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>What areas do you cover for EV charger installation?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>San Luis Obispo, Atascadero, Paso Robles, and the surrounding SLO County area. If you're not sure I reach you, call and ask.</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-cta" id="contact" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="page-cta__inner">
+          <div>
+            <span class="eyebrow eyebrow--light">Ready to charge at home?</span>
+            <h2 id="cta-title" class="page-cta__title">Free estimates.<br/><em>Owner-operated.</em></h2>
+            <p class="page-cta__lead">Free estimates. Licensed, insured, permitted. Owner-operated by Adam.</p>
+            <div class="page-cta__btns">
+              <a class="btn btn--primary btn--lg" href="tel:+18052860477">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+                Call (805) 286-0477
+              </a>
+              <a class="btn btn--outline-light btn--lg" href="mailto:adam@keifelectric.com?subject=EV%20charger%20quote%20request">Email a quote request</a>
+            </div>
+          </div>
+          <div class="page-cta__card">
+            <p class="page-cta__card-eyebrow">Free estimate</p>
+            <a href="tel:+18052860477" class="page-cta__phone">(805) 286-0477</a>
+            <div class="page-cta__trust">
+              <span>California C-10 licensed</span>
+              <span>Liability insured</span>
+              <span>Mon–Fri, 9am–5pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+
+  .container--prose {
+    max-width: 760px;
+  }
+
+  /* breadcrumb */
+  .breadcrumb {
+    background: var(--ke-bone);
+    border-bottom: 1px solid var(--border-1);
+    padding: 12px 0;
+  }
+
+  .breadcrumb .container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 13px;
+    color: var(--fg-2);
+  }
+
+  .breadcrumb a {
+    color: var(--ke-orange);
+    font-weight: 500;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  /* hero */
+  .page-hero {
+    background: var(--ke-ink);
+    color: var(--ke-bone);
+    padding: 80px 0 72px;
+  }
+
+  .page-hero__title {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+    max-width: 22ch;
+  }
+
+  .page-hero__sub {
+    font-size: clamp(16px, 2vw, 19px);
+    line-height: 1.55;
+    color: rgba(246, 241, 232, 0.82);
+    max-width: 52ch;
+    margin-bottom: 32px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .trust-line {
+    font-size: 13px;
+    color: rgba(246, 241, 232, 0.58);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  /* buttons */
+  .btn {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 13px 18px;
+    border-radius: var(--radius-2);
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    line-height: 1;
+    min-height: 48px;
+    transition: all var(--dur-1) var(--ease-out);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn svg { width: 18px; height: 18px; flex: none; }
+
+  .btn--primary { background: var(--ke-orange); color: #fff; }
+  .btn--primary:hover { background: var(--ke-orange-dark); }
+  .btn--primary:active { transform: translateY(1px); }
+
+  .btn--outline-light {
+    background: transparent;
+    color: var(--ke-bone);
+    border-color: rgba(246, 241, 232, 0.4);
+  }
+  .btn--outline-light:hover { background: rgba(246, 241, 232, 0.08); border-color: var(--ke-bone); }
+
+  .btn--outline-dark {
+    background: transparent;
+    color: var(--ke-ink);
+    border-color: rgba(36, 32, 33, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: var(--radius-2);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    border: 1px solid rgba(36, 32, 33, 0.3);
+    transition: all var(--dur-1) var(--ease-out);
+  }
+  .btn--outline-dark svg { width: 16px; height: 16px; flex: none; }
+  .btn--outline-dark:hover { border-color: var(--ke-orange); color: var(--ke-orange); }
+
+  .btn--lg { padding: 16px 22px; font-size: 16px; border-radius: var(--radius-3); min-height: 54px; }
+
+  /* content sections */
+  .content-section {
+    padding: 80px 0;
+    background: var(--ke-bone);
+  }
+
+  .content-section--alt {
+    background: var(--ke-paper);
+  }
+
+  .section-title {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: clamp(24px, 3vw, 34px);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--ke-ink);
+    margin-bottom: 20px;
+  }
+
+  .lead-copy {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--fg-1);
+    margin-bottom: 20px;
+  }
+
+  .content-section p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--fg-1);
+    margin-bottom: 16px;
+    max-width: 68ch;
+  }
+
+  .content-section p:last-child { margin-bottom: 0; }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .feature-list li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--fg-1);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .feature-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 2px;
+    background: var(--ke-orange);
+  }
+
+  .inline-link {
+    color: var(--ke-orange);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ke-orange);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--dur-1) var(--ease-out);
+    margin-top: 8px;
+  }
+
+  .cta-link:hover { border-bottom-color: var(--ke-orange); }
+
+  /* why section */
+  .why-section {
+    background: var(--ke-ink);
+    color: var(--ke-bone);
+    padding: 80px 0;
+  }
+
+  .why-section .section-title { color: var(--ke-bone); }
+
+  .why-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .why-list li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(246, 241, 232, 0.82);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .why-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 2px;
+    background: var(--ke-orange);
+  }
+
+  .why-list li strong { color: var(--ke-bone); }
+
+  /* proof placeholder */
+  .proof-placeholder {
+    background: var(--ke-sand);
+    border-top: 1px solid var(--border-1);
+    border-bottom: 1px solid var(--border-1);
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .proof-placeholder__label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ke-stone);
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--ke-bone);
+    padding: 100px 0;
+  }
+
+  .faq-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 64px;
+    align-items: flex-start;
+  }
+
+  .faq-sidebar {
+    position: sticky;
+    top: 96px;
+  }
+
+  .faq-sidebar__title {
+    font-family: var(--font-sans);
+    font-weight: 900;
+    font-size: clamp(28px, 3vw, 40px);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--ke-ink);
+    margin: 10px 0 14px;
+  }
+
+  .faq-sidebar p {
+    font-size: 15px;
+    color: var(--fg-2);
+    margin-bottom: 20px;
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ke-orange);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .eyebrow--light { color: var(--ke-amber); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border-1);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border-1);
+  }
+
+  .faq-item__btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ke-ink);
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-item__btn::-webkit-details-marker { display: none; }
+
+  .faq-icon {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    border-radius: 50%;
+    border: 1.5px solid var(--border-2);
+    position: relative;
+  }
+
+  .faq-icon::before,
+  .faq-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: var(--ke-orange);
+    border-radius: 2px;
+  }
+
+  .faq-icon::before {
+    width: 8px;
+    height: 1.5px;
+    transform: translate(-50%, -50%);
+  }
+
+  .faq-icon::after {
+    width: 1.5px;
+    height: 8px;
+    transform: translate(-50%, -50%);
+    transition: transform var(--dur-1) var(--ease-out), opacity var(--dur-1) var(--ease-out);
+  }
+
+  details[open] .faq-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    opacity: 0;
+  }
+
+  .faq-item__body {
+    padding-bottom: 20px;
+  }
+
+  .faq-item__body p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--fg-2);
+  }
+
+  /* final CTA */
+  .page-cta {
+    background: var(--ke-ink);
+    color: var(--ke-bone);
+    padding: 100px 0;
+  }
+
+  .page-cta__inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .page-cta__title {
+    font-family: var(--font-display);
+    font-variation-settings: 'YEAR' 2050;
+    font-size: clamp(44px, 6vw, 88px);
+    line-height: 0.95;
+    color: var(--ke-bone);
+    margin: 12px 0 18px;
+    letter-spacing: -0.005em;
+  }
+
+  .page-cta__title em {
+    font-style: normal;
+    color: var(--ke-orange);
+  }
+
+  .page-cta__lead {
+    font-size: 17px;
+    color: rgba(246, 241, 232, 0.75);
+    line-height: 1.55;
+    margin-bottom: 28px;
+    max-width: 44ch;
+  }
+
+  .page-cta__btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .page-cta__card {
+    background: var(--ke-bone);
+    color: var(--ke-ink);
+    border-radius: var(--radius-4);
+    padding: 32px 28px;
+    min-width: 260px;
+    flex-shrink: 0;
+  }
+
+  .page-cta__card-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ke-orange);
+    margin-bottom: 10px;
+  }
+
+  .page-cta__phone {
+    display: block;
+    font-family: var(--font-display);
+    font-variation-settings: 'YEAR' 2030;
+    font-size: clamp(32px, 3.5vw, 44px);
+    line-height: 1;
+    color: var(--ke-ink);
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: color var(--dur-1) var(--ease-out);
+  }
+
+  .page-cta__phone:hover { color: var(--ke-orange); }
+
+  .page-cta__trust {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 13px;
+    color: var(--fg-2);
+    font-weight: 500;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-1);
+  }
+
+  @media (max-width: 900px) {
+    .page-cta__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-hero { padding: 56px 0 48px; }
+    .content-section { padding: 56px 0; }
+    .why-section { padding: 56px 0; }
+    .faq-section { padding: 64px 0; }
+    .page-cta { padding: 64px 0; }
+
+    .hero-ctas { flex-direction: column; }
+    .btn--lg { width: 100%; justify-content: center; }
+    .page-cta__btns { flex-direction: column; }
+
+    .faq-inner { grid-template-columns: 1fr; gap: 32px; }
+    .faq-sidebar { position: static; }
+  }
+</style>

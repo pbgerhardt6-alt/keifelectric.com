@@ -1,0 +1,339 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+
+const title = 'Electrical Panel Upgrades in San Luis Obispo County | Keif Electric';
+const description = '100-amp to 200-amp panel upgrades and replacements for older homes, remodels, and added loads. Permitted, inspected, owner-operated by Adam Keif. Serving SLO County.';
+const canonical = 'https://keifelectric.com/services/panel';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Electrical Panel Upgrade',
+  description: 'Residential electrical panel upgrades and service replacements. 100-amp to 200-amp upgrades, permitting, utility coordination, and inspection. Serving San Luis Obispo County.',
+  provider: {
+    '@type': 'Electrician',
+    name: 'Keif Electric',
+    telephone: '+18052860477',
+    areaServed: 'San Luis Obispo County, CA',
+  },
+  areaServed: 'San Luis Obispo County, CA',
+  serviceType: 'Electrical Panel Upgrade',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does a 200-amp panel upgrade cost?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Most residential service upgrades in SLO County run $3,500 to $5,500 depending on your current service, wiring condition, and whether the meter or mast needs work. You get a written quote before anything starts.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a permit to upgrade my electrical panel?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Service upgrades require a permit and usually a PG&E disconnect and reconnect. I handle the permit, utility coordination, and inspection.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does a panel upgrade take?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Most standard upgrades are a one-day job, though power is off for part of it and the utility coordination can affect scheduling. I\'ll give you a realistic timeline with the quote.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to upgrade my panel to install an EV charger?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Sometimes. Older 100-amp panels often can\'t handle a Level 2 charger\'s load. I check capacity before quoting, and if an upgrade is needed I\'ll quote both together.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What\'s the difference between a panel upgrade and a panel replacement?',
+      acceptedAnswer: { '@type': 'Answer', text: 'An upgrade increases your service capacity, for example 100 amps to 200 amps. A replacement swaps an old or unsafe panel for a modern, code-compliant one at the same capacity. Some jobs are both. I\'ll tell you which yours is.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What areas do you serve for panel upgrades?',
+      acceptedAnswer: { '@type': 'Answer', text: 'San Luis Obispo, Atascadero, Paso Robles, and surrounding SLO County. Not sure I reach you? Call and ask.' },
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} includeFaqSchema={false}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <Header />
+
+  <main id="main">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/#services">Services</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Panel Upgrades</span>
+      </div>
+    </nav>
+
+    <section class="page-hero" id="top" aria-labelledby="page-h1">
+      <div class="container">
+        <h1 id="page-h1" class="page-hero__title">Electrical Panel Upgrades in San Luis Obispo County</h1>
+        <p class="page-hero__sub">100-amp to 200-amp service upgrades and panel replacements for older homes, remodels, and increased electrical loads like EV chargers. Permitted, inspected, owner-operated by Adam Keif.</p>
+        <div class="hero-ctas">
+          <a class="btn btn--primary btn--lg" href="tel:+18052860477">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+            Call (805) 286-0477
+          </a>
+          <a class="btn btn--outline-light btn--lg" href="#contact">Get a free quote</a>
+        </div>
+        <p class="trust-line">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="signs-title">
+      <div class="container container--prose">
+        <h2 id="signs-title" class="section-title">Signs you need a panel upgrade</h2>
+        <p class="lead-copy">You might need a service upgrade or panel replacement if:</p>
+        <ul class="feature-list">
+          <li>Your breakers trip regularly, or the panel feels warm or buzzes</li>
+          <li>You have a fuse box or an outdated panel brand known for problems</li>
+          <li>You're adding a big load — EV charger, heat pump, hot tub, AC, or a remodel</li>
+          <li>Your insurance company or PG&amp;E flagged your panel</li>
+          <li>Your home still runs on a 100-amp service and you're out of room</li>
+          <li>The panel is 25 to 30-plus years old and has never been touched</li>
+        </ul>
+        <p>If a couple of those sound familiar, it's worth a look before it becomes a bigger problem.</p>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="cost-title">
+      <div class="container container--prose">
+        <h2 id="cost-title" class="section-title">What a panel upgrade costs in SLO County</h2>
+        <p class="lead-copy">Straight answer: a residential service upgrade in San Luis Obispo County typically runs <strong>$3,500 to $5,500</strong>, with most standard 200-amp upgrades landing in that range.</p>
+        <p>What moves the price:</p>
+        <ul class="feature-list">
+          <li><strong>Current vs. new service size</strong> — 100-amp to 200-amp is the common jump</li>
+          <li><strong>Whether the meter and mast need work</strong> — sometimes the utility side needs upgrading too</li>
+          <li><strong>Panel location and access</strong> — a tight or awkward spot adds labor</li>
+          <li><strong>Condition of existing wiring</strong> — older homes sometimes need a few circuits brought up to code</li>
+          <li><strong>Permit and utility coordination</strong> — included in the quote, not tacked on later</li>
+        </ul>
+        <p>You get a written quote before any work begins. If something unexpected turns up behind the wall, we talk about it before I touch it.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="ev-title">
+      <div class="container container--prose">
+        <h2 id="ev-title" class="section-title">Upgrading your panel for an EV charger</h2>
+        <p>One of the most common reasons homeowners upgrade a panel is to add an EV charger. A Level 2 charger is a big continuous load, and a lot of older 100-amp panels in this area simply don't have room for it.</p>
+        <p>If that's why you're here, I can quote the panel upgrade and the charger install together so you see the full picture and only schedule one project.</p>
+        <a href="/services/ev-charger" class="cta-link">See EV charger installation &rarr;</a>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="permits-title">
+      <div class="container container--prose">
+        <h2 id="permits-title" class="section-title">Permits, inspection, and PG&amp;E</h2>
+        <p>A service upgrade always requires a permit, and it usually involves coordinating with PG&amp;E to disconnect and reconnect power. That's a lot of moving parts if you're doing it yourself. It's routine for me.</p>
+        <p>I pull the permit, schedule the utility disconnect and reconnect, coordinate the inspection, and make sure the new panel is signed off to code. Unpermitted electrical work can void your insurance and create headaches at resale, so this part isn't optional and I don't skip it.</p>
+      </div>
+    </section>
+
+    <section class="why-section" aria-labelledby="why-title">
+      <div class="container container--prose">
+        <h2 id="why-title" class="section-title">Why homeowners hire Keif Electric</h2>
+        <ul class="why-list">
+          <li><strong>You hire me, not a crew.</strong> The person who quotes your panel is the person who installs it.</li>
+          <li><strong>Licensed and insured.</strong> California C-10 electrical contractor, CA# 1152084, with liability insurance.</li>
+          <li><strong>Honest about scope.</strong> If you don't need a full upgrade, I'll tell you. If you do, I'll show you why.</li>
+          <li><strong>Clean, labeled work.</strong> The new panel is neat, every circuit labeled, so the next person who opens it knows what's what.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="proof-placeholder" aria-label="Recent panel work">
+      <div class="container">
+        <p class="proof-placeholder__label">Recent panel work: photos coming soon</p>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="faq-inner">
+          <aside class="faq-sidebar">
+            <span class="eyebrow">Questions</span>
+            <h2 id="faq-title" class="faq-sidebar__title">Panel upgrade FAQ</h2>
+            <p>Have something else? Call and ask.</p>
+            <a href="tel:+18052860477" class="btn-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              (805) 286-0477
+            </a>
+          </aside>
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary class="faq-item__btn"><span>How much does a 200-amp panel upgrade cost?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Most residential service upgrades in SLO County run $3,500 to $5,500 depending on your current service, wiring condition, and whether the meter or mast needs work. You get a written quote before anything starts.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>Do I need a permit to upgrade my electrical panel?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Yes. Service upgrades require a permit and usually a PG&amp;E disconnect and reconnect. I handle the permit, utility coordination, and inspection.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>How long does a panel upgrade take?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Most standard upgrades are a one-day job, though power is off for part of it and the utility coordination can affect scheduling. I'll give you a realistic timeline with the quote.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>Do I need to upgrade my panel to install an EV charger?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Sometimes. Older 100-amp panels often can't handle a Level 2 charger's load. I check capacity before quoting, and if an upgrade is needed I'll quote both together.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>What's the difference between a panel upgrade and a panel replacement?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>An upgrade increases your service capacity, for example 100 amps to 200 amps. A replacement swaps an old or unsafe panel for a modern, code-compliant one at the same capacity. Some jobs are both. I'll tell you which yours is.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>What areas do you serve for panel upgrades?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>San Luis Obispo, Atascadero, Paso Robles, and surrounding SLO County. Not sure I reach you? Call and ask.</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-cta" id="contact" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="page-cta__inner">
+          <div>
+            <span class="eyebrow eyebrow--amber">Panel giving you trouble?</span>
+            <h2 id="cta-title" class="page-cta__title">Free estimates.<br/><em>No surprises.</em></h2>
+            <p class="page-cta__lead">Free estimates. Licensed, insured, permitted. Owner-operated by Adam.</p>
+            <div class="page-cta__btns">
+              <a class="btn btn--primary btn--lg" href="tel:+18052860477">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+                Call (805) 286-0477
+              </a>
+              <a class="btn btn--outline-light btn--lg" href="mailto:adam@keifelectric.com?subject=Panel%20upgrade%20quote%20request">Email a quote request</a>
+            </div>
+          </div>
+          <div class="page-cta__card">
+            <p class="page-cta__card-eyebrow">Free estimate</p>
+            <a href="tel:+18052860477" class="page-cta__phone">(805) 286-0477</a>
+            <div class="page-cta__trust">
+              <span>California C-10 licensed</span>
+              <span>Liability insured</span>
+              <span>Mon–Fri, 9am–5pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .container { max-width: var(--max); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+  .container--prose { max-width: 760px; }
+
+  .breadcrumb { background: var(--ke-bone); border-bottom: 1px solid var(--border-1); padding: 12px 0; }
+  .breadcrumb .container { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--fg-2); }
+  .breadcrumb a { color: var(--ke-orange); font-weight: 500; }
+  .breadcrumb a:hover { text-decoration: underline; }
+
+  .page-hero { background: var(--ke-ink); color: var(--ke-bone); padding: 80px 0 72px; }
+  .page-hero__title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(32px, 5vw, 56px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px; max-width: 22ch; }
+  .page-hero__sub { font-size: clamp(16px, 2vw, 19px); line-height: 1.55; color: rgba(246, 241, 232, 0.82); max-width: 52ch; margin-bottom: 32px; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+  .trust-line { font-size: 13px; color: rgba(246, 241, 232, 0.58); font-weight: 500; letter-spacing: 0.02em; }
+
+  .btn { font-family: var(--font-sans); font-weight: 600; font-size: 15px; padding: 13px 18px; border-radius: var(--radius-2); border: 1px solid transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 9px; line-height: 1; min-height: 48px; transition: all var(--dur-1) var(--ease-out); text-decoration: none; white-space: nowrap; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn--primary { background: var(--ke-orange); color: #fff; }
+  .btn--primary:hover { background: var(--ke-orange-dark); }
+  .btn--primary:active { transform: translateY(1px); }
+  .btn--outline-light { background: transparent; color: var(--ke-bone); border-color: rgba(246, 241, 232, 0.4); }
+  .btn--outline-light:hover { background: rgba(246, 241, 232, 0.08); border-color: var(--ke-bone); }
+  .btn--lg { padding: 16px 22px; font-size: 16px; border-radius: var(--radius-3); min-height: 54px; }
+
+  .btn-link { display: inline-flex; align-items: center; gap: 8px; color: var(--ke-orange); font-weight: 600; font-size: 15px; text-decoration: none; }
+  .btn-link svg { width: 16px; height: 16px; }
+  .btn-link:hover { text-decoration: underline; }
+
+  .content-section { padding: 80px 0; background: var(--ke-bone); }
+  .content-section--alt { background: var(--ke-paper); }
+
+  .section-title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.02em; line-height: 1.15; color: var(--ke-ink); margin-bottom: 20px; }
+  .lead-copy { font-size: 17px; line-height: 1.6; color: var(--fg-1); margin-bottom: 20px; }
+  .content-section p { font-size: 16px; line-height: 1.65; color: var(--fg-1); margin-bottom: 16px; max-width: 68ch; }
+  .content-section p:last-child { margin-bottom: 0; }
+
+  .feature-list { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 12px; }
+  .feature-list li { font-size: 16px; line-height: 1.6; color: var(--fg-1); padding-left: 20px; position: relative; }
+  .feature-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 2px; background: var(--ke-orange); }
+
+  .cta-link { display: inline-flex; align-items: center; gap: 6px; color: var(--ke-orange); font-weight: 600; font-size: 15px; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color var(--dur-1) var(--ease-out); margin-top: 8px; }
+  .cta-link:hover { border-bottom-color: var(--ke-orange); }
+
+  .why-section { background: var(--ke-ink); color: var(--ke-bone); padding: 80px 0; }
+  .why-section .section-title { color: var(--ke-bone); }
+  .why-list { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-direction: column; gap: 16px; }
+  .why-list li { font-size: 16px; line-height: 1.6; color: rgba(246, 241, 232, 0.82); padding-left: 20px; position: relative; }
+  .why-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 2px; background: var(--ke-orange); }
+  .why-list li strong { color: var(--ke-bone); }
+
+  .proof-placeholder { background: var(--ke-sand); border-top: 1px solid var(--border-1); border-bottom: 1px solid var(--border-1); padding: 40px 0; text-align: center; }
+  .proof-placeholder__label { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ke-stone); }
+
+  .faq-section { background: var(--ke-bone); padding: 100px 0; }
+  .faq-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: flex-start; }
+  .faq-sidebar { position: sticky; top: 96px; }
+  .faq-sidebar__title { font-family: var(--font-sans); font-weight: 900; font-size: clamp(28px, 3vw, 40px); letter-spacing: -0.02em; line-height: 1.1; color: var(--ke-ink); margin: 10px 0 14px; }
+  .faq-sidebar p { font-size: 15px; color: var(--fg-2); margin-bottom: 20px; }
+
+  .eyebrow { font-family: var(--font-sans); font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ke-orange); display: inline-block; }
+  .eyebrow--amber { color: var(--ke-amber); }
+
+  .faq-list { display: flex; flex-direction: column; border-top: 1px solid var(--border-1); }
+  .faq-item { border-bottom: 1px solid var(--border-1); }
+  .faq-item__btn { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; cursor: pointer; font-size: 16px; font-weight: 600; color: var(--ke-ink); list-style: none; user-select: none; }
+  .faq-item__btn::-webkit-details-marker { display: none; }
+  .faq-icon { width: 20px; height: 20px; flex: none; border-radius: 50%; border: 1.5px solid var(--border-2); position: relative; }
+  .faq-icon::before, .faq-icon::after { content: ''; position: absolute; top: 50%; left: 50%; background: var(--ke-orange); border-radius: 2px; }
+  .faq-icon::before { width: 8px; height: 1.5px; transform: translate(-50%, -50%); }
+  .faq-icon::after { width: 1.5px; height: 8px; transform: translate(-50%, -50%); transition: transform var(--dur-1) var(--ease-out), opacity var(--dur-1) var(--ease-out); }
+  details[open] .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+  .faq-item__body { padding-bottom: 20px; }
+  .faq-item__body p { font-size: 15px; line-height: 1.65; color: var(--fg-2); }
+
+  .page-cta { background: var(--ke-ink); color: var(--ke-bone); padding: 100px 0; }
+  .page-cta__inner { display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; }
+  .page-cta__title { font-family: var(--font-display); font-variation-settings: 'YEAR' 2050; font-size: clamp(44px, 6vw, 88px); line-height: 0.95; color: var(--ke-bone); margin: 12px 0 18px; letter-spacing: -0.005em; }
+  .page-cta__title em { font-style: normal; color: var(--ke-orange); }
+  .page-cta__lead { font-size: 17px; color: rgba(246, 241, 232, 0.75); line-height: 1.55; margin-bottom: 28px; max-width: 44ch; }
+  .page-cta__btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .page-cta__card { background: var(--ke-bone); color: var(--ke-ink); border-radius: var(--radius-4); padding: 32px 28px; min-width: 260px; flex-shrink: 0; }
+  .page-cta__card-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ke-orange); margin-bottom: 10px; }
+  .page-cta__phone { display: block; font-family: var(--font-display); font-variation-settings: 'YEAR' 2030; font-size: clamp(32px, 3.5vw, 44px); line-height: 1; color: var(--ke-ink); text-decoration: none; margin-bottom: 16px; transition: color var(--dur-1) var(--ease-out); }
+  .page-cta__phone:hover { color: var(--ke-orange); }
+  .page-cta__trust { display: flex; flex-direction: column; gap: 5px; font-size: 13px; color: var(--fg-2); font-weight: 500; padding-top: 16px; border-top: 1px solid var(--border-1); }
+
+  @media (max-width: 900px) { .page-cta__inner { grid-template-columns: 1fr; gap: 40px; } }
+  @media (max-width: 768px) {
+    .page-hero { padding: 56px 0 48px; }
+    .content-section { padding: 56px 0; }
+    .why-section { padding: 56px 0; }
+    .faq-section { padding: 64px 0; }
+    .page-cta { padding: 64px 0; }
+    .hero-ctas { flex-direction: column; }
+    .btn--lg { width: 100%; justify-content: center; }
+    .page-cta__btns { flex-direction: column; }
+    .faq-inner { grid-template-columns: 1fr; gap: 32px; }
+    .faq-sidebar { position: static; }
+  }
+</style>

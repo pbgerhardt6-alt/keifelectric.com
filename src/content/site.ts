@@ -58,24 +58,28 @@ export const siteContent = {
   servicesText: [
     {
       id: 'outlets',
+      href: '/#services',
       icon: 'power',
       title: 'Outlets & switches',
       description: 'New outlet and switch installation, GFCI and AFCI upgrades, USB outlets, and dedicated circuits for appliances and home offices. Code-compliant throughout.',
     },
     {
       id: 'ceiling-fan',
+      href: '/#services',
       icon: 'fan',
       title: 'Ceiling fan installation',
       description: 'Ceiling fan installation and replacement including fan-rated electrical boxes, dedicated wiring where needed, and remote or smart controls.',
     },
     {
       id: 'troubleshooting',
+      href: '/services/troubleshooting',
       icon: 'magnifying-glass',
       title: 'Troubleshooting & diagnostics',
       description: 'Electrical troubleshooting and diagnostics for flickering lights, tripping breakers, dead outlets, and mystery circuits. Root cause, not just the symptom.',
     },
     {
       id: 'same-week',
+      href: '/#services',
       icon: 'clock',
       title: 'Same-week service calls',
       description: 'Same-week scheduling for most non-emergency electrical service calls across San Luis Obispo and SLO County.',

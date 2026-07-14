@@ -2,9 +2,16 @@
 interface Props {
   title: string;
   description?: string;
+  canonical?: string;
+  includeFaqSchema?: boolean;
 }
 
-const { title, description = 'San Luis Obispo and SLO County electrician. EV chargers, panel upgrades, lighting, new builds. Licensed, insured, owner-operated. Free estimates.' } = Astro.props;
+const {
+  title,
+  description = 'San Luis Obispo and SLO County electrician. EV chargers, panel upgrades, lighting, new builds. Licensed, insured, owner-operated. Free estimates.',
+  canonical = 'https://keifelectric.com/',
+  includeFaqSchema = true,
+} = Astro.props;
 
 import '../../styles/global.css';
 import { siteContent } from '../../content/site';
@@ -31,14 +38,14 @@ const faqSchema = {
     <meta name="theme-color" content="#242021" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href="https://keifelectric.com/" />
+    <link rel="canonical" href={canonical} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Keif Electric" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://keifelectric.com/" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:image" content="https://keifelectric.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -102,8 +109,10 @@ const faqSchema = {
       }
     </script>
 
-    <!-- FAQPage schema -->
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <!-- FAQPage schema (homepage only) -->
+    {includeFaqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+
+    <slot name="head" />
 
     <!-- Meta Pixel placeholder (uncomment on launch) -->
     <!-- <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=XXXXXXXXXXXXX&ev=PageView&noscript=1" /> -->

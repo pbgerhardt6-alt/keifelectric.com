@@ -31,7 +31,7 @@ import { siteContent } from '../../content/site';
           <li><a href={`/services/${s.id}`}>{s.title}</a></li>
         ))}
         {siteContent.servicesText.map(s => (
-          <li><a href={`/services/${s.id}`}>{s.title}</a></li>
+          <li><a href={s.href ?? `/services/${s.id}`}>{s.title}</a></li>
         ))}
       </ul>
     </div>
