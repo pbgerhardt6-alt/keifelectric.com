@@ -4,7 +4,7 @@ import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
 
 const title = 'EV Charger Installation in San Luis Obispo County | Keif Electric';
-const description = 'Level 2 EV charger installation for Tesla, Rivian, Ford, and all electric vehicles. Permitted, inspected, owner-operated by Adam Keif. Serving SLO County.';
+const description = 'Level 2 EV charger installation in SLO County. Tesla Wall Connectors, NEMA 14-50 outlets, and dedicated 240V circuits. Permitted, inspected, owner-operated by Adam Keif.';
 const canonical = 'https://keifelectric.com/services/ev-charger';
 
 const serviceSchema = {
@@ -29,7 +29,17 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'Do you install Tesla Wall Connectors?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. I install Tesla Wall Connectors along with chargers for Rivian, Ford, and every other EV. If you\'ve already bought your unit, I\'ll install it. If not, I\'ll help you pick the right one.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. I install Tesla Wall Connectors along with the electrical work behind them, the dedicated circuit, breaker, conduit, and panel connection. I also install chargers for Rivian, Ford, and every other EV. If you\'ve already bought your unit, I\'ll install it. If not, I\'ll help you pick the right one.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a 200-amp panel for an EV charger?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Not always. Plenty of homes can support EV charging without a panel upgrade. I do a load assessment first to confirm your home\'s actual capacity rather than assuming either way.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should I install a plug-in charger or a hardwired one?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Both work. Hardwired chargers like the Tesla Wall Connector generally allow higher charging speeds and make for a cleaner permanent install. A NEMA 14-50 outlet can make sense for some setups, especially if you want flexibility. I\'ll walk you through which fits your situation.' },
     },
     {
       '@type': 'Question',
@@ -39,12 +49,7 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'Do I need a permit to install an EV charger?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes, in SLO County these installs require a permit. I handle the permit, inspection, and utility coordination so it\'s code-compliant and signed off.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can my home\'s electrical panel handle an EV charger?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Sometimes yes, sometimes it needs an upgrade first, especially on older 100-amp panels common in this area. I check your panel capacity before quoting so there are no surprises.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Most residential EV charger installs in SLO County need an electrical permit and inspection. I handle the permit, inspection, and utility coordination so it\'s code-compliant and signed off.' },
     },
     {
       '@type': 'Question',
@@ -75,18 +80,35 @@ const faqSchema = {
       </div>
     </nav>
 
-    <section class="page-hero" id="top" aria-labelledby="page-h1">
-      <div class="container">
-        <h1 id="page-h1" class="page-hero__title">Tesla &amp; EV Charger Installation in San Luis Obispo County</h1>
-        <p class="page-hero__sub">Level 2 home charging for Tesla, Rivian, Ford, and every EV. Permitted, inspected, and installed clean by a licensed local electrician. Owner-operated by Adam Keif.</p>
-        <div class="hero-ctas">
-          <a class="btn btn--primary btn--lg" href="tel:+18052860477">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-            Call (805) 286-0477
-          </a>
-          <a class="btn btn--outline-light btn--lg" href="#contact">Get a free quote</a>
+    <section class="svc-hero" id="top" aria-labelledby="page-h1">
+      <div class="svc-hero__inner container">
+        <div class="svc-hero__copy">
+          <p class="svc-hero__eyebrow">
+            <svg class="svc-hero__spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z"/></svg>
+            EV Charger Installation
+          </p>
+          <h1 id="page-h1" class="svc-hero__title">
+            <span class="svc-hero__line">Tesla &amp; EV charger</span>
+            <span class="svc-hero__line svc-hero__line--accent">installation<span class="svc-hero__dot" aria-hidden="true"></span></span>
+            <span class="svc-hero__place">in San Luis Obispo County</span>
+          </h1>
+          <p class="svc-hero__sub">Level 2 charging for Tesla, Rivian, Ford, and every EV. Tesla Wall Connectors, NEMA 14-50 outlets, and dedicated 240V circuits, with permits and inspection handled start to finish.</p>
+          <div class="svc-hero__ctas">
+            <a class="btn btn--primary btn--lg" href="tel:+18052860477">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              Call (805) 286-0477
+            </a>
+            <a class="btn btn--outline btn--lg" href="#contact">Get a free quote</a>
+          </div>
+          <p class="svc-hero__trust">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
         </div>
-        <p class="trust-line">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
+        <div class="svc-hero__media">
+          <img class="svc-hero__img" src="/assets/service-ev-charger.jpg" alt="Level 2 EV charger installed cleanly in a residential garage" width="533" height="800" fetchpriority="high" />
+          <div class="svc-hero__chip">
+            <span class="svc-hero__chip-k">Level 2</span>
+            <span class="svc-hero__chip-l">Permitted &amp; inspected</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -97,55 +119,70 @@ const faqSchema = {
         <ul class="feature-list">
           <li><strong>Panel assessment</strong> — I check whether your electrical panel and service can handle the added load before quoting. No surprises mid-job.</li>
           <li><strong>Dedicated 240V circuit</strong> — a properly sized dedicated circuit run for your charger, not a shared line that trips under load.</li>
+          <li><strong>Hardwired or plug-in setup</strong> — some homeowners go with a NEMA 14-50 outlet, others with a hardwired charger like the Tesla Wall Connector. I'll recommend what fits your vehicle and your electrical system.</li>
           <li><strong>Clean conduit runs</strong> — conduit routed neatly along the garage or exterior, not slapped across the wall.</li>
           <li><strong>Permit and inspection</strong> — I pull the permit, coordinate the inspection, and make sure the install is signed off to code.</li>
           <li><strong>Charger mounting and testing</strong> — hardware mounted, wired, energized, and tested before I leave.</li>
         </ul>
-        <p>Whether you already have your Tesla Wall Connector in hand or you want a recommendation on which charger fits your setup, I handle the full job from permit to first charge.</p>
+        <p>Whether you already have your charger in hand or you want a recommendation on which one fits your setup, I handle the full job from permit to first charge.</p>
       </div>
     </section>
 
-    <section class="content-section content-section--alt" aria-labelledby="cost-title">
+    <section class="content-section content-section--alt" aria-labelledby="chargers-title">
       <div class="container container--prose">
-        <h2 id="cost-title" class="section-title">What an EV charger installation costs</h2>
+        <h2 id="chargers-title" class="section-title">EV chargers I install</h2>
+        <p class="lead-copy">Whether you already own your charger or need help choosing one, I install residential EV charging equipment including:</p>
+        <ul class="feature-list">
+          <li>Tesla Wall Connector</li>
+          <li>ChargePoint Home</li>
+          <li>Wallbox</li>
+          <li>Emporia</li>
+          <li>Ford and Rivian home charging</li>
+        </ul>
+        <p>The right setup depends on your vehicle, how much you drive, your panel capacity, and where the charger needs to go. If you haven't bought yet, ask me before you do.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="cost-title">
+      <div class="container container--prose">
+        <h2 id="cost-title" class="section-title">How much does EV charger installation cost in San Luis Obispo?</h2>
         <p class="lead-copy">Straight answer: most home Level 2 installs land in the <strong>$700 to $1,500</strong> range for a standard job where your panel has capacity and the run to the garage is reasonable.</p>
+        <p>Tesla Wall Connector installs fall into the same range as other Level 2 chargers. The cost comes from the electrical work, not the brand on the box.</p>
         <p>What moves the price:</p>
         <ul class="feature-list">
           <li><strong>Distance from your panel to the charger</strong> — longer conduit runs cost more in materials and labor.</li>
           <li><strong>Panel capacity</strong> — if your panel is full or under-sized, you may need a panel upgrade first. <a href="/services/panel" class="inline-link">If your panel can't support the added load, we may need to upgrade your electrical panel first.</a></li>
           <li><strong>Indoor vs. outdoor mounting</strong> — exterior installs need weatherproofing.</li>
-          <li><strong>Charger type</strong> — hardwired vs. plug-in, and whether you've already bought the unit.</li>
+          <li><strong>Hardwired vs. plug-in</strong> — and whether you've already bought the unit.</li>
         </ul>
         <p>You get a written quote before any work starts. No hidden fees, no add-ons that weren't discussed.</p>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="panel-title">
+    <section class="content-section content-section--alt" aria-labelledby="panel-title">
       <div class="container container--prose">
         <h2 id="panel-title" class="section-title">Will your panel handle it?</h2>
-        <p>An EV charger is one of the biggest loads you can add to a home. Older SLO County homes especially, many built in the 60s and 70s, often run 100-amp panels that are already close to full.</p>
-        <p>Before I install a charger, I check your panel and service capacity. If there's room, we install and you're charging the same day. If there isn't, I'll walk you through what a panel upgrade involves and quote both together so you can decide.</p>
+        <p>An EV charger is one of the biggest loads you can add to a home. Plenty of older homes around San Luis Obispo, Atascadero, and Paso Robles still run 100-amp panels that are already close to full.</p>
+        <p>Before I install a charger, I do a load assessment on your panel and service. If there's room, we install and you're charging the same day. If there isn't, I'll walk you through what a panel upgrade involves and quote both together so you can decide with the full picture.</p>
+        <p>If the assessment turns up other problems, a loose neutral, a failing breaker, wiring that isn't right, I'll tell you. <a href="/services/troubleshooting" class="inline-link">I can also handle electrical issues found during your panel evaluation.</a></p>
         <a href="/services/panel" class="cta-link">Learn more about electrical panel upgrades &rarr;</a>
       </div>
     </section>
 
-    <section class="content-section content-section--alt" aria-labelledby="permits-title">
+    <section class="content-section" aria-labelledby="permits-title">
       <div class="container container--prose">
         <h2 id="permits-title" class="section-title">Permits and inspection</h2>
-        <p>EV charger installations require a permit in San Luis Obispo County. That's not red tape to dodge. An unpermitted install can void your homeowner's insurance and cause problems at resale.</p>
+        <p>Most residential EV charger installations in San Luis Obispo County require an electrical permit and inspection. That's not red tape to dodge. Unpermitted work can cause problems with your homeowner's insurance and at resale.</p>
         <p>I pull the permit, coordinate with the utility where needed, schedule the inspection, and make sure everything is signed off. You don't chase any of it.</p>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="rebates-title">
+    <section class="content-section content-section--alt" aria-labelledby="rebates-title">
       <div class="container container--prose">
-        <h2 id="rebates-title" class="section-title">Rebates and tax credits</h2>
-        <p>Worth knowing before you budget:</p>
-        <ul class="feature-list">
-          <li><strong>Federal EV charger tax credit (30C):</strong> This federal credit expired June 30, 2026. If you're seeing older articles that mention it, they're out of date.</li>
-          <li><strong>PG&amp;E and California programs:</strong> Rebate availability changes. I'll tell you what's currently active when I quote — I'd rather you hear the honest answer from me than find out later something was stale.</li>
-        </ul>
-        <p>I'll tell you honestly what's available when I quote. I'd rather you hear "there's no rebate right now" from me than find out later.</p>
+        <h2 id="rebates-title" class="section-title">EV charger rebates and incentives</h2>
+        <p>EV charger incentives change often. Federal, state, utility, and local programs come and go, and most have eligibility rules or expiration dates attached.</p>
+        <p>One thing worth knowing right now: the federal EV charger tax credit (30C) expired on June 30, 2026. If you're reading older articles or other installers' pages that still advertise it, they're out of date.</p>
+        <p>Before your installation, I'll tell you what's actually available and what you'd qualify for. I'd rather you hear "there's nothing right now" from me than budget around a credit that doesn't exist.</p>
       </div>
     </section>
 
@@ -154,6 +191,7 @@ const faqSchema = {
         <h2 id="why-title" class="section-title">Why homeowners hire Keif Electric</h2>
         <ul class="why-list">
           <li><strong>You hire me, not a crew.</strong> Every job is done by me, personally. The person who quotes it is the person who installs it.</li>
+          <li><strong>Local SLO County electrician.</strong> I work throughout San Luis Obispo County and know what's common in local homes, from older 100-amp panels to garage layouts that need a longer conduit run.</li>
           <li><strong>Licensed and insured.</strong> California C-10 electrical contractor, CA# 1152084, with liability insurance.</li>
           <li><strong>Permitted and inspected, every time.</strong> I don't cut corners on code to shave a quote.</li>
           <li><strong>Clean work.</strong> Conduit run straight, panel labeled, garage left the way I found it.</li>
@@ -182,7 +220,15 @@ const faqSchema = {
           <div class="faq-list">
             <details class="faq-item" open>
               <summary class="faq-item__btn"><span>Do you install Tesla Wall Connectors?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes. I install Tesla Wall Connectors along with chargers for Rivian, Ford, and every other EV. If you've already bought your unit, I'll install it. If not, I'll help you pick the right one.</p></div>
+              <div class="faq-item__body"><p>Yes. I install Tesla Wall Connectors along with the electrical work behind them, the dedicated circuit, breaker, conduit, and panel connection. I also install chargers for Rivian, Ford, and every other EV. If you've already bought your unit, I'll install it. If not, I'll help you pick the right one.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>Do I need a 200-amp panel for an EV charger?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Not always. Plenty of homes can support EV charging without a panel upgrade. I do a load assessment first to confirm your home's actual capacity rather than assuming either way.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>Should I install a plug-in charger or a hardwired one?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Both work. Hardwired chargers like the Tesla Wall Connector generally allow higher charging speeds and make for a cleaner permanent install. A NEMA 14-50 outlet can make sense for some setups, especially if you want flexibility. I'll walk you through which fits your situation.</p></div>
             </details>
             <details class="faq-item">
               <summary class="faq-item__btn"><span>How long does an EV charger installation take?</span><span class="faq-icon" aria-hidden="true"></span></summary>
@@ -190,11 +236,7 @@ const faqSchema = {
             </details>
             <details class="faq-item">
               <summary class="faq-item__btn"><span>Do I need a permit to install an EV charger?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes, in SLO County these installs require a permit. I handle the permit, inspection, and utility coordination so it's code-compliant and signed off.</p></div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-item__btn"><span>Can my home's electrical panel handle an EV charger?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Sometimes yes, sometimes it needs an upgrade first, especially on older 100-amp panels common in this area. I check your panel capacity before quoting so there are no surprises.</p></div>
+              <div class="faq-item__body"><p>Most residential EV charger installs in SLO County need an electrical permit and inspection. I handle the permit, inspection, and utility coordination so it's code-compliant and signed off.</p></div>
             </details>
             <details class="faq-item">
               <summary class="faq-item__btn"><span>What areas do you cover for EV charger installation?</span><span class="faq-icon" aria-hidden="true"></span></summary>
@@ -234,6 +276,16 @@ const faqSchema = {
     </section>
 
   </main>
+
+  <noscript>
+    <style>
+      .content-section .container--prose,
+      .why-section .container--prose,
+      .proof-placeholder .container,
+      .faq-inner,
+      .page-cta__inner { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 
   <Footer />
 </BaseLayout>
@@ -275,42 +327,188 @@ const faqSchema = {
   }
 
   /* hero */
-  .page-hero {
-    background: var(--ke-ink);
-    color: var(--ke-bone);
-    padding: 80px 0 72px;
+  .svc-hero {
+    position: relative;
+    background: var(--ke-bone);
+    overflow: hidden;
+    padding: 72px 0 88px;
   }
 
-  .page-hero__title {
-    font-family: var(--font-sans);
-    font-weight: 800;
-    font-size: clamp(32px, 5vw, 56px);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+  .svc-hero::before {
+    content: '';
+    position: absolute;
+    top: -25%;
+    right: -12%;
+    width: 62%;
+    height: 130%;
+    background: radial-gradient(closest-side, rgba(243, 152, 31, 0.12), transparent 72%);
+    pointer-events: none;
+  }
+
+  .svc-hero__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .svc-hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ke-clay);
     margin-bottom: 18px;
-    max-width: 22ch;
   }
 
-  .page-hero__sub {
-    font-size: clamp(16px, 2vw, 19px);
+  .svc-hero__spark { width: 15px; height: 15px; color: var(--ke-orange); }
+
+  .svc-hero__title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "YEAR" 2050;
+    font-size: clamp(46px, 6.4vw, 92px);
+    line-height: 0.9;
+    letter-spacing: -0.005em;
+    color: var(--ke-ink);
+    margin: 0;
+  }
+
+  .svc-hero__line { display: block; }
+  .svc-hero__line--accent { color: var(--ke-orange); }
+
+  .svc-hero__dot {
+    display: inline-block;
+    width: 0.16em;
+    height: 0.16em;
+    background: var(--ke-orange);
+    border-radius: 2px;
+    margin-left: 0.05em;
+    vertical-align: baseline;
+  }
+
+  .svc-hero__place {
+    display: block;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: clamp(15px, 1.6vw, 19px);
+    letter-spacing: 0;
+    color: var(--fg-2);
+    margin-top: 16px;
+  }
+
+  .svc-hero__sub {
+    font-size: 18px;
     line-height: 1.55;
-    color: rgba(246, 241, 232, 0.82);
-    max-width: 52ch;
-    margin-bottom: 32px;
+    color: var(--ke-ink);
+    max-width: 46ch;
+    margin: 26px 0 26px;
+    font-weight: 500;
   }
 
-  .hero-ctas {
+  .svc-hero__ctas {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
   }
 
-  .trust-line {
+  .svc-hero__trust {
+    margin-top: 26px;
     font-size: 13px;
-    color: rgba(246, 241, 232, 0.58);
-    font-weight: 500;
+    font-weight: 600;
+    color: var(--fg-2);
+    letter-spacing: 0.01em;
+  }
+
+  .svc-hero__media {
+    position: relative;
+    justify-self: end;
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .svc-hero__img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-4);
+    box-shadow: var(--shadow-3);
+    border: 1px solid var(--border-1);
+  }
+
+  .svc-hero__chip {
+    position: absolute;
+    left: -16px;
+    bottom: 28px;
+    background: var(--ke-ink);
+    color: var(--ke-bone);
+    padding: 12px 16px;
+    border-radius: var(--radius-3);
+    box-shadow: var(--shadow-3);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .svc-hero__chip-k {
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--ke-amber);
     letter-spacing: 0.02em;
+  }
+
+  .svc-hero__chip-l {
+    font-size: 12px;
+    color: rgba(246, 241, 232, 0.8);
+  }
+
+  .btn--outline {
+    background: transparent;
+    color: var(--ke-ink);
+    border-color: var(--ke-ink);
+  }
+
+  .btn--outline:hover { background: var(--ke-ink); color: var(--ke-bone); }
+
+  /* hero entrance + scroll reveal */
+  @media (prefers-reduced-motion: no-preference) {
+    .svc-hero__eyebrow,
+    .svc-hero__line,
+    .svc-hero__place,
+    .svc-hero__sub,
+    .svc-hero__ctas,
+    .svc-hero__trust,
+    .svc-hero__media {
+      opacity: 0;
+      animation: heroIn 0.8s var(--ease-emph) forwards;
+    }
+    .svc-hero__eyebrow { animation-delay: 0.05s; }
+    .svc-hero__line:nth-child(1) { animation-delay: 0.13s; }
+    .svc-hero__line:nth-child(2) { animation-delay: 0.21s; }
+    .svc-hero__place { animation-delay: 0.29s; }
+    .svc-hero__sub { animation-delay: 0.37s; }
+    .svc-hero__ctas { animation-delay: 0.45s; }
+    .svc-hero__trust { animation-delay: 0.53s; }
+    .svc-hero__media { animation-delay: 0.22s; animation-duration: 1s; }
+
+    .content-section .container--prose,
+    .why-section .container--prose,
+    .proof-placeholder .container,
+    .faq-inner,
+    .page-cta__inner {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s var(--ease-emph), transform 0.7s var(--ease-emph);
+    }
+    .is-in { opacity: 1 !important; transform: none !important; }
+  }
+
+  @keyframes heroIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
   }
 
   /* buttons */
@@ -721,14 +919,20 @@ const faqSchema = {
     }
   }
 
+  @media (max-width: 860px) {
+    .svc-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .svc-hero__media { justify-self: start; max-width: 340px; margin: 0 auto; }
+    .svc-hero__chip { left: 12px; }
+  }
+
   @media (max-width: 768px) {
-    .page-hero { padding: 56px 0 48px; }
+    .svc-hero { padding: 44px 0 56px; }
     .content-section { padding: 56px 0; }
     .why-section { padding: 56px 0; }
     .faq-section { padding: 64px 0; }
     .page-cta { padding: 64px 0; }
 
-    .hero-ctas { flex-direction: column; }
+    .svc-hero__ctas { flex-direction: column; }
     .btn--lg { width: 100%; justify-content: center; }
     .page-cta__btns { flex-direction: column; }
 
@@ -736,3 +940,22 @@ const faqSchema = {
     .faq-sidebar { position: static; }
   }
 </style>
+
+<script>
+  // Scroll-reveal for content sections below the hero (hero itself animates on load via CSS)
+  const mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
+  if (mq.matches && 'IntersectionObserver' in window) {
+    const els = document.querySelectorAll(
+      '.content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner, .page-cta__inner'
+    );
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach((el) => io.observe(el));
+  }
+</script>

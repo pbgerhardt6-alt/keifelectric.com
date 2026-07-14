@@ -80,18 +80,35 @@ const faqSchema = {
       </div>
     </nav>
 
-    <section class="page-hero" id="top" aria-labelledby="page-h1">
-      <div class="container">
-        <h1 id="page-h1" class="page-hero__title">Electrical Troubleshooting &amp; Repair in San Luis Obispo County</h1>
-        <p class="page-hero__sub">Flickering lights, tripping breakers, dead outlets, mystery circuits. I find the root cause, not just the symptom. Licensed, owner-operated by Adam Keif.</p>
-        <div class="hero-ctas">
-          <a class="btn btn--primary btn--lg" href="tel:+18052860477">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-            Call (805) 286-0477
-          </a>
-          <a class="btn btn--outline-light btn--lg" href="#contact">Get a free quote</a>
+    <section class="svc-hero" id="top" aria-labelledby="page-h1">
+      <div class="svc-hero__inner container">
+        <div class="svc-hero__copy">
+          <p class="svc-hero__eyebrow">
+            <svg class="svc-hero__spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z"/></svg>
+            Troubleshooting &amp; Repair
+          </p>
+          <h1 id="page-h1" class="svc-hero__title">
+            <span class="svc-hero__line">Electrical troubleshooting</span>
+            <span class="svc-hero__line svc-hero__line--accent">&amp; repair<span class="svc-hero__dot" aria-hidden="true"></span></span>
+            <span class="svc-hero__place">in San Luis Obispo County</span>
+          </h1>
+          <p class="svc-hero__sub">Flickering lights, tripping breakers, dead outlets, mystery circuits. I find the root cause, not just the symptom. Licensed, owner-operated by Adam Keif.</p>
+          <div class="svc-hero__ctas">
+            <a class="btn btn--primary btn--lg" href="tel:+18052860477">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              Call (805) 286-0477
+            </a>
+            <a class="btn btn--outline btn--lg" href="#contact">Get a free quote</a>
+          </div>
+          <p class="svc-hero__trust">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
         </div>
-        <p class="trust-line">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
+        <div class="svc-hero__media">
+          <img class="svc-hero__img" src="/assets/adam-keif-job-site.png" alt="Adam Keif diagnosing an electrical issue on a job site" width="1114" height="1411" fetchpriority="high" />
+          <div class="svc-hero__chip">
+            <span class="svc-hero__chip-k">Root cause</span>
+            <span class="svc-hero__chip-l">Not just the symptom</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -222,6 +239,16 @@ const faqSchema = {
 
   </main>
 
+  <noscript>
+    <style>
+      .content-section .container--prose,
+      .why-section .container--prose,
+      .proof-placeholder .container,
+      .faq-inner,
+      .page-cta__inner { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+
   <Footer />
 </BaseLayout>
 
@@ -232,11 +259,40 @@ const faqSchema = {
   .breadcrumb .container { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--fg-2); }
   .breadcrumb a { color: var(--ke-orange); font-weight: 500; }
   .breadcrumb a:hover { text-decoration: underline; }
-  .page-hero { background: var(--ke-ink); color: var(--ke-bone); padding: 80px 0 72px; }
-  .page-hero__title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(32px, 5vw, 56px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px; max-width: 22ch; }
-  .page-hero__sub { font-size: clamp(16px, 2vw, 19px); line-height: 1.55; color: rgba(246, 241, 232, 0.82); max-width: 52ch; margin-bottom: 32px; }
-  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
-  .trust-line { font-size: 13px; color: rgba(246, 241, 232, 0.58); font-weight: 500; letter-spacing: 0.02em; }
+  .svc-hero { position: relative; background: var(--ke-bone); overflow: hidden; padding: 72px 0 88px; }
+  .svc-hero::before { content: ''; position: absolute; top: -25%; right: -12%; width: 62%; height: 130%; background: radial-gradient(closest-side, rgba(243, 152, 31, 0.12), transparent 72%); pointer-events: none; }
+  .svc-hero__inner { position: relative; display: grid; grid-template-columns: 1.05fr 0.85fr; gap: 56px; align-items: center; }
+  .svc-hero__eyebrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ke-clay); margin-bottom: 18px; }
+  .svc-hero__spark { width: 15px; height: 15px; color: var(--ke-orange); }
+  .svc-hero__title { font-family: var(--font-display); font-weight: 400; font-variation-settings: "YEAR" 2050; font-size: clamp(46px, 6.4vw, 92px); line-height: 0.9; letter-spacing: -0.005em; color: var(--ke-ink); margin: 0; }
+  .svc-hero__line { display: block; }
+  .svc-hero__line--accent { color: var(--ke-orange); }
+  .svc-hero__dot { display: inline-block; width: 0.16em; height: 0.16em; background: var(--ke-orange); border-radius: 2px; margin-left: 0.05em; vertical-align: baseline; }
+  .svc-hero__place { display: block; font-family: var(--font-sans); font-weight: 600; font-size: clamp(15px, 1.6vw, 19px); letter-spacing: 0; color: var(--fg-2); margin-top: 16px; }
+  .svc-hero__sub { font-size: 18px; line-height: 1.55; color: var(--ke-ink); max-width: 46ch; margin: 26px 0 26px; font-weight: 500; }
+  .svc-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .svc-hero__trust { margin-top: 26px; font-size: 13px; font-weight: 600; color: var(--fg-2); letter-spacing: 0.01em; }
+  .svc-hero__media { position: relative; justify-self: end; width: 100%; max-width: 440px; }
+  .svc-hero__img { width: 100%; height: auto; border-radius: var(--radius-4); box-shadow: var(--shadow-3); border: 1px solid var(--border-1); }
+  .svc-hero__chip { position: absolute; left: -16px; bottom: 28px; background: var(--ke-ink); color: var(--ke-bone); padding: 12px 16px; border-radius: var(--radius-3); box-shadow: var(--shadow-3); display: flex; flex-direction: column; gap: 2px; }
+  .svc-hero__chip-k { font-weight: 800; font-size: 15px; color: var(--ke-amber); letter-spacing: 0.02em; }
+  .svc-hero__chip-l { font-size: 12px; color: rgba(246, 241, 232, 0.8); }
+  .btn--outline { background: transparent; color: var(--ke-ink); border-color: var(--ke-ink); }
+  .btn--outline:hover { background: var(--ke-ink); color: var(--ke-bone); }
+  @media (prefers-reduced-motion: no-preference) {
+    .svc-hero__eyebrow, .svc-hero__line, .svc-hero__place, .svc-hero__sub, .svc-hero__ctas, .svc-hero__trust, .svc-hero__media { opacity: 0; animation: heroIn 0.8s var(--ease-emph) forwards; }
+    .svc-hero__eyebrow { animation-delay: 0.05s; }
+    .svc-hero__line:nth-child(1) { animation-delay: 0.13s; }
+    .svc-hero__line:nth-child(2) { animation-delay: 0.21s; }
+    .svc-hero__place { animation-delay: 0.29s; }
+    .svc-hero__sub { animation-delay: 0.37s; }
+    .svc-hero__ctas { animation-delay: 0.45s; }
+    .svc-hero__trust { animation-delay: 0.53s; }
+    .svc-hero__media { animation-delay: 0.22s; animation-duration: 1s; }
+    .content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner, .page-cta__inner { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease-emph), transform 0.7s var(--ease-emph); }
+    .is-in { opacity: 1 !important; transform: none !important; }
+  }
+  @keyframes heroIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
   .btn { font-family: var(--font-sans); font-weight: 600; font-size: 15px; padding: 13px 18px; border-radius: var(--radius-2); border: 1px solid transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 9px; line-height: 1; min-height: 48px; transition: all var(--dur-1) var(--ease-out); text-decoration: none; white-space: nowrap; }
   .btn svg { width: 18px; height: 18px; flex: none; }
   .btn--primary { background: var(--ke-orange); color: #fff; }
@@ -296,16 +352,36 @@ const faqSchema = {
   .page-cta__phone:hover { color: var(--ke-orange); }
   .page-cta__trust { display: flex; flex-direction: column; gap: 5px; font-size: 13px; color: var(--fg-2); font-weight: 500; padding-top: 16px; border-top: 1px solid var(--border-1); }
   @media (max-width: 900px) { .page-cta__inner { grid-template-columns: 1fr; gap: 40px; } }
+  @media (max-width: 860px) {
+    .svc-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .svc-hero__media { justify-self: start; max-width: 340px; margin: 0 auto; }
+    .svc-hero__chip { left: 12px; }
+  }
   @media (max-width: 768px) {
-    .page-hero { padding: 56px 0 48px; }
+    .svc-hero { padding: 44px 0 56px; }
     .content-section { padding: 56px 0; }
     .why-section { padding: 56px 0; }
     .faq-section { padding: 64px 0; }
     .page-cta { padding: 64px 0; }
-    .hero-ctas { flex-direction: column; }
+    .svc-hero__ctas { flex-direction: column; }
     .btn--lg { width: 100%; justify-content: center; }
     .page-cta__btns { flex-direction: column; }
     .faq-inner { grid-template-columns: 1fr; gap: 32px; }
     .faq-sidebar { position: static; }
   }
 </style>
+
+<script>
+  const mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
+  if (mq.matches && 'IntersectionObserver' in window) {
+    const els = document.querySelectorAll(
+      '.content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner, .page-cta__inner'
+    );
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach((el) => io.observe(el));
+  }
+</script>
