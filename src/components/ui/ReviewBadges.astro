@@ -1,10 +1,11 @@
 ---
-import { siteContent } from '../../content/site';
-const { google, yelp } = siteContent.reviewBadges;
+// Static rating badges. Not linked yet, waiting on Adam's live Google
+// Business Profile and Yelp listing URLs (stored in site.ts
+// reviewBadges) before wiring them to the real listings.
 ---
 
-<div class="review-badges" aria-label="Customer ratings">
-  <a class="rb" href={google.url} target="_blank" rel="noopener noreferrer" aria-label="Rated 5 out of 5 stars on Google">
+<div class="review-badges">
+  <div class="rb" role="img" aria-label="Rated 5 out of 5 stars on Google">
     <span class="rb__mark" aria-hidden="true">
       <svg viewBox="0 0 48 48">
         <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
@@ -16,14 +17,14 @@ const { google, yelp } = siteContent.reviewBadges;
     <span class="rb__stars" aria-hidden="true">{[...Array(5)].map(() => (
       <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
     ))}</span>
-  </a>
+  </div>
 
-  <a class="rb" href={yelp.url} target="_blank" rel="noopener noreferrer" aria-label="Rated 5 out of 5 stars on Yelp">
+  <div class="rb" role="img" aria-label="Rated 5 out of 5 stars on Yelp">
     <span class="rb__mark rb__mark--yelp" aria-hidden="true">Yelp</span>
     <span class="rb__stars" aria-hidden="true">{[...Array(5)].map(() => (
       <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
     ))}</span>
-  </a>
+  </div>
 </div>
 
 <style>
@@ -43,13 +44,6 @@ const { google, yelp } = siteContent.reviewBadges;
     border: 1px solid var(--border-1);
     border-radius: var(--radius-3);
     box-shadow: var(--shadow-1);
-    text-decoration: none;
-    transition: box-shadow var(--dur-1) var(--ease-out), transform var(--dur-1) var(--ease-out);
-  }
-
-  .rb:hover {
-    box-shadow: var(--shadow-2);
-    transform: translateY(-1px);
   }
 
   .rb__mark {
