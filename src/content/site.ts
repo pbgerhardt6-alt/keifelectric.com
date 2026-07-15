@@ -11,6 +11,14 @@ export const siteContent = {
     { label: 'FAQ', href: '/#faq' },
   ],
 
+  // Real review platform data for the above-the-fold trust badges.
+  // Update counts as reviews come in. Replace the URLs with the real
+  // Google Business Profile and Yelp listing links.
+  reviewBadges: {
+    google: { rating: '5.0', count: 2, url: 'https://www.google.com/search?q=Keif+Electric+San+Luis+Obispo' },
+    yelp: { rating: '5.0', count: 1, url: 'https://www.yelp.com/biz/keif-electric-san-luis-obispo' },
+  },
+
   // Service pages that appear in the Services nav dropdown
   serviceNav: [
     { label: 'EV charger installation', href: '/services/ev-charger' },
@@ -95,38 +103,32 @@ export const siteContent = {
     },
   ],
 
+  // Real customer reviews only. Paste verbatim from Google/Yelp; do not
+  // fabricate. Currently: 2 Google + 1 Yelp, all 5 stars. Fill in the
+  // real text/names below as Adam provides them.
+  // Shape: { name, location, service, source: 'Google'|'Yelp', rating,
+  //          text, avatar (initials), avatarBg: ''|'bg-amber'|'bg-orange' }
   reviews: [
     {
-      name: 'Sarah M.',
-      location: 'Atascadero',
-      service: 'Panel upgrade',
+      name: 'Peter G.',
+      location: 'Los Osos',
+      service: 'New circuit install',
       source: 'Google',
       rating: 5,
-      text: 'Adam came out for a panel upgrade on our 1970s ranch house. Showed up on time, walked us through the quote line by line, and left the garage cleaner than he found it. Best experience we\'ve had with any contractor in years.',
-      avatar: 'SM',
+      text: 'Adam from Keif Electric did a great job adding a new circuit to my electrical panel in Los Osos. He was professional, reliable, and took the time to explain what needed to be done and why. The work was clean, efficient, and done with a high level of attention to detail. And the best part, cleaned up after himself, you couldn\'t even tell he\'d been there. It\'s great to have a local electrician who you can trust for this kind of work. I\'d definitely recommend Keif Electric to anyone in Los Osos or the surrounding area who needs electrical repairs, new circuits, or residential electrical work.',
+      avatar: 'PG',
       avatarBg: '',
     },
-    {
-      name: 'Mike T.',
-      location: 'Paso Robles',
-      service: 'EV charger install',
-      source: 'Google',
-      rating: 5,
-      text: 'Hired Keif Electric for a Tesla wall connector install. Adam pulled the permit, ran the conduit clean against the side of the garage, and the inspector signed off first try. Fair price, no upsell. Already have him scheduled for recessed lighting next month.',
-      avatar: 'MT',
-      avatarBg: 'bg-amber',
-    },
-    {
-      name: 'Janet R.',
-      location: 'San Luis Obispo',
-      service: 'Diagnostic call',
-      source: 'Nextdoor',
-      rating: 5,
-      text: 'We had been chasing a flickering kitchen light for over a year. Two electricians wrote it off as a mystery. Adam found the loose neutral in the panel in about ten minutes. Honest, professional, and explains everything.',
-      avatar: 'JR',
-      avatarBg: 'bg-orange',
-    },
-  ],
+  ] as Array<{
+    name: string;
+    location: string;
+    service: string;
+    source: string;
+    rating: number;
+    text: string;
+    avatar: string;
+    avatarBg: string;
+  }>,
 
   faqs: [
     {

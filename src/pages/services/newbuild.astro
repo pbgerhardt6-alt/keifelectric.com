@@ -2,6 +2,7 @@
 import BaseLayout from '../../components/layout/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
+import ReviewBadges from '../../components/ui/ReviewBadges.astro';
 
 const title = 'New Construction & Remodel Electrical in San Luis Obispo County | Keif Electric';
 const description = 'Full residential electrical for new builds, ADUs, and major remodels, rough-in to finish trim. Coordinated with your GC. Licensed, owner-operated by Adam Keif. Serving SLO County.';
@@ -96,6 +97,7 @@ const faqSchema = {
             <a class="btn btn--outline btn--lg" href="#contact">Get a quote</a>
           </div>
           <p class="svc-hero__trust">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
+          <ReviewBadges />
         </div>
         <div class="svc-hero__media">
           <img class="svc-hero__img" src="/assets/service-newbuild.jpg" alt="New construction electrical rough-in by Keif Electric" width="800" height="532" fetchpriority="high" />

@@ -9,33 +9,35 @@ import { siteContent } from '../../content/site';
       <h2 id="reviews-title" class="section__title">Trusted by neighbors across the Central Coast.</h2>
     </div>
     <p class="section__lead">
-      Real reviews from real homeowners, left on Google, Nextdoor, and Yelp. We treat every job like we'd want our own house treated.
+      Real reviews from real homeowners on Google and Yelp. We treat every job like we'd want our own house treated.
     </p>
   </div>
 
   <div class="container">
-    <div class="reviews__grid">
-      {siteContent.reviews.map((review) => (
-        <article class="review-card">
-          <div class="review-card__stars" aria-label={`${review.rating} out of 5 stars`}>
-            {[...Array(5)].map(() => (
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            ))}
-          </div>
-          <p class="review-card__body">{review.text}</p>
-          <div class="review-card__foot">
-            <div class={`review-card__avatar${review.avatarBg ? ' ' + review.avatarBg : ''}`}>{review.avatar}</div>
-            <div>
-              <p class="review-card__name">{review.name}</p>
-              <p class="review-card__meta">{review.location} · {review.service}</p>
+    {siteContent.reviews.length > 0 && (
+      <div class="reviews__grid">
+        {siteContent.reviews.map((review) => (
+          <article class="review-card">
+            <div class="review-card__stars" aria-label={`${review.rating} out of 5 stars`}>
+              {[...Array(5)].map(() => (
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              ))}
             </div>
-            <span class="review-card__source">{review.source}</span>
-          </div>
-        </article>
-      ))}
-    </div>
+            <p class="review-card__body">{review.text}</p>
+            <div class="review-card__foot">
+              <div class={`review-card__avatar${review.avatarBg ? ' ' + review.avatarBg : ''}`}>{review.avatar}</div>
+              <div>
+                <p class="review-card__name">{review.name}</p>
+                <p class="review-card__meta">{review.location} · {review.service}</p>
+              </div>
+              <span class="review-card__source">{review.source}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
 
     <div class="reviews__summary" role="note">
       <div class="reviews__summary-stars" aria-hidden="true">
@@ -45,14 +47,18 @@ import { siteContent } from '../../content/site';
           </svg>
         ))}
       </div>
-      <strong>5.0 average</strong>
-      <span>across Google, Nextdoor, and Yelp</span>
-      <a href="#contact" class="btn btn--ghost">
-        Be the next happy customer
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M5 12h14M13 5l7 7-7 7" />
-        </svg>
-      </a>
+      <strong>5.0 on Google &amp; Yelp</strong>
+      <span>Read the reviews from Central Coast homeowners</span>
+      <div class="reviews__summary-links">
+        <a href={siteContent.reviewBadges.google.url} target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
+          Google reviews
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg>
+        </a>
+        <a href={siteContent.reviewBadges.yelp.url} target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
+          Yelp reviews
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -263,8 +269,15 @@ import { siteContent } from '../../content/site';
     color: var(--fg-3);
   }
 
-  .btn {
+  .reviews__summary-links {
     margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -273,6 +286,8 @@ import { siteContent } from '../../content/site';
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
+    border: 1px solid var(--border-1);
+    border-radius: var(--radius-2);
     transition: background var(--dur-1) var(--ease-out);
     background: transparent;
   }
@@ -282,8 +297,8 @@ import { siteContent } from '../../content/site';
   }
 
   .btn svg {
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
   }
 
   @media (max-width: 900px) {
@@ -306,10 +321,14 @@ import { siteContent } from '../../content/site';
       flex-wrap: wrap;
     }
 
-    .btn {
+    .reviews__summary-links {
       margin-left: 0;
       margin-top: 12px;
       width: 100%;
+    }
+
+    .reviews__summary-links .btn {
+      flex: 1;
       justify-content: center;
     }
   }

@@ -2,6 +2,7 @@
 import BaseLayout from '../../components/layout/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
+import ReviewBadges from '../../components/ui/ReviewBadges.astro';
 
 const title = 'Electrical Troubleshooting & Repair in San Luis Obispo County | Keif Electric';
 const description = 'Flickering lights, tripping breakers, dead outlets: root cause diagnosis, not just a bandaid. Flat diagnostic fee. Owner-operated by Adam Keif. Serving SLO County.';
@@ -101,6 +102,7 @@ const faqSchema = {
             <a class="btn btn--outline btn--lg" href="#contact">Get a free quote</a>
           </div>
           <p class="svc-hero__trust">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
+          <ReviewBadges />
         </div>
         <div class="svc-hero__media">
           <img class="svc-hero__img" src="/assets/adam-keif-job-site.png" alt="Adam Keif diagnosing an electrical issue on a job site" width="1114" height="1411" fetchpriority="high" />
