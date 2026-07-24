@@ -14,8 +14,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="6"/></svg>
             San Luis Obispo
           </span>
-          <span class="city-chip">Atascadero</span>
-          <span class="city-chip">Paso Robles</span>
+          <a class="city-chip city-chip--link" href="/electrician-atascadero" aria-label="Electrician in Atascadero, CA">Atascadero</a>
+          <a class="city-chip city-chip--link" href="/electrician-paso-robles" aria-label="Electrician in Paso Robles, CA">Paso Robles</a>
           <span class="city-chip">Templeton</span>
           <span class="city-chip">Santa Margarita</span>
           <span class="city-chip">Arroyo Grande</span>
@@ -310,6 +310,17 @@
     width: 13px;
     height: 13px;
     color: var(--ke-orange);
+  }
+
+  .city-chip--link {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .city-chip--link:hover {
+    border-color: var(--ke-orange);
+    color: var(--ke-orange);
+    background: var(--ke-bone);
   }
 
   .city-chip--primary {

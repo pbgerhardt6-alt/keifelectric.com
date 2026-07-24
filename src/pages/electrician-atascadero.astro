@@ -1,0 +1,377 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import ReviewBadges from '../components/ui/ReviewBadges.astro';
+
+const title = 'Electrician in Atascadero, CA | Keif Electric';
+const description = 'Residential electrician serving Atascadero, CA. Panel upgrades, EV chargers, lighting, and troubleshooting for ranch homes, Colony homes, and larger lots. C-10 licensed and insured. Free estimates.';
+const canonical = 'https://keifelectric.com/electrician-atascadero';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://keifelectric.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://keifelectric.com/#service-area' },
+    { '@type': 'ListItem', position: 3, name: 'Atascadero', item: 'https://keifelectric.com/electrician-atascadero' },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do I need a permit for electrical work in Atascadero?',
+      acceptedAnswer: { '@type': 'Answer', text: 'For panel upgrades, new circuits, EV charger installs, and ADU wiring inside city limits, yes. The City of Atascadero requires a permit and inspection. I handle the paperwork and scheduling as part of the job.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can my panel handle an EV charger?',
+      acceptedAnswer: { '@type': 'Answer', text: 'It depends on the panel\'s capacity and what else it\'s feeding. Many older Atascadero homes on 100-amp service need an upgrade first; some don\'t, especially with a newer panel that has room. I check before quoting so you know the real cost up front.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you wire a detached shop, garage, or ADU?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. That\'s common on the larger lots out here. Whether it\'s a subpanel to a shop, a dedicated circuit for equipment, or a full ADU wire, I size it correctly, pull the permit, and handle the inspection.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How soon can you come out?',
+      acceptedAnswer: { '@type': 'Answer', text: 'For non-emergency work, usually within a few business days. I\'m available Monday to Friday, 9am to 5pm.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What areas do you serve?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Atascadero, and from my base in San Luis Obispo I also cover Paso Robles, Templeton, Santa Margarita, and the surrounding SLO County area. Not sure I reach you? Call and ask.' },
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} includeFaqSchema={false}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <Header />
+
+  <main id="main">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/#service-area">Service Areas</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Atascadero</span>
+      </div>
+    </nav>
+
+    <section class="svc-hero" id="top" aria-labelledby="page-h1">
+      <div class="svc-hero__inner container">
+        <div class="svc-hero__copy">
+          <p class="svc-hero__eyebrow">
+            <svg class="svc-hero__spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z"/></svg>
+            Service Area
+          </p>
+          <h1 id="page-h1" class="svc-hero__title">
+            <span class="svc-hero__line">Electrician in</span>
+            <span class="svc-hero__line svc-hero__line--accent">Atascadero, CA<span class="svc-hero__dot" aria-hidden="true"></span></span>
+            <span class="svc-hero__place">Residential electrical, owner-operated by Adam Keif</span>
+          </h1>
+          <p class="svc-hero__sub">Panel upgrades, EV chargers, lighting, and troubleshooting for the ranch homes and larger lots around Atascadero. I quote the job, I do the work, and I answer the phone.</p>
+          <div class="svc-hero__ctas">
+            <a class="btn btn--primary btn--lg" href="tel:+18052860477">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              Call (805) 286-0477
+            </a>
+            <a class="btn btn--outline btn--lg" href="#contact">Get a free quote</a>
+          </div>
+          <p class="svc-hero__trust">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
+          <ReviewBadges />
+        </div>
+        <div class="svc-hero__media">
+          <img class="svc-hero__img" src="/assets/adam-keif-job-site.png" alt="Adam Keif, owner of Keif Electric, on a residential electrical job" width="1114" height="1411" fetchpriority="high" />
+          <div class="svc-hero__chip">
+            <span class="svc-hero__chip-k">Atascadero</span>
+            <span class="svc-hero__chip-l">Ranch homes &amp; larger lots</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="handle-title">
+      <div class="container container--prose">
+        <h2 id="handle-title" class="section-title">Electrical work I handle in Atascadero</h2>
+        <p class="lead-copy">I'm Adam Keif, a C-10 licensed residential electrician based in San Luis Obispo. Atascadero is one of the areas I work in most, a short drive up the 101 and somewhere I'm on jobs regularly. I work on homes only, no commercial, though on the larger lots up here that often means the shop, garage, or ADU on the property too, not just the main house. Most calls up here fall into a few categories.</p>
+        <ul class="feature-list">
+          <li><strong>Troubleshooting.</strong> Flickering lights, breakers that trip for no clear reason, an outlet or a well pump that stopped working. I find the cause instead of patching the symptom. <a href="/services/troubleshooting" class="inline-link">Troubleshooting &amp; repair</a>.</li>
+          <li><strong>Panel upgrades.</strong> A lot of Atascadero ranch homes still run on 100-amp panels sized for a different era. If you're adding an EV charger, wiring a shop or ADU, or your insurer flagged the panel, I handle the upgrade, the permit, and the inspection. <a href="/services/panel" class="inline-link">Panel upgrades</a>.</li>
+          <li><strong>EV charger installation.</strong> Level 2 charging for any vehicle. In a town where a lot of people commute over the grade, home charging matters. I check whether your panel can support the load before quoting. <a href="/services/ev-charger" class="inline-link">EV charger installation</a>.</li>
+          <li><strong>Lighting.</strong> Recessed lighting, fixture installation, exterior and landscape lighting for larger lots and long driveways. Clean lines and neat work are the point. <a href="/services/lighting" class="inline-link">Recessed &amp; custom lighting</a>.</li>
+          <li><strong>New construction and ADUs.</strong> For contractors and owner-builders, full residential wiring from pre-wire through trim, including detached shops and accessory dwelling units. <a href="/services/newbuild" class="inline-link">New construction &amp; remodels</a>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="homes-title">
+      <div class="container container--prose">
+        <h2 id="homes-title" class="section-title">Ranch homes, larger lots, older wiring</h2>
+        <p>Atascadero is a patchwork of very different homes, and the electrical work changes with the neighborhood. The older Colony homes near the Sunken Gardens and along El Camino Real were wired generations ago, and their panels and circuits often need bringing up to modern loads. Head west toward Morro Road and the San Marcos hills, or out to Garden Farms, and it's larger rural-residential lots with wells, septic, and a detached shop or barn, each with its own wiring to think about. Newer parts of town like Las Lomas on the south end start with more capacity, but plenty of homeowners there are still adding EV chargers and heat pumps their panels were never planned around.</p>
+        <p>That mix creates electrical work you don't run into as often elsewhere. Well pumps on their own circuits. Subpanels feeding a garage, shop, or ADU across the property. Longer conduit runs than a city lot needs. And panels that were sized before anyone was charging a car or running a heat pump.</p>
+        <p>If you own an older home or a larger property here and aren't sure what shape the electrical is in, that's a normal starting point. I can assess it and give you a straight answer about what needs attention now and what can wait.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="howiwork-title">
+      <div class="container container--prose">
+        <h2 id="howiwork-title" class="section-title">How I work</h2>
+        <p>You call or send a quote request. For simple repairs I can often quote by phone. For larger projects like panel upgrades, a shop subpanel, or an ADU, I'll come out and look, at no cost.</p>
+        <p>You get a written quote before any work begins. Flat-rate where possible, no add-ons you didn't agree to. For troubleshooting, I charge a diagnostic fee that applies toward the repair if you move forward.</p>
+        <p>When permits are required, and in Atascadero they are for panel work, new circuits, EV chargers, and ADU wiring, I pull them and handle the inspection. Permits go through the City of Atascadero Community Development Department. You don't have to deal with any of it.</p>
+      </div>
+    </section>
+
+    <section class="why-section" aria-labelledby="why-title">
+      <div class="container container--prose">
+        <h2 id="why-title" class="section-title">Why Atascadero homeowners hire Keif Electric</h2>
+        <ul class="why-list">
+          <li><strong>You hire me, not a crew.</strong> The person who quotes your job is the person who does it.</li>
+          <li><strong>Licensed and insured.</strong> California C-10, CA# 1152084.</li>
+          <li><strong>Honest about scope.</strong> If you don't need a full upgrade, I'll tell you. If you do, I'll show you why.</li>
+          <li><strong>Clean, labeled work.</strong> Panels left neat and every circuit labeled, so the next person who opens it knows what's what.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="proof" aria-label="Recent Atascadero work">
+      <div class="container">
+        <span class="proof__eyebrow">Recent work</span>
+        <figure class="proof__figure">
+          <img class="proof__img" src="/assets/electrical-panel-upgrade-atascadero.jpg" alt="Electrical panel upgrade with every circuit neatly labeled, installed by Keif Electric in Atascadero, CA" width="1400" height="1050" loading="lazy" decoding="async" />
+          <figcaption class="proof__caption">Panel install, every circuit labeled. Atascadero, CA.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="faq-inner">
+          <aside class="faq-sidebar">
+            <span class="eyebrow">Questions</span>
+            <h2 id="faq-title" class="faq-sidebar__title">Atascadero FAQ</h2>
+            <p>Have something else? Call and ask.</p>
+            <a href="tel:+18052860477" class="btn-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              (805) 286-0477
+            </a>
+          </aside>
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary class="faq-item__btn"><span>Do I need a permit for electrical work in Atascadero?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>For panel upgrades, new circuits, EV charger installs, and ADU wiring inside city limits, yes. The City of Atascadero requires a permit and inspection. I handle the paperwork and scheduling as part of the job.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>Can my panel handle an EV charger?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>It depends on the panel's capacity and what else it's feeding. Many older Atascadero homes on 100-amp service need an upgrade first; some don't, especially with a newer panel that has room. I check before quoting so you know the real cost up front.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>Can you wire a detached shop, garage, or ADU?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Yes. That's common on the larger lots out here. Whether it's a subpanel to a shop, a dedicated circuit for equipment, or a full ADU wire, I size it correctly, pull the permit, and handle the inspection.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>How soon can you come out?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>For non-emergency work, usually within a few business days. I'm available Monday to Friday, 9am to 5pm.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>What areas do you serve?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Atascadero, and from my base in San Luis Obispo I also cover Paso Robles, Templeton, Santa Margarita, and the surrounding SLO County area. Not sure I reach you? Call and ask.</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-cta" id="contact" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="page-cta__inner">
+          <div>
+            <span class="eyebrow eyebrow--amber">Need an electrician in Atascadero?</span>
+            <h2 id="cta-title" class="page-cta__title">Free estimates<br/><em>in Atascadero.</em></h2>
+            <p class="page-cta__lead">Free estimates. California C-10 licensed and insured. Owner-operated by Adam.</p>
+            <div class="page-cta__btns">
+              <a class="btn btn--primary btn--lg" href="tel:+18052860477">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+                Call (805) 286-0477
+              </a>
+              <a class="btn btn--outline-light btn--lg" href="mailto:adam@keifelectric.com?subject=Atascadero%20electrical%20quote%20request">Email a quote request</a>
+            </div>
+          </div>
+          <div class="page-cta__card">
+            <p class="page-cta__card-eyebrow">Free estimate</p>
+            <a href="tel:+18052860477" class="page-cta__phone">(805) 286-0477</a>
+            <div class="page-cta__trust">
+              <span>California C-10 licensed</span>
+              <span>Liability insured</span>
+              <span>Mon–Fri, 9am–5pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <noscript>
+    <style>
+      .content-section .container--prose,
+      .why-section .container--prose,
+      .proof-placeholder .container,
+      .faq-inner,
+      .page-cta__inner { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .container { max-width: var(--max); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+  .container--prose { max-width: 760px; }
+  .breadcrumb { background: var(--ke-bone); border-bottom: 1px solid var(--border-1); padding: 12px 0; }
+  .breadcrumb .container { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--fg-2); }
+  .breadcrumb a { color: var(--ke-orange); font-weight: 500; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .svc-hero { position: relative; background: var(--ke-bone); overflow: hidden; padding: 72px 0 88px; }
+  .svc-hero::before { content: ''; position: absolute; top: -25%; right: -12%; width: 62%; height: 130%; background: radial-gradient(closest-side, rgba(243, 152, 31, 0.12), transparent 72%); pointer-events: none; }
+  .svc-hero__inner { position: relative; display: grid; grid-template-columns: 1.05fr 0.85fr; gap: 56px; align-items: center; }
+  .svc-hero__eyebrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ke-clay); margin-bottom: 18px; }
+  .svc-hero__spark { width: 15px; height: 15px; color: var(--ke-orange); }
+  .svc-hero__title { font-family: var(--font-display); font-weight: 400; font-variation-settings: "YEAR" 2050; font-size: clamp(46px, 6.4vw, 92px); line-height: 0.9; letter-spacing: -0.005em; color: var(--ke-ink); margin: 0; }
+  .svc-hero__line { display: block; }
+  .svc-hero__line--accent { color: var(--ke-orange); }
+  .svc-hero__dot { display: inline-block; width: 0.16em; height: 0.16em; background: var(--ke-orange); border-radius: 2px; margin-left: 0.05em; vertical-align: baseline; }
+  .svc-hero__place { display: block; font-family: var(--font-sans); font-weight: 600; font-size: clamp(15px, 1.6vw, 19px); letter-spacing: 0; color: var(--fg-2); margin-top: 16px; }
+  .svc-hero__sub { font-size: 18px; line-height: 1.55; color: var(--ke-ink); max-width: 46ch; margin: 26px 0 26px; font-weight: 500; }
+  .svc-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .svc-hero__trust { margin-top: 26px; font-size: 13px; font-weight: 600; color: var(--fg-2); letter-spacing: 0.01em; }
+  .svc-hero__media { position: relative; justify-self: end; width: 100%; max-width: 440px; }
+  .svc-hero__img { width: 100%; height: auto; border-radius: var(--radius-4); box-shadow: var(--shadow-3); border: 1px solid var(--border-1); }
+  .svc-hero__chip { position: absolute; left: -16px; bottom: 28px; background: var(--ke-ink); color: var(--ke-bone); padding: 12px 16px; border-radius: var(--radius-3); box-shadow: var(--shadow-3); display: flex; flex-direction: column; gap: 2px; }
+  .svc-hero__chip-k { font-weight: 800; font-size: 15px; color: var(--ke-amber); letter-spacing: 0.02em; }
+  .svc-hero__chip-l { font-size: 12px; color: rgba(246, 241, 232, 0.8); }
+  .btn--outline { background: transparent; color: var(--ke-ink); border-color: var(--ke-ink); }
+  .btn--outline:hover { background: var(--ke-ink); color: var(--ke-bone); }
+  @media (prefers-reduced-motion: no-preference) {
+    .svc-hero__eyebrow, .svc-hero__line, .svc-hero__place, .svc-hero__sub, .svc-hero__ctas, .svc-hero__trust, .svc-hero__media { opacity: 0; animation: heroIn 0.8s var(--ease-emph) forwards; }
+    .svc-hero__eyebrow { animation-delay: 0.05s; }
+    .svc-hero__line:nth-child(1) { animation-delay: 0.13s; }
+    .svc-hero__line:nth-child(2) { animation-delay: 0.21s; }
+    .svc-hero__place { animation-delay: 0.29s; }
+    .svc-hero__sub { animation-delay: 0.37s; }
+    .svc-hero__ctas { animation-delay: 0.45s; }
+    .svc-hero__trust { animation-delay: 0.53s; }
+    .svc-hero__media { animation-delay: 0.22s; animation-duration: 1s; }
+    .content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner, .page-cta__inner { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease-emph), transform 0.7s var(--ease-emph); }
+    .is-in { opacity: 1 !important; transform: none !important; }
+  }
+  @keyframes heroIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  .btn { font-family: var(--font-sans); font-weight: 600; font-size: 15px; padding: 13px 18px; border-radius: var(--radius-2); border: 1px solid transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 9px; line-height: 1; min-height: 48px; transition: all var(--dur-1) var(--ease-out); text-decoration: none; white-space: nowrap; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn--primary { background: var(--ke-orange); color: #fff; }
+  .btn--primary:hover { background: var(--ke-orange-dark); }
+  .btn--primary:active { transform: translateY(1px); }
+  .btn--outline-light { background: transparent; color: var(--ke-bone); border-color: rgba(246, 241, 232, 0.4); }
+  .btn--outline-light:hover { background: rgba(246, 241, 232, 0.08); border-color: var(--ke-bone); }
+  .btn--lg { padding: 16px 22px; font-size: 16px; border-radius: var(--radius-3); min-height: 54px; }
+  .btn-link { display: inline-flex; align-items: center; gap: 8px; color: var(--ke-orange); font-weight: 600; font-size: 15px; text-decoration: none; }
+  .btn-link svg { width: 16px; height: 16px; }
+  .btn-link:hover { text-decoration: underline; }
+  .content-section { padding: 80px 0; background: var(--ke-bone); }
+  .content-section--alt { background: var(--ke-paper); }
+  .section-title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.02em; line-height: 1.15; color: var(--ke-ink); margin-bottom: 20px; }
+  .lead-copy { font-size: 17px; line-height: 1.6; color: var(--fg-1); margin-bottom: 20px; }
+  .content-section p { font-size: 16px; line-height: 1.65; color: var(--fg-1); margin-bottom: 16px; max-width: 68ch; }
+  .content-section p:last-child { margin-bottom: 0; }
+  .feature-list { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 12px; }
+  .feature-list li { font-size: 16px; line-height: 1.6; color: var(--fg-1); padding-left: 20px; position: relative; }
+  .feature-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 2px; background: var(--ke-orange); }
+  .inline-link { color: var(--ke-orange); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+  .why-section { background: var(--ke-ink); color: var(--ke-bone); padding: 80px 0; }
+  .why-section .section-title { color: var(--ke-bone); }
+  .why-list { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-direction: column; gap: 16px; }
+  .why-list li { font-size: 16px; line-height: 1.6; color: rgba(246, 241, 232, 0.82); padding-left: 20px; position: relative; }
+  .why-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 2px; background: var(--ke-orange); }
+  .why-list li strong { color: var(--ke-bone); }
+  .proof { background: var(--ke-sand); border-top: 1px solid var(--border-1); border-bottom: 1px solid var(--border-1); padding: 64px 0; text-align: center; }
+  .proof__eyebrow { font-family: var(--font-sans); font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ke-orange); display: inline-block; margin-bottom: 20px; }
+  .proof__figure { margin: 0 auto; max-width: 820px; }
+  .proof__img { width: 100%; height: auto; border-radius: var(--radius-4); box-shadow: var(--shadow-3); border: 1px solid var(--border-1); display: block; }
+  .proof__caption { margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--ke-stone); letter-spacing: 0.01em; }
+  .faq-section { background: var(--ke-bone); padding: 100px 0; }
+  .faq-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: flex-start; }
+  .faq-sidebar { position: sticky; top: 96px; }
+  .faq-sidebar__title { font-family: var(--font-sans); font-weight: 900; font-size: clamp(28px, 3vw, 40px); letter-spacing: -0.02em; line-height: 1.1; color: var(--ke-ink); margin: 10px 0 14px; }
+  .faq-sidebar p { font-size: 15px; color: var(--fg-2); margin-bottom: 20px; }
+  .eyebrow { font-family: var(--font-sans); font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ke-orange); display: inline-block; }
+  .eyebrow--amber { color: var(--ke-amber); }
+  .faq-list { display: flex; flex-direction: column; border-top: 1px solid var(--border-1); }
+  .faq-item { border-bottom: 1px solid var(--border-1); }
+  .faq-item__btn { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; cursor: pointer; font-size: 16px; font-weight: 600; color: var(--ke-ink); list-style: none; user-select: none; }
+  .faq-item__btn::-webkit-details-marker { display: none; }
+  .faq-icon { width: 20px; height: 20px; flex: none; border-radius: 50%; border: 1.5px solid var(--border-2); position: relative; }
+  .faq-icon::before, .faq-icon::after { content: ''; position: absolute; top: 50%; left: 50%; background: var(--ke-orange); border-radius: 2px; }
+  .faq-icon::before { width: 8px; height: 1.5px; transform: translate(-50%, -50%); }
+  .faq-icon::after { width: 1.5px; height: 8px; transform: translate(-50%, -50%); transition: transform var(--dur-1) var(--ease-out), opacity var(--dur-1) var(--ease-out); }
+  details[open] .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+  .faq-item__body { padding-bottom: 20px; }
+  .faq-item__body p { font-size: 15px; line-height: 1.65; color: var(--fg-2); }
+  .page-cta { background: var(--ke-ink); color: var(--ke-bone); padding: 100px 0; }
+  .page-cta__inner { display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; }
+  .page-cta__title { font-family: var(--font-display); font-variation-settings: 'YEAR' 2050; font-size: clamp(44px, 6vw, 88px); line-height: 0.95; color: var(--ke-bone); margin: 12px 0 18px; letter-spacing: -0.005em; }
+  .page-cta__title em { font-style: normal; color: var(--ke-orange); }
+  .page-cta__lead { font-size: 17px; color: rgba(246, 241, 232, 0.75); line-height: 1.55; margin-bottom: 28px; max-width: 44ch; }
+  .page-cta__btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .page-cta__card { background: var(--ke-bone); color: var(--ke-ink); border-radius: var(--radius-4); padding: 32px 28px; min-width: 260px; flex-shrink: 0; }
+  .page-cta__card-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ke-orange); margin-bottom: 10px; }
+  .page-cta__phone { display: block; font-family: var(--font-display); font-variation-settings: 'YEAR' 2030; font-size: clamp(32px, 3.5vw, 44px); line-height: 1; color: var(--ke-ink); text-decoration: none; margin-bottom: 16px; transition: color var(--dur-1) var(--ease-out); }
+  .page-cta__phone:hover { color: var(--ke-orange); }
+  .page-cta__trust { display: flex; flex-direction: column; gap: 5px; font-size: 13px; color: var(--fg-2); font-weight: 500; padding-top: 16px; border-top: 1px solid var(--border-1); }
+  @media (max-width: 900px) { .page-cta__inner { grid-template-columns: 1fr; gap: 40px; } }
+  @media (max-width: 860px) {
+    .svc-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .svc-hero__media { justify-self: start; max-width: 340px; margin: 0 auto; }
+    .svc-hero__chip { left: 12px; }
+  }
+  @media (max-width: 768px) {
+    .svc-hero { padding: 44px 0 56px; }
+    .content-section { padding: 56px 0; }
+    .why-section { padding: 56px 0; }
+    .faq-section { padding: 64px 0; }
+    .page-cta { padding: 64px 0; }
+    .svc-hero__ctas { flex-direction: column; }
+    .btn--lg { width: 100%; justify-content: center; }
+    .page-cta__btns { flex-direction: column; }
+    .faq-inner { grid-template-columns: 1fr; gap: 32px; }
+    .faq-sidebar { position: static; }
+  }
+</style>
+
+<script>
+  const mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
+  if (mq.matches && 'IntersectionObserver' in window) {
+    const els = document.querySelectorAll(
+      '.content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner, .page-cta__inner'
+    );
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach((el) => io.observe(el));
+  }
+</script>

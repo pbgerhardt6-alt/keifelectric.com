@@ -18,7 +18,7 @@
 | Client | Keif Electric |
 | Owner | Adam |
 | Trade | Residential electrician |
-| Location | Atascadero, CA (SLO County) |
+| Location | San Luis Obispo, CA (SLO County) |
 | Domain | keifelectric.com |
 | Engagement | 90-day founder package (free) |
 | Build target | Single-page Astro site at root URL |
@@ -216,7 +216,7 @@ Three trust signals, equal weight, subtle background:
 >
 > Every job is done by me, personally. No subs, no handoffs. When you hire Keif Electric, you hire me.
 >
-> I'm based in Atascadero and serve homeowners and builders across SLO County. Whether it's a single ceiling fan or a full new-build wire, the work gets done to code, on time, and at the price we agreed on.
+> I'm based in San Luis Obispo and serve homeowners and builders across SLO County. Whether it's a single ceiling fan or a full new-build wire, the work gets done to code, on time, and at the price we agreed on.
 
 **Pull quote (designed treatment):**
 > "Every job is done by me, personally. No subs, no surprises."
@@ -369,11 +369,11 @@ Full JSON examples in SOP §3.2.
 
 | Field | Value |
 |---|---|
-| Page title | Keif Electric \| Licensed Residential Electrician in Atascadero, CA |
-| Meta description | Licensed, insured residential electrician serving Atascadero and SLO County. EV chargers, panel upgrades, lighting, new builds. Free estimates, upfront pricing. Owner-operated. |
+| Page title | Electrician in San Luis Obispo, CA \| Keif Electric |
+| Meta description | San Luis Obispo and SLO County electrician. EV chargers, panel upgrades, lighting, new builds. Licensed, insured, owner-operated. Free estimates. |
 | Canonical URL | https://keifelectric.com |
 | OG image | TODO — design 1200x630 OG card using brand assets |
-| OG title | Keif Electric — Residential Electrician in Atascadero |
+| OG title | Keif Electric \| Electrician in San Luis Obispo, CA |
 | OG description | Same as meta description |
 | Twitter card | summary_large_image |
 

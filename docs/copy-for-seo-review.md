@@ -1,5 +1,11 @@
 # Keif Electric — Site Copy for SEO Review
 
+> ⚠️ **SUPERSEDED (2026-07-24). Pre-SLO-pivot snapshot — do NOT rebuild from this file.**
+> This captures an earlier Atascadero-primary draft (old hero "Wired right, the first time.",
+> Atascadero H1/title/meta). The site that actually shipped is **San Luis Obispo-primary**.
+> Source of truth for live copy is now `src/` (Hero.astro, index.astro, BaseLayout.astro,
+> OwnerStory.astro) and the live site at keifelectric.com. Kept for history only.
+
 All visible copy on the site, section by section. Edit directly in this file, then tell Claude which changes to apply.
 
 ---

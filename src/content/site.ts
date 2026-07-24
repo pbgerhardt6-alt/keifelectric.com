@@ -5,7 +5,7 @@ export const siteContent = {
 
   nav: [
     { label: 'Services', href: '/#services' },
-    { label: 'Areas', href: '/#service-area' },
+    { label: 'Service Areas', href: '/#service-area' },
     { label: 'About', href: '/#about' },
     { label: 'Reviews', href: '/#reviews' },
     { label: 'FAQ', href: '/#faq' },
@@ -28,10 +28,16 @@ export const siteContent = {
     { label: 'New construction & remodels', href: '/services/newbuild' },
   ],
 
+  // City service-area pages that appear in the Service Areas nav dropdown
+  areaNav: [
+    { label: 'Atascadero', href: '/electrician-atascadero' },
+    { label: 'Paso Robles', href: '/electrician-paso-robles' },
+  ],
+
   hero: {
     eyebrow: 'Keif Electric',
     title: 'Residential electrical work, done to a finish-quality standard.',
-    subtitle: 'Licensed, insured electrician serving Atascadero and SLO County. EV chargers, panel upgrades, lighting, new builds. Free estimates, upfront pricing, owner-operated.',
+    subtitle: 'Licensed, insured electrician serving San Luis Obispo, Atascadero, Paso Robles, and SLO County. EV chargers, panel upgrades, lighting, new builds. Free estimates, upfront pricing, owner-operated.',
     cta1: { label: 'Call (805) 286-0477', href: 'tel:+18052860477' },
     cta2: { label: 'Get a free quote', href: '#contact' },
     trust: [

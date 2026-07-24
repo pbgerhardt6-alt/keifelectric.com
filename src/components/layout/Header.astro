@@ -15,23 +15,26 @@ import { siteContent } from '../../content/site';
     </a>
 
     <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-      {siteContent.nav.map(item => (
-        item.label === 'Services' ? (
+      {siteContent.nav.map(item => {
+        const submenu = item.label === 'Services' ? siteContent.serviceNav
+          : item.label === 'Service Areas' ? siteContent.areaNav
+          : null;
+        return submenu ? (
           <div class="nav-dd">
             <a href={item.href} class="nav-dd__trigger" aria-haspopup="true" aria-expanded="false">
               {item.label}
               <svg class="nav-dd__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </a>
             <div class="nav-dd__menu" role="menu">
-              {siteContent.serviceNav.map(s => (
+              {submenu.map(s => (
                 <a href={s.href} class="nav-dd__link" role="menuitem">{s.label}</a>
               ))}
             </div>
           </div>
         ) : (
           <a href={item.href}>{item.label}</a>
-        )
-      ))}
+        );
+      })}
     </nav>
 
     <div class="site-header__cta">
@@ -54,20 +57,23 @@ import { siteContent } from '../../content/site';
 
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
   <nav class="mobile-menu__nav" aria-label="Mobile navigation">
-    {siteContent.nav.map(item => (
-      item.label === 'Services' ? (
+    {siteContent.nav.map(item => {
+      const submenu = item.label === 'Services' ? siteContent.serviceNav
+        : item.label === 'Service Areas' ? siteContent.areaNav
+        : null;
+      return submenu ? (
         <div class="mobile-menu__group">
           <a href={item.href} class="mobile-menu__link">{item.label}</a>
           <div class="mobile-menu__sublinks">
-            {siteContent.serviceNav.map(s => (
+            {submenu.map(s => (
               <a href={s.href} class="mobile-menu__sublink">{s.label}</a>
             ))}
           </div>
         </div>
       ) : (
         <a href={item.href} class="mobile-menu__link">{item.label}</a>
-      )
-    ))}
+      );
+    })}
   </nav>
   <div class="mobile-menu__ctas">
     <a href="tel:+18052860477" class="btn btn--primary">

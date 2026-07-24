@@ -4,7 +4,7 @@
 - **Name**: Keif Electric
 - **Owner/Contact**: Adam — 805.286.0477 — Adam@keifelectric.com
 - **Business Type**: Residential electrician
-- **Location**: Atascadero, CA (service area: Atascadero, Paso Robles, SLO County)
+- **Location**: San Luis Obispo, CA (service area: San Luis Obispo, Atascadero, Paso Robles, SLO County)
 
 ## Brand Voice
 Trustworthy, competent
