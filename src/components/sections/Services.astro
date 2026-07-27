@@ -65,6 +65,12 @@ import { siteContent } from '../../content/site';
           <div>
             <h4 id={`svc-text-${service.id}`} class="service-row__title">{service.title}</h4>
             <p>{service.description}</p>
+            {service.href !== '/#services' && (
+              <a href={service.href} class="service-row__more">
+                <span class="sr-only">{service.title} — </span>Learn more
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            )}
           </div>
         </article>
       ))}
@@ -339,6 +345,27 @@ import { siteContent } from '../../content/site';
     line-height: 1.5;
     color: var(--fg-2);
     margin: 0;
+  }
+
+  .service-row__more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ke-orange);
+    margin-top: 8px;
+    text-decoration: none;
+  }
+
+  .service-row__more svg {
+    width: 14px;
+    height: 14px;
+    transition: transform var(--dur-1) var(--ease-out);
+  }
+
+  .service-row:hover .service-row__more svg {
+    transform: translateX(3px);
   }
 
   @media (max-width: 900px) {
