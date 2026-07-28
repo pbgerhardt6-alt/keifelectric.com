@@ -334,11 +334,15 @@ import { siteContent } from '../../content/site';
     overflow-y: auto;
     transform: translateY(-8px);
     opacity: 0;
-    transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out), visibility var(--dur-2) var(--ease-out);
   }
 
   .mobile-menu.is-open {
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
   }
 
