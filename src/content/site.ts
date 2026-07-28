@@ -30,6 +30,7 @@ export const siteContent = {
 
   // City service-area pages that appear in the Service Areas nav dropdown
   areaNav: [
+    { label: 'San Luis Obispo', href: '/electrician-san-luis-obispo' },
     { label: 'Atascadero', href: '/electrician-atascadero' },
     { label: 'Paso Robles', href: '/electrician-paso-robles' },
   ],

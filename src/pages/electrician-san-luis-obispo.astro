@@ -4,9 +4,9 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import ReviewBadges from '../components/ui/ReviewBadges.astro';
 
-const title = 'Electrician in Paso Robles, CA | Keif Electric';
-const description = 'Residential electrician in Paso Robles, CA. Panel upgrades, EV chargers, AC and heat pump circuits, lighting, and repairs for estates, downtown homes, and east-side neighborhoods. C-10 licensed and insured. Free estimates.';
-const canonical = 'https://keifelectric.com/electrician-paso-robles';
+const title = 'Residential Electrician in San Luis Obispo, CA | Keif Electric';
+const description = 'Residential electrician based in San Luis Obispo. Panel upgrades, EV chargers, lighting, and troubleshooting for older downtown homes, mid-century neighborhoods, and newer builds. C-10 licensed and insured. Free estimates.';
+const canonical = 'https://keifelectric.com/electrician-san-luis-obispo';
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -14,7 +14,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://keifelectric.com/' },
     { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://keifelectric.com/#service-area' },
-    { '@type': 'ListItem', position: 3, name: 'Paso Robles', item: 'https://keifelectric.com/electrician-paso-robles' },
+    { '@type': 'ListItem', position: 3, name: 'San Luis Obispo', item: 'https://keifelectric.com/electrician-san-luis-obispo' },
   ],
 };
 
@@ -24,28 +24,28 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Do I need a permit for electrical work in Paso Robles?',
-      acceptedAnswer: { '@type': 'Answer', text: 'For panel upgrades, new circuits, EV chargers, AC and heat pump circuits, and ADU wiring, yes. Work inside city limits goes through the City of Paso Robles; properties out in the county go through SLO County. I pull the permit and handle the inspection either way.' },
+      name: 'Do I need a permit for electrical work in San Luis Obispo?',
+      acceptedAnswer: { '@type': 'Answer', text: 'For panel upgrades, new circuits, EV charger installs, and ADU wiring, yes. Inside city limits that goes through the City of San Luis Obispo Building and Safety Division at 919 Palm Street. If your address is in an unincorporated part of the county, it goes through SLO County instead, at 1585 Kansas Avenue. I figure out which one applies to your address and handle the filing and inspection scheduling.' },
     },
     {
       '@type': 'Question',
-      name: 'Can my panel handle a new AC unit or heat pump?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Air conditioning and heat pumps are among the largest loads a home carries, and in Paso\'s heat they run hard. Many older panels are already close to full. I check your panel\'s capacity before quoting so you know whether it can take the new load or needs an upgrade first.' },
+      name: 'Are there rebates for EV charger installation in San Luis Obispo?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Usually, yes. Most of San Luis Obispo is in 3CE territory, and their Electrify Your Ride program covers Level 2 chargers, installation, and the electrical work needed to get ready for one. PG&E runs its own residential charging rebates on top of that. The federal tax credit for EV chargers ended on June 30, 2026, so that one is no longer available. Amounts and eligibility windows change, sometimes more than once a year, so I\'d rather tell you what\'s actually current when you call than post a number here that goes stale.' },
     },
     {
       '@type': 'Question',
-      name: 'Can you wire a shop, barn, guest house, or ADU?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. That\'s common on Paso properties. Whether it\'s a subpanel to a barn or shop, a dedicated circuit, or a full guest house or ADU wire, I size it correctly, pull the permit, and handle the inspection.' },
+      name: 'My house is older. Can the panel handle an EV charger?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Depends what\'s in there. Plenty of older San Luis Obispo homes are still on 100-amp service, which may or may not have room depending on what else it\'s feeding. Some panels need replacing before anything else happens, especially older Federal Pacific and Zinsco equipment. I check the panel and do the load calculation before quoting, so the number you get includes whatever the job actually needs.' },
     },
     {
       '@type': 'Question',
-      name: 'How soon can you come out?',
-      acceptedAnswer: { '@type': 'Answer', text: 'For non-emergency work, usually within a few business days. I\'m available Monday to Friday, 9am to 5pm.' },
+      name: 'Do you work on rental properties?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. San Luis Obispo has a lot of rental housing and a lot of owners who don\'t live locally. I document the work so you have a record. Unpermitted electrical work is a real liability on a rental, so I permit what needs permitting.' },
     },
     {
       '@type': 'Question',
-      name: 'What areas do you serve?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Paso Robles, and from my base in San Luis Obispo I also cover Templeton, Atascadero, Creston, and the surrounding SLO County area. Not sure I reach you? Call and ask.' },
+      name: 'Where are you based?',
+      acceptedAnswer: { '@type': 'Answer', text: 'San Luis Obispo. That\'s my home and my service area, and I cover Paso Robles, Atascadero, Templeton, Santa Margarita, Morro Bay, Los Osos, and the surrounding county from here.' },
     },
   ],
 };
@@ -67,7 +67,7 @@ const faqSchema = {
         <span aria-hidden="true">/</span>
         <a href="/#service-area">Service Areas</a>
         <span aria-hidden="true">/</span>
-        <span aria-current="page">Paso Robles</span>
+        <span aria-current="page">San Luis Obispo</span>
       </div>
     </nav>
 
@@ -79,11 +79,11 @@ const faqSchema = {
             Service Area
           </p>
           <h1 id="page-h1" class="svc-hero__title">
-            <span class="svc-hero__line">Electrician in</span>
-            <span class="svc-hero__line svc-hero__line--accent">Paso Robles, CA<span class="svc-hero__dot" aria-hidden="true"></span></span>
-            <span class="svc-hero__place">Residential electrical, owner-operated by Adam Keif</span>
+            <span class="svc-hero__line">Residential Electrician in</span>
+            <span class="svc-hero__line svc-hero__line--accent">San Luis Obispo<span class="svc-hero__dot" aria-hidden="true"></span></span>
+            <span class="svc-hero__place">Owner-operated by Adam Keif</span>
           </h1>
-          <p class="svc-hero__sub">Panel upgrades, EV chargers, AC and heat pump circuits, lighting, and troubleshooting for wine country estates, downtown homes, and east-side neighborhoods. I quote the job, I do the work, and I answer the phone.</p>
+          <p class="svc-hero__sub">I live and work in San Luis Obispo. Every job is done by me personally, no subcontractors, no handoffs. C-10 licensed, insured, free estimates.</p>
           <div class="svc-hero__ctas">
             <a class="btn btn--primary btn--lg" href="tel:+18052860477">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
@@ -91,14 +91,14 @@ const faqSchema = {
             </a>
             <a class="btn btn--outline btn--lg" href="#contact">Get a free quote</a>
           </div>
-          <p class="svc-hero__trust">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
+          <p class="svc-hero__trust">California C-10 #1152084 &middot; Insured &middot; Based in SLO</p>
           <ReviewBadges />
         </div>
         <div class="svc-hero__media">
-          <img class="svc-hero__img" src="/assets/panel-upgrade-creston-road-paso-robles.jpg" alt="Keif Electric updating an electrical panel off Creston Road in Paso Robles, CA" width="800" height="1000" fetchpriority="high" />
+          <img class="svc-hero__img" src="/assets/adam-keif-job-site.png" alt="Adam Keif, owner of Keif Electric, on a residential electrical job in San Luis Obispo" width="1114" height="1411" fetchpriority="high" />
           <div class="svc-hero__chip">
-            <span class="svc-hero__chip-k">Paso Robles</span>
-            <span class="svc-hero__chip-l">Estates &amp; downtown homes</span>
+            <span class="svc-hero__chip-k">San Luis Obispo</span>
+            <span class="svc-hero__chip-l">Where I live and work</span>
           </div>
         </div>
       </div>
@@ -106,55 +106,66 @@ const faqSchema = {
 
     <section class="content-section" aria-labelledby="handle-title">
       <div class="container container--prose">
-        <h2 id="handle-title" class="section-title">Electrical work I handle in Paso Robles</h2>
-        <p class="lead-copy">I'm Adam Keif, a C-10 licensed residential electrician based in San Luis Obispo. Paso Robles is a regular stop, whether it's an estate out in the vineyards, an older home downtown, or a newer place on the east side. Residential work is what I focus on, and on a lot of Paso properties that also means the shop, barn, guest house, or ADU out back, not just the main house. Most calls out here fall into a few categories.</p>
-        <ul class="feature-list">
-          <li><strong>Troubleshooting.</strong> Flickering lights, breakers that trip in the heat of summer, an outlet or a well pump that quit. I find the cause instead of patching the symptom. <a href="/services/troubleshooting" class="inline-link">Troubleshooting &amp; repair</a>.</li>
-          <li><strong>Panel upgrades.</strong> Paso summers are hard on electrical systems, and a lot of homes are adding AC, heat pumps, and EV chargers to panels sized decades ago. I handle the upgrade, the permit, and the inspection. <a href="/services/panel" class="inline-link">Panel upgrades</a>.</li>
-          <li><strong>EV charger installation.</strong> Level 2 charging for any vehicle. Whether you commute over the grade or just want to charge at home, I check your panel can support the load before quoting. <a href="/services/ev-charger" class="inline-link">EV charger installation</a>.</li>
-          <li><strong>Lighting.</strong> Recessed lighting, fixture installation, and exterior and landscape lighting for long driveways, patios, and estate grounds. Clean lines and neat work are the point. <a href="/services/lighting" class="inline-link">Recessed &amp; custom lighting</a>.</li>
-          <li><strong>New construction, shops, and ADUs.</strong> For contractors and owner-builders, full residential wiring from pre-wire through trim, plus subpanels for barns, shops, guest houses, and accessory dwelling units. <a href="/services/newbuild" class="inline-link">New construction &amp; remodels</a>.</li>
-        </ul>
+        <h2 id="handle-title" class="section-title">Electrical work I handle in San Luis Obispo</h2>
+        <p class="lead-copy">I'm Adam Keif, a C-10 licensed residential electrician based in San Luis Obispo, and I run Keif Electric myself. The person who gives you the estimate is the same person who does the work. One estimate, one point of contact, from the first look to the final inspection.</p>
+        <p>When a panel runs out of room or starts tripping, I handle <a href="/services/panel" class="inline-link">panel upgrades and service replacements</a>. I install <a href="/services/ev-charger" class="inline-link">Level 2 EV chargers</a> and confirm your panel can carry the load before I quote. I take care of <a href="/services/lighting" class="inline-link">recessed and custom lighting</a>, <a href="/services/troubleshooting" class="inline-link">troubleshooting and repair</a> when something has quit or won't stay on, and full <a href="/services/newbuild" class="inline-link">wiring for new construction and remodels</a>. If it's in a home in San Luis Obispo, it's what I do.</p>
       </div>
     </section>
 
     <section class="content-section content-section--alt" aria-labelledby="homes-title">
       <div class="container container--prose">
-        <h2 id="homes-title" class="section-title">Estates, downtown homes, and hot-summer loads</h2>
-        <p>Paso Robles covers a lot of ground, and the electrical work changes with where you are. The historic homes around the Downtown City Park were wired generations ago and often need panels and circuits brought up to modern loads. Out west toward Vineyard Drive and the Adelaida hills, it's rural estates and vineyards with wells, outbuildings, and long runs between structures. On the east side along Creston Road and Union Road, newer subdivisions start with more capacity, but plenty of homeowners are still adding loads the original panel wasn't planned around.</p>
-        <p>The other thing about Paso is the heat. Summers here run far hotter than the coast, and air conditioning and heat pumps are some of the biggest loads a home can carry. When a panel is already full, adding cooling, an EV charger, or a shop out back is where a service upgrade usually comes in.</p>
-        <p>If you own an older home or a larger property here and aren't sure what shape the electrical is in, that's a normal starting point. I can assess it and give you a straight answer about what needs attention now and what can wait.</p>
+        <h2 id="homes-title" class="section-title">Older homes, newer loads</h2>
+        <p>San Luis Obispo has a wide spread of housing, and the wiring usually matches the neighborhood. The older homes downtown and up around Foothill were built for a fraction of today's electrical load, and a lot of them are rentals. Laguna Lake and the mid-century tracts sit in between. Head out toward Edna Valley and you get larger lots and rural properties with their own needs. Newer construction toward the edges of town starts with more capacity.</p>
+        <p>The electrical reality is that a lot of these homes were wired for a fraction of what a modern household draws. A 100-amp service was generous in its day. Add an EV charger, a heat pump, an induction range, and a home office, and it isn't. Some older panels are worth replacing on safety grounds alone, Federal Pacific and Zinsco in particular have known failure histories.</p>
+        <p>I check what's actually there before quoting, so you find out what the job costs before it starts, not after.</p>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="howiwork-title">
+    <section class="content-section" aria-labelledby="reasons-title">
+      <div class="container container--prose">
+        <h2 id="reasons-title" class="section-title">Common reasons homeowners call me</h2>
+        <p>Most of my calls sound like one of these:</p>
+        <ul class="feature-list">
+          <li>The breakers keep tripping, or one won't reset.</li>
+          <li>Lights flicker or dim when the AC or the microwave kicks on.</li>
+          <li>The panel is full and there's no room to add a circuit.</li>
+          <li>You need a dedicated circuit for a new appliance, a hot tub, or a workshop.</li>
+          <li>You're putting in an EV charger and aren't sure the panel can handle it.</li>
+          <li>You want outlets, a ceiling fan, or GFCI protection added in a kitchen, bath, or garage.</li>
+          <li>You're remodeling and the wiring needs to come up to code.</li>
+        </ul>
+        <p>None of these are unusual. If one of them sounds like your house, that's a normal reason to call.</p>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="howiwork-title">
       <div class="container container--prose">
         <h2 id="howiwork-title" class="section-title">How I work</h2>
-        <p>You call or send a quote request. For simple repairs I can often quote by phone. For larger projects like panel upgrades, a shop subpanel, or an ADU, I'll come out and look, at no cost.</p>
-        <p>You get a written quote before any work begins. Flat-rate where possible, no add-ons you didn't agree to. For troubleshooting, I charge a diagnostic fee that applies toward the repair if you move forward.</p>
-        <p>When permits are required, and in Paso Robles they are for panel work, new circuits, EV chargers, AC and heat pump circuits, and ADU wiring, I pull them and handle the inspection. Work inside city limits goes through the City of Paso Robles Community Development Department; for properties out in the county, I coordinate with SLO County. You don't have to deal with any of it.</p>
+        <p>I come look at the job before quoting anything more than a simple service call. You get a written price before work begins, and that price is the price.</p>
+        <p>Permits and inspections are part of the job, not an extra. Inside city limits that means the City of San Luis Obispo Building and Safety Division. I handle the filing and the scheduling.</p>
       </div>
     </section>
 
     <section class="why-section" aria-labelledby="why-title">
       <div class="container container--prose">
-        <h2 id="why-title" class="section-title">Why Paso Robles homeowners hire Keif Electric</h2>
+        <h2 id="why-title" class="section-title">Why San Luis Obispo homeowners hire Keif Electric</h2>
         <ul class="why-list">
-          <li><strong>You hire me, not a crew.</strong> The person who quotes your job is the person who does it.</li>
-          <li><strong>Licensed and insured.</strong> California C-10, CA# 1152084.</li>
-          <li><strong>Honest about scope.</strong> If you don't need a full upgrade, I'll tell you. If you do, I'll show you why.</li>
-          <li><strong>Clean, labeled work.</strong> Panels left neat and every circuit labeled, so the next person who opens it knows what's what.</li>
+          <li><strong>I'm actually here.</strong> Not a crew dispatched from another town. I live in San Luis Obispo, and the person who quotes your job is the person who does it.</li>
+          <li><strong>Homes are my specialty.</strong> Residential wiring is what I do day in and day out, so your project gets my full attention.</li>
+          <li><strong>One person, start to finish.</strong> No subcontractors, no handoffs, no explaining what you already explained to somebody else.</li>
         </ul>
       </div>
     </section>
 
-    <section class="proof" aria-label="Recent Paso Robles work">
+    <section class="proof" aria-label="Recently completed work in San Luis Obispo">
       <div class="container">
-        <span class="proof__eyebrow">Recent work</span>
-        <figure class="proof__figure">
-          <img class="proof__img" src="/assets/electrical-trenching-paso-robles.jpg" alt="Adam Keif running a mini excavator to trench for an underground electrical line at a rural property in Paso Robles, CA" width="975" height="1300" loading="lazy" decoding="async" />
-          <figcaption class="proof__caption">Trenching for an underground electrical run. Paso Robles, CA.</figcaption>
-        </figure>
+        <span class="proof__eyebrow">Recently completed</span>
+        <div class="proof__grid">
+          <figure class="proof__figure">
+            <img class="proof__img" src="/assets/200-amp-panel-upgrade-san-luis-obispo.jpg" alt="200-amp electrical panel upgrade with every circuit hand-labeled, installed by Keif Electric in San Luis Obispo, CA" width="900" height="1200" loading="lazy" decoding="async" />
+            <figcaption class="proof__caption">200-amp panel upgrade. San Luis Obispo, CA.</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -163,7 +174,7 @@ const faqSchema = {
         <div class="faq-inner">
           <aside class="faq-sidebar">
             <span class="eyebrow">Questions</span>
-            <h2 id="faq-title" class="faq-sidebar__title">Paso Robles FAQ</h2>
+            <h2 id="faq-title" class="faq-sidebar__title">San Luis Obispo FAQ</h2>
             <p>Have something else? Call and ask.</p>
             <a href="tel:+18052860477" class="btn-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
@@ -172,24 +183,24 @@ const faqSchema = {
           </aside>
           <div class="faq-list">
             <details class="faq-item" open>
-              <summary class="faq-item__btn"><span>Do I need a permit for electrical work in Paso Robles?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>For panel upgrades, new circuits, EV chargers, AC and heat pump circuits, and ADU wiring, yes. Work inside city limits goes through the City of Paso Robles; properties out in the county go through SLO County. I pull the permit and handle the inspection either way.</p></div>
+              <summary class="faq-item__btn"><span>Do I need a permit for electrical work in San Luis Obispo?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>For panel upgrades, new circuits, EV charger installs, and ADU wiring, yes. Inside city limits that goes through the City of San Luis Obispo Building and Safety Division at 919 Palm Street. If your address is in an unincorporated part of the county, it goes through SLO County instead, at 1585 Kansas Avenue. I figure out which one applies to your address and handle the filing and inspection scheduling.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Can my panel handle a new AC unit or heat pump?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Air conditioning and heat pumps are among the largest loads a home carries, and in Paso's heat they run hard. Many older panels are already close to full. I check your panel's capacity before quoting so you know whether it can take the new load or needs an upgrade first.</p></div>
+              <summary class="faq-item__btn"><span>Are there rebates for EV charger installation in San Luis Obispo?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Usually, yes. Most of San Luis Obispo is in 3CE territory, and their Electrify Your Ride program covers Level 2 chargers, installation, and the electrical work needed to get ready for one. PG&amp;E runs its own residential charging rebates on top of that. The federal tax credit for EV chargers ended on June 30, 2026, so that one is no longer available.</p><p>Amounts and eligibility windows change, sometimes more than once a year, so I'd rather tell you what's actually current when you call than post a number here that goes stale.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Can you wire a shop, barn, guest house, or ADU?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes. That's common on Paso properties. Whether it's a subpanel to a barn or shop, a dedicated circuit, or a full guest house or ADU wire, I size it correctly, pull the permit, and handle the inspection.</p></div>
+              <summary class="faq-item__btn"><span>My house is older. Can the panel handle an EV charger?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Depends what's in there. Plenty of older San Luis Obispo homes are still on 100-amp service, which may or may not have room depending on what else it's feeding. Some panels need replacing before anything else happens, especially older Federal Pacific and Zinsco equipment. I check the panel and do the load calculation before quoting, so the number you get includes whatever the job actually needs.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>How soon can you come out?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>For non-emergency work, usually within a few business days. I'm available Monday to Friday, 9am to 5pm.</p></div>
+              <summary class="faq-item__btn"><span>Do you work on rental properties?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Yes. San Luis Obispo has a lot of rental housing and a lot of owners who don't live locally. I document the work so you have a record. Unpermitted electrical work is a real liability on a rental, so I permit what needs permitting.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>What areas do you serve?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Paso Robles, and from my base in <a href="/electrician-san-luis-obispo" class="inline-link">San Luis Obispo</a> I also cover Templeton, Atascadero, Creston, and the surrounding SLO County area. Not sure I reach you? Call and ask.</p></div>
+              <summary class="faq-item__btn"><span>Where are you based?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>San Luis Obispo. That's my home and my service area, and I cover Paso Robles, Atascadero, Templeton, Santa Margarita, Morro Bay, Los Osos, and the surrounding county from here.</p></div>
             </details>
           </div>
         </div>
@@ -200,15 +211,15 @@ const faqSchema = {
       <div class="container">
         <div class="page-cta__inner">
           <div>
-            <span class="eyebrow eyebrow--amber">Need an electrician in Paso Robles?</span>
-            <h2 id="cta-title" class="page-cta__title">Free estimates<br/><em>in Paso Robles.</em></h2>
+            <span class="eyebrow eyebrow--amber">Need an electrician in San Luis Obispo?</span>
+            <h2 id="cta-title" class="page-cta__title">Free estimates<br/><em>in San Luis Obispo.</em></h2>
             <p class="page-cta__lead">Free estimates. California C-10 licensed and insured. Owner-operated by Adam.</p>
             <div class="page-cta__btns">
               <a class="btn btn--primary btn--lg" href="tel:+18052860477">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
                 Call (805) 286-0477
               </a>
-              <a class="btn btn--outline-light btn--lg" href="mailto:adam@keifelectric.com?subject=Paso%20Robles%20electrical%20quote%20request">Email a quote request</a>
+              <a class="btn btn--outline-light btn--lg" href="mailto:adam@keifelectric.com?subject=San%20Luis%20Obispo%20electrical%20quote%20request">Email a quote request</a>
             </div>
           </div>
           <div class="page-cta__card">
@@ -297,9 +308,6 @@ const faqSchema = {
   .lead-copy { font-size: 17px; line-height: 1.6; color: var(--fg-1); margin-bottom: 20px; }
   .content-section p { font-size: 16px; line-height: 1.65; color: var(--fg-1); margin-bottom: 16px; max-width: 68ch; }
   .content-section p:last-child { margin-bottom: 0; }
-  .feature-list { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 12px; }
-  .feature-list li { font-size: 16px; line-height: 1.6; color: var(--fg-1); padding-left: 20px; position: relative; }
-  .feature-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 2px; background: var(--ke-orange); }
   .inline-link { color: var(--ke-orange); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
   .why-section { background: var(--ke-ink); color: var(--ke-bone); padding: 80px 0; }
   .why-section .section-title { color: var(--ke-bone); }
@@ -307,11 +315,15 @@ const faqSchema = {
   .why-list li { font-size: 16px; line-height: 1.6; color: rgba(246, 241, 232, 0.82); padding-left: 20px; position: relative; }
   .why-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 2px; background: var(--ke-orange); }
   .why-list li strong { color: var(--ke-bone); }
+  .feature-list { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 12px; }
+  .feature-list li { font-size: 16px; line-height: 1.6; color: var(--fg-1); padding-left: 20px; position: relative; }
+  .feature-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 2px; background: var(--ke-orange); }
   .proof { background: var(--ke-sand); border-top: 1px solid var(--border-1); border-bottom: 1px solid var(--border-1); padding: 64px 0; text-align: center; }
-  .proof__eyebrow { font-family: var(--font-sans); font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ke-orange); display: inline-block; margin-bottom: 20px; }
-  .proof__figure { margin: 0 auto; max-width: 560px; }
+  .proof__eyebrow { font-family: var(--font-sans); font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ke-orange); display: inline-block; margin-bottom: 24px; }
+  .proof__grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+  .proof__figure { margin: 0; flex: 0 1 320px; max-width: 360px; }
   .proof__img { width: 100%; height: auto; border-radius: var(--radius-4); box-shadow: var(--shadow-3); border: 1px solid var(--border-1); display: block; }
-  .proof__caption { margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--ke-stone); letter-spacing: 0.01em; }
+  .proof__caption { margin-top: 14px; font-size: 14px; font-weight: 600; color: var(--ke-stone); letter-spacing: 0.01em; }
   .faq-section { background: var(--ke-bone); padding: 100px 0; }
   .faq-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: flex-start; }
   .faq-sidebar { position: sticky; top: 96px; }
@@ -330,6 +342,7 @@ const faqSchema = {
   details[open] .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
   .faq-item__body { padding-bottom: 20px; }
   .faq-item__body p { font-size: 15px; line-height: 1.65; color: var(--fg-2); }
+  .faq-item__body p + p { margin-top: 12px; }
   .page-cta { background: var(--ke-ink); color: var(--ke-bone); padding: 100px 0; }
   .page-cta__inner { display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; }
   .page-cta__title { font-family: var(--font-display); font-variation-settings: 'YEAR' 2050; font-size: clamp(44px, 6vw, 88px); line-height: 0.95; color: var(--ke-bone); margin: 12px 0 18px; letter-spacing: -0.005em; }
