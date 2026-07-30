@@ -1,0 +1,29 @@
+# Keif Electric
+
+> Licensed residential electrician based in San Luis Obispo, California, serving San Luis Obispo County. Owner-operated by Adam Keif. California C-10 electrical contractor license #1152084.
+
+Keif Electric is a one-person residential electrical shop. The work is finish-focused: panel upgrades, EV charger installation, lighting, troubleshooting, and full electrical for new builds and remodels. Adam does the work himself, pulls the permits, and handles inspections.
+
+- Phone: (805) 286-0477
+- Email: adam@keifelectric.com
+- Hours: Monday to Friday, 9am to 5pm
+- Service area: San Luis Obispo, Atascadero, Paso Robles, Templeton, Santa Margarita, Arroyo Grande, Morro Bay, Los Osos, Cayucos, Cambria, Pismo Beach, Santa Maria
+
+## Services
+
+- [EV charger installation](https://keifelectric.com/services/ev-charger): Level 2 home charger installs, panel assessment, dedicated 240V circuit, permit and inspection.
+- [Electrical panel upgrades](https://keifelectric.com/services/panel): 100-amp to 200-amp service upgrades and panel replacements, including PG&E coordination. Federal Pacific and Zinsco replacements.
+- [Lighting installation](https://keifelectric.com/services/lighting): Recessed lighting, chandeliers, exterior and landscape lighting, dimmers and smart controls.
+- [Electrical repair and troubleshooting](https://keifelectric.com/services/troubleshooting): Flickering lights, tripping breakers, dead outlets, mystery circuits. Flat diagnostic fee that applies toward the repair.
+- [New build and remodel electrical](https://keifelectric.com/services/newbuild): Full residential electrical for new construction, ADUs, and major remodels. Rough-in through finish trim, coordinated with your GC.
+
+## Service areas
+
+- [Electrician in San Luis Obispo](https://keifelectric.com/electrician-san-luis-obispo)
+- [Electrician in Atascadero](https://keifelectric.com/electrician-atascadero)
+- [Electrician in Paso Robles](https://keifelectric.com/electrician-paso-robles)
+
+## Optional
+
+- [Homepage](https://keifelectric.com/): Full service list, owner background, reviews, and FAQ.
+- [Sitemap](https://keifelectric.com/sitemap.xml)

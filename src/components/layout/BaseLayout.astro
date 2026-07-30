@@ -63,17 +63,30 @@ const faqSchema = {
     <meta name="geo.position" content="35.2828;-120.6596" />
     <meta name="ICBM" content="35.2828, -120.6596" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/favicon.png" />
 
     <!-- Schema markup -->
     <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
         "@type": ["LocalBusiness", "Electrician"],
+        "@id": "https://keifelectric.com/#business",
         "name": "Keif Electric",
+        "url": "https://keifelectric.com/",
+        "image": "https://keifelectric.com/og-image.png",
+        "logo": "https://keifelectric.com/favicon.png",
         "description": "Licensed electrician serving San Luis Obispo and SLO County. EV chargers, panel upgrades, lighting, new builds. Owner-operated by Adam Keif.",
-        "hasCredential": "CA# 1152084",
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "license",
+          "name": "California C-10 Electrical Contractor License",
+          "identifier": "1152084",
+          "recognizedBy": {
+            "@type": "GovernmentOrganization",
+            "name": "California Contractors State License Board"
+          }
+        },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "San Luis Obispo",

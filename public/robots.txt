@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://keifelectric.com/sitemap.xml

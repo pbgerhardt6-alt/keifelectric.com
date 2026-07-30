@@ -4,7 +4,7 @@ import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
 import ReviewBadges from '../../components/ui/ReviewBadges.astro';
 
-const title = 'Recessed & Custom Lighting Installation in San Luis Obispo County | Keif Electric';
+const title = 'Recessed Lighting Installation San Luis Obispo | Keif Electric';
 const description = 'Recessed lighting, chandeliers, exterior and landscape lighting, dimmers and smart controls, installed to code and finished clean. Owner-operated by Adam Keif. Serving SLO County.';
 const canonical = 'https://keifelectric.com/services/lighting';
 
@@ -13,14 +13,24 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'Lighting Installation',
   description: 'Recessed lighting, chandeliers, exterior and landscape lighting, dimmers and smart controls. Code-compliant, finish-quality installation serving San Luis Obispo County.',
-  provider: {
-    '@type': 'Electrician',
-    name: 'Keif Electric',
-    telephone: '+18052860477',
-    areaServed: 'San Luis Obispo County, CA',
+  url: canonical,
+  image: 'https://keifelectric.com/assets/service-lighting.jpg',
+  provider: { '@id': 'https://keifelectric.com/#business' },
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'San Luis Obispo County, CA',
   },
-  areaServed: 'San Luis Obispo County, CA',
   serviceType: 'Lighting Installation',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://keifelectric.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://keifelectric.com/#services' },
+    { '@type': 'ListItem', position: 3, name: 'Lighting Installation', item: canonical },
+  ],
 };
 
 const faqSchema = {
@@ -58,6 +68,7 @@ const faqSchema = {
 
 <BaseLayout title={title} description={description} canonical={canonical} includeFaqSchema={false}>
   <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>

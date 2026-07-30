@@ -13,14 +13,24 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'EV Charger Installation',
   description: 'Level 2 home EV charger installation including panel assessment, dedicated 240V circuit, permit, inspection, and charger mounting. Serving San Luis Obispo County.',
-  provider: {
-    '@type': 'Electrician',
-    name: 'Keif Electric',
-    telephone: '+18052860477',
-    areaServed: 'San Luis Obispo County, CA',
+  url: canonical,
+  image: 'https://keifelectric.com/assets/service-ev-charger.jpg',
+  provider: { '@id': 'https://keifelectric.com/#business' },
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'San Luis Obispo County, CA',
   },
-  areaServed: 'San Luis Obispo County, CA',
   serviceType: 'EV Charger Installation',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://keifelectric.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://keifelectric.com/#services' },
+    { '@type': 'ListItem', position: 3, name: 'EV Charger Installation', item: canonical },
+  ],
 };
 
 const faqSchema = {
@@ -63,6 +73,7 @@ const faqSchema = {
 
 <BaseLayout title={title} description={description} canonical={canonical} includeFaqSchema={false}>
   <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
