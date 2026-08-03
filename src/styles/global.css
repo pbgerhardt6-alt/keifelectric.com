@@ -1,10 +1,21 @@
 @import './tokens.css';
 
+/* Subset from ClimateCrisis-Regular-VariableFont_YEAR.ttf, cut to Latin and
+   pinned to a single instance. 3499 glyphs to 117, 627 KB to 9.6 KB.
+   Regenerate with scripts/build-display-font.py if the copy needs new
+   characters. Filename is versioned because /fonts/* is served immutable.
+
+   Pinned at YEAR 1979, not 2050, despite what the old filename said. The
+   upstream file declared 2050 as its fvar default but baked the 1979 outlines,
+   so browsers applied no delta and drew 1979. See the script for detail. */
 @font-face {
   font-family: 'Climate Crisis';
-  src: url('/fonts/ClimateCrisis-2050.woff2') format('woff2');
+  src: url('/fonts/ClimateCrisis-latin-v2.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
+  /* swap is safe here because every above-the-fold font is preloaded in
+     BaseLayout, so they arrive before first paint and no reflow happens.
+     block was tried and cost LCP by holding the headline invisible. */
   font-display: swap;
 }
 

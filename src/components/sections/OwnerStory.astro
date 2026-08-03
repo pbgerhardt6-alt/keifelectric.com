@@ -5,7 +5,17 @@
   <div class="container">
     <div class="story__inner">
       <div class="story__photo" role="img" aria-label="Photo of Adam Keif, owner and electrician">
-        <img src="/assets/adam-keif.jpg" alt="Adam Keif" />
+        <picture>
+          <source srcset="/assets/adam-keif.avif" type="image/avif" />
+          <img
+            src="/assets/adam-keif.jpg"
+            alt="Adam Keif"
+            width="533"
+            height="800"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
         <span class="story__photo-label">Adam Keif · San Luis Obispo, CA</span>
         <span class="story__photo-tag">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -72,6 +82,12 @@
     border-radius: var(--radius-4);
     overflow: hidden;
     box-shadow: var(--shadow-3);
+  }
+
+  /* The <picture> wrapper must not create a box, otherwise the img's
+     height: 100% resolves against it instead of .story__photo. */
+  .story__photo picture {
+    display: contents;
   }
 
   .story__photo img {

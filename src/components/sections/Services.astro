@@ -180,7 +180,10 @@ import { siteContent } from '../../content/site';
 
   .media--ev {
     background-color: var(--ke-ink);
-    background-image: url("/assets/service-ev-charger.jpg");
+    background-image: image-set(
+      url("/assets/service-ev-charger.avif") type("image/avif"),
+      url("/assets/service-ev-charger.jpg") type("image/jpeg")
+    );
     background-size: cover;
     background-position: center 40%;
   }
@@ -194,7 +197,10 @@ import { siteContent } from '../../content/site';
 
   .media--panel {
     background-color: var(--ke-clay);
-    background-image: url("/assets/service-panel.jpg");
+    background-image: image-set(
+      url("/assets/service-panel.avif") type("image/avif"),
+      url("/assets/service-panel.jpg") type("image/jpeg")
+    );
     background-size: cover;
     background-position: center 30%;
   }
@@ -208,7 +214,10 @@ import { siteContent } from '../../content/site';
 
   .media--lighting {
     background-color: var(--ke-amber);
-    background-image: url("/assets/service-lighting.jpg");
+    background-image: image-set(
+      url("/assets/service-lighting.avif") type("image/avif"),
+      url("/assets/service-lighting.jpg") type("image/jpeg")
+    );
     background-size: cover;
     background-position: center;
   }
@@ -222,7 +231,10 @@ import { siteContent } from '../../content/site';
 
   .media--newbuild {
     background-color: var(--ke-orange);
-    background-image: url("/assets/service-newbuild.jpg");
+    background-image: image-set(
+      url("/assets/service-newbuild.avif") type("image/avif"),
+      url("/assets/service-newbuild.jpg") type("image/jpeg")
+    );
     background-size: cover;
     background-position: center;
   }

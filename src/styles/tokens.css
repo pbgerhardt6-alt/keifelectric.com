@@ -22,7 +22,10 @@
   --border-2: rgba(36, 32, 33, 0.22);
   --border-on-dark: rgba(246, 241, 232, 0.18);
 
-  --font-display: 'Climate Crisis', 'Times New Roman', serif;
+  /* The fallback is a heavy grotesque, not a serif. Climate Crisis is an
+     ultra-heavy blocky display face, and falling back to Times at 112px in
+     the hero caused a large layout shift when the real font swapped in. */
+  --font-display: 'Climate Crisis', 'Arial Black', 'Helvetica Neue', Impact, sans-serif;
   --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --radius-1: 4px;

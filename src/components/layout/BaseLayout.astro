@@ -40,6 +40,18 @@ const faqSchema = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
+    <!-- Preload every font that renders above the fold. Without these they are
+         only discovered after the CSS parses, so they arrive late and the swap
+         reflows the hero. The hero copy column is vertically centered inside a
+         100vh section, so any late height change recenters the block and moves
+         the title, which is most of the page's layout shift.
+         Weights above the fold: display for the title, 500 lead, 600 buttons
+         and trust row, 700 eyebrow. -->
+    <link rel="preload" href="/fonts/ClimateCrisis-latin-v2.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Geist-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Geist-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Geist-Bold.woff2" as="font" type="font/woff2" crossorigin />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Keif Electric" />
@@ -63,8 +75,8 @@ const faqSchema = {
     <meta name="geo.position" content="35.2828;-120.6596" />
     <meta name="ICBM" content="35.2828, -120.6596" />
 
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/favicon.png" />
 
     <!-- Schema markup -->
     <script type="application/ld+json" is:inline>
