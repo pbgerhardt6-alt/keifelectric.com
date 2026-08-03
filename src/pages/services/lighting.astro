@@ -59,6 +59,16 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      name: 'Why do my LED lights buzz or flicker when dimmed?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Usually a dimmer mismatch. Older dimmers were designed for incandescent loads and do not work correctly with the much smaller load an LED draws, which causes buzzing, flickering, or a narrow dimming range. The fix is pairing an LED-compatible dimmer with fixtures the manufacturer lists as compatible.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How many recessed lights does a room need?',
+      acceptedAnswer: { '@type': 'Answer', text: 'A reasonable starting point is spacing cans about half the ceiling height apart, so roughly 4 feet on a standard 8-foot ceiling, then adjusting for the room shape and what the space is used for. Kitchens want light on the counters, living rooms usually want a softer general wash. I lay it out with you before cutting any holes.' },
+    },
+    {
+      '@type': 'Question',
       name: 'What areas do you cover?',
       acceptedAnswer: { '@type': 'Answer', text: 'San Luis Obispo, Atascadero, Paso Robles, and surrounding SLO County.' },
     },
@@ -124,17 +134,33 @@ const faqSchema = {
       <div class="container container--prose">
         <h2 id="work-title" class="section-title">Lighting work I do</h2>
         <ul class="feature-list">
-          <li><strong>Recessed lighting / can lights</strong> — new installs and retrofits, including converting old fixtures to clean recessed LED</li>
-          <li><strong>Chandeliers and statement fixtures</strong> — safely mounted with the right box and support, wired and balanced</li>
-          <li><strong>Exterior and landscape lighting</strong> — entry, path, and yard lighting on proper circuits and weatherproofed</li>
-          <li><strong>Under-cabinet and accent lighting</strong> — kitchens and built-ins</li>
-          <li><strong>Dimmers and smart controls</strong> — dimming, smart switches, and scene control that actually works with your fixtures</li>
+          <li><strong>Recessed lighting and can lights.</strong> New installs and retrofits, including converting old fixtures to clean recessed LED.</li>
+          <li><strong>Chandeliers and statement fixtures.</strong> Safely mounted with the right box and support, wired and balanced.</li>
+          <li><strong>Exterior and landscape lighting.</strong> Entry, path, and yard lighting on proper circuits and weatherproofed.</li>
+          <li><strong>Under-cabinet and accent lighting.</strong> Kitchens and built-ins.</li>
+          <li><strong>Dimmers and smart controls.</strong> Dimming, smart switches, and scene control that actually works with your fixtures.</li>
         </ul>
         <p>Whether it's a single fixture swap or lighting a whole remodel, the work gets done to code and finished the way you'd want it in your own home.</p>
       </div>
     </section>
 
-    <section class="content-section content-section--alt" aria-labelledby="quality-title">
+    <section class="content-section content-section--alt" aria-labelledby="cost-title">
+      <div class="container container--prose">
+        <h2 id="cost-title" class="section-title">What does lighting installation cost in San Luis Obispo?</h2>
+        <p>Lighting pricing varies more than most electrical work, because a job can be anything from swapping one fixture to laying out a whole floor of recessed cans. Rather than quote a number that won't match your house, here's what actually moves the price:</p>
+        <ul class="feature-list">
+          <li><strong>How many fixtures.</strong> Per-fixture cost drops as the count goes up, since most of the setup is the same whether it's four cans or twelve.</li>
+          <li><strong>Attic access above the room.</strong> An accessible attic is the difference between a straightforward run and cutting into finished ceiling.</li>
+          <li><strong>New circuit or existing.</strong> If the existing circuit has capacity, we use it. If not, a new home run from the panel adds cost.</li>
+          <li><strong>Insulation and fire rating.</strong> Insulation contact and airtight-rated housings are required in certain assemblies and cost more than builder-grade.</li>
+          <li><strong>Ceiling height and type.</strong> Vaulted, sloped, and two-story ceilings take longer and sometimes need specific housings.</li>
+          <li><strong>Who supplies the fixtures.</strong> You can buy your own, or I'll spec them. Either works.</li>
+        </ul>
+        <p>You get a written quote before anything starts, and it covers the whole scope rather than a per-hour guess.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="quality-title">
       <div class="container container--prose">
         <h2 id="quality-title" class="section-title">Finish-quality work</h2>
         <p>Lighting is where sloppy work shows. Cans that don't line up, trims that sit crooked, dimmers that buzz or flicker. I take the extra time to lay out spacing properly, mount level, and match trims so the finished room looks considered, not patched together.</p>
@@ -143,10 +169,56 @@ const faqSchema = {
       </div>
     </section>
 
+    <section class="content-section content-section--alt" aria-labelledby="layout-title">
+      <div class="container container--prose">
+        <h2 id="layout-title" class="section-title">How many recessed lights does a room need?</h2>
+        <p>The common mistake is treating recessed lighting like a grid to fill in. Too many cans and the room reads like an office. Too few, or spaced wrong, and you get bright pools with dark corners between them.</p>
+        <p>A reasonable starting point for general ceiling lighting is spacing cans about half your ceiling height apart. On a standard 8-foot ceiling that puts them roughly 4 feet apart, then adjusted for the room's shape and what the space is actually for.</p>
+        <p>Beyond that, layout depends on where the light needs to land. Kitchens want light on the counters rather than the middle of the floor. Living rooms usually want a softer general wash with accent lighting doing the work. Hallways and stairs have their own spacing logic.</p>
+        <p>I lay this out with you before cutting a single hole, because once the holes are in the ceiling, they're in the ceiling.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="dimming-title">
+      <div class="container container--prose">
+        <h2 id="dimming-title" class="section-title">Why LED lights buzz, flicker, or won't dim smoothly</h2>
+        <p>This is one of the most common calls I get after somebody else's install, or after a homeowner swaps in LED bulbs and adds a dimmer from the hardware store.</p>
+        <p>The usual cause is a mismatch. A lot of older dimmers were built for incandescent loads and don't work correctly with the much smaller electrical load an LED draws. The result is buzzing, flickering, a limited dimming range, or lights that glow faintly when they're supposed to be off.</p>
+        <p>The fix is matching the dimmer to the fixture. LED-compatible dimmers exist for exactly this, and reputable fixture manufacturers publish which dimmers work with their drivers. I check that pairing before installing rather than after you've noticed the flicker.</p>
+        <p>If your lights are already doing this, it may be the dimmer, or it may be something upstream in the circuit. See <a href="/services/troubleshooting" class="inline-link">electrical troubleshooting and repair</a> if you want it diagnosed properly.</p>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="exterior-title">
+      <div class="container container--prose">
+        <h2 id="exterior-title" class="section-title">Exterior and landscape lighting on the Central Coast</h2>
+        <p>Outdoor lighting here has to deal with conditions that inland installs don't. Closer to the coast, salt air is hard on fixtures and hard on connections. Cheap exterior fixtures and unsealed splices corrode, and what fails first is usually the connection rather than the fixture itself.</p>
+        <p>Exterior work needs weather-rated fixtures, properly sealed connections, and GFCI protection on outdoor circuits. Landscape lighting typically runs on a low-voltage transformer, which is safer to work around and easier to extend later if you add to the yard.</p>
+        <ul class="feature-list">
+          <li><strong>Entry and porch lighting.</strong> The fixtures people actually see every day.</li>
+          <li><strong>Path and step lighting.</strong> Safety lighting on walkways, stairs, and grade changes.</li>
+          <li><strong>Uplighting and accent.</strong> Trees, architectural features, and planting beds.</li>
+          <li><strong>Security and motion lighting.</strong> Positioned to be useful rather than blinding.</li>
+        </ul>
+        <p>Exterior circuits and new outdoor runs generally require a permit. I handle that.</p>
+      </div>
+    </section>
+
     <section class="content-section" aria-labelledby="permits-title">
       <div class="container container--prose">
         <h2 id="permits-title" class="section-title">Permits and code</h2>
         <p>Most straightforward fixture swaps don't need a permit, but new circuits, exterior work, and larger lighting projects often do. I'll tell you upfront whether yours does, and if it does, I handle the permit and inspection.</p>
+        <p>Inside San Luis Obispo city limits, permits go through the Building and Safety Division at 919 Palm Street. For addresses in unincorporated parts of the county, it's SLO County Permits on Kansas Avenue. Either way, that's my job to sort out, not yours.</p>
+        <p>Title 24, California's energy code, also has requirements that affect residential lighting, including where high-efficacy fixtures and specific controls are required. It's the kind of thing that rarely comes up on a single fixture swap and always comes up on a remodel.</p>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="older-title">
+      <div class="container container--prose">
+        <h2 id="older-title" class="section-title">Lighting in older SLO County homes</h2>
+        <p>A lot of homes around San Luis Obispo, Atascadero, and Paso Robles were built when a bedroom got one ceiling fixture on a single switch and that was the whole plan. Adding real lighting to those rooms often means more than mounting a fixture.</p>
+        <p>Common things I run into: no neutral wire at the switch box, which matters for most smart switches. Ceiling boxes that aren't rated to carry the weight of a fan or a heavy fixture. Circuits already carrying more than they should before anything gets added. Older wiring that needs attention before new devices go on it.</p>
+        <p>None of that is unusual and none of it is a reason to avoid the project. It just needs to be found before the work starts rather than discovered halfway through. If your panel is also near capacity, see <a href="/services/panel" class="inline-link">panel upgrades and replacements</a>.</p>
       </div>
     </section>
 
@@ -156,7 +228,7 @@ const faqSchema = {
         <ul class="why-list">
           <li><strong>You hire me, not a crew.</strong> Same person quotes and installs.</li>
           <li><strong>Licensed and insured.</strong> California C-10, CA# 1152084.</li>
-          <li><strong>Finish-quality focus.</strong> Level, aligned, and clean — lighting done right.</li>
+          <li><strong>Finish-quality focus.</strong> Level, aligned, and clean.</li>
           <li><strong>Honest scope.</strong> If a fixture or circuit needs work to be safe, I'll show you why.</li>
         </ul>
       </div>
@@ -196,6 +268,14 @@ const faqSchema = {
             <details class="faq-item">
               <summary class="faq-item__btn"><span>Do you install smart or dimmable lighting?</span><span class="faq-icon" aria-hidden="true"></span></summary>
               <div class="faq-item__body"><p>Yes: dimmers, smart switches, and scene control, matched to fixtures that will actually dim without buzzing or flickering.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>Why do my LED lights buzz or flicker when dimmed?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Usually a dimmer mismatch. Older dimmers were designed for incandescent loads and don't work correctly with the much smaller load an LED draws, which causes buzzing, flickering, or a narrow dimming range. The fix is pairing an LED-compatible dimmer with fixtures the manufacturer lists as compatible.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>How many recessed lights does a room need?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>A reasonable starting point is spacing cans about half the ceiling height apart, so roughly 4 feet on a standard 8-foot ceiling, then adjusting for the room shape and what the space is used for. Kitchens want light on the counters, living rooms usually want a softer general wash. I lay it out with you before cutting any holes.</p></div>
             </details>
             <details class="faq-item">
               <summary class="faq-item__btn"><span>What areas do you cover?</span><span class="faq-icon" aria-hidden="true"></span></summary>

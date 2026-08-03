@@ -59,6 +59,16 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      name: 'Can my existing panel handle an ADU?',
+      acceptedAnswer: { '@type': 'Answer', text: 'It depends on the current service size and what the main house already draws. An ADU may run off a subpanel fed from the existing service, or it may need its own service. On older homes still on 100-amp service, adding a full dwelling unit is often what pushes the panel past capacity. Worth answering before the design is finalized rather than after.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'When during the build do you need to be on site?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Electrical comes in phases: temporary power on ground-up builds, then rough-in after framing and before insulation, rough inspection, then finish trim after drywall and cabinets, then final inspection. I coordinate those stages around your schedule so a held inspection does not stall the trades behind me.' },
+    },
+    {
+      '@type': 'Question',
       name: 'What areas do you serve?',
       acceptedAnswer: { '@type': 'Answer', text: 'San Luis Obispo, Atascadero, Paso Robles, and surrounding SLO County.' },
     },
@@ -124,14 +134,39 @@ const faqSchema = {
       <div class="container container--prose">
         <h2 id="scope-title" class="section-title">What I handle on new builds and remodels</h2>
         <ul class="feature-list">
-          <li><strong>Rough-in wiring</strong> — full residential rough-in to plan and code</li>
-          <li><strong>Panel installation</strong> — new service and <a href="/services/panel" class="inline-link">panel sized for the home</a></li>
-          <li><strong>Dedicated circuits</strong> — kitchen, laundry, HVAC, EV-ready, and appliance circuits</li>
-          <li><strong>Finish trim</strong> — devices, fixtures, and final connections, clean and labeled</li>
-          <li><strong>ADU electrical</strong> — full electrical for accessory dwelling units</li>
-          <li><strong>Remodel lighting</strong> — <a href="/services/lighting" class="inline-link">recessed lighting and fixture work</a> integrated into the remodel scope</li>
-          <li><strong>Remodel integration</strong> — tying new work into existing systems without leaving a mess behind the wall</li>
+          <li><strong>Rough-in wiring.</strong> Full residential rough-in to plan and code.</li>
+          <li><strong>Panel installation.</strong> New service and <a href="/services/panel" class="inline-link">panel sized for the home</a>.</li>
+          <li><strong>Dedicated circuits.</strong> Kitchen, laundry, HVAC, EV-ready, and appliance circuits.</li>
+          <li><strong>Finish trim.</strong> Devices, fixtures, and final connections, clean and labeled.</li>
+          <li><strong>ADU electrical.</strong> Full electrical for accessory dwelling units.</li>
+          <li><strong>Remodel lighting.</strong> <a href="/services/lighting" class="inline-link">Recessed lighting and fixture work</a> integrated into the remodel scope.</li>
+          <li><strong>Remodel integration.</strong> Tying new work into existing systems without leaving a mess behind the wall.</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="stages-title">
+      <div class="container container--prose">
+        <h2 id="stages-title" class="section-title">How electrical works on a build, stage by stage</h2>
+        <p>If you haven't been through a build before, the electrical scope is not one visit. It comes in distinct phases, each tied to an inspection and to what the other trades are doing.</p>
+        <ul class="feature-list">
+          <li><strong>Planning and load calculation.</strong> Before anything gets wired, the service size gets calculated against what the home will actually run. This is where EV readiness, heat pumps, and future solar should be accounted for, because adding capacity later costs considerably more than sizing correctly now.</li>
+          <li><strong>Temporary power.</strong> On ground-up builds, a temp service so the other trades have power on site.</li>
+          <li><strong>Rough-in.</strong> After framing and before insulation and drywall. All the boxes, home runs, and circuits go in while the walls are open. This stage sets everything that follows.</li>
+          <li><strong>Rough inspection.</strong> The inspector sees the work before it gets covered. Nothing gets closed up until it passes.</li>
+          <li><strong>Finish trim.</strong> After drywall, paint, and cabinets. Devices, fixtures, plates, and the panel get finished and labeled.</li>
+          <li><strong>Final inspection.</strong> Sign-off, and the service gets energized.</li>
+        </ul>
+        <p>The part homeowners tend to underestimate is how early the decisions land. By rough-in, where every outlet, switch, and fixture goes is committed. Moving them after drywall means opening walls again.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="walkthrough-title">
+      <div class="container container--prose">
+        <h2 id="walkthrough-title" class="section-title">The walkthrough before rough-in</h2>
+        <p>Before I wire anything, I walk the framed house with you and mark locations. Where the bed goes, so the outlets and switches land where you'll reach for them. Which counters need power and where the appliances sit. Where you'd want a floor outlet rather than running a cord across a room. Whether the garage should be EV-ready now instead of later.</p>
+        <p>This takes an hour and it is the highest-value hour of the whole electrical scope. Plans show code minimums. They don't show how you'll actually live in the house.</p>
+        <p>It is also the cheapest possible time to add a circuit. An extra dedicated run during rough-in is a fraction of what the same circuit costs once the walls are closed.</p>
       </div>
     </section>
 
@@ -140,6 +175,17 @@ const faqSchema = {
         <h2 id="gc-title" class="section-title">Built to work with your GC</h2>
         <p>I work as the electrical piece of a build, not a headache for the general contractor. That means showing up when the schedule needs me, keeping rough-in on pace so inspections don't hold up the trades behind me, and communicating clearly about what's done and what's next.</p>
         <p>If you're a GC or builder looking for a residential electrician who's reliable on schedule and clean on finish, that's the work I'm built for.</p>
+        <p>Because I'm owner-operated, the person you coordinate with is the person on site. There's no dispatcher relaying schedule changes and no rotating crew that has to be re-briefed on the job. If the framing slips a week, you tell me directly and we adjust.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="adu-title">
+      <div class="container container--prose">
+        <h2 id="adu-title" class="section-title">ADU electrical in San Luis Obispo County</h2>
+        <p>ADUs have been a large share of residential permit activity across the county, and the electrical scope on them is its own problem rather than a scaled-down house.</p>
+        <p>The first question is always how the unit gets power. Depending on the design and the existing service, an ADU may run off a subpanel fed from the main house, or it may need its own service. That decision affects cost, the permit, and whether the main panel needs upgrading first. On older homes still running a 100-amp service, adding a full dwelling unit is frequently what pushes the existing panel past what it can carry.</p>
+        <p>From there it's a complete dwelling's worth of electrical in a small footprint: kitchen circuits, bathroom GFCI protection, heating and cooling, laundry, smoke and carbon monoxide detection, exterior lighting, and its own load calculation.</p>
+        <p>If you're planning an ADU and don't yet know whether your existing service can carry it, that's worth answering before the design is finalized. See <a href="/services/panel" class="inline-link">panel upgrades</a>, or call and I'll tell you what you're working with.</p>
       </div>
     </section>
 
@@ -147,6 +193,17 @@ const faqSchema = {
       <div class="container container--prose">
         <h2 id="permits-title" class="section-title">Permits, inspection, and code</h2>
         <p>New construction and remodel electrical is permit-and-inspection heavy by nature. I pull the electrical permits, coordinate inspections around the build schedule, and make sure every stage passes so the project keeps moving. Panels left clean and labeled for the next person who opens them.</p>
+        <p>Inside city limits, that's the Building and Safety Division at 919 Palm Street in San Luis Obispo. For unincorporated addresses it's SLO County Permits on Kansas Avenue. Each jurisdiction has its own scheduling rhythm, which matters on a build where a held inspection stalls every trade behind it.</p>
+        <p>Current California code also drives a lot of what goes into a new residential build: AFCI and GFCI protection through most of the house, tamper-resistant devices, Title 24 energy requirements on lighting and controls, and EV-ready provisions in garages on new construction. I build to what the code requires now rather than what it required a few cycles ago.</p>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="remodel-title">
+      <div class="container container--prose">
+        <h2 id="remodel-title" class="section-title">Remodels in older homes</h2>
+        <p>Remodel electrical in an older home is a different animal from new construction. On a new build you're working to a plan on open framing. On a remodel you're tying new work into whatever is already there, and what's already there is often not what the drawings say.</p>
+        <p>Around SLO County that regularly means older wiring methods, ungrounded circuits, junction boxes buried behind finished surfaces from a previous remodel, and a panel with no room left. Any of those can turn a straightforward scope into a larger conversation.</p>
+        <p>My approach is to find that early. I'd rather open a few things up during the walkthrough and give you an accurate number than start work and hand you a change order in week three. If the existing service can't carry the remodeled house, you should know before demo, not after.</p>
       </div>
     </section>
 
@@ -196,6 +253,14 @@ const faqSchema = {
             <details class="faq-item">
               <summary class="faq-item__btn"><span>Do you pull the electrical permits on a build?</span><span class="faq-icon" aria-hidden="true"></span></summary>
               <div class="faq-item__body"><p>Yes. I pull the electrical permits and coordinate inspections around the project schedule.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>Can my existing panel handle an ADU?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>It depends on the current service size and what the main house already draws. An ADU may run off a subpanel fed from the existing service, or it may need its own service. On older homes still on 100-amp service, adding a full dwelling unit is often what pushes the panel past capacity. Worth answering before the design is finalized rather than after.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__btn"><span>When during the build do you need to be on site?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Electrical comes in phases: temporary power on ground-up builds, then rough-in after framing and before insulation, rough inspection, then finish trim after drywall and cabinets, then final inspection. I coordinate those stages around your schedule so a held inspection doesn't stall the trades behind me.</p></div>
             </details>
             <details class="faq-item">
               <summary class="faq-item__btn"><span>What areas do you serve?</span><span class="faq-icon" aria-hidden="true"></span></summary>
