@@ -117,10 +117,6 @@ const faqSchema = {
         </div>
         <div class="svc-hero__media">
           <img class="svc-hero__img" src="/assets/adam-keif-job-site.png" alt="Adam Keif diagnosing an electrical issue on a job site" width="1114" height="1411" fetchpriority="high" />
-          <div class="svc-hero__chip">
-            <span class="svc-hero__chip-k">Root cause</span>
-            <span class="svc-hero__chip-l">Not just the symptom</span>
-          </div>
         </div>
       </div>
     </section>
@@ -351,9 +347,6 @@ const faqSchema = {
   .svc-hero__trust { margin-top: 26px; font-size: 13px; font-weight: 600; color: var(--fg-2); letter-spacing: 0.01em; }
   .svc-hero__media { position: relative; justify-self: end; width: 100%; max-width: 440px; }
   .svc-hero__img { width: 100%; height: auto; border-radius: var(--radius-4); box-shadow: var(--shadow-3); border: 1px solid var(--border-1); }
-  .svc-hero__chip { position: absolute; left: -16px; bottom: 28px; background: var(--ke-ink); color: var(--ke-bone); padding: 12px 16px; border-radius: var(--radius-3); box-shadow: var(--shadow-3); display: flex; flex-direction: column; gap: 2px; }
-  .svc-hero__chip-k { font-weight: 800; font-size: 15px; color: var(--ke-amber); letter-spacing: 0.02em; }
-  .svc-hero__chip-l { font-size: 12px; color: rgba(246, 241, 232, 0.8); }
   .btn--outline { background: transparent; color: var(--ke-ink); border-color: var(--ke-ink); }
   .btn--outline:hover { background: var(--ke-ink); color: var(--ke-bone); }
   @media (prefers-reduced-motion: no-preference) {
@@ -432,7 +425,6 @@ const faqSchema = {
   @media (max-width: 860px) {
     .svc-hero__inner { grid-template-columns: 1fr; gap: 40px; }
     .svc-hero__media { justify-self: start; max-width: 340px; margin: 0 auto; }
-    .svc-hero__chip { left: 12px; }
   }
   @media (max-width: 768px) {
     .svc-hero { padding: 44px 0 56px; }
