@@ -73,7 +73,7 @@ export const siteContent = {
     {
       id: 'newbuild',
       title: 'New construction & remodels',
-      description: 'Full residential electrical for new builds and major remodels — rough-in, panel installation, dedicated circuits, and finish trim. We coordinate with GCs, pull all required permits, and leave panels clean and labeled.',
+      description: 'Full residential electrical for new builds and major remodels: rough-in, panel installation, dedicated circuits, and finish trim. We coordinate with GCs, pull all required permits, and leave panels clean and labeled.',
       image: 'service-newbuild.jpg',
       imageLabel: 'Photo: New construction wiring, Central Coast',
     },
@@ -140,7 +140,7 @@ export const siteContent = {
   faqs: [
     {
       question: 'Are you a licensed and insured electrician in California?',
-      answer: 'Yes. Keif Electric holds a California C-10 electrical contractor license (CA# 1152084) and carries general liability insurance. The license number is displayed on every quote and invoice — happy to email it before any visit.',
+      answer: 'Yes. Keif Electric holds a California C-10 electrical contractor license (CA# 1152084) and carries general liability insurance. The license number is displayed on every quote and invoice, and I am happy to email it before any visit.',
     },
     {
       question: 'What areas do you serve in SLO County?',
@@ -148,7 +148,7 @@ export const siteContent = {
     },
     {
       question: 'Do I need permits for electrical work or EV charger installation?',
-      answer: 'Most significant electrical work requires permits — panel upgrades, EV charger installations, new circuits, and electrical service upgrades. We handle all permitting, coordinate with the utility, manage inspections, and ensure everything is code-compliant and signed off before we\'re done.',
+      answer: 'Most significant electrical work requires permits: panel upgrades, EV charger installations, new circuits, and electrical service upgrades. We handle all permitting, coordinate with the utility, manage inspections, and ensure everything is code-compliant and signed off before we\'re done.',
     },
     {
       question: 'Do you offer free estimates?',
@@ -156,7 +156,7 @@ export const siteContent = {
     },
     {
       question: 'How do you price jobs?',
-      answer: 'Flat-rate pricing where possible. You get a written quote before work begins — no hidden fees, no add-ons that weren\'t discussed. For diagnostic and troubleshooting calls, we charge a flat diagnostic fee that applies toward the repair if you move forward.',
+      answer: 'Flat-rate pricing where possible. You get a written quote before work begins, no hidden fees, no add-ons that weren\'t discussed. For diagnostic and troubleshooting calls, we charge a flat diagnostic fee that applies toward the repair if you move forward.',
     },
     {
       question: 'Do you install EV chargers?',

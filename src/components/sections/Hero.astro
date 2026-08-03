@@ -13,7 +13,7 @@ import ReviewBadges from '../ui/ReviewBadges.astro';
       </p>
       <p class="hero__lead">
         Licensed electrical contractor serving <strong>San Luis Obispo, Atascadero, Paso Robles, and SLO County</strong>.
-        Panel upgrades, EV chargers, lighting, troubleshooting, new builds — permitted, inspected, and completed without surprises.
+        Panel upgrades, EV chargers, lighting, troubleshooting, new builds. Permitted, inspected, and completed without surprises.
         Owner-operated by Adam Keif.
       </p>
       <div class="hero__ctas">
@@ -35,6 +35,22 @@ import ReviewBadges from '../ui/ReviewBadges.astro';
       </div>
       <ReviewBadges />
     </div>
+
+    <figure class="hero__media">
+      <picture>
+        <source srcset="/assets/adam-keif-labeling-panel-san-luis-obispo.avif" type="image/avif" />
+        <img
+          class="hero__img"
+          src="/assets/adam-keif-labeling-panel-san-luis-obispo.jpg"
+          alt="Adam Keif labeling a breaker in an electrical panel on a San Luis Obispo job"
+          width="952"
+          height="954"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+      <figcaption class="hero__caption">Adam Keif, owner-operator</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -50,12 +66,52 @@ import ReviewBadges from '../ui/ReviewBadges.astro';
 
   .hero__inner {
     flex: 1;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    /* minmax(0, ...) so a long title line can never starve the image column */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: 48px;
+    align-items: center;
     max-width: var(--max);
     width: 100%;
     margin: 0 auto;
     padding: 52px var(--gutter) 44px;
+  }
+
+  .hero__media {
+    position: relative;
+    justify-self: end;
+    width: 100%;
+    max-width: 560px;
+    margin: 0;
+  }
+
+  /* The face is turned away, so the caption is what makes this a specific
+     person rather than a stock-looking trade photo. */
+  .hero__caption {
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ke-clay);
+    text-align: right;
+  }
+
+  .hero__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-4);
+    box-shadow: var(--shadow-3);
+    border: 1px solid var(--border-1);
+  }
+
+  /* Below the split breakpoint the image lands under the CTAs and badges,
+     which is well past where it does any work. The mobile hero is the type
+     and the call button. */
+  @media (max-width: 980px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 0; }
+    .hero__media { display: none; }
   }
 
   .container {
@@ -92,7 +148,7 @@ import ReviewBadges from '../ui/ReviewBadges.astro';
   .hero__title {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: clamp(56px, 7.5vw, 124px);
+    font-size: clamp(52px, 6.9vw, 112px);
     line-height: 0.88;
     letter-spacing: -0.005em;
     color: var(--ke-ink);
