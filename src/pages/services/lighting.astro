@@ -234,9 +234,26 @@ const faqSchema = {
       </div>
     </section>
 
-    <section class="proof-placeholder" aria-label="Recent lighting work">
+    <section class="proof" aria-labelledby="proof-title">
       <div class="container">
-        <p class="proof-placeholder__label">Recent lighting work: photos coming soon</p>
+        <p class="proof__eyebrow" id="proof-title">Recent lighting work</p>
+        <figure class="proof__figure">
+          <picture>
+            <source srcset="/assets/custom-recessed-lighting-san-luis-obispo.avif" type="image/avif" />
+            <img
+              class="proof__img"
+              src="/assets/custom-recessed-lighting-san-luis-obispo.jpg"
+              alt="Custom and recessed lighting project in San Luis Obispo: recessed cans and cove lighting in a vaulted great room with exposed wood trusses"
+              width="1200"
+              height="1600"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption class="proof__caption">
+            Custom and recessed lighting project in San Luis Obispo. Recessed cans laid out to the truss lines, with concealed cove lighting washing the vaulted ceiling.
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -320,7 +337,7 @@ const faqSchema = {
     <style>
       .content-section .container--prose,
       .why-section .container--prose,
-      .proof-placeholder .container,
+      .proof .container,
       .faq-inner,
       .page-cta__inner { opacity: 1 !important; transform: none !important; }
     </style>
@@ -366,7 +383,7 @@ const faqSchema = {
     .svc-hero__ctas { animation-delay: 0.45s; }
     .svc-hero__trust { animation-delay: 0.53s; }
     .svc-hero__media { animation-delay: 0.22s; animation-duration: 1s; }
-    .content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner, .page-cta__inner { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease-emph), transform 0.7s var(--ease-emph); }
+    .content-section .container--prose, .why-section .container--prose, .proof .container, .faq-inner, .page-cta__inner { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease-emph), transform 0.7s var(--ease-emph); }
     .is-in { opacity: 1 !important; transform: none !important; }
   }
   @keyframes heroIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
@@ -397,8 +414,11 @@ const faqSchema = {
   .why-list li { font-size: 16px; line-height: 1.6; color: rgba(246, 241, 232, 0.82); padding-left: 20px; position: relative; }
   .why-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 2px; background: var(--ke-orange); }
   .why-list li strong { color: var(--ke-bone); }
-  .proof-placeholder { background: var(--ke-sand); border-top: 1px solid var(--border-1); border-bottom: 1px solid var(--border-1); padding: 40px 0; text-align: center; }
-  .proof-placeholder__label { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ke-stone); }
+  .proof { background: var(--ke-sand); border-top: 1px solid var(--border-1); border-bottom: 1px solid var(--border-1); padding: 64px 0; text-align: center; }
+  .proof__eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ke-stone); margin-bottom: 28px; }
+  .proof__figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .proof__img { display: block; width: 100%; max-width: 420px; height: auto; border-radius: var(--radius-4); box-shadow: var(--shadow-3); border: 1px solid var(--border-1); }
+  .proof__caption { font-size: 14px; line-height: 1.6; color: var(--fg-2); max-width: 52ch; }
   .faq-section { background: var(--ke-bone); padding: 100px 0; }
   .faq-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: flex-start; }
   .faq-sidebar { position: sticky; top: 96px; }
@@ -452,7 +472,7 @@ const faqSchema = {
   const mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
   if (mq.matches && 'IntersectionObserver' in window) {
     const els = document.querySelectorAll(
-      '.content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner, .page-cta__inner'
+      '.content-section .container--prose, .why-section .container--prose, .proof .container, .faq-inner, .page-cta__inner'
     );
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
