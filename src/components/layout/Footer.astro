@@ -5,7 +5,10 @@ import { siteContent } from '../../content/site';
 <footer class="site-footer">
   <div class="site-footer__top">
     <div class="footer-brand">
-      <img src="/assets/logos/logo-primary.svg" alt="Keif Electric" />
+      <!-- Intrinsic dimensions from the SVG viewBox. CSS still sizes this to
+           56px tall with auto width; the attributes only give the browser the
+           aspect ratio so it can reserve the box before the file lands. -->
+      <img src="/assets/logos/logo-primary.svg" alt="Keif Electric" width="1100" height="460" />
       <p>Licensed electrician serving San Luis Obispo, Atascadero, and the Central Coast. Owner-operated by Adam Keif.</p>
       <address class="nap">
         <span>

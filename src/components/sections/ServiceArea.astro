@@ -117,6 +117,28 @@
   </div>
 </section>
 
+<script>
+  // Hold the map animations until the map is actually on screen. Pausing is
+  // applied here rather than in the markup so that a client without JS keeps
+  // the original play-on-load behaviour instead of a permanently frozen map.
+  const map = document.querySelector('.service-area__map');
+
+  if (map instanceof HTMLElement && 'IntersectionObserver' in window) {
+    map.classList.add('anim-idle');
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          map.classList.remove('anim-idle');
+          observer.disconnect();
+        }
+      }
+    }, { rootMargin: '150px' });
+
+    observer.observe(map);
+  }
+</script>
+
 <style>
   .section {
     padding: 120px 0;
@@ -217,6 +239,23 @@
     will-change: transform, opacity;
     animation: pulse 2.4s ease-in-out infinite;
     animation-delay: 4s;
+  }
+
+  /* The map sits well below the fold, but its animations are on time-based
+     delays, so they used to run during the initial load and compete for the
+     main thread while the hero was still settling. The inline script below
+     adds this class at parse time and drops it when the map scrolls into view.
+     If the script never runs the class is never added, so the no-JS behaviour
+     is exactly what it was before: animations play on load. */
+  .service-area__map.anim-idle :is(
+    .coastline-animated,
+    .hwy-draw,
+    .map-mountains,
+    .city-group,
+    .map-label-fade,
+    .atascadero-pulse
+  ) {
+    animation-play-state: paused;
   }
 
   @media (prefers-reduced-motion: reduce) {
