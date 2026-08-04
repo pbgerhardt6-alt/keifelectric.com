@@ -12,6 +12,15 @@
   --ke-soot: #1A1718;
   --ke-orange-dark: #C44621;
   --ke-orange-soft: #FBE3D6;
+
+  /* Text-safe orange. --ke-orange is 3.1:1 on bone and 3.3:1 on paper, and
+     white on it is 3.5:1, so every orange link and every filled orange button
+     failed WCAG AA for normal text. This is the same hue and saturation
+     darkened to the first point that clears 4.5:1 in all three directions:
+     4.80 on paper, 4.56 on bone, 5.13 for white on it.
+     Use this wherever orange carries text. --ke-orange stays as-is for
+     decorative fills, borders, rules, and icons, which only need 3:1. */
+  --ke-orange-text: #C44015;
   --ke-amber-soft: #FCEBC9;
   --ke-clay-soft: #E8D6C4;
 
