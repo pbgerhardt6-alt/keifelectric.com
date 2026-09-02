@@ -1,5 +1,6 @@
 ---
 import { siteContent } from '../../content/site';
+import { servicePath } from '../../content/routes';
 ---
 
 <footer class="site-footer">
@@ -31,10 +32,10 @@ import { siteContent } from '../../content/site';
       <p class="footer-col__title">Services</p>
       <ul>
         {siteContent.services.map(s => (
-          <li><a href={`/services/${s.id}`}>{s.title}</a></li>
+          <li><a href={servicePath(s.id)}>{s.title}</a></li>
         ))}
         {siteContent.servicesText.map(s => (
-          <li><a href={s.href ?? `/services/${s.id}`}>{s.title}</a></li>
+          <li><a href={s.href ?? servicePath(s.id)}>{s.title}</a></li>
         ))}
       </ul>
     </div>

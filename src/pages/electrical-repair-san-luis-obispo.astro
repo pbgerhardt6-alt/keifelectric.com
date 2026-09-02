@@ -1,26 +1,26 @@
 ---
-import BaseLayout from '../../components/layout/BaseLayout.astro';
-import Header from '../../components/layout/Header.astro';
-import Footer from '../../components/layout/Footer.astro';
-import ReviewBadges from '../../components/ui/ReviewBadges.astro';
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import ReviewBadges from '../components/ui/ReviewBadges.astro';
 
-const title = 'New Build & Remodel Electrical San Luis Obispo | Keif Electric';
-const description = 'Full residential electrical for new builds, ADUs, and major remodels, rough-in to finish trim. Coordinated with your GC. Licensed, owner-operated by Adam Keif. Serving SLO County.';
-const canonical = 'https://keifelectric.com/services/newbuild';
+const title = 'Electrical Repair San Luis Obispo | Troubleshooting & Diagnosis';
+const description = 'Flickering lights, tripping breakers, dead outlets: root cause diagnosis, not just a bandaid. Flat diagnostic fee. Owner-operated by Adam Keif. Serving SLO County.';
+const canonical = 'https://keifelectric.com/electrical-repair-san-luis-obispo';
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'New Construction & Remodel Electrical',
-  description: 'Full residential electrical for new builds, ADUs, and major remodels. Rough-in, panel installation, dedicated circuits, finish trim. Permitted and inspected. Serving San Luis Obispo County.',
+  name: 'Electrical Troubleshooting & Repair',
+  description: 'Electrical troubleshooting and diagnostic service for flickering lights, tripping breakers, dead outlets, and mystery circuits. Root cause diagnosis with flat diagnostic fee. Serving San Luis Obispo County.',
   url: canonical,
-  image: 'https://keifelectric.com/assets/service-newbuild.jpg',
+  image: 'https://keifelectric.com/assets/adam-keif-job-site.png',
   provider: { '@id': 'https://keifelectric.com/#business' },
   areaServed: {
     '@type': 'AdministrativeArea',
     name: 'San Luis Obispo County, CA',
   },
-  serviceType: 'New Construction Electrical',
+  serviceType: 'Electrical Troubleshooting',
 };
 
 const breadcrumbSchema = {
@@ -29,7 +29,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://keifelectric.com/' },
     { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://keifelectric.com/#services' },
-    { '@type': 'ListItem', position: 3, name: 'New Build & Remodel Electrical', item: canonical },
+    { '@type': 'ListItem', position: 3, name: 'Electrical Repair & Troubleshooting', item: canonical },
   ],
 };
 
@@ -39,33 +39,28 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Do you work with general contractors on new builds?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes, that\'s most of this work. I handle the electrical scope and coordinate around the build schedule so I\'m not the trade that holds things up.' },
+      name: 'My lights keep flickering. Is that dangerous?',
+      acceptedAnswer: { '@type': 'Answer', text: 'It can be. Flickering is sometimes minor, but it can signal a loose connection or a panel issue that\'s worth catching early. I find the actual cause rather than guessing.' },
     },
     {
       '@type': 'Question',
-      name: 'Do you do ADU electrical?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Full electrical for accessory dwelling units, from panel and circuits through finish, permitted and inspected.' },
+      name: 'Why does my breaker keep tripping?',
+      acceptedAnswer: { '@type': 'Answer', text: 'A breaker trips to protect the circuit, from an overload, a short, or a ground fault. Repeated tripping means something needs attention. I trace it to the source instead of just resetting it.' },
     },
     {
       '@type': 'Question',
-      name: 'Can you handle both rough-in and finish?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes, the whole electrical scope: rough-in, panel, dedicated circuits, and finish trim.' },
+      name: 'Do you charge for a diagnostic visit?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes, a flat diagnostic fee, and it applies toward the repair if you move forward. You get a quote on the fix before I do the work.' },
     },
     {
       '@type': 'Question',
-      name: 'Do you pull the electrical permits on a build?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. I pull the electrical permits and coordinate inspections around the project schedule.' },
+      name: 'How fast can you come out?',
+      acceptedAnswer: { '@type': 'Answer', text: 'For most non-emergency issues, usually within the same week. For anything urgent like a burning smell, call and I\'ll advise you right away.' },
     },
     {
       '@type': 'Question',
-      name: 'Can my existing panel handle an ADU?',
-      acceptedAnswer: { '@type': 'Answer', text: 'It depends on the current service size and what the main house already draws. An ADU may run off a subpanel fed from the existing service, or it may need its own service. On older homes still on 100-amp service, adding a full dwelling unit is often what pushes the panel past capacity. Worth answering before the design is finalized rather than after.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'When during the build do you need to be on site?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Electrical comes in phases: temporary power on ground-up builds, then rough-in after framing and before insulation, rough inspection, then finish trim after drywall and cabinets, then final inspection. I coordinate those stages around your schedule so a held inspection does not stall the trades behind me.' },
+      name: 'Do you also install outlets, switches, and GFCIs?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. New outlets and switches, GFCI and AFCI upgrades, USB outlets, and dedicated circuits for appliances and home offices, all code-compliant.' },
     },
     {
       '@type': 'Question',
@@ -93,7 +88,7 @@ const faqSchema = {
         <span aria-hidden="true">/</span>
         <a href="/#services">Services</a>
         <span aria-hidden="true">/</span>
-        <span aria-current="page">New Construction &amp; Remodels</span>
+        <span aria-current="page">Troubleshooting &amp; Repair</span>
       </div>
     </nav>
 
@@ -102,126 +97,146 @@ const faqSchema = {
         <div class="svc-hero__copy">
           <p class="svc-hero__eyebrow">
             <svg class="svc-hero__spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z"/></svg>
-            New Construction &amp; Remodels
+            Troubleshooting &amp; Repair
           </p>
           <h1 id="page-h1" class="svc-hero__title">
-            <span class="svc-hero__line">New construction</span>
-            <span class="svc-hero__line svc-hero__line--accent">&amp; remodels<span class="svc-hero__dot" aria-hidden="true"></span></span>
+            <span class="svc-hero__line">Electrical troubleshooting</span>
+            <span class="svc-hero__line svc-hero__line--accent">&amp; repair<span class="svc-hero__dot" aria-hidden="true"></span></span>
             <span class="svc-hero__place">in San Luis Obispo County</span>
           </h1>
-          <p class="svc-hero__sub">Full residential electrical for new builds, ADUs, and major remodels, rough-in to finish trim. Coordinated with your GC, permitted and inspected. Owner-operated by Adam Keif.</p>
+          <p class="svc-hero__sub">Flickering lights, tripping breakers, dead outlets, mystery circuits. I find the root cause, not just the symptom. Licensed, owner-operated by Adam Keif.</p>
           <div class="svc-hero__ctas">
             <a class="btn btn--primary btn--lg" href="tel:+18052860477">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
               Call (805) 286-0477
             </a>
-            <a class="btn btn--outline btn--lg" href="#contact">Get a quote</a>
+            <a class="btn btn--outline btn--lg" href="#contact">Get a free quote</a>
           </div>
           <p class="svc-hero__trust">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
           <ReviewBadges />
         </div>
         <div class="svc-hero__media">
-          <img class="svc-hero__img" src="/assets/service-newbuild.jpg" alt="New construction electrical rough-in by Keif Electric" width="800" height="532" fetchpriority="high" />
-          <div class="svc-hero__chip">
-            <span class="svc-hero__chip-k">Rough-in to finish</span>
-            <span class="svc-hero__chip-l">On schedule with your GC</span>
-          </div>
+          <img class="svc-hero__img" src="/assets/adam-keif-job-site.png" alt="Adam Keif diagnosing an electrical issue on a job site" width="1114" height="1411" fetchpriority="high" />
         </div>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="scope-title">
+    <section class="content-section" aria-labelledby="problems-title">
       <div class="container container--prose">
-        <h2 id="scope-title" class="section-title">What I handle on new builds and remodels</h2>
+        <h2 id="problems-title" class="section-title">Problems I fix</h2>
         <ul class="feature-list">
-          <li><strong>Rough-in wiring.</strong> Full residential rough-in to plan and code.</li>
-          <li><strong>Panel installation.</strong> New service and <a href="/services/panel" class="inline-link">panel sized for the home</a>.</li>
-          <li><strong>Dedicated circuits.</strong> Kitchen, laundry, HVAC, EV-ready, and appliance circuits.</li>
-          <li><strong>Finish trim.</strong> Devices, fixtures, and final connections, clean and labeled.</li>
-          <li><strong>ADU electrical.</strong> Full electrical for accessory dwelling units.</li>
-          <li><strong>Remodel lighting.</strong> <a href="/services/lighting" class="inline-link">Recessed lighting and fixture work</a> integrated into the remodel scope.</li>
-          <li><strong>Remodel integration.</strong> Tying new work into existing systems without leaving a mess behind the wall.</li>
+          <li><strong>Flickering or dimming lights.</strong> Often a loose connection or a failing circuit, sometimes a sign of something in the panel.</li>
+          <li><strong>Breakers that keep tripping.</strong> A breaker trips for a reason. I find what's overloading or faulting the circuit.</li>
+          <li><strong>Dead outlets or partial power.</strong> Half a room out, an outlet with no power, a tripped circuit that won't reset.</li>
+          <li><strong>Burning smell or warm outlets and switches.</strong> Don't wait on this one. Call and stop using the outlet.</li>
+          <li><strong>Buzzing or warm panel.</strong> It may point to <a href="/electrical-panel-upgrade-san-luis-obispo" class="inline-link">a panel that needs upgrading</a>. Worth looking at before it becomes a bigger problem.</li>
+          <li><strong>Outlets and switches.</strong> New installs, replacements, GFCI and AFCI upgrades, USB outlets, dedicated circuits for appliances.</li>
+          <li><strong>Mystery circuits.</strong> The switch that controls nothing, the circuit no one can trace.</li>
         </ul>
       </div>
     </section>
 
-    <section class="content-section content-section--alt" aria-labelledby="stages-title">
+    <section class="content-section content-section--alt" aria-labelledby="breaker-title">
       <div class="container container--prose">
-        <h2 id="stages-title" class="section-title">How electrical works on a build, stage by stage</h2>
-        <p>If you haven't been through a build before, the electrical scope is not one visit. It comes in distinct phases, each tied to an inspection and to what the other trades are doing.</p>
+        <h2 id="breaker-title" class="section-title">Why does my breaker keep tripping?</h2>
+        <p>A breaker is doing its job when it trips. It's a safety device interrupting the circuit before something overheats. Resetting it repeatedly without finding out why is how a nuisance becomes a hazard.</p>
+        <p>There are three common causes, and they need different fixes:</p>
         <ul class="feature-list">
-          <li><strong>Planning and load calculation.</strong> Before anything gets wired, the service size gets calculated against what the home will actually run. This is where EV readiness, heat pumps, and future solar should be accounted for, because adding capacity later costs considerably more than sizing correctly now.</li>
-          <li><strong>Temporary power.</strong> On ground-up builds, a temp service so the other trades have power on site.</li>
-          <li><strong>Rough-in.</strong> After framing and before insulation and drywall. All the boxes, home runs, and circuits go in while the walls are open. This stage sets everything that follows.</li>
-          <li><strong>Rough inspection.</strong> The inspector sees the work before it gets covered. Nothing gets closed up until it passes.</li>
-          <li><strong>Finish trim.</strong> After drywall, paint, and cabinets. Devices, fixtures, plates, and the panel get finished and labeled.</li>
-          <li><strong>Final inspection.</strong> Sign-off, and the service gets energized.</li>
+          <li><strong>Overload.</strong> More load on the circuit than it's rated to carry. Common with space heaters, window units, and kitchens where several appliances share one circuit. The fix is usually redistributing the load or adding a dedicated circuit.</li>
+          <li><strong>Short circuit.</strong> A hot conductor contacting a neutral or ground, often at a damaged device, a failing appliance, or a compromised cable. This trips hard and immediately.</li>
+          <li><strong>Ground fault.</strong> Current escaping the intended path, frequently involving moisture. This is what GFCI protection in kitchens, baths, garages, and outdoor areas is built to catch.</li>
         </ul>
-        <p>The part homeowners tend to underestimate is how early the decisions land. By rough-in, where every outlet, switch, and fixture goes is committed. Moving them after drywall means opening walls again.</p>
+        <p>An AFCI breaker adds a fourth possibility. These detect arcing, which is a legitimate fire risk, but they can also trip on certain motors and electronics. Telling a real fault from a nuisance trip takes testing, not guessing.</p>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="walkthrough-title">
+    <section class="content-section" aria-labelledby="flicker-title">
       <div class="container container--prose">
-        <h2 id="walkthrough-title" class="section-title">The walkthrough before rough-in</h2>
-        <p>Before I wire anything, I walk the framed house with you and mark locations. Where the bed goes, so the outlets and switches land where you'll reach for them. Which counters need power and where the appliances sit. Where you'd want a floor outlet rather than running a cord across a room. Whether the garage should be EV-ready now instead of later.</p>
-        <p>This takes an hour and it is the highest-value hour of the whole electrical scope. Plans show code minimums. They don't show how you'll actually live in the house.</p>
-        <p>It is also the cheapest possible time to add a circuit. An extra dedicated run during rough-in is a fraction of what the same circuit costs once the walls are closed.</p>
+        <h2 id="flicker-title" class="section-title">Are flickering lights dangerous?</h2>
+        <p>Sometimes, and the distinction matters.</p>
+        <p>One fixture flickering is usually contained: a loose bulb, a failing fixture, or an <a href="/lighting-installation-san-luis-obispo" class="inline-link">LED and dimmer mismatch</a>. Annoying, rarely urgent.</p>
+        <p>Lights flickering throughout the house, or dimming whenever a large appliance starts, is a different signal. That pattern can indicate a loose or failing connection upstream, sometimes at the main panel or the service connection itself. A loose neutral in particular can put uneven voltage across the house, which damages electronics and is a genuine fire risk.</p>
+        <p>The rule I'd give a homeowner: one fixture, get it looked at when convenient. Multiple rooms, or flickering paired with a warm panel, a buzzing sound, or a burning smell, call now and stop using the affected circuits.</p>
       </div>
     </section>
 
-    <section class="content-section content-section--alt" aria-labelledby="gc-title">
+    <section class="content-section content-section--alt" aria-labelledby="rootcause-title">
       <div class="container container--prose">
-        <h2 id="gc-title" class="section-title">Built to work with your GC</h2>
-        <p>I work as the electrical piece of a build, not a headache for the general contractor. That means showing up when the schedule needs me, keeping rough-in on pace so inspections don't hold up the trades behind me, and communicating clearly about what's done and what's next.</p>
-        <p>If you're a GC or builder looking for a residential electrician who's reliable on schedule and clean on finish, that's the work I'm built for.</p>
-        <p>Because I'm owner-operated, the person you coordinate with is the person on site. There's no dispatcher relaying schedule changes and no rotating crew that has to be re-briefed on the job. If the framing slips a week, you tell me directly and we adjust.</p>
+        <h2 id="rootcause-title" class="section-title">Root cause, not a bandaid</h2>
+        <p>A lot of electrical problems get "fixed" by swapping the part that failed without finding why it failed. That's how you end up calling three electricians for the same flickering light.</p>
+        <p>I diagnose the actual cause. Sometimes that's a five-minute fix: a loose neutral, a bad connection. Sometimes it points to something bigger like a panel that's on its way out. Either way, you'll know what's actually going on and what it'll take to fix it for good.</p>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="adu-title">
+    <section class="content-section" aria-labelledby="process-title">
       <div class="container container--prose">
-        <h2 id="adu-title" class="section-title">ADU electrical in San Luis Obispo County</h2>
-        <p>ADUs have been a large share of residential permit activity across the county, and the electrical scope on them is its own problem rather than a scaled-down house.</p>
-        <p>The first question is always how the unit gets power. Depending on the design and the existing service, an ADU may run off a subpanel fed from the main house, or it may need its own service. That decision affects cost, the permit, and whether the main panel needs upgrading first. On older homes still running a 100-amp service, adding a full dwelling unit is frequently what pushes the existing panel past what it can carry.</p>
-        <p>From there it's a complete dwelling's worth of electrical in a small footprint: kitchen circuits, bathroom GFCI protection, heating and cooling, laundry, smoke and carbon monoxide detection, exterior lighting, and its own load calculation.</p>
-        <p>If you're planning an ADU and don't yet know whether your existing service can carry it, that's worth answering before the design is finalized. See <a href="/services/panel" class="inline-link">panel upgrades</a>, or call and I'll tell you what you're working with.</p>
+        <h2 id="process-title" class="section-title">How I diagnose an electrical problem</h2>
+        <p>Troubleshooting is a process of narrowing down, not a lucky guess. Roughly how it goes:</p>
+        <ul class="feature-list">
+          <li><strong>What changed.</strong> When did it start, what was running, has anything been added or worked on recently. This alone often points at the circuit.</li>
+          <li><strong>Reproduce it.</strong> An intermittent fault is the hard case. If I can make it happen on demand, I can find it.</li>
+          <li><strong>Isolate the circuit.</strong> Establish exactly what's affected and what isn't. The boundary between working and not working is usually where the fault lives.</li>
+          <li><strong>Test rather than assume.</strong> Voltage, continuity, and load readings at each point along the run.</li>
+          <li><strong>Work back to the source.</strong> Devices, then junctions, then the run itself, then the panel.</li>
+          <li><strong>Confirm the fix.</strong> Verify under load that the original symptom is actually gone, not just quiet at the moment.</li>
+        </ul>
+        <p>Most residential faults come down to a connection somewhere: a backstabbed outlet that's worked loose, a wire nut that was never tight, a corroded terminal, a damaged cable. They're findable. It just takes going in order instead of replacing parts and hoping.</p>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="permits-title">
+    <section class="content-section content-section--alt" aria-labelledby="safety-title">
       <div class="container container--prose">
-        <h2 id="permits-title" class="section-title">Permits, inspection, and code</h2>
-        <p>New construction and remodel electrical is permit-and-inspection heavy by nature. I pull the electrical permits, coordinate inspections around the build schedule, and make sure every stage passes so the project keeps moving. Panels left clean and labeled for the next person who opens them.</p>
-        <p>Inside city limits, that's the Building and Safety Division at 919 Palm Street in San Luis Obispo. For unincorporated addresses it's SLO County Permits on Kansas Avenue. Each jurisdiction has its own scheduling rhythm, which matters on a build where a held inspection stalls every trade behind it.</p>
-        <p>Current California code also drives a lot of what goes into a new residential build: AFCI and GFCI protection through most of the house, tamper-resistant devices, Title 24 energy requirements on lighting and controls, and EV-ready provisions in garages on new construction. I build to what the code requires now rather than what it required a few cycles ago.</p>
+        <h2 id="safety-title" class="section-title">What to do before I get there</h2>
+        <p>If you're dealing with something that feels urgent, a few things are worth doing right away:</p>
+        <ul class="feature-list">
+          <li><strong>Burning smell, scorch marks, or a hot outlet or switch plate.</strong> Stop using that circuit. If you can identify the breaker, shut it off. Call me.</li>
+          <li><strong>Buzzing, crackling, or heat at the panel.</strong> Don't open the panel. Call.</li>
+          <li><strong>A breaker that won't stay reset.</strong> Leave it off. It's telling you something. Repeatedly forcing it back on is the wrong move.</li>
+          <li><strong>Water anywhere near electrical.</strong> Keep away from it and kill the circuit if you can do so safely.</li>
+          <li><strong>Any shock, even a small one.</strong> That's not normal and it's worth a same-day call.</li>
+        </ul>
+        <p>Anything genuinely on fire or actively arcing is a 911 call first, not an electrician call.</p>
       </div>
     </section>
 
-    <section class="content-section content-section--alt" aria-labelledby="remodel-title">
+    <section class="content-section" aria-labelledby="older-title">
       <div class="container container--prose">
-        <h2 id="remodel-title" class="section-title">Remodels in older homes</h2>
-        <p>Remodel electrical in an older home is a different animal from new construction. On a new build you're working to a plan on open framing. On a remodel you're tying new work into whatever is already there, and what's already there is often not what the drawings say.</p>
-        <p>Around SLO County that regularly means older wiring methods, ungrounded circuits, junction boxes buried behind finished surfaces from a previous remodel, and a panel with no room left. Any of those can turn a straightforward scope into a larger conversation.</p>
-        <p>My approach is to find that early. I'd rather open a few things up during the walkthrough and give you an accurate number than start work and hand you a change order in week three. If the existing service can't carry the remodeled house, you should know before demo, not after.</p>
+        <h2 id="older-title" class="section-title">Common faults in older SLO County homes</h2>
+        <p>A lot of the housing stock around San Luis Obispo, Atascadero, and Paso Robles dates to eras with different wiring practices, and certain problems recur.</p>
+        <p>Ungrounded two-prong circuits, sometimes with three-prong outlets swapped in at some point without an actual ground, which defeats the protection people assume they have. Backstabbed outlets, where conductors were pushed into the back of the device instead of secured under the screw terminal, which loosen over decades and are a leading cause of intermittent faults. Original aluminum branch wiring in some mid-century homes, which needs specific handling at every connection. Missing GFCI protection in kitchens, baths, garages, and exterior outlets. Circuits extended by a previous owner without much regard for load.</p>
+        <p>None of this means a house is unsafe. It means the wiring reflects when it was installed, and it's worth knowing what you actually have rather than assuming.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="pricing-title">
+      <div class="container container--prose">
+        <h2 id="pricing-title" class="section-title">How diagnostic pricing works</h2>
+        <p>For troubleshooting and diagnostic calls, I charge a flat diagnostic fee to come out and find the problem. If you move forward with the repair, that fee applies toward the work. You get a clear quote on the fix before I do it, with no open-ended hourly surprises.</p>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="scheduling-title">
+      <div class="container container--prose">
+        <h2 id="scheduling-title" class="section-title">Same-week scheduling</h2>
+        <p>For most non-emergency electrical issues, I can usually get out within the same week across San Luis Obispo, Atascadero, Paso Robles, and the surrounding area. If it's something urgent like a burning smell or exposed wiring, call and I'll tell you straight what to do in the meantime.</p>
       </div>
     </section>
 
     <section class="why-section" aria-labelledby="why-title">
       <div class="container container--prose">
-        <h2 id="why-title" class="section-title">Why builders and homeowners hire Keif Electric</h2>
+        <h2 id="why-title" class="section-title">Why homeowners hire Keif Electric</h2>
         <ul class="why-list">
-          <li><strong>Owner-operated.</strong> You get me on your job, not a rotating crew.</li>
+          <li><strong>You hire me, not a crew.</strong> I diagnose it and I fix it.</li>
           <li><strong>Licensed and insured.</strong> California C-10, CA# 1152084.</li>
-          <li><strong>Reliable on schedule.</strong> Rough-in stays on pace; I don't hold up the build.</li>
-          <li><strong>Clean, code-compliant finish.</strong> Labeled panels, tidy work, passes inspection.</li>
+          <li><strong>Honest diagnosis.</strong> If it's small, I'll tell you it's small.</li>
+          <li><strong>Explains everything.</strong> You'll understand what was wrong and what I did.</li>
         </ul>
       </div>
     </section>
 
-    <section class="proof-placeholder" aria-label="Recent build work">
+    <section class="proof-placeholder" aria-label="Recent repairs">
       <div class="container">
-        <p class="proof-placeholder__label">Recent build work: photos coming soon</p>
+        <p class="proof-placeholder__label">Recent repairs: photos coming soon</p>
       </div>
     </section>
 
@@ -230,7 +245,7 @@ const faqSchema = {
         <div class="faq-inner">
           <aside class="faq-sidebar">
             <span class="eyebrow">Questions</span>
-            <h2 id="faq-title" class="faq-sidebar__title">New construction FAQ</h2>
+            <h2 id="faq-title" class="faq-sidebar__title">Troubleshooting FAQ</h2>
             <p>Have something else? Call and ask.</p>
             <a href="tel:+18052860477" class="btn-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
@@ -239,28 +254,24 @@ const faqSchema = {
           </aside>
           <div class="faq-list">
             <details class="faq-item" open>
-              <summary class="faq-item__btn"><span>Do you work with general contractors on new builds?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes, that's most of this work. I handle the electrical scope and coordinate around the build schedule so I'm not the trade that holds things up.</p></div>
+              <summary class="faq-item__btn"><span>My lights keep flickering. Is that dangerous?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>It can be. Flickering is sometimes minor, but it can signal a loose connection or a panel issue that's worth catching early. I find the actual cause rather than guessing.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Do you do ADU electrical?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes. Full electrical for accessory dwelling units, from panel and circuits through finish, permitted and inspected.</p></div>
+              <summary class="faq-item__btn"><span>Why does my breaker keep tripping?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>A breaker trips to protect the circuit, from an overload, a short, or a ground fault. Repeated tripping means something needs attention. I trace it to the source instead of just resetting it.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Can you handle both rough-in and finish?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes, the whole electrical scope: rough-in, panel, dedicated circuits, and finish trim.</p></div>
+              <summary class="faq-item__btn"><span>Do you charge for a diagnostic visit?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Yes, a flat diagnostic fee, and it applies toward the repair if you move forward. You get a quote on the fix before I do the work.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Do you pull the electrical permits on a build?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes. I pull the electrical permits and coordinate inspections around the project schedule.</p></div>
+              <summary class="faq-item__btn"><span>How fast can you come out?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>For most non-emergency issues, usually within the same week. For anything urgent like a burning smell, call and I'll advise you right away.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Can my existing panel handle an ADU?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>It depends on the current service size and what the main house already draws. An ADU may run off a subpanel fed from the existing service, or it may need its own service. On older homes still on 100-amp service, adding a full dwelling unit is often what pushes the panel past capacity. Worth answering before the design is finalized rather than after.</p></div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-item__btn"><span>When during the build do you need to be on site?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Electrical comes in phases: temporary power on ground-up builds, then rough-in after framing and before insulation, rough inspection, then finish trim after drywall and cabinets, then final inspection. I coordinate those stages around your schedule so a held inspection doesn't stall the trades behind me.</p></div>
+              <summary class="faq-item__btn"><span>Do you also install outlets, switches, and GFCIs?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Yes. New outlets and switches, GFCI and AFCI upgrades, USB outlets, and dedicated circuits for appliances and home offices, all code-compliant.</p></div>
             </details>
             <details class="faq-item">
               <summary class="faq-item__btn"><span>What areas do you serve?</span><span class="faq-icon" aria-hidden="true"></span></summary>
@@ -275,15 +286,15 @@ const faqSchema = {
       <div class="container">
         <div class="page-cta__inner">
           <div>
-            <span class="eyebrow eyebrow--amber">Building or remodeling?</span>
-            <h2 id="cta-title" class="page-cta__title">Reliable electrical,<br/><em>on schedule.</em></h2>
-            <p class="page-cta__lead">Reliable residential electrical, coordinated with your GC. Licensed, insured, owner-operated by Adam.</p>
+            <span class="eyebrow eyebrow--amber">Something not working right?</span>
+            <h2 id="cta-title" class="page-cta__title">Free estimates<br/><em>on repairs.</em></h2>
+            <p class="page-cta__lead">Free estimates on repairs. Licensed, insured, owner-operated by Adam.</p>
             <div class="page-cta__btns">
               <a class="btn btn--primary btn--lg" href="tel:+18052860477">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
                 Call (805) 286-0477
               </a>
-              <a class="btn btn--outline-light btn--lg" href="mailto:adam@keifelectric.com?subject=New%20construction%20electrical%20quote">Email a quote request</a>
+              <a class="btn btn--outline-light btn--lg" href="mailto:adam@keifelectric.com?subject=Electrical%20repair%20quote%20request">Email a quote request</a>
             </div>
           </div>
           <div class="page-cta__card">
@@ -323,10 +334,15 @@ const faqSchema = {
   .breadcrumb a:hover { text-decoration: underline; }
   .svc-hero { position: relative; background: var(--ke-bone); overflow: hidden; padding: 72px 0 88px; }
   .svc-hero::before { content: ''; position: absolute; top: -25%; right: -12%; width: 62%; height: 130%; background: radial-gradient(closest-side, rgba(243, 152, 31, 0.12), transparent 72%); pointer-events: none; }
-  .svc-hero__inner { position: relative; display: grid; grid-template-columns: 1.05fr 0.85fr; gap: 56px; align-items: center; }
+  /* minmax(0, ...) stops the copy column from claiming min-content width.
+     "troubleshooting" is a single 15-character word in a wide display face,
+     and at the top of the clamp it would otherwise starve the image column. */
+  .svc-hero__inner { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.85fr); gap: 56px; align-items: center; }
   .svc-hero__eyebrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ke-clay); margin-bottom: 18px; }
   .svc-hero__spark { width: 15px; height: 15px; color: var(--ke-orange); }
-  .svc-hero__title { font-family: var(--font-display); font-weight: 400; font-variation-settings: "YEAR" 2050; font-size: clamp(46px, 6.4vw, 92px); line-height: 0.9; letter-spacing: -0.005em; color: var(--ke-ink); margin: 0; }
+  /* Capped below the shared 92px because this page's longest word is much
+     longer than the other service heroes. */
+  .svc-hero__title { font-family: var(--font-display); font-weight: 400; font-variation-settings: "YEAR" 2050; font-size: clamp(36px, 4.1vw, 58px); line-height: 0.96; letter-spacing: -0.005em; color: var(--ke-ink); margin: 0; }
   .svc-hero__line { display: block; }
   .svc-hero__line--accent { color: var(--ke-orange); }
   .svc-hero__dot { display: inline-block; width: 0.16em; height: 0.16em; background: var(--ke-orange); border-radius: 2px; margin-left: 0.05em; vertical-align: baseline; }
@@ -336,9 +352,6 @@ const faqSchema = {
   .svc-hero__trust { margin-top: 26px; font-size: 13px; font-weight: 600; color: var(--fg-2); letter-spacing: 0.01em; }
   .svc-hero__media { position: relative; justify-self: end; width: 100%; max-width: 440px; }
   .svc-hero__img { width: 100%; height: auto; border-radius: var(--radius-4); box-shadow: var(--shadow-3); border: 1px solid var(--border-1); }
-  .svc-hero__chip { position: absolute; left: -16px; bottom: 28px; background: var(--ke-ink); color: var(--ke-bone); padding: 12px 16px; border-radius: var(--radius-3); box-shadow: var(--shadow-3); display: flex; flex-direction: column; gap: 2px; }
-  .svc-hero__chip-k { font-weight: 800; font-size: 15px; color: var(--ke-amber); letter-spacing: 0.02em; }
-  .svc-hero__chip-l { font-size: 12px; color: rgba(246, 241, 232, 0.8); }
   .btn--outline { background: transparent; color: var(--ke-ink); border-color: var(--ke-ink); }
   .btn--outline:hover { background: var(--ke-ink); color: var(--ke-bone); }
   @media (prefers-reduced-motion: no-preference) {
@@ -417,7 +430,6 @@ const faqSchema = {
   @media (max-width: 860px) {
     .svc-hero__inner { grid-template-columns: 1fr; gap: 40px; }
     .svc-hero__media { justify-self: start; max-width: 340px; margin: 0 auto; }
-    .svc-hero__chip { left: 12px; }
   }
   @media (max-width: 768px) {
     .svc-hero { padding: 44px 0 56px; }

@@ -5,6 +5,10 @@
     {
       "source": "/sitemap.xml",
       "destination": "/sitemap-index.xml"
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon.png"
     }
   ],
   "headers": [
@@ -58,6 +62,33 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/services/ev-charger",
+      "destination": "/ev-charger-installation-san-luis-obispo",
+      "permanent": true
+    },
+    {
+      "source": "/services/panel",
+      "destination": "/electrical-panel-upgrade-san-luis-obispo",
+      "permanent": true
+    },
+    {
+      "source": "/services/lighting",
+      "destination": "/lighting-installation-san-luis-obispo",
+      "permanent": true
+    },
+    {
+      "source": "/services/troubleshooting",
+      "destination": "/electrical-repair-san-luis-obispo",
+      "permanent": true
+    },
+    {
+      "source": "/services/newbuild",
+      "destination": "/new-construction-electrical-san-luis-obispo",
+      "permanent": true
     }
   ]
 }
