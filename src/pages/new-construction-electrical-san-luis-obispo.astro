@@ -116,18 +116,19 @@ const faqSchema = {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
               Call (805) 286-0477
             </a>
-            <a class="btn btn--outline btn--lg" href="#contact">Get a quote</a>
+            <a class="btn btn--outline btn--lg" href="sms:+18052860477">Text (805) 286-0477</a>
           </div>
           <p class="svc-hero__trust">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
           <ReviewBadges />
         </div>
-        <div class="svc-hero__media">
-          <img class="svc-hero__img" src="/assets/service-newbuild.jpg" alt="New construction electrical rough-in by Keif Electric" width="800" height="532" fetchpriority="high" />
-          <div class="svc-hero__chip">
-            <span class="svc-hero__chip-k">Rough-in to finish</span>
-            <span class="svc-hero__chip-l">On schedule with your GC</span>
+        <aside class="svc-hero__card" aria-label="Request a free estimate">
+          <div class="svc-hero__owner">
+            <img class="svc-hero__avatar" src="/assets/adam-keif.jpg" alt="" width="112" height="112" loading="eager" />
+            <p class="svc-hero__owner-text"><strong>Adam Keif, owner.</strong> Reads every request and calls back the same business day.</p>
           </div>
-        </div>
+          <p class="svc-hero__fact"><strong>Rough-in to finish</strong> On schedule with your GC</p>
+          <QuoteForm title="Request a free estimate" variant="hero" />
+        </aside>
       </div>
     </section>
 
@@ -275,27 +276,23 @@ const faqSchema = {
     <section class="page-cta" id="contact" aria-labelledby="cta-title">
       <div class="container">
         <div class="page-cta__inner">
-          <div>
+          <div class="page-cta__copy">
             <span class="eyebrow eyebrow--amber">Building or remodeling?</span>
-            <h2 id="cta-title" class="page-cta__title">Reliable electrical,<br/><em>on schedule.</em></h2>
-            <p class="page-cta__lead">Reliable residential electrical, coordinated with your GC. Licensed, insured, owner-operated by Adam.</p>
-            <div class="page-cta__btns">
-              <a class="btn btn--primary btn--lg" href="tel:+18052860477">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-                Call (805) 286-0477
-              </a>
-              <a class="btn btn--outline-light btn--lg" href="sms:+18052860477">Text (805) 286-0477</a>
-            </div>
+            <h2 id="cta-title" class="page-cta__title"><span class="page-cta__call">Call</span><a class="page-cta__num" href="tel:+18052860477">(805) 286-0477</a></h2>
+            <p class="page-cta__lead">Send the plans or the scope and I will get you a number and a schedule that works with your GC.</p>
+            <a class="page-cta__alt" href="sms:+18052860477">Or text me at the same number.</a>
+            <ul class="page-cta__facts">
+              <li>California C-10 #1152084</li>
+              <li>Liability insured</li>
+              <li>Mon&ndash;Fri, 9am&ndash;5pm</li>
+            </ul>
           </div>
           <div class="page-cta__card">
-            <p class="page-cta__card-eyebrow">Free estimate</p>
-            <a href="tel:+18052860477" class="page-cta__phone">(805) 286-0477</a>
-            <div class="page-cta__trust">
-              <span>California C-10 licensed</span>
-              <span>Liability insured</span>
-              <span>Mon–Fri, 9am–5pm</span>
-            </div>
-            <QuoteForm />
+            <div class="page-cta__owner">
+            <img class="page-cta__avatar" src="/assets/adam-keif.jpg" alt="" width="112" height="112" loading="lazy" />
+            <p class="page-cta__owner-text"><strong>Adam Keif, owner.</strong> Reads every request and calls back the same business day.</p>
+          </div>
+            <QuoteForm title="Or send it and I will call you" variant="hero" />
           </div>
         </div>
       </div>
@@ -309,7 +306,6 @@ const faqSchema = {
       .why-section .container--prose,
       .proof-placeholder .container,
       .faq-inner,
-      .page-cta__inner { opacity: 1 !important; transform: none !important; }
     </style>
   </noscript>
 
@@ -325,10 +321,10 @@ const faqSchema = {
   .breadcrumb a:hover { text-decoration: underline; }
   .svc-hero { position: relative; background: var(--ke-bone); overflow: hidden; padding: 72px 0 88px; }
   .svc-hero::before { content: ''; position: absolute; top: -25%; right: -12%; width: 62%; height: 130%; background: radial-gradient(closest-side, rgba(243, 152, 31, 0.12), transparent 72%); pointer-events: none; }
-  .svc-hero__inner { position: relative; display: grid; grid-template-columns: 1.05fr 0.85fr; gap: 56px; align-items: center; }
+  .svc-hero__inner { position: relative; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
   .svc-hero__eyebrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ke-clay); margin-bottom: 18px; }
   .svc-hero__spark { width: 15px; height: 15px; color: var(--ke-orange); }
-  .svc-hero__title { font-family: var(--font-display); font-weight: 400; font-variation-settings: "YEAR" 2050; font-size: clamp(46px, 6.4vw, 92px); line-height: 0.9; letter-spacing: -0.005em; color: var(--ke-ink); margin: 0; }
+  .svc-hero__title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(38px, 4.4vw, 62px); line-height: 1.04; letter-spacing: -0.025em; color: var(--ke-ink); margin: 0; }
   .svc-hero__line { display: block; }
   .svc-hero__line--accent { color: var(--ke-orange); }
   .svc-hero__dot { display: inline-block; width: 0.16em; height: 0.16em; background: var(--ke-orange); border-radius: 2px; margin-left: 0.05em; vertical-align: baseline; }
@@ -336,15 +332,15 @@ const faqSchema = {
   .svc-hero__sub { font-size: 18px; line-height: 1.55; color: var(--ke-ink); max-width: 46ch; margin: 26px 0 26px; font-weight: 500; }
   .svc-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
   .svc-hero__trust { margin-top: 26px; font-size: 13px; font-weight: 600; color: var(--fg-2); letter-spacing: 0.01em; }
-  .svc-hero__media { position: relative; justify-self: end; width: 100%; max-width: 440px; }
-  .svc-hero__img { width: 100%; height: auto; border-radius: var(--radius-4); box-shadow: var(--shadow-3); border: 1px solid var(--border-1); }
-  .svc-hero__chip { position: absolute; left: -16px; bottom: 28px; background: var(--ke-ink); color: var(--ke-bone); padding: 12px 16px; border-radius: var(--radius-3); box-shadow: var(--shadow-3); display: flex; flex-direction: column; gap: 2px; }
-  .svc-hero__chip-k { font-weight: 800; font-size: 15px; color: var(--ke-amber); letter-spacing: 0.02em; }
-  .svc-hero__chip-l { font-size: 12px; color: rgba(246, 241, 232, 0.8); }
-  .btn--outline { background: transparent; color: var(--ke-ink); border-color: var(--ke-ink); }
-  .btn--outline:hover { background: var(--ke-ink); color: var(--ke-bone); }
+  .svc-hero__card { justify-self: end; width: 100%; max-width: 460px; background: #fff; border: 1px solid var(--border-1); border-radius: var(--radius-4); box-shadow: var(--shadow-3); padding: 24px 24px 22px; }
+  .svc-hero__owner { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--border-1); }
+  .svc-hero__avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: 50% 12%; flex: none; border: 2px solid var(--ke-bone); box-shadow: 0 0 0 1px var(--border-1); }
+  .svc-hero__owner-text { margin: 0; font-size: 14px; line-height: 1.45; color: var(--fg-2); }
+  .svc-hero__owner-text strong { color: var(--ke-ink); }
+  .svc-hero__fact { display: inline-flex; gap: 6px; align-items: baseline; margin: -4px 0 16px; padding: 7px 11px; background: var(--ke-bone); border-radius: var(--radius-2); font-size: 13px; color: var(--fg-2); }
+  .svc-hero__fact strong { color: var(--ke-ink); font-weight: 700; }
   @media (prefers-reduced-motion: no-preference) {
-    .svc-hero__eyebrow, .svc-hero__line, .svc-hero__place, .svc-hero__sub, .svc-hero__ctas, .svc-hero__trust, .svc-hero__media { opacity: 0; animation: heroIn 0.8s var(--ease-emph) forwards; }
+    .svc-hero__eyebrow, .svc-hero__line, .svc-hero__place, .svc-hero__sub, .svc-hero__ctas, .svc-hero__trust, .svc-hero__card { opacity: 0; animation: heroIn 0.8s var(--ease-emph) forwards; }
     .svc-hero__eyebrow { animation-delay: 0.05s; }
     .svc-hero__line:nth-child(1) { animation-delay: 0.13s; }
     .svc-hero__line:nth-child(2) { animation-delay: 0.21s; }
@@ -352,14 +348,16 @@ const faqSchema = {
     .svc-hero__sub { animation-delay: 0.37s; }
     .svc-hero__ctas { animation-delay: 0.45s; }
     .svc-hero__trust { animation-delay: 0.53s; }
-    .svc-hero__media { animation-delay: 0.22s; animation-duration: 1s; }
-    .content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner, .page-cta__inner { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease-emph), transform 0.7s var(--ease-emph); }
+    .svc-hero__card { animation-delay: 0.22s; animation-duration: 1s; }
+    .content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease-emph), transform 0.7s var(--ease-emph); }
     .is-in { opacity: 1 !important; transform: none !important; }
   }
   @keyframes heroIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
   .btn { font-family: var(--font-sans); font-weight: 600; font-size: 15px; padding: 13px 18px; border-radius: var(--radius-2); border: 1px solid transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 9px; line-height: 1; min-height: 48px; transition: all var(--dur-1) var(--ease-out); text-decoration: none; white-space: nowrap; }
   .btn svg { width: 18px; height: 18px; flex: none; }
   .btn--primary { background: var(--ke-orange); color: #fff; }
+  .btn--outline { background: transparent; color: var(--ke-ink); border: 1.5px solid var(--ke-ink); }
+  .btn--outline:hover { background: var(--ke-ink); color: var(--ke-bone); }
   .btn--primary:hover { background: var(--ke-orange-dark); }
   .btn--primary:active { transform: translateY(1px); }
   .btn--outline-light { background: transparent; color: var(--ke-bone); border-color: rgba(246, 241, 232, 0.4); }
@@ -404,32 +402,36 @@ const faqSchema = {
   details[open] .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
   .faq-item__body { padding-bottom: 20px; }
   .faq-item__body p { font-size: 15px; line-height: 1.65; color: var(--fg-2); }
-  .page-cta { background: var(--ke-ink); color: var(--ke-bone); padding: 100px 0; }
-  .page-cta__inner { display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; }
-  .page-cta__title { font-family: var(--font-display); font-variation-settings: 'YEAR' 2050; font-size: clamp(44px, 6vw, 88px); line-height: 0.95; color: var(--ke-bone); margin: 12px 0 18px; letter-spacing: -0.005em; }
-  .page-cta__title em { font-style: normal; color: var(--ke-orange); }
-  .page-cta__lead { font-size: 17px; color: rgba(246, 241, 232, 0.75); line-height: 1.55; margin-bottom: 28px; max-width: 44ch; }
-  .page-cta__btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .page-cta__card { background: var(--ke-bone); color: var(--ke-ink); border-radius: var(--radius-4); padding: 32px 28px; min-width: 260px; flex-shrink: 0; }
-  .page-cta__card-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ke-orange); margin-bottom: 10px; }
-  .page-cta__phone { display: block; font-family: var(--font-display); font-variation-settings: 'YEAR' 2030; font-size: clamp(32px, 3.5vw, 44px); line-height: 1; color: var(--ke-ink); text-decoration: none; margin-bottom: 16px; transition: color var(--dur-1) var(--ease-out); }
-  .page-cta__phone:hover { color: var(--ke-orange); }
-  .page-cta__trust { display: flex; flex-direction: column; gap: 5px; font-size: 13px; color: var(--fg-2); font-weight: 500; padding-top: 16px; border-top: 1px solid var(--border-1); }
-  @media (max-width: 900px) { .page-cta__inner { grid-template-columns: 1fr; gap: 40px; } }
+  .page-cta { background: var(--ke-ink); color: var(--ke-bone); padding: 88px 0; overflow-x: clip; }
+  .page-cta__inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 460px); gap: 72px; align-items: start; }
+  .page-cta__title { font-family: var(--font-display); font-weight: 400; font-variation-settings: 'YEAR' 2030; font-size: clamp(30px, 3.4vw, 52px); line-height: 1; color: var(--ke-bone); margin: 14px 0 18px; letter-spacing: 0; }
+  .page-cta__call { display: block; }
+  .page-cta__num { display: block; color: var(--ke-orange); text-decoration: none; white-space: nowrap; transition: color var(--dur-1) var(--ease-out); }
+  .page-cta__num:hover { color: var(--ke-amber); }
+  .page-cta__lead { font-size: 17px; color: rgba(246, 241, 232, 0.78); line-height: 1.55; margin: 0 0 14px; max-width: 44ch; }
+  .page-cta__alt { display: inline-block; color: var(--ke-bone); font-weight: 600; font-size: 15px; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(246, 241, 232, 0.4); margin-bottom: 28px; }
+  .page-cta__alt:hover { text-decoration-color: var(--ke-bone); }
+  .page-cta__facts { display: flex; flex-wrap: wrap; gap: 6px 10px; list-style: none; padding: 0; margin: 0; font-size: 13px; font-weight: 600; color: rgba(246, 241, 232, 0.65); }
+  .page-cta__facts li:not(:last-child)::after { content: '\00B7'; margin-left: 10px; }
+  .page-cta__card { background: var(--ke-bone); color: var(--ke-ink); border-radius: var(--radius-4); padding: 24px 24px 22px; }
+  .page-cta__owner { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--border-1); }
+  .page-cta__avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: 50% 12%; flex: none; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--border-1); }
+  .page-cta__owner-text { margin: 0; font-size: 14px; line-height: 1.45; color: var(--fg-2); }
+  .page-cta__owner-text strong { color: var(--ke-ink); }
+  @media (max-width: 900px) { .page-cta__inner { grid-template-columns: 1fr; gap: 36px; } }
   @media (max-width: 860px) {
     .svc-hero__inner { grid-template-columns: 1fr; gap: 40px; }
-    .svc-hero__media { justify-self: start; max-width: 340px; margin: 0 auto; }
-    .svc-hero__chip { left: 12px; }
+    .svc-hero__card { justify-self: stretch; max-width: none; }
   }
   @media (max-width: 768px) {
     .svc-hero { padding: 44px 0 56px; }
     .content-section { padding: 56px 0; }
     .why-section { padding: 56px 0; }
     .faq-section { padding: 64px 0; }
-    .page-cta { padding: 64px 0; }
+    .page-cta { padding: 56px 0; }
+    .page-cta__title { font-size: clamp(24px, 8vw, 32px); }
     .svc-hero__ctas { flex-direction: column; }
     .btn--lg { width: 100%; justify-content: center; }
-    .page-cta__btns { flex-direction: column; }
     .faq-inner { grid-template-columns: 1fr; gap: 32px; }
     .faq-sidebar { position: static; }
   }
@@ -439,7 +441,7 @@ const faqSchema = {
   const mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
   if (mq.matches && 'IntersectionObserver' in window) {
     const els = document.querySelectorAll(
-      '.content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner, .page-cta__inner'
+      '.content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner'
     );
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
