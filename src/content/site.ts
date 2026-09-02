@@ -12,12 +12,16 @@ export const siteContent = {
   ],
 
   // Real review platform data for the above-the-fold trust badges.
-  // Update counts as reviews come in. Replace the URLs with the real
-  // Google Business Profile and Yelp listing links.
+  // Verify counts against the live GBP before editing; do not round up.
+  // Last synced from Google Business Profile: 2026-09-01 (5.0, 5 reviews).
   reviewBadges: {
-    google: { rating: '5.0', count: 2, url: 'https://www.google.com/search?q=Keif+Electric+San+Luis+Obispo' },
+    google: { rating: '5.0', count: 5, url: 'https://www.google.com/maps/place/?q=place_id:ChIJAzUvNBrJbAoRN4kXIKD9uEk' },
     yelp: { rating: '5.0', count: 1, url: 'https://www.yelp.com/biz/keif-electric-san-luis-obispo' },
   },
+
+  // Send this to customers after a job to collect reviews. Opens the
+  // Google review form directly on the Keif Electric listing.
+  reviewRequestUrl: 'https://search.google.com/local/writereview?placeid=ChIJAzUvNBrJbAoRN4kXIKD9uEk',
 
   // Service pages that appear in the Services nav dropdown
   serviceNav: [
@@ -110,10 +114,16 @@ export const siteContent = {
     },
   ],
 
-  // Real customer reviews only. Paste verbatim from Google/Yelp; do not
-  // fabricate. Currently: 2 Google + 1 Yelp, all 5 stars. Fill in the
-  // real text/names below as Adam provides them.
-  // Shape: { name, location, service, source: 'Google'|'Yelp', rating,
+  // Real customer reviews only, pulled from the live Google Business
+  // Profile. Never fabricate, trim or reword. The only edits permitted
+  // are obvious typo fixes that do not change meaning (Jay L.'s card
+  // fixes "all my issue" -> "issues" and "Very though" -> "Very thorough").
+  // Last synced 2026-09-01: 5 Google reviews, 5.0 average. One of the
+  // five (Brady B.) is a star rating with no written text, so it counts
+  // toward the badge total but has no card here.
+  // `location` is optional and set only when the reviewer names the city
+  // in their own review. Leave it out rather than guessing.
+  // Shape: { name, location?, service, source: 'Google'|'Yelp', rating,
   //          text, avatar (initials), avatarBg: ''|'bg-amber'|'bg-orange' }
   reviews: [
     {
@@ -122,13 +132,40 @@ export const siteContent = {
       service: 'New circuit install',
       source: 'Google',
       rating: 5,
-      text: 'Adam from Keif Electric did a great job adding a new circuit to my electrical panel in Los Osos. He was professional, reliable, and took the time to explain what needed to be done and why. The work was clean, efficient, and done with a high level of attention to detail. And the best part, cleaned up after himself, you couldn\'t even tell he\'d been there. It\'s great to have a local electrician who you can trust for this kind of work. I\'d definitely recommend Keif Electric to anyone in Los Osos or the surrounding area who needs electrical repairs, new circuits, or residential electrical work.',
+      text: 'Adam from Keif Electric did a great job adding a new circuit to my electrical panel in Los Osos. He was professional, reliable, and took the time to explain what needed to be done and why. The work was clean, efficient, and done with a high level of attention to detail. It\u2019s great to have a local electrician who you can trust for residential electrical work. I\u2019d definitely recommend Keif Electric to anyone in Los Osos or the surrounding area who needs electrical repairs, new circuits, or panel work.',
       avatar: 'PG',
+      avatarBg: '',
+    },
+    {
+      name: 'Craig R.',
+      service: 'Light switch repair',
+      source: 'Google',
+      rating: 5,
+      text: 'Adam came over and quickly repaired the wonky light switch in our bathroom. The work was meticulous, and the bathroom looks great!!! I highly recommend Adam Keif and Keif Electric. In the future, I won\u2019t hesitate to ask him again. (Great price, too)',
+      avatar: 'CR',
+      avatarBg: 'bg-amber',
+    },
+    {
+      name: 'Jay L.',
+      service: 'Lighting & EV charger',
+      source: 'Google',
+      rating: 5,
+      text: 'Contacted Adam regarding upgrading kitchen can lights, countertop lights, installing a prewired EV charger and repairing a malfunctioning electric cooktop. He was upfront with his estimates and worked through all my issues. Very thorough. Wouldn\u2019t hesitate to use him again.',
+      avatar: 'JL',
+      avatarBg: 'bg-orange',
+    },
+    {
+      name: 'Barry P.',
+      service: 'Residential electrical',
+      source: 'Google',
+      rating: 5,
+      text: 'Adam is knowledgeable and skilled and did a great job with our electrical work. I\u2019ll definitely call Keif Electric next time I need a top-notch electrician.',
+      avatar: 'BP',
       avatarBg: '',
     },
   ] as Array<{
     name: string;
-    location: string;
+    location?: string;
     service: string;
     source: string;
     rating: number;

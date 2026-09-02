@@ -1,5 +1,18 @@
 ---
 import { siteContent } from '../../content/site';
+
+const totalReviewCount =
+  siteContent.reviewBadges.google.count + siteContent.reviewBadges.yelp.count;
+
+// The marquee renders the review list twice and slides the track exactly
+// one list-width, so the loop is seamless. Duration scales with the review
+// count to keep the drift speed constant as Adam collects more reviews.
+const SECONDS_PER_CARD = 9;
+const marqueeDuration = `${siteContent.reviews.length * SECONDS_PER_CARD}s`;
+const marqueePasses = [
+  { clone: false },
+  { clone: true },
+];
 ---
 
 <section class="section section--paper" id="reviews" aria-labelledby="reviews-title">
@@ -13,11 +26,14 @@ import { siteContent } from '../../content/site';
     </p>
   </div>
 
-  <div class="container">
-    {siteContent.reviews.length > 0 && (
-      <div class="reviews__grid">
-        {siteContent.reviews.map((review) => (
-          <article class="review-card">
+  {siteContent.reviews.length > 0 && (
+    <div class="reviews__marquee">
+      <div class="reviews__track" style={`--marquee-duration: ${marqueeDuration}`}>
+        {marqueePasses.map((pass) => siteContent.reviews.map((review) => (
+          <article
+            class={`review-card${pass.clone ? ' review-card--clone' : ''}`}
+            aria-hidden={pass.clone ? 'true' : undefined}
+          >
             <div class="review-card__stars" role="img" aria-label={`${review.rating} out of 5 stars`}>
               {[...Array(5)].map(() => (
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -30,15 +46,17 @@ import { siteContent } from '../../content/site';
               <div class={`review-card__avatar${review.avatarBg ? ' ' + review.avatarBg : ''}`}>{review.avatar}</div>
               <div>
                 <p class="review-card__name">{review.name}</p>
-                <p class="review-card__meta">{review.location} · {review.service}</p>
+                <p class="review-card__meta">{review.location ? `${review.location} · ${review.service}` : review.service}</p>
               </div>
               <span class="review-card__source">{review.source}</span>
             </div>
           </article>
-        ))}
+        )))}
       </div>
-    )}
+    </div>
+  )}
 
+  <div class="container">
     <div class="reviews__summary" role="note">
       <div class="reviews__summary-stars" aria-hidden="true">
         {[...Array(5)].map(() => (
@@ -47,7 +65,7 @@ import { siteContent } from '../../content/site';
           </svg>
         ))}
       </div>
-      <strong>5.0 on Google &amp; Yelp</strong>
+      <strong>{siteContent.reviewBadges.google.rating} from {totalReviewCount} reviews on Google &amp; Yelp</strong>
       <span>Verified 5-star reviews from Central Coast homeowners</span>
     </div>
   </div>
@@ -125,14 +143,59 @@ import { siteContent } from '../../content/site';
     background: var(--ke-clay);
   }
 
-  .reviews__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  /* Auto-scrolling marquee. The card list is rendered twice and the track
+     slides exactly one list-width, so the loop has no visible seam. The
+     inter-card gap is a margin on the card rather than `gap` on the track:
+     with `gap`, translateX(-50%) lands half a gap short and the seam jumps. */
+  .reviews__marquee {
+    --review-gap: 20px;
+    position: relative;
+    overflow: hidden;
     margin-bottom: 36px;
+    /* Soften both edges so cards drift in and out instead of being cut off
+       against a hard border. */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 90px,
+      #000 calc(100% - 90px),
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 90px,
+      #000 calc(100% - 90px),
+      transparent
+    );
+  }
+
+  .reviews__track {
+    display: flex;
+    width: max-content;
+    animation: reviews-scroll var(--marquee-duration, 36s) linear infinite;
+  }
+
+  @keyframes reviews-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Let people stop the motion to actually read a review. focus-within
+     covers keyboard users, who cannot hover. */
+  .reviews__marquee:hover .reviews__track,
+  .reviews__marquee:focus-within .reviews__track {
+    animation-play-state: paused;
   }
 
   .review-card {
+    width: min(360px, 78vw);
+    flex: none;
+    margin-right: var(--review-gap);
     background: var(--ke-paper);
     border: 1px solid var(--border-1);
     border-radius: var(--radius-3);
@@ -291,9 +354,29 @@ import { siteContent } from '../../content/site';
     height: 15px;
   }
 
-  @media (max-width: 900px) {
-    .reviews__grid {
-      grid-template-columns: 1fr;
+  /* No animation: fall back to a plain horizontal scroll row, drop the
+     duplicate cards so screen readers and scrolling see each review once,
+     and remove the edge fade that would otherwise hide the first card. */
+  @media (prefers-reduced-motion: reduce) {
+    .reviews__marquee {
+      overflow-x: auto;
+      -webkit-mask-image: none;
+      mask-image: none;
+      scroll-snap-type: x mandatory;
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    .reviews__track {
+      animation: none;
+    }
+
+    .review-card {
+      scroll-snap-align: start;
+    }
+
+    .review-card--clone {
+      display: none;
     }
   }
 
