@@ -10,6 +10,7 @@ export const servicePaths: Record<string, string> = {
   lighting: '/lighting-installation-san-luis-obispo',
   troubleshooting: '/electrical-repair-san-luis-obispo',
   newbuild: '/new-construction-electrical-san-luis-obispo',
+  adu: '/adu-electrical-san-luis-obispo',
 };
 
 export function servicePath(id: string): string {

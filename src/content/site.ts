@@ -30,6 +30,7 @@ export const siteContent = {
     { label: 'Recessed & custom lighting', href: '/lighting-installation-san-luis-obispo' },
     { label: 'Troubleshooting & repair', href: '/electrical-repair-san-luis-obispo' },
     { label: 'New construction & remodels', href: '/new-construction-electrical-san-luis-obispo' },
+    { label: 'ADU electrical', href: '/adu-electrical-san-luis-obispo' },
   ],
 
   // City service-area pages that appear in the Service Areas nav dropdown
@@ -107,6 +108,13 @@ export const siteContent = {
       icon: 'magnifying-glass',
       title: 'Troubleshooting & diagnostics',
       description: 'Electrical troubleshooting and diagnostics for flickering lights, tripping breakers, dead outlets, and mystery circuits. Root cause, not just the symptom.',
+    },
+    {
+      id: 'adu',
+      href: '/adu-electrical-san-luis-obispo',
+      icon: 'magnifying-glass',
+      title: 'ADU electrical',
+      description: 'Electrical for accessory dwelling units: a load calculation on the existing service, subpanel or separate service, feeders and trenching, and full ADU wiring rough-in to finish.',
     },
     {
       id: 'same-week',
