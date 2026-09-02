@@ -5,32 +5,17 @@ import Footer from '../components/layout/Footer.astro';
 import ReviewBadges from '../components/ui/ReviewBadges.astro';
 import QuoteForm from '../components/ui/QuoteForm.astro';
 
-const title = 'Electrical Repair San Luis Obispo | Troubleshooting & Diagnosis';
-const description = 'Flickering lights, tripping breakers, dead outlets: root cause diagnosis, not just a bandaid. Flat diagnostic fee. Owner-operated by Adam Keif. Serving SLO County.';
-const canonical = 'https://keifelectric.com/electrical-repair-san-luis-obispo';
-
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Electrical Troubleshooting & Repair',
-  description: 'Electrical troubleshooting and diagnostic service for flickering lights, tripping breakers, dead outlets, and mystery circuits. Root cause diagnosis with flat diagnostic fee. Serving San Luis Obispo County.',
-  url: canonical,
-  image: 'https://keifelectric.com/assets/adam-keif-job-site.png',
-  provider: { '@id': 'https://keifelectric.com/#business' },
-  areaServed: {
-    '@type': 'AdministrativeArea',
-    name: 'San Luis Obispo County, CA',
-  },
-  serviceType: 'Electrical Troubleshooting',
-};
+const title = 'Electrician in Arroyo Grande, CA | Keif Electric';
+const description = "Residential electrician serving Arroyo Grande, CA. Panel upgrades, EV chargers, lighting, and repairs for Village-era homes, Rancho Grande tracts, and rural properties toward Huasna and Lopez Lake. C-10 licensed and insured. Free estimates.";
+const canonical = 'https://keifelectric.com/electrician-arroyo-grande';
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://keifelectric.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://keifelectric.com/#services' },
-    { '@type': 'ListItem', position: 3, name: 'Electrical Repair & Troubleshooting', item: canonical },
+    { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://keifelectric.com/#service-area' },
+    { '@type': 'ListItem', position: 3, name: 'Arroyo Grande', item: 'https://keifelectric.com/electrician-arroyo-grande' },
   ],
 };
 
@@ -40,33 +25,28 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'My lights keep flickering. Is that dangerous?',
-      acceptedAnswer: { '@type': 'Answer', text: 'It can be. Flickering is sometimes minor, but it can signal a loose connection or a panel issue that\'s worth catching early. I find the actual cause rather than guessing.' },
+      name: "Does electrical work in Arroyo Grande require a permit?",
+      acceptedAnswer: { '@type': 'Answer', text: "Permit requirements depend on the work. Inside city limits, the City lists panel upgrades as over-the-counter permits, typically processed in zero to three days, while larger electrical projects may need plan review. Permits go through the City of Arroyo Grande Community Development Department, Building Division, at 300 East Branch Street. For properties in unincorporated areas outside the City, permitting goes through San Luis Obispo County. I handle the permit and inspection process when one is required." },
     },
     {
       '@type': 'Question',
-      name: 'Why does my breaker keep tripping?',
-      acceptedAnswer: { '@type': 'Answer', text: 'A breaker trips to protect the circuit, from an overload, a short, or a ground fault. Repeated tripping means something needs attention. I trace it to the source instead of just resetting it.' },
+      name: "Do older Arroyo Grande homes have ungrounded wiring?",
+      acceptedAnswer: { '@type': 'Answer', text: "Older homes around the Village often do. Two-prong outlets are a sign that the receptacle does not provide an equipment grounding contact, and in an older home the wiring behind it may be ungrounded or may be knob-and-tube or cloth-insulated. I inspect before recommending anything, then lay out options from GFCI protection on ungrounded circuits through to a staged rewire." },
     },
     {
       '@type': 'Question',
-      name: 'Do you charge for a diagnostic visit?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes, a flat diagnostic fee, and it applies toward the repair if you move forward. You get a quote on the fix before I do the work.' },
+      name: "Can my electrical panel handle a new heat pump or AC?",
+      acceptedAnswer: { '@type': 'Answer', text: "Sometimes yes, sometimes not, and it is worth answering before the equipment is ordered. I do a load calculation on the existing service first, so you know whether the panel is part of the project or not. A lot of homes here are adding cooling for the first time, which is exactly when this comes up." },
     },
     {
       '@type': 'Question',
-      name: 'How fast can you come out?',
-      acceptedAnswer: { '@type': 'Answer', text: 'For most non-emergency issues, usually within the same week. For anything urgent like a burning smell, call and I\'ll advise you right away.' },
+      name: "Can you wire a well, barn, shop, or second dwelling?",
+      acceptedAnswer: { '@type': 'Answer', text: "Yes. On acreage east of town that is most of the work: a well pump on its own protected circuit, a subpanel in a barn or shop fed by a properly sized run, and long feeders between buildings. Each building may need its own feeder, subpanel, or service depending on the setup." },
     },
     {
       '@type': 'Question',
-      name: 'Do you also install outlets, switches, and GFCIs?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. New outlets and switches, GFCI and AFCI upgrades, USB outlets, and dedicated circuits for appliances and home offices, all code-compliant.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What areas do you serve?',
-      acceptedAnswer: { '@type': 'Answer', text: 'San Luis Obispo, Atascadero, Paso Robles, and surrounding SLO County.' },
+      name: "Do you serve rural properties outside Arroyo Grande?",
+      acceptedAnswer: { '@type': 'Answer', text: "Yes, including the properties along Huasna Road and east toward Lopez Lake. I also serve Grover Beach, Pismo Beach, and Oceano, and from my base in San Luis Obispo the rest of SLO County. Not sure I reach you? Call and ask." },
     },
   ],
 };
@@ -75,7 +55,6 @@ const faqSchema = {
 <BaseLayout title={title} description={description} canonical={canonical} includeFaqSchema={false}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
@@ -87,9 +66,9 @@ const faqSchema = {
       <div class="container">
         <a href="/">Home</a>
         <span aria-hidden="true">/</span>
-        <a href="/#services">Services</a>
+        <a href="/#service-area">Service Areas</a>
         <span aria-hidden="true">/</span>
-        <span aria-current="page">Troubleshooting &amp; Repair</span>
+        <span aria-current="page">Arroyo Grande</span>
       </div>
     </nav>
 
@@ -98,14 +77,14 @@ const faqSchema = {
         <div class="svc-hero__copy">
           <p class="svc-hero__eyebrow">
             <svg class="svc-hero__spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z"/></svg>
-            Troubleshooting &amp; Repair
+            Service Area
           </p>
           <h1 id="page-h1" class="svc-hero__title">
-            <span class="svc-hero__line">Electrical troubleshooting</span>
-            <span class="svc-hero__line svc-hero__line--accent">&amp; repair<span class="svc-hero__dot" aria-hidden="true"></span></span>
-            <span class="svc-hero__place">in San Luis Obispo County</span>
+            <span class="svc-hero__line">Electrician in</span>
+            <span class="svc-hero__line svc-hero__line--accent">Arroyo Grande, CA<span class="svc-hero__dot" aria-hidden="true"></span></span>
           </h1>
-          <p class="svc-hero__sub">Flickering lights, tripping breakers, dead outlets, mystery circuits. I find the root cause, not just the symptom. Licensed, owner-operated by Adam Keif.</p>
+          <p class="svc-hero__place">Residential electrical work from the Village to the hills and the rural properties east of town</p>
+          <p class="svc-hero__sub">Panel upgrades, EV chargers, lighting, and troubleshooting from the Village to the hillside tracts to the ranches out Huasna Road. About twenty minutes from my base in SLO. I quote the job, I do the work, and I answer the phone.</p>
           <div class="svc-hero__ctas">
             <a class="btn btn--primary btn--lg" href="tel:+18052860477">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
@@ -113,7 +92,7 @@ const faqSchema = {
             </a>
             <a class="btn btn--outline btn--lg" href="sms:+18052860477">Text (805) 286-0477</a>
           </div>
-          <p class="svc-hero__trust">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
+          <p class="svc-hero__trust">California C-10 licensed &middot; Insured &middot; Serving Arroyo Grande, the Five Cities &amp; SLO</p>
           <ReviewBadges />
         </div>
         <aside class="svc-hero__card" aria-label="Request a free estimate">
@@ -121,127 +100,69 @@ const faqSchema = {
             <img class="svc-hero__avatar" src="/assets/adam-keif.jpg" alt="" width="112" height="112" loading="eager" />
             <p class="svc-hero__owner-text"><strong>Adam Keif, owner.</strong> Reads every request and calls back the same business day.</p>
           </div>
-          <QuoteForm title="Request a free estimate" variant="hero" />
+          <QuoteForm city="Arroyo Grande" title="Request a free estimate" variant="hero" />
         </aside>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="problems-title">
+    <section class="content-section" aria-labelledby="handle-title">
       <div class="container container--prose">
-        <h2 id="problems-title" class="section-title">Problems I fix</h2>
+        <h2 id="handle-title" class="section-title">Electrical work I handle in Arroyo Grande</h2>
+        <p class="lead-copy">I'm Adam Keif, a C-10 licensed residential electrician based in San Luis Obispo. Arroyo Grande is about twenty minutes down the 101 and a regular part of my service area. It is a town with three very different kinds of housing, and the work splits along those lines: older homes around the Village, newer tracts on the hills, and rural properties east of town.</p>
         <ul class="feature-list">
-          <li><strong>Flickering or dimming lights.</strong> Often a loose connection or a failing circuit, sometimes a sign of something in the panel.</li>
-          <li><strong>Breakers that keep tripping.</strong> A breaker trips for a reason. I find what's overloading or faulting the circuit.</li>
-          <li><strong>Dead outlets or partial power.</strong> Half a room out, an outlet with no power, a tripped circuit that won't reset.</li>
-          <li><strong>Burning smell or warm outlets and switches.</strong> Don't wait on this one. Call and stop using the outlet.</li>
-          <li><strong>Buzzing or warm panel.</strong> It may point to <a href="/electrical-panel-upgrade-san-luis-obispo" class="inline-link">a panel that needs upgrading</a>. Worth looking at before it becomes a bigger problem.</li>
-          <li><strong>Outlets and switches.</strong> New installs, replacements, GFCI and AFCI upgrades, USB outlets, dedicated circuits for appliances.</li>
-          <li><strong>Mystery circuits.</strong> The switch that controls nothing, the circuit no one can trace.</li>
+          <li><strong>Troubleshooting.</strong> Breakers that trip when the AC starts, a dead circuit in an older house, an outlet that sparks. I find the cause instead of patching the symptom. <a href="/electrical-repair-san-luis-obispo" class="inline-link">Troubleshooting &amp; repair</a>.</li>
+          <li><strong>Panel upgrades and replacements.</strong> Whether it is a Village home on a small original panel or a 1990s tract home that has run out of room, I handle the upgrade, the permit, and the inspection. <a href="/electrical-panel-upgrade-san-luis-obispo" class="inline-link">Panel upgrades</a>.</li>
+          <li><strong>AC, heat pump, and appliance circuits.</strong> Arroyo Grande gets warmer summer temperatures than the immediate coast, and adding cooling is a common reason for an electrical upgrade. Dedicated equipment, a load check on the existing service, and a clean disconnect at the unit.</li>
+          <li><strong>EV charger installation.</strong> Level 2 charging for commuters heading up to SLO or down to Santa Maria. I check the panel can support the load before quoting. <a href="/ev-charger-installation-san-luis-obispo" class="inline-link">EV charger installation</a>.</li>
+          <li><strong>Lighting.</strong> Recessed lighting for remodels, exterior and landscape lighting for larger lots and long driveways, and period-appropriate fixtures for older homes. <a href="/lighting-installation-san-luis-obispo" class="inline-link">Recessed &amp; custom lighting</a>.</li>
+          <li><strong>Old-home wiring.</strong> Ungrounded two-prong circuits, knob and tube, and cloth-wrapped wiring in homes from the Village era. Inspection first, then honest options from GFCI protection to a rewire.</li>
+          <li><strong>Rural properties.</strong> Well pump circuits, subpanels for barns and shops, long feeder runs, and wiring for a second dwelling on acreage along Huasna Road and east of town.</li>
+          <li><strong>Remodels and new construction.</strong> Kitchen and bath remodels, additions, ADUs, and full wiring for new builds, coordinated with your contractor. <a href="/new-construction-electrical-san-luis-obispo" class="inline-link">New construction &amp; remodels</a>.</li>
         </ul>
       </div>
     </section>
 
-    <section class="content-section content-section--alt" aria-labelledby="breaker-title">
+    <section class="content-section content-section--alt" aria-labelledby="homes-title">
       <div class="container container--prose">
-        <h2 id="breaker-title" class="section-title">Why does my breaker keep tripping?</h2>
-        <p>A breaker is doing its job when it trips. It's a safety device interrupting the circuit before something overheats. Resetting it repeatedly without finding out why is how a nuisance becomes a hazard.</p>
-        <p>There are three common causes, and they need different fixes:</p>
-        <ul class="feature-list">
-          <li><strong>Overload.</strong> More load on the circuit than it's rated to carry. Common with space heaters, window units, and kitchens where several appliances share one circuit. The fix is usually redistributing the load or adding a dedicated circuit.</li>
-          <li><strong>Short circuit.</strong> A hot conductor contacting a neutral or ground, often at a damaged device, a failing appliance, or a compromised cable. This trips hard and immediately.</li>
-          <li><strong>Ground fault.</strong> Current escaping the intended path, frequently involving moisture. This is what GFCI protection in kitchens, baths, garages, and outdoor areas is built to catch.</li>
-        </ul>
-        <p>An AFCI breaker adds a fourth possibility. These detect arcing, which is a legitimate fire risk, but they can also trip on certain motors and electronics. Telling a real fault from a nuisance trip takes testing, not guessing.</p>
+        <h2 id="homes-title" class="section-title">Three kinds of Arroyo Grande homes</h2>
+        <p>The Village is the old heart of town, and the homes on the streets around East Branch Street are some of the oldest I work on. Parts of the area are covered by the City's Historic Character Overlay District and its Village historic-district guidelines, which shape what you can change outside. Inside, it is often older panels, ungrounded two-prong outlets, and wiring that predates modern household electrical loads.</p>
+        <p>Up the hill, neighborhoods such as Rancho Grande and Royal Oaks have many homes built in the 1990s and 2000s. Many of those have newer wiring and larger electrical services, but they were built before EV charging, heat pumps, and induction cooking became common household loads, so the panel is often full and the question is how to add load without replacing it.</p>
+        <p>East of town the road turns rural. Along Huasna Road and out toward Lopez Lake it is larger parcels with a well, a septic system, a barn or a shop, and sometimes a second dwelling. Each building may need its own feeder, subpanel, or service depending on the setup, the well pump needs a properly protected circuit, and the runs between buildings are long. That is a different kind of electrical work.</p>
+        <p>If you own a home in any of those three parts of town and are not sure what shape the electrical is in, that is a normal place to start. I can assess it and give you a straight answer about what needs attention now and what can wait.</p>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="flicker-title">
+    <section class="content-section" aria-labelledby="loads-title">
       <div class="container container--prose">
-        <h2 id="flicker-title" class="section-title">Are flickering lights dangerous?</h2>
-        <p>Sometimes, and the distinction matters.</p>
-        <p>One fixture flickering is usually contained: a loose bulb, a failing fixture, or an <a href="/lighting-installation-san-luis-obispo" class="inline-link">LED and dimmer mismatch</a>. Annoying, rarely urgent.</p>
-        <p>Lights flickering throughout the house, or dimming whenever a large appliance starts, is a different signal. That pattern can indicate a loose or failing connection upstream, sometimes at the main panel or the service connection itself. A loose neutral in particular can put uneven voltage across the house, which damages electronics and is a genuine fire risk.</p>
-        <p>The rule I'd give a homeowner: one fixture, get it looked at when convenient. Multiple rooms, or flickering paired with a warm panel, a buzzing sound, or a burning smell, call now and stop using the affected circuits.</p>
+        <h2 id="loads-title" class="section-title">Cooling loads, old wiring, and properties with a well</h2>
+        <p>Three requests come up here more than in the coastal towns I serve.</p>
+        <h3 class="sub-title">Adding AC or a heat pump</h3>
+        <p>Arroyo Grande gets warmer summer temperatures than the immediate coast, and a lot of homes here were built without cooling. Adding a heat pump or central AC typically means dedicated electrical equipment, a disconnect at the unit, and a load calculation on the existing service before anything is ordered. Sometimes the panel has room. Sometimes it is at capacity and the honest answer is that the panel is part of the job. I tell you which before you commit.</p>
+        <h3 class="sub-title">Wiring in Village-era homes</h3>
+        <p>Two-prong outlets are a sign that the receptacle does not provide an equipment grounding contact. In an older home the underlying wiring may also be ungrounded, and there may be knob-and-tube or cloth-insulated wiring behind the plaster. Neither automatically means the house needs a full rewire, but both deserve an assessment before adding significant new loads or starting a remodel. I inspect the wiring first, then lay out real options: GFCI protection on ungrounded circuits, replacing the worst runs, or a rewire staged around your project.</p>
+        <h3 class="sub-title">Wells, barns, and second dwellings</h3>
+        <p>On acreage east of town, the electrical is spread across the property. A well pump on its own protected circuit. A subpanel in the barn or shop, fed by a properly sized run from the house. A second dwelling that may need its own service or subpanel and a permit through the County. I size the feeders for the distance, trench or run conduit, and set each building up to stand on its own.</p>
       </div>
     </section>
 
-    <section class="content-section content-section--alt" aria-labelledby="rootcause-title">
+    <section class="content-section" aria-labelledby="howiwork-title">
       <div class="container container--prose">
-        <h2 id="rootcause-title" class="section-title">Root cause, not a bandaid</h2>
-        <p>A lot of electrical problems get "fixed" by swapping the part that failed without finding why it failed. That's how you end up calling three electricians for the same flickering light.</p>
-        <p>I diagnose the actual cause. Sometimes that's a five-minute fix: a loose neutral, a bad connection. Sometimes it points to something bigger like a panel that's on its way out. Either way, you'll know what's actually going on and what it'll take to fix it for good.</p>
-      </div>
-    </section>
-
-    <section class="content-section" aria-labelledby="process-title">
-      <div class="container container--prose">
-        <h2 id="process-title" class="section-title">How I diagnose an electrical problem</h2>
-        <p>Troubleshooting is a process of narrowing down, not a lucky guess. Roughly how it goes:</p>
-        <ul class="feature-list">
-          <li><strong>What changed.</strong> When did it start, what was running, has anything been added or worked on recently. This alone often points at the circuit.</li>
-          <li><strong>Reproduce it.</strong> An intermittent fault is the hard case. If I can make it happen on demand, I can find it.</li>
-          <li><strong>Isolate the circuit.</strong> Establish exactly what's affected and what isn't. The boundary between working and not working is usually where the fault lives.</li>
-          <li><strong>Test rather than assume.</strong> Voltage, continuity, and load readings at each point along the run.</li>
-          <li><strong>Work back to the source.</strong> Devices, then junctions, then the run itself, then the panel.</li>
-          <li><strong>Confirm the fix.</strong> Verify under load that the original symptom is actually gone, not just quiet at the moment.</li>
-        </ul>
-        <p>Most residential faults come down to a connection somewhere: a backstabbed outlet that's worked loose, a wire nut that was never tight, a corroded terminal, a damaged cable. They're findable. It just takes going in order instead of replacing parts and hoping.</p>
-      </div>
-    </section>
-
-    <section class="content-section content-section--alt" aria-labelledby="safety-title">
-      <div class="container container--prose">
-        <h2 id="safety-title" class="section-title">What to do before I get there</h2>
-        <p>If you're dealing with something that feels urgent, a few things are worth doing right away:</p>
-        <ul class="feature-list">
-          <li><strong>Burning smell, scorch marks, or a hot outlet or switch plate.</strong> Stop using that circuit. If you can identify the breaker, shut it off. Call me.</li>
-          <li><strong>Buzzing, crackling, or heat at the panel.</strong> Don't open the panel. Call.</li>
-          <li><strong>A breaker that won't stay reset.</strong> Leave it off. It's telling you something. Repeatedly forcing it back on is the wrong move.</li>
-          <li><strong>Water anywhere near electrical.</strong> Keep away from it and kill the circuit if you can do so safely.</li>
-          <li><strong>Any shock, even a small one.</strong> That's not normal and it's worth a same-day call.</li>
-        </ul>
-        <p>Anything genuinely on fire or actively arcing is a 911 call first, not an electrician call.</p>
-      </div>
-    </section>
-
-    <section class="content-section" aria-labelledby="older-title">
-      <div class="container container--prose">
-        <h2 id="older-title" class="section-title">Common faults in older SLO County homes</h2>
-        <p>A lot of the housing stock around San Luis Obispo, Atascadero, and Paso Robles dates to eras with different wiring practices, and certain problems recur.</p>
-        <p>Ungrounded two-prong circuits, sometimes with three-prong outlets swapped in at some point without an actual ground, which defeats the protection people assume they have. Backstabbed outlets, where conductors were pushed into the back of the device instead of secured under the screw terminal, which loosen over decades and are a leading cause of intermittent faults. Original aluminum branch wiring in some mid-century homes, which needs specific handling at every connection. Missing GFCI protection in kitchens, baths, garages, and exterior outlets. Circuits extended by a previous owner without much regard for load.</p>
-        <p>None of this means a house is unsafe. It means the wiring reflects when it was installed, and it's worth knowing what you actually have rather than assuming.</p>
-      </div>
-    </section>
-
-    <section class="content-section" aria-labelledby="pricing-title">
-      <div class="container container--prose">
-        <h2 id="pricing-title" class="section-title">How diagnostic pricing works</h2>
-        <p>For troubleshooting and diagnostic calls, I charge a flat diagnostic fee to come out and find the problem. If you move forward with the repair, that fee applies toward the work. You get a clear quote on the fix before I do it, with no open-ended hourly surprises.</p>
-      </div>
-    </section>
-
-    <section class="content-section content-section--alt" aria-labelledby="scheduling-title">
-      <div class="container container--prose">
-        <h2 id="scheduling-title" class="section-title">Same-week scheduling</h2>
-        <p>For most non-emergency electrical issues, I can usually get out within the same week across San Luis Obispo, Atascadero, Paso Robles, and the surrounding area. If it's something urgent like a burning smell or exposed wiring, call and I'll tell you straight what to do in the meantime.</p>
+        <h2 id="howiwork-title" class="section-title">How I work</h2>
+        <p>You call or send a quote request. For simple repairs I can often quote by phone. For a panel upgrade, a heat pump circuit, or a rewire, I will come out and look, at no cost.</p>
+        <p>You get a written quote before any work begins. Flat-rate where possible, no add-ons you did not agree to. For troubleshooting, I charge a diagnostic fee that applies toward the repair if you move forward.</p>
+        <p>Permit requirements depend on the work. Inside city limits, permits go through the City of Arroyo Grande Community Development Department, Building Division, at 300 East Branch Street. The City lists panel upgrades as over-the-counter permits, typically processed in zero to three days, while larger electrical projects may need plan review. For properties in unincorporated areas outside the City, permits go through San Luis Obispo County. Either way, I pull the permit and handle the inspection when one is required.</p>
       </div>
     </section>
 
     <section class="why-section" aria-labelledby="why-title">
       <div class="container container--prose">
-        <h2 id="why-title" class="section-title">Why homeowners hire Keif Electric</h2>
+        <h2 id="why-title" class="section-title">Why Arroyo Grande homeowners hire Keif Electric</h2>
         <ul class="why-list">
-          <li><strong>You hire me, not a crew.</strong> I diagnose it and I fix it.</li>
+          <li><strong>You hire me, not a crew.</strong> The person who quotes your job is the person who does it.</li>
           <li><strong>Licensed and insured.</strong> California C-10, CA# 1152084.</li>
-          <li><strong>Honest diagnosis.</strong> If it's small, I'll tell you it's small.</li>
-          <li><strong>Explains everything.</strong> You'll understand what was wrong and what I did.</li>
+          <li><strong>Honest about scope.</strong> If you don't need a full upgrade, I'll tell you. If you do, I'll show you why.</li>
+          <li><strong>Clean, labeled work.</strong> Panels left neat and every circuit labeled, so the next person who opens it knows what's what.</li>
         </ul>
-      </div>
-    </section>
-
-    <section class="proof-placeholder" aria-label="Recent repairs">
-      <div class="container">
-        <p class="proof-placeholder__label">Recent repairs: photos coming soon</p>
       </div>
     </section>
 
@@ -250,7 +171,7 @@ const faqSchema = {
         <div class="faq-inner">
           <aside class="faq-sidebar">
             <span class="eyebrow">Questions</span>
-            <h2 id="faq-title" class="faq-sidebar__title">Troubleshooting FAQ</h2>
+            <h2 id="faq-title" class="faq-sidebar__title">Arroyo Grande FAQ</h2>
             <p>Have something else? Call and ask.</p>
             <a href="tel:+18052860477" class="btn-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
@@ -259,28 +180,24 @@ const faqSchema = {
           </aside>
           <div class="faq-list">
             <details class="faq-item" open>
-              <summary class="faq-item__btn"><span>My lights keep flickering. Is that dangerous?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>It can be. Flickering is sometimes minor, but it can signal a loose connection or a panel issue that's worth catching early. I find the actual cause rather than guessing.</p></div>
+              <summary class="faq-item__btn"><span>Does electrical work in Arroyo Grande require a permit?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Permit requirements depend on the work. Inside city limits, the City lists panel upgrades as over-the-counter permits, typically processed in zero to three days, while larger electrical projects may need plan review. Permits go through the City of Arroyo Grande Community Development Department, Building Division, at 300 East Branch Street. For properties in unincorporated areas outside the City, permitting goes through San Luis Obispo County. I handle the permit and inspection process when one is required.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Why does my breaker keep tripping?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>A breaker trips to protect the circuit, from an overload, a short, or a ground fault. Repeated tripping means something needs attention. I trace it to the source instead of just resetting it.</p></div>
+              <summary class="faq-item__btn"><span>Do older Arroyo Grande homes have ungrounded wiring?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Older homes around the Village often do. Two-prong outlets are a sign that the receptacle does not provide an equipment grounding contact, and in an older home the wiring behind it may be ungrounded or may be knob-and-tube or cloth-insulated. I inspect before recommending anything, then lay out options from GFCI protection on ungrounded circuits through to a staged rewire.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Do you charge for a diagnostic visit?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes, a flat diagnostic fee, and it applies toward the repair if you move forward. You get a quote on the fix before I do the work.</p></div>
+              <summary class="faq-item__btn"><span>Can my electrical panel handle a new heat pump or AC?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Sometimes yes, sometimes not, and it is worth answering before the equipment is ordered. I do a load calculation on the existing service first, so you know whether the panel is part of the project or not. A lot of homes here are adding cooling for the first time, which is exactly when this comes up.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>How fast can you come out?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>For most non-emergency issues, usually within the same week. For anything urgent like a burning smell, call and I'll advise you right away.</p></div>
+              <summary class="faq-item__btn"><span>Can you wire a well, barn, shop, or second dwelling?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Yes. On acreage east of town that is most of the work: a well pump on its own protected circuit, a subpanel in a barn or shop fed by a properly sized run, and long feeders between buildings. Each building may need its own feeder, subpanel, or service depending on the setup.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Do you also install outlets, switches, and GFCIs?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes. New outlets and switches, GFCI and AFCI upgrades, USB outlets, and dedicated circuits for appliances and home offices, all code-compliant.</p></div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-item__btn"><span>What areas do you serve?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>San Luis Obispo, Atascadero, Paso Robles, and surrounding SLO County.</p></div>
+              <summary class="faq-item__btn"><span>Do you serve rural properties outside Arroyo Grande?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Yes, including the properties along Huasna Road and east toward Lopez Lake. I also serve Grover Beach, Pismo Beach, and Oceano, and from my base in <a href="/electrician-san-luis-obispo" class="inline-link">San Luis Obispo</a> the rest of SLO County. Not sure I reach you? Call and ask.</p></div>
             </details>
           </div>
         </div>
@@ -291,9 +208,9 @@ const faqSchema = {
       <div class="container">
         <div class="page-cta__inner">
           <div class="page-cta__copy">
-            <span class="eyebrow eyebrow--amber">Something not working right?</span>
+            <span class="eyebrow eyebrow--amber">Need an electrician in Arroyo Grande?</span>
             <h2 id="cta-title" class="page-cta__title"><span class="page-cta__call">Call</span><a class="page-cta__num" href="tel:+18052860477">(805) 286-0477</a></h2>
-            <p class="page-cta__lead">Tell me what it is doing. Small repairs I can often quote by phone. For the rest, a flat diagnostic fee that applies toward the fix.</p>
+            <p class="page-cta__lead">I quote the job myself, pull the permit when one is required, and do the work. Arroyo Grande is about twenty minutes down the 101 from my base in San Luis Obispo.</p>
             <a class="page-cta__alt" href="sms:+18052860477">Or text me at the same number.</a>
             <ul class="page-cta__facts">
               <li>California C-10 #1152084</li>
@@ -306,7 +223,7 @@ const faqSchema = {
             <img class="page-cta__avatar" src="/assets/adam-keif.jpg" alt="" width="112" height="112" loading="lazy" />
             <p class="page-cta__owner-text"><strong>Adam Keif, owner.</strong> Reads every request and calls back the same business day.</p>
           </div>
-            <QuoteForm title="Or send it and I will call you" variant="hero" />
+            <QuoteForm city="Arroyo Grande" title="Or send it and I will call you" variant="hero" />
           </div>
         </div>
       </div>
@@ -335,20 +252,15 @@ const faqSchema = {
   .breadcrumb a:hover { text-decoration: underline; }
   .svc-hero { position: relative; background: var(--ke-bone); overflow: hidden; padding: 72px 0 88px; }
   .svc-hero::before { content: ''; position: absolute; top: -25%; right: -12%; width: 62%; height: 130%; background: radial-gradient(closest-side, rgba(243, 152, 31, 0.12), transparent 72%); pointer-events: none; }
-  /* minmax(0, ...) stops the copy column from claiming min-content width.
-     "troubleshooting" is a single 15-character word in a wide display face,
-     and at the top of the clamp it would otherwise starve the image column. */
   .svc-hero__inner { position: relative; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
   .svc-hero__eyebrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ke-clay); margin-bottom: 18px; }
   .svc-hero__spark { width: 15px; height: 15px; color: var(--ke-orange); }
-  /* Capped below the shared 92px because this page's longest word is much
-     longer than the other service heroes. */
   .svc-hero__title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(38px, 4.4vw, 62px); line-height: 1.04; letter-spacing: -0.025em; color: var(--ke-ink); margin: 0; }
   .svc-hero__line { display: block; }
   .svc-hero__line--accent { color: var(--ke-orange); }
   .svc-hero__dot { display: inline-block; width: 0.16em; height: 0.16em; background: var(--ke-orange); border-radius: 2px; margin-left: 0.05em; vertical-align: baseline; }
   .svc-hero__place { display: block; font-family: var(--font-sans); font-weight: 600; font-size: clamp(15px, 1.6vw, 19px); letter-spacing: 0; color: var(--fg-2); margin: 16px 0 0; }
-  .svc-hero__sub { font-size: 18px; line-height: 1.55; color: var(--ke-ink); max-width: 46ch; margin: 26px 0 26px; font-weight: 500; }
+  .svc-hero__sub { font-size: 18px; line-height: 1.55; color: var(--ke-ink); max-width: 46ch; margin: 22px 0 26px; font-weight: 500; }
   .svc-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
   .svc-hero__trust { margin-top: 26px; font-size: 13px; font-weight: 600; color: var(--fg-2); letter-spacing: 0.01em; }
   .svc-hero__card { justify-self: end; width: 100%; max-width: 460px; background: #fff; border: 1px solid var(--border-1); border-radius: var(--radius-4); box-shadow: var(--shadow-3); padding: 24px 24px 22px; }
@@ -356,8 +268,6 @@ const faqSchema = {
   .svc-hero__avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: 50% 12%; flex: none; border: 2px solid var(--ke-bone); box-shadow: 0 0 0 1px var(--border-1); }
   .svc-hero__owner-text { margin: 0; font-size: 14px; line-height: 1.45; color: var(--fg-2); }
   .svc-hero__owner-text strong { color: var(--ke-ink); }
-  .svc-hero__fact { display: inline-flex; gap: 6px; align-items: baseline; margin: -4px 0 16px; padding: 7px 11px; background: var(--ke-bone); border-radius: var(--radius-2); font-size: 13px; color: var(--fg-2); }
-  .svc-hero__fact strong { color: var(--ke-ink); font-weight: 700; }
   @media (prefers-reduced-motion: no-preference) {
     .svc-hero__eyebrow, .svc-hero__line, .svc-hero__place, .svc-hero__sub, .svc-hero__ctas, .svc-hero__trust, .svc-hero__card { opacity: 0; animation: heroIn 0.8s var(--ease-emph) forwards; }
     .svc-hero__eyebrow { animation-delay: 0.05s; }
@@ -387,6 +297,7 @@ const faqSchema = {
   .btn-link:hover { text-decoration: underline; }
   .content-section { padding: 80px 0; background: var(--ke-bone); }
   .content-section--alt { background: var(--ke-paper); }
+  .sub-title { font-size: 20px; font-weight: 700; margin: 28px 0 8px; color: var(--ke-ink); }
   .section-title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.02em; line-height: 1.15; color: var(--ke-ink); margin-bottom: 20px; }
   .lead-copy { font-size: 17px; line-height: 1.6; color: var(--fg-1); margin-bottom: 20px; }
   .content-section p { font-size: 16px; line-height: 1.65; color: var(--fg-1); margin-bottom: 16px; max-width: 68ch; }
@@ -401,8 +312,11 @@ const faqSchema = {
   .why-list li { font-size: 16px; line-height: 1.6; color: rgba(246, 241, 232, 0.82); padding-left: 20px; position: relative; }
   .why-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 2px; background: var(--ke-orange); }
   .why-list li strong { color: var(--ke-bone); }
-  .proof-placeholder { background: var(--ke-sand); border-top: 1px solid var(--border-1); border-bottom: 1px solid var(--border-1); padding: 40px 0; text-align: center; }
-  .proof-placeholder__label { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ke-stone); }
+  .proof { background: var(--ke-sand); border-top: 1px solid var(--border-1); border-bottom: 1px solid var(--border-1); padding: 64px 0; text-align: center; }
+  .proof__eyebrow { font-family: var(--font-sans); font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ke-clay); display: inline-block; margin-bottom: 20px; }
+  .proof__figure { margin: 0 auto; max-width: 820px; }
+  .proof__img { width: 100%; height: auto; border-radius: var(--radius-4); box-shadow: var(--shadow-3); border: 1px solid var(--border-1); display: block; }
+  .proof__caption { margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--fg-2); letter-spacing: 0.01em; }
   .faq-section { background: var(--ke-bone); padding: 100px 0; }
   .faq-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: flex-start; }
   .faq-sidebar { position: sticky; top: 96px; }

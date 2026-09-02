@@ -5,32 +5,17 @@ import Footer from '../components/layout/Footer.astro';
 import ReviewBadges from '../components/ui/ReviewBadges.astro';
 import QuoteForm from '../components/ui/QuoteForm.astro';
 
-const title = 'Electrical Repair San Luis Obispo | Troubleshooting & Diagnosis';
-const description = 'Flickering lights, tripping breakers, dead outlets: root cause diagnosis, not just a bandaid. Flat diagnostic fee. Owner-operated by Adam Keif. Serving SLO County.';
-const canonical = 'https://keifelectric.com/electrical-repair-san-luis-obispo';
-
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Electrical Troubleshooting & Repair',
-  description: 'Electrical troubleshooting and diagnostic service for flickering lights, tripping breakers, dead outlets, and mystery circuits. Root cause diagnosis with flat diagnostic fee. Serving San Luis Obispo County.',
-  url: canonical,
-  image: 'https://keifelectric.com/assets/adam-keif-job-site.png',
-  provider: { '@id': 'https://keifelectric.com/#business' },
-  areaServed: {
-    '@type': 'AdministrativeArea',
-    name: 'San Luis Obispo County, CA',
-  },
-  serviceType: 'Electrical Troubleshooting',
-};
+const title = 'Electrician in Los Osos, CA | Keif Electric';
+const description = "Residential electrician serving Los Osos and Baywood Park, CA. Panel upgrades, EV chargers, lighting, and repairs for 1960s to 1990s homes in salt air. C-10 licensed and insured. Free estimates.";
+const canonical = 'https://keifelectric.com/electrician-los-osos';
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://keifelectric.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://keifelectric.com/#services' },
-    { '@type': 'ListItem', position: 3, name: 'Electrical Repair & Troubleshooting', item: canonical },
+    { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://keifelectric.com/#service-area' },
+    { '@type': 'ListItem', position: 3, name: 'Los Osos', item: 'https://keifelectric.com/electrician-los-osos' },
   ],
 };
 
@@ -40,33 +25,28 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'My lights keep flickering. Is that dangerous?',
-      acceptedAnswer: { '@type': 'Answer', text: 'It can be. Flickering is sometimes minor, but it can signal a loose connection or a panel issue that\'s worth catching early. I find the actual cause rather than guessing.' },
+      name: "Does electrical work in Los Osos require a permit?",
+      acceptedAnswer: { '@type': 'Answer', text: "Permit requirements depend on the work. Panel replacements, EV chargers, and many new electrical installations require one. Los Osos is unincorporated, so permits are handled through San Luis Obispo County Planning & Building rather than a city building department. I handle the permit and inspection process when one is required." },
     },
     {
       '@type': 'Question',
-      name: 'Why does my breaker keep tripping?',
-      acceptedAnswer: { '@type': 'Answer', text: 'A breaker trips to protect the circuit, from an overload, a short, or a ground fault. Repeated tripping means something needs attention. I trace it to the source instead of just resetting it.' },
+      name: "Why do electrical panels in Los Osos have corrosion problems?",
+      acceptedAnswer: { '@type': 'Answer', text: "Los Osos is a coastal community, and salt air and moisture are hard on exterior electrical equipment. Surface rust on a panel door is different from corrosion inside the enclosure, at the bus bars, or at the connections. I can inspect the panel and tell you which one you have and what needs attention." },
     },
     {
       '@type': 'Question',
-      name: 'Do you charge for a diagnostic visit?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes, a flat diagnostic fee, and it applies toward the repair if you move forward. You get a quote on the fix before I do the work.' },
+      name: "Should I be concerned about aluminum wiring in my Los Osos home?",
+      acceptedAnswer: { '@type': 'Answer', text: "Some homes built or rewired during the late 1960s and early 1970s used aluminum branch-circuit wiring, and Los Osos added a lot of housing in those years. It does not automatically mean you need a full rewire. I can inspect the wiring, tell you what condition it is in, and recommend an approved repair method or replacement where it is warranted." },
     },
     {
       '@type': 'Question',
-      name: 'How fast can you come out?',
-      acceptedAnswer: { '@type': 'Answer', text: 'For most non-emergency issues, usually within the same week. For anything urgent like a burning smell, call and I\'ll advise you right away.' },
+      name: "Can I install a generator at my Los Osos home?",
+      acceptedAnswer: { '@type': 'Answer', text: "Yes. For many homes a portable generator with a properly installed interlock or manual transfer switch is enough to run essential loads such as a refrigerator, a pump, lights, and selected outlets safely, without backfeeding the utility lines. The right setup depends on what you want to keep running and the electrical service at your home." },
     },
     {
       '@type': 'Question',
-      name: 'Do you also install outlets, switches, and GFCIs?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. New outlets and switches, GFCI and AFCI upgrades, USB outlets, and dedicated circuits for appliances and home offices, all code-compliant.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What areas do you serve?',
-      acceptedAnswer: { '@type': 'Answer', text: 'San Luis Obispo, Atascadero, Paso Robles, and surrounding SLO County.' },
+      name: "What areas do you serve?",
+      acceptedAnswer: { '@type': 'Answer', text: "Los Osos and Baywood Park, plus Morro Bay, and from my base in San Luis Obispo the rest of SLO County. Not sure I reach you? Call and ask." },
     },
   ],
 };
@@ -75,7 +55,6 @@ const faqSchema = {
 <BaseLayout title={title} description={description} canonical={canonical} includeFaqSchema={false}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
@@ -87,9 +66,9 @@ const faqSchema = {
       <div class="container">
         <a href="/">Home</a>
         <span aria-hidden="true">/</span>
-        <a href="/#services">Services</a>
+        <a href="/#service-area">Service Areas</a>
         <span aria-hidden="true">/</span>
-        <span aria-current="page">Troubleshooting &amp; Repair</span>
+        <span aria-current="page">Los Osos</span>
       </div>
     </nav>
 
@@ -98,14 +77,14 @@ const faqSchema = {
         <div class="svc-hero__copy">
           <p class="svc-hero__eyebrow">
             <svg class="svc-hero__spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z"/></svg>
-            Troubleshooting &amp; Repair
+            Service Area
           </p>
           <h1 id="page-h1" class="svc-hero__title">
-            <span class="svc-hero__line">Electrical troubleshooting</span>
-            <span class="svc-hero__line svc-hero__line--accent">&amp; repair<span class="svc-hero__dot" aria-hidden="true"></span></span>
-            <span class="svc-hero__place">in San Luis Obispo County</span>
+            <span class="svc-hero__line">Electrician in</span>
+            <span class="svc-hero__line svc-hero__line--accent">Los Osos, CA<span class="svc-hero__dot" aria-hidden="true"></span></span>
           </h1>
-          <p class="svc-hero__sub">Flickering lights, tripping breakers, dead outlets, mystery circuits. I find the root cause, not just the symptom. Licensed, owner-operated by Adam Keif.</p>
+          <p class="svc-hero__place">Residential electrical work for Los Osos and Baywood Park</p>
+          <p class="svc-hero__sub">Panel upgrades, EV chargers, lighting, and troubleshooting for the older homes of Los Osos and Baywood Park. About fifteen minutes from my base in SLO. I quote the job, I do the work, and I answer the phone.</p>
           <div class="svc-hero__ctas">
             <a class="btn btn--primary btn--lg" href="tel:+18052860477">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
@@ -113,7 +92,7 @@ const faqSchema = {
             </a>
             <a class="btn btn--outline btn--lg" href="sms:+18052860477">Text (805) 286-0477</a>
           </div>
-          <p class="svc-hero__trust">California C-10 licensed &middot; Insured &middot; Serving SLO, Atascadero &amp; Paso Robles</p>
+          <p class="svc-hero__trust">California C-10 licensed &middot; Insured &middot; Serving Los Osos, Baywood Park &amp; SLO</p>
           <ReviewBadges />
         </div>
         <aside class="svc-hero__card" aria-label="Request a free estimate">
@@ -121,127 +100,80 @@ const faqSchema = {
             <img class="svc-hero__avatar" src="/assets/adam-keif.jpg" alt="" width="112" height="112" loading="eager" />
             <p class="svc-hero__owner-text"><strong>Adam Keif, owner.</strong> Reads every request and calls back the same business day.</p>
           </div>
-          <QuoteForm title="Request a free estimate" variant="hero" />
+          <QuoteForm city="Los Osos" title="Request a free estimate" variant="hero" />
         </aside>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="problems-title">
+    <section class="content-section" aria-labelledby="handle-title">
       <div class="container container--prose">
-        <h2 id="problems-title" class="section-title">Problems I fix</h2>
+        <h2 id="handle-title" class="section-title">Electrical work I handle in Los Osos</h2>
+        <p class="lead-copy">I'm Adam Keif, a C-10 licensed residential electrician based in San Luis Obispo. Los Osos is about fifteen minutes down Los Osos Valley Road from my base, so I am over there regularly. The work here is mostly in existing homes. A large part of Los Osos was effectively under a building moratorium for more than 35 years, from 1988 until the community plan was approved in 2024, so very little new housing went up in that time. That shapes what I get called for.</p>
         <ul class="feature-list">
-          <li><strong>Flickering or dimming lights.</strong> Often a loose connection or a failing circuit, sometimes a sign of something in the panel.</li>
-          <li><strong>Breakers that keep tripping.</strong> A breaker trips for a reason. I find what's overloading or faulting the circuit.</li>
-          <li><strong>Dead outlets or partial power.</strong> Half a room out, an outlet with no power, a tripped circuit that won't reset.</li>
-          <li><strong>Burning smell or warm outlets and switches.</strong> Don't wait on this one. Call and stop using the outlet.</li>
-          <li><strong>Buzzing or warm panel.</strong> It may point to <a href="/electrical-panel-upgrade-san-luis-obispo" class="inline-link">a panel that needs upgrading</a>. Worth looking at before it becomes a bigger problem.</li>
-          <li><strong>Outlets and switches.</strong> New installs, replacements, GFCI and AFCI upgrades, USB outlets, dedicated circuits for appliances.</li>
-          <li><strong>Mystery circuits.</strong> The switch that controls nothing, the circuit no one can trace.</li>
+          <li><strong>Troubleshooting.</strong> Outlets that stopped working on the side of the house that faces the bay, breakers that trip when the heater comes on, lights that flicker in one room. I find the cause instead of patching the symptom. <a href="/electrical-repair-san-luis-obispo" class="inline-link">Troubleshooting &amp; repair</a>.</li>
+          <li><strong>Panel upgrades and replacements.</strong> Older Los Osos homes can still have the original 100-amp service, sized for a very different household load. If you are adding an EV charger or a heat pump, or an insurer or inspector has raised the panel, I handle the upgrade, the county permit, and the inspection. <a href="/electrical-panel-upgrade-san-luis-obispo" class="inline-link">Panel upgrades</a>.</li>
+          <li><strong>EV charger installation.</strong> Level 2 charging at home, sized to what your panel can actually support. On a small Baywood lot that often means a charger on the driveway side of the house rather than in a garage. <a href="/ev-charger-installation-san-luis-obispo" class="inline-link">EV charger installation</a>.</li>
+          <li><strong>Lighting.</strong> Recessed lighting in low ceilings, under-cabinet lighting, and exterior fixtures and hardware selected to hold up better in a coastal, salt-air environment. <a href="/lighting-installation-san-luis-obispo" class="inline-link">Recessed &amp; custom lighting</a>.</li>
+          <li><strong>Exterior and corrosion repairs.</strong> Rusted meter mains, weathered outdoor outlets that no longer hold a GFCI reset, fixture boxes that have turned to powder. Coastal problems, fixed with the right materials.</li>
+          <li><strong>Backup power.</strong> Generator interlocks and transfer switches so you can keep the essentials running during a PG&amp;E outage without backfeeding the line.</li>
+          <li><strong>Remodels and additions.</strong> New circuits for a kitchen or bath remodel, a converted garage, or a studio out back. With new residential development now moving through the County’s growth-allocation process, full new-home wiring too. <a href="/new-construction-electrical-san-luis-obispo" class="inline-link">New construction &amp; remodels</a>.</li>
         </ul>
       </div>
     </section>
 
-    <section class="content-section content-section--alt" aria-labelledby="breaker-title">
+    <section class="content-section content-section--alt" aria-labelledby="homes-title">
       <div class="container container--prose">
-        <h2 id="breaker-title" class="section-title">Why does my breaker keep tripping?</h2>
-        <p>A breaker is doing its job when it trips. It's a safety device interrupting the circuit before something overheats. Resetting it repeatedly without finding out why is how a nuisance becomes a hazard.</p>
-        <p>There are three common causes, and they need different fixes:</p>
+        <h2 id="homes-title" class="section-title">A town of 1960s to 1990s homes, wired for a different era</h2>
+        <p>Los Osos grew rapidly through the 1970s and 1980s, then development largely stopped after the 1988 building moratorium. The sewer came online in 2016, and the moratorium was lifted in 2024 with the approval of the community plan, though new development is still subject to County growth allocations, water requirements, and habitat mitigation. The result is a housing stock weighted toward homes built between the 1960s and the 1990s, many of them still on their original panel.</p>
+        <p>The neighborhoods differ in the details. Baywood Park, down near the bay and Second Street, has many of the older and smaller houses, on small lots where exterior electrical equipment sits close to the water. Up the hill in Cabrillo Estates the homes are generally larger and on bigger parcels. In between, along Los Osos Valley Road and the streets off South Bay Boulevard toward Monta&ntilde;a de Oro, there is a lot of mid-century housing that has been remodeled over the years without the electrical service ever being upgraded.</p>
+        <p>Two things follow from that. First, a lot of the work here is upgrade work: bringing an older panel and its circuits up to what a household actually runs today. Second, the marine environment is hard on outdoor electrical equipment. Meter equipment, exterior receptacles, and light fixtures can corrode faster here than they would inland. Both are routine for me. If you are not sure what shape your house is in, that is a normal place to start, and I can give you a straight answer.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="coastal-title">
+      <div class="container container--prose">
+        <h2 id="coastal-title" class="section-title">Salt air, older panels, and aluminum wiring</h2>
+        <p>Three things come up on the coast that inland jobs rarely involve.</p>
+        <h3 class="sub-title">Exterior panels and meter mains in salt air</h3>
+        <p>Exterior electrical equipment near the bay takes a beating. Surface rust on a panel door is different from corrosion inside the enclosure, at the bus bars, the breaker terminals, or the neutral lugs, and the second kind is usually hidden until someone opens the panel. When I replace a coastal panel I use a rated enclosure, seal the penetrations, and set it so water has somewhere to go besides inside. The same thinking applies to outdoor receptacles and fixtures: the right box, the right cover, the right gasket.</p>
+        <h3 class="sub-title">Aluminum branch wiring</h3>
+        <p>Some homes built or rewired during the late 1960s and early 1970s used aluminum branch-circuit wiring for ordinary 15 and 20 amp circuits, and Los Osos added a lot of housing in those years. Aluminum expands, contracts, and oxidizes at connections, which is why the classic symptom is a warm outlet or a switch that works intermittently. It does not automatically mean a full rewire. Depending on the condition of the wiring, I can identify the problem and recommend an approved repair method or, where it is warranted, rewiring.</p>
+        <h3 class="sub-title">Backup power for outages</h3>
+        <p>People here ask about generators. For many homes the practical answer is a portable generator with a properly installed interlock or manual transfer switch, so you can safely run essential loads such as a refrigerator, a pump, lights, and selected outlets without backfeeding the utility lines. That is a modest, permitted job. A whole-house standby unit is a bigger project, and I will tell you if it is more than you need.</p>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" aria-labelledby="common-title">
+      <div class="container container--prose">
+        <h2 id="common-title" class="section-title">Electrical problems common in older Los Osos homes</h2>
         <ul class="feature-list">
-          <li><strong>Overload.</strong> More load on the circuit than it's rated to carry. Common with space heaters, window units, and kitchens where several appliances share one circuit. The fix is usually redistributing the load or adding a dedicated circuit.</li>
-          <li><strong>Short circuit.</strong> A hot conductor contacting a neutral or ground, often at a damaged device, a failing appliance, or a compromised cable. This trips hard and immediately.</li>
-          <li><strong>Ground fault.</strong> Current escaping the intended path, frequently involving moisture. This is what GFCI protection in kitchens, baths, garages, and outdoor areas is built to catch.</li>
+          <li><strong>Breakers that trip repeatedly.</strong> Usually a circuit carrying more than it was designed for, or a fault worth finding rather than resetting.</li>
+          <li><strong>Aging 100-amp service.</strong> Enough for the household it was sized for, tight for one running a heat pump, an induction range, or a car charger.</li>
+          <li><strong>Aluminum branch wiring.</strong> Warm outlets or switches that work intermittently, in homes wired in the late 1960s and early 1970s.</li>
+          <li><strong>Corrosion at exterior equipment.</strong> Receptacles that will not hold a GFCI reset, rusted fixture boxes, corrosion inside a meter enclosure.</li>
+          <li><strong>Not enough circuits.</strong> Kitchens, garages, and home offices running off circuits that predate the equipment plugged into them.</li>
         </ul>
-        <p>An AFCI breaker adds a fourth possibility. These detect arcing, which is a legitimate fire risk, but they can also trip on certain motors and electronics. Telling a real fault from a nuisance trip takes testing, not guessing.</p>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="flicker-title">
+    <section class="content-section" aria-labelledby="howiwork-title">
       <div class="container container--prose">
-        <h2 id="flicker-title" class="section-title">Are flickering lights dangerous?</h2>
-        <p>Sometimes, and the distinction matters.</p>
-        <p>One fixture flickering is usually contained: a loose bulb, a failing fixture, or an <a href="/lighting-installation-san-luis-obispo" class="inline-link">LED and dimmer mismatch</a>. Annoying, rarely urgent.</p>
-        <p>Lights flickering throughout the house, or dimming whenever a large appliance starts, is a different signal. That pattern can indicate a loose or failing connection upstream, sometimes at the main panel or the service connection itself. A loose neutral in particular can put uneven voltage across the house, which damages electronics and is a genuine fire risk.</p>
-        <p>The rule I'd give a homeowner: one fixture, get it looked at when convenient. Multiple rooms, or flickering paired with a warm panel, a buzzing sound, or a burning smell, call now and stop using the affected circuits.</p>
-      </div>
-    </section>
-
-    <section class="content-section content-section--alt" aria-labelledby="rootcause-title">
-      <div class="container container--prose">
-        <h2 id="rootcause-title" class="section-title">Root cause, not a bandaid</h2>
-        <p>A lot of electrical problems get "fixed" by swapping the part that failed without finding why it failed. That's how you end up calling three electricians for the same flickering light.</p>
-        <p>I diagnose the actual cause. Sometimes that's a five-minute fix: a loose neutral, a bad connection. Sometimes it points to something bigger like a panel that's on its way out. Either way, you'll know what's actually going on and what it'll take to fix it for good.</p>
-      </div>
-    </section>
-
-    <section class="content-section" aria-labelledby="process-title">
-      <div class="container container--prose">
-        <h2 id="process-title" class="section-title">How I diagnose an electrical problem</h2>
-        <p>Troubleshooting is a process of narrowing down, not a lucky guess. Roughly how it goes:</p>
-        <ul class="feature-list">
-          <li><strong>What changed.</strong> When did it start, what was running, has anything been added or worked on recently. This alone often points at the circuit.</li>
-          <li><strong>Reproduce it.</strong> An intermittent fault is the hard case. If I can make it happen on demand, I can find it.</li>
-          <li><strong>Isolate the circuit.</strong> Establish exactly what's affected and what isn't. The boundary between working and not working is usually where the fault lives.</li>
-          <li><strong>Test rather than assume.</strong> Voltage, continuity, and load readings at each point along the run.</li>
-          <li><strong>Work back to the source.</strong> Devices, then junctions, then the run itself, then the panel.</li>
-          <li><strong>Confirm the fix.</strong> Verify under load that the original symptom is actually gone, not just quiet at the moment.</li>
-        </ul>
-        <p>Most residential faults come down to a connection somewhere: a backstabbed outlet that's worked loose, a wire nut that was never tight, a corroded terminal, a damaged cable. They're findable. It just takes going in order instead of replacing parts and hoping.</p>
-      </div>
-    </section>
-
-    <section class="content-section content-section--alt" aria-labelledby="safety-title">
-      <div class="container container--prose">
-        <h2 id="safety-title" class="section-title">What to do before I get there</h2>
-        <p>If you're dealing with something that feels urgent, a few things are worth doing right away:</p>
-        <ul class="feature-list">
-          <li><strong>Burning smell, scorch marks, or a hot outlet or switch plate.</strong> Stop using that circuit. If you can identify the breaker, shut it off. Call me.</li>
-          <li><strong>Buzzing, crackling, or heat at the panel.</strong> Don't open the panel. Call.</li>
-          <li><strong>A breaker that won't stay reset.</strong> Leave it off. It's telling you something. Repeatedly forcing it back on is the wrong move.</li>
-          <li><strong>Water anywhere near electrical.</strong> Keep away from it and kill the circuit if you can do so safely.</li>
-          <li><strong>Any shock, even a small one.</strong> That's not normal and it's worth a same-day call.</li>
-        </ul>
-        <p>Anything genuinely on fire or actively arcing is a 911 call first, not an electrician call.</p>
-      </div>
-    </section>
-
-    <section class="content-section" aria-labelledby="older-title">
-      <div class="container container--prose">
-        <h2 id="older-title" class="section-title">Common faults in older SLO County homes</h2>
-        <p>A lot of the housing stock around San Luis Obispo, Atascadero, and Paso Robles dates to eras with different wiring practices, and certain problems recur.</p>
-        <p>Ungrounded two-prong circuits, sometimes with three-prong outlets swapped in at some point without an actual ground, which defeats the protection people assume they have. Backstabbed outlets, where conductors were pushed into the back of the device instead of secured under the screw terminal, which loosen over decades and are a leading cause of intermittent faults. Original aluminum branch wiring in some mid-century homes, which needs specific handling at every connection. Missing GFCI protection in kitchens, baths, garages, and exterior outlets. Circuits extended by a previous owner without much regard for load.</p>
-        <p>None of this means a house is unsafe. It means the wiring reflects when it was installed, and it's worth knowing what you actually have rather than assuming.</p>
-      </div>
-    </section>
-
-    <section class="content-section" aria-labelledby="pricing-title">
-      <div class="container container--prose">
-        <h2 id="pricing-title" class="section-title">How diagnostic pricing works</h2>
-        <p>For troubleshooting and diagnostic calls, I charge a flat diagnostic fee to come out and find the problem. If you move forward with the repair, that fee applies toward the work. You get a clear quote on the fix before I do it, with no open-ended hourly surprises.</p>
-      </div>
-    </section>
-
-    <section class="content-section content-section--alt" aria-labelledby="scheduling-title">
-      <div class="container container--prose">
-        <h2 id="scheduling-title" class="section-title">Same-week scheduling</h2>
-        <p>For most non-emergency electrical issues, I can usually get out within the same week across San Luis Obispo, Atascadero, Paso Robles, and the surrounding area. If it's something urgent like a burning smell or exposed wiring, call and I'll tell you straight what to do in the meantime.</p>
+        <h2 id="howiwork-title" class="section-title">How I work</h2>
+        <p>You call or send a quote request. For simple repairs I can often quote by phone. For a panel upgrade, a generator setup, or an aluminum wiring assessment, I will come out and look, at no cost.</p>
+        <p>You get a written quote before any work begins. Flat-rate where possible, no add-ons you did not agree to. For troubleshooting, I charge a diagnostic fee that applies toward the repair if you move forward.</p>
+        <p>Permit requirements depend on the work. Panel replacements, EV chargers, and many new electrical installations require a permit. Los Osos is unincorporated, so permits are handled through San Luis Obispo County Planning &amp; Building rather than a city building department. I pull the permit and handle the inspection when one is required. You do not have to deal with any of it.</p>
       </div>
     </section>
 
     <section class="why-section" aria-labelledby="why-title">
       <div class="container container--prose">
-        <h2 id="why-title" class="section-title">Why homeowners hire Keif Electric</h2>
+        <h2 id="why-title" class="section-title">Why Los Osos homeowners hire Keif Electric</h2>
         <ul class="why-list">
-          <li><strong>You hire me, not a crew.</strong> I diagnose it and I fix it.</li>
+          <li><strong>You hire me, not a crew.</strong> The person who quotes your job is the person who does it.</li>
           <li><strong>Licensed and insured.</strong> California C-10, CA# 1152084.</li>
-          <li><strong>Honest diagnosis.</strong> If it's small, I'll tell you it's small.</li>
-          <li><strong>Explains everything.</strong> You'll understand what was wrong and what I did.</li>
+          <li><strong>Honest about scope.</strong> If you don't need a full upgrade, I'll tell you. If you do, I'll show you why.</li>
+          <li><strong>Clean, labeled work.</strong> Panels left neat and every circuit labeled, so the next person who opens it knows what's what.</li>
         </ul>
-      </div>
-    </section>
-
-    <section class="proof-placeholder" aria-label="Recent repairs">
-      <div class="container">
-        <p class="proof-placeholder__label">Recent repairs: photos coming soon</p>
       </div>
     </section>
 
@@ -250,7 +182,7 @@ const faqSchema = {
         <div class="faq-inner">
           <aside class="faq-sidebar">
             <span class="eyebrow">Questions</span>
-            <h2 id="faq-title" class="faq-sidebar__title">Troubleshooting FAQ</h2>
+            <h2 id="faq-title" class="faq-sidebar__title">Los Osos FAQ</h2>
             <p>Have something else? Call and ask.</p>
             <a href="tel:+18052860477" class="btn-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
@@ -259,28 +191,24 @@ const faqSchema = {
           </aside>
           <div class="faq-list">
             <details class="faq-item" open>
-              <summary class="faq-item__btn"><span>My lights keep flickering. Is that dangerous?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>It can be. Flickering is sometimes minor, but it can signal a loose connection or a panel issue that's worth catching early. I find the actual cause rather than guessing.</p></div>
+              <summary class="faq-item__btn"><span>Does electrical work in Los Osos require a permit?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Permit requirements depend on the work. Panel replacements, EV chargers, and many new electrical installations require one. Los Osos is unincorporated, so permits are handled through San Luis Obispo County Planning &amp; Building rather than a city building department. I handle the permit and inspection process when one is required.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Why does my breaker keep tripping?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>A breaker trips to protect the circuit, from an overload, a short, or a ground fault. Repeated tripping means something needs attention. I trace it to the source instead of just resetting it.</p></div>
+              <summary class="faq-item__btn"><span>Why do electrical panels in Los Osos have corrosion problems?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Los Osos is a coastal community, and salt air and moisture are hard on exterior electrical equipment. Surface rust on a panel door is different from corrosion inside the enclosure, at the bus bars, or at the connections. I can inspect the panel and tell you which one you have and what needs attention.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Do you charge for a diagnostic visit?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes, a flat diagnostic fee, and it applies toward the repair if you move forward. You get a quote on the fix before I do the work.</p></div>
+              <summary class="faq-item__btn"><span>Should I be concerned about aluminum wiring in my Los Osos home?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Some homes built or rewired during the late 1960s and early 1970s used aluminum branch-circuit wiring, and Los Osos added a lot of housing in those years. It does not automatically mean you need a full rewire. I can inspect the wiring, tell you what condition it is in, and recommend an approved repair method or replacement where it is warranted.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>How fast can you come out?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>For most non-emergency issues, usually within the same week. For anything urgent like a burning smell, call and I'll advise you right away.</p></div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-item__btn"><span>Do you also install outlets, switches, and GFCIs?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes. New outlets and switches, GFCI and AFCI upgrades, USB outlets, and dedicated circuits for appliances and home offices, all code-compliant.</p></div>
+              <summary class="faq-item__btn"><span>Can I install a generator at my Los Osos home?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Yes. For many homes a portable generator with a properly installed interlock or manual transfer switch is enough to run essential loads such as a refrigerator, a pump, lights, and selected outlets safely, without backfeeding the utility lines. The right setup depends on what you want to keep running and the electrical service at your home.</p></div>
             </details>
             <details class="faq-item">
               <summary class="faq-item__btn"><span>What areas do you serve?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>San Luis Obispo, Atascadero, Paso Robles, and surrounding SLO County.</p></div>
+              <div class="faq-item__body"><p>Los Osos and Baywood Park, plus <a href="/electrician-morro-bay" class="inline-link">Morro Bay</a>, and from my base in <a href="/electrician-san-luis-obispo" class="inline-link">San Luis Obispo</a> the rest of SLO County. Not sure I reach you? Call and ask.</p></div>
             </details>
           </div>
         </div>
@@ -291,9 +219,9 @@ const faqSchema = {
       <div class="container">
         <div class="page-cta__inner">
           <div class="page-cta__copy">
-            <span class="eyebrow eyebrow--amber">Something not working right?</span>
+            <span class="eyebrow eyebrow--amber">Need an electrician in Los Osos?</span>
             <h2 id="cta-title" class="page-cta__title"><span class="page-cta__call">Call</span><a class="page-cta__num" href="tel:+18052860477">(805) 286-0477</a></h2>
-            <p class="page-cta__lead">Tell me what it is doing. Small repairs I can often quote by phone. For the rest, a flat diagnostic fee that applies toward the fix.</p>
+            <p class="page-cta__lead">I quote the job myself, pull the county permit when one is required, and do the work. Los Osos is about fifteen minutes from my base in San Luis Obispo.</p>
             <a class="page-cta__alt" href="sms:+18052860477">Or text me at the same number.</a>
             <ul class="page-cta__facts">
               <li>California C-10 #1152084</li>
@@ -306,7 +234,7 @@ const faqSchema = {
             <img class="page-cta__avatar" src="/assets/adam-keif.jpg" alt="" width="112" height="112" loading="lazy" />
             <p class="page-cta__owner-text"><strong>Adam Keif, owner.</strong> Reads every request and calls back the same business day.</p>
           </div>
-            <QuoteForm title="Or send it and I will call you" variant="hero" />
+            <QuoteForm city="Los Osos" title="Or send it and I will call you" variant="hero" />
           </div>
         </div>
       </div>
@@ -335,20 +263,15 @@ const faqSchema = {
   .breadcrumb a:hover { text-decoration: underline; }
   .svc-hero { position: relative; background: var(--ke-bone); overflow: hidden; padding: 72px 0 88px; }
   .svc-hero::before { content: ''; position: absolute; top: -25%; right: -12%; width: 62%; height: 130%; background: radial-gradient(closest-side, rgba(243, 152, 31, 0.12), transparent 72%); pointer-events: none; }
-  /* minmax(0, ...) stops the copy column from claiming min-content width.
-     "troubleshooting" is a single 15-character word in a wide display face,
-     and at the top of the clamp it would otherwise starve the image column. */
   .svc-hero__inner { position: relative; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
   .svc-hero__eyebrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ke-clay); margin-bottom: 18px; }
   .svc-hero__spark { width: 15px; height: 15px; color: var(--ke-orange); }
-  /* Capped below the shared 92px because this page's longest word is much
-     longer than the other service heroes. */
   .svc-hero__title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(38px, 4.4vw, 62px); line-height: 1.04; letter-spacing: -0.025em; color: var(--ke-ink); margin: 0; }
   .svc-hero__line { display: block; }
   .svc-hero__line--accent { color: var(--ke-orange); }
   .svc-hero__dot { display: inline-block; width: 0.16em; height: 0.16em; background: var(--ke-orange); border-radius: 2px; margin-left: 0.05em; vertical-align: baseline; }
   .svc-hero__place { display: block; font-family: var(--font-sans); font-weight: 600; font-size: clamp(15px, 1.6vw, 19px); letter-spacing: 0; color: var(--fg-2); margin: 16px 0 0; }
-  .svc-hero__sub { font-size: 18px; line-height: 1.55; color: var(--ke-ink); max-width: 46ch; margin: 26px 0 26px; font-weight: 500; }
+  .svc-hero__sub { font-size: 18px; line-height: 1.55; color: var(--ke-ink); max-width: 46ch; margin: 22px 0 26px; font-weight: 500; }
   .svc-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
   .svc-hero__trust { margin-top: 26px; font-size: 13px; font-weight: 600; color: var(--fg-2); letter-spacing: 0.01em; }
   .svc-hero__card { justify-self: end; width: 100%; max-width: 460px; background: #fff; border: 1px solid var(--border-1); border-radius: var(--radius-4); box-shadow: var(--shadow-3); padding: 24px 24px 22px; }
@@ -356,8 +279,6 @@ const faqSchema = {
   .svc-hero__avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: 50% 12%; flex: none; border: 2px solid var(--ke-bone); box-shadow: 0 0 0 1px var(--border-1); }
   .svc-hero__owner-text { margin: 0; font-size: 14px; line-height: 1.45; color: var(--fg-2); }
   .svc-hero__owner-text strong { color: var(--ke-ink); }
-  .svc-hero__fact { display: inline-flex; gap: 6px; align-items: baseline; margin: -4px 0 16px; padding: 7px 11px; background: var(--ke-bone); border-radius: var(--radius-2); font-size: 13px; color: var(--fg-2); }
-  .svc-hero__fact strong { color: var(--ke-ink); font-weight: 700; }
   @media (prefers-reduced-motion: no-preference) {
     .svc-hero__eyebrow, .svc-hero__line, .svc-hero__place, .svc-hero__sub, .svc-hero__ctas, .svc-hero__trust, .svc-hero__card { opacity: 0; animation: heroIn 0.8s var(--ease-emph) forwards; }
     .svc-hero__eyebrow { animation-delay: 0.05s; }
@@ -387,6 +308,7 @@ const faqSchema = {
   .btn-link:hover { text-decoration: underline; }
   .content-section { padding: 80px 0; background: var(--ke-bone); }
   .content-section--alt { background: var(--ke-paper); }
+  .sub-title { font-size: 20px; font-weight: 700; margin: 28px 0 8px; color: var(--ke-ink); }
   .section-title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.02em; line-height: 1.15; color: var(--ke-ink); margin-bottom: 20px; }
   .lead-copy { font-size: 17px; line-height: 1.6; color: var(--fg-1); margin-bottom: 20px; }
   .content-section p { font-size: 16px; line-height: 1.65; color: var(--fg-1); margin-bottom: 16px; max-width: 68ch; }
@@ -401,8 +323,11 @@ const faqSchema = {
   .why-list li { font-size: 16px; line-height: 1.6; color: rgba(246, 241, 232, 0.82); padding-left: 20px; position: relative; }
   .why-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 2px; background: var(--ke-orange); }
   .why-list li strong { color: var(--ke-bone); }
-  .proof-placeholder { background: var(--ke-sand); border-top: 1px solid var(--border-1); border-bottom: 1px solid var(--border-1); padding: 40px 0; text-align: center; }
-  .proof-placeholder__label { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ke-stone); }
+  .proof { background: var(--ke-sand); border-top: 1px solid var(--border-1); border-bottom: 1px solid var(--border-1); padding: 64px 0; text-align: center; }
+  .proof__eyebrow { font-family: var(--font-sans); font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ke-clay); display: inline-block; margin-bottom: 20px; }
+  .proof__figure { margin: 0 auto; max-width: 820px; }
+  .proof__img { width: 100%; height: auto; border-radius: var(--radius-4); box-shadow: var(--shadow-3); border: 1px solid var(--border-1); display: block; }
+  .proof__caption { margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--fg-2); letter-spacing: 0.01em; }
   .faq-section { background: var(--ke-bone); padding: 100px 0; }
   .faq-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: flex-start; }
   .faq-sidebar { position: sticky; top: 96px; }

@@ -37,6 +37,9 @@ export const siteContent = {
     { label: 'San Luis Obispo', href: '/electrician-san-luis-obispo' },
     { label: 'Atascadero', href: '/electrician-atascadero' },
     { label: 'Paso Robles', href: '/electrician-paso-robles' },
+    { label: 'Los Osos', href: '/electrician-los-osos' },
+    { label: 'Morro Bay', href: '/electrician-morro-bay' },
+    { label: 'Arroyo Grande', href: '/electrician-arroyo-grande' },
   ],
 
   hero: {
@@ -181,7 +184,7 @@ export const siteContent = {
     },
     {
       question: 'What areas do you serve in SLO County?',
-      answer: 'We serve San Luis Obispo, Atascadero, Paso Robles, Templeton, Santa Margarita, Arroyo Grande, Santa Maria, and surrounding areas on the Central Coast. If you\'re not sure whether we reach you, call and ask.',
+      answer: 'We serve San Luis Obispo, Atascadero, Paso Robles, Los Osos, Morro Bay, Arroyo Grande, Templeton, Santa Margarita, Santa Maria, and surrounding areas on the Central Coast. If you\'re not sure whether we reach you, call and ask.',
     },
     {
       question: 'Do I need permits for electrical work or EV charger installation?',
