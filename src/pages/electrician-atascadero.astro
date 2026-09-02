@@ -3,6 +3,7 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import ReviewBadges from '../components/ui/ReviewBadges.astro';
+import QuoteForm from '../components/ui/QuoteForm.astro';
 
 const title = 'Electrician in Atascadero, CA | Keif Electric';
 const description = 'Residential electrician serving Atascadero, CA. Panel upgrades, EV chargers, lighting, and troubleshooting for ranch homes, Colony homes, and larger lots. C-10 licensed and insured. Free estimates.';
@@ -113,6 +114,9 @@ const faqSchema = {
           <li><strong>Panel upgrades.</strong> A lot of Atascadero ranch homes still run on 100-amp panels sized for a different era. If you're adding an EV charger, wiring a shop or ADU, or your insurer flagged the panel, I handle the upgrade, the permit, and the inspection. <a href="/electrical-panel-upgrade-san-luis-obispo" class="inline-link">Panel upgrades</a>.</li>
           <li><strong>EV charger installation.</strong> Level 2 charging for any vehicle. In a town where a lot of people commute over the grade, home charging matters. I check whether your panel can support the load before quoting. <a href="/ev-charger-installation-san-luis-obispo" class="inline-link">EV charger installation</a>.</li>
           <li><strong>Lighting.</strong> Recessed lighting, fixture installation, exterior and landscape lighting for larger lots and long driveways. Clean lines and neat work are the point. <a href="/lighting-installation-san-luis-obispo" class="inline-link">Recessed &amp; custom lighting</a>.</li>
+          <li><strong>Subpanels and panel repair.</strong> A subpanel out to the garage, shop, barn, or ADU so it has its own circuits instead of running everything off the house. Also repairs on panels that are buzzing, warm, or have breakers that will not reset. <a href="/electrical-panel-upgrade-san-luis-obispo" class="inline-link">Panels &amp; subpanels</a>.</li>
+          <li><strong>Garage and shop wiring.</strong> 240-volt circuits for compressors and welders, dedicated outlets, lighting, and a feed sized for what you actually run out there.</li>
+          <li><strong>Electrical inspections.</strong> A straight assessment of a panel and wiring before a purchase, after an insurer asks about the panel, or when you just want to know what shape an older home is in.</li>
           <li><strong>New construction and ADUs.</strong> For contractors and owner-builders, full residential wiring from pre-wire through trim, including detached shops and accessory dwelling units. <a href="/new-construction-electrical-san-luis-obispo" class="inline-link">New construction &amp; remodels</a>.</li>
         </ul>
       </div>
@@ -124,6 +128,19 @@ const faqSchema = {
         <p>Atascadero is a patchwork of very different homes, and the electrical work changes with the neighborhood. The older Colony homes near the Sunken Gardens and along El Camino Real were wired generations ago, and their panels and circuits often need bringing up to modern loads. Head west toward Morro Road and the San Marcos hills, or out to Garden Farms, and it's larger rural-residential lots with wells, septic, and a detached shop or barn, each with its own wiring to think about. Newer parts of town like Las Lomas on the south end start with more capacity, but plenty of homeowners there are still adding EV chargers and heat pumps their panels were never planned around.</p>
         <p>That mix creates electrical work you don't run into as often elsewhere. Well pumps on their own circuits. Subpanels feeding a garage, shop, or ADU across the property. Longer conduit runs than a city lot needs. And panels that were sized before anyone was charging a car or running a heat pump.</p>
         <p>If you own an older home or a larger property here and aren't sure what shape the electrical is in, that's a normal starting point. I can assess it and give you a straight answer about what needs attention now and what can wait.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="outbuildings-title">
+      <div class="container container--prose">
+        <h2 id="outbuildings-title" class="section-title">Subpanels, garage wiring, and inspections on Atascadero properties</h2>
+        <p>Three requests come up in Atascadero more than anywhere else I work, and they all trace back to the same thing: properties with more than one building on them.</p>
+        <h3 class="sub-title">Subpanel installation and repair</h3>
+        <p>If your garage, shop, or ADU is running off a couple of extension circuits from the house, a subpanel is usually the right fix. I size the feeder for the load, trench or run conduit as needed, set the subpanel, and land the circuits so each building stands on its own. Existing subpanels that were added over the years without a permit are common up here too. I can tell you whether one is safe to keep, needs repair, or should be replaced.</p>
+        <h3 class="sub-title">Garage and shop wiring</h3>
+        <p>A shop needs different power than a house: 240-volt circuits for a compressor or welder, 20-amp outlets spaced where the benches are, and lighting that does not flicker when a tool starts. I wire shops and garages for how they will actually be used, on a permit, so nothing has to be redone at resale.</p>
+        <h3 class="sub-title">Electrical inspections</h3>
+        <p>Homebuyers, sellers, and homeowners whose insurer has asked about the panel call for an electrical inspection. I look at the service, the panel, the grounding, visible wiring, and any outbuilding feeds, then give you a written summary of what is fine, what needs attention, and what it would cost. If the answer is "nothing right now," that is what I will tell you.</p>
       </div>
     </section>
 
@@ -208,7 +225,7 @@ const faqSchema = {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
                 Call (805) 286-0477
               </a>
-              <a class="btn btn--outline-light btn--lg" href="mailto:adam@keifelectric.com?subject=Atascadero%20electrical%20quote%20request">Email a quote request</a>
+              <a class="btn btn--outline-light btn--lg" href="sms:+18052860477">Text (805) 286-0477</a>
             </div>
           </div>
           <div class="page-cta__card">
@@ -219,6 +236,7 @@ const faqSchema = {
               <span>Liability insured</span>
               <span>Mon–Fri, 9am–5pm</span>
             </div>
+            <QuoteForm city="Atascadero" />
           </div>
         </div>
       </div>
@@ -293,6 +311,7 @@ const faqSchema = {
   .btn-link:hover { text-decoration: underline; }
   .content-section { padding: 80px 0; background: var(--ke-bone); }
   .content-section--alt { background: var(--ke-paper); }
+  .sub-title { font-size: 20px; font-weight: 700; margin: 28px 0 8px; color: var(--ke-ink); }
   .section-title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.02em; line-height: 1.15; color: var(--ke-ink); margin-bottom: 20px; }
   .lead-copy { font-size: 17px; line-height: 1.6; color: var(--fg-1); margin-bottom: 20px; }
   .content-section p { font-size: 16px; line-height: 1.65; color: var(--fg-1); margin-bottom: 16px; max-width: 68ch; }

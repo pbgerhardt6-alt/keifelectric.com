@@ -1,0 +1,131 @@
+---
+// Quote request form. Posts to Web3Forms, which emails Adam. No backend in
+// this repo. Progressive enhancement: works as a plain HTML POST without JS;
+// with JS it submits in place, shows an inline confirmation, and fires a
+// GA4 form_submit event so form leads count next to phone_click.
+interface Props {
+  city?: string;
+}
+const { city } = Astro.props;
+const ACCESS_KEY = '371128e9-1235-4d12-9ad2-87464571b978';
+const cities = [
+  'San Luis Obispo', 'Atascadero', 'Paso Robles', 'Templeton', 'Santa Margarita',
+  'Los Osos', 'Morro Bay', 'Arroyo Grande', 'Pismo Beach', 'Cayucos', 'Cambria', 'Santa Maria', 'Other',
+];
+const services = [
+  'Panel upgrade or repair', 'EV charger', 'Lighting', 'Troubleshooting or repair',
+  'New build or remodel', 'Something else',
+];
+---
+<form class="qf" action="https://api.web3forms.com/submit" method="POST" data-quote-form novalidate>
+  <input type="hidden" name="access_key" value={ACCESS_KEY} />
+  <input type="hidden" name="subject" value="Quote request from keifelectric.com" />
+  <input type="hidden" name="from_name" value="Keif Electric website" />
+  <input type="hidden" name="page" value={Astro.url.pathname} />
+  <input type="checkbox" name="botcheck" class="qf__hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+  <p class="qf__title">Or send a quote request</p>
+
+  <div class="qf__row">
+    <label class="qf__field">
+      <span>Name</span>
+      <input type="text" name="name" autocomplete="name" required />
+    </label>
+    <label class="qf__field">
+      <span>Phone</span>
+      <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required />
+    </label>
+  </div>
+
+  <div class="qf__row">
+    <label class="qf__field">
+      <span>What do you need?</span>
+      <select name="service" required>
+        <option value="" disabled selected>Choose one</option>
+        {services.map(s => <option value={s}>{s}</option>)}
+      </select>
+    </label>
+    <label class="qf__field">
+      <span>City <em>(optional)</em></span>
+      <select name="city">
+        <option value="" selected={!city}>Choose</option>
+        {cities.map(c => <option value={c} selected={c === city}>{c}</option>)}
+      </select>
+    </label>
+  </div>
+
+  <label class="qf__field">
+    <span>Details <em>(optional)</em></span>
+    <textarea name="details" rows="2" placeholder="Anything that helps Adam quote it: the problem, the panel, what you're adding."></textarea>
+  </label>
+
+  <button type="submit" class="qf__btn">Request my free estimate</button>
+  <p class="qf__note">Adam reads every request himself and calls back the same business day. No spam, no sales team.</p>
+  <p class="qf__status" role="status" aria-live="polite" hidden></p>
+</form>
+
+<style>
+  .qf { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-1); display: grid; gap: 12px; }
+  .qf [hidden] { display: none !important; }
+  .qf__hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .qf__title { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ke-orange); margin: 0; }
+  .qf__row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .qf__field { display: grid; gap: 5px; font-size: 13px; font-weight: 600; color: var(--ke-ink); }
+  .qf__field em { font-style: normal; font-weight: 500; color: var(--fg-2); }
+  .qf__field input, .qf__field select, .qf__field textarea {
+    width: 100%; box-sizing: border-box; min-height: 44px; padding: 10px 12px;
+    font: inherit; font-size: 16px; font-weight: 500; color: var(--ke-ink);
+    background: #fff; border: 1px solid var(--border-1); border-radius: var(--radius-2);
+  }
+  .qf__field textarea { min-height: 64px; resize: vertical; }
+  .qf__field input:focus, .qf__field select:focus, .qf__field textarea:focus { outline: 2px solid var(--ke-orange); outline-offset: 1px; border-color: var(--ke-orange); }
+  .qf__field input:user-invalid, .qf__field select:user-invalid { border-color: var(--ke-orange-text); }
+  .qf__btn {
+    min-height: 52px; padding: 0 20px; border: 0; border-radius: var(--radius-3); cursor: pointer;
+    background: var(--ke-orange-text); color: #fff; font: inherit; font-weight: 700; font-size: 16px;
+  }
+  .qf__btn:hover { filter: brightness(0.94); }
+  .qf__btn[disabled] { opacity: 0.6; cursor: wait; }
+  .qf__note { margin: 0; font-size: 12.5px; line-height: 1.45; color: var(--fg-2); }
+  .qf__status { margin: 0; font-size: 14px; font-weight: 600; line-height: 1.45; color: var(--ke-ink); }
+  .qf__status.is-error { color: var(--ke-orange-text); }
+  @media (max-width: 480px) { .qf__row { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+  const PHONE = '(805) 286-0477';
+  document.querySelectorAll<HTMLFormElement>('form[data-quote-form]').forEach((form) => {
+    const status = form.querySelector<HTMLElement>('.qf__status')!;
+    const btn = form.querySelector<HTMLButtonElement>('.qf__btn')!;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      btn.disabled = true;
+      status.hidden = true;
+      status.classList.remove('is-error');
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+        const data = await res.json();
+        if (!res.ok || !data.success) throw new Error(data.message || 'Send failed');
+        const phone = (form.elements.namedItem('phone') as HTMLInputElement).value.trim();
+        status.textContent = `Got it. Adam will call you at ${phone} within one business day. Need it sooner? Call ${PHONE}.`;
+        status.hidden = false;
+        form.querySelectorAll<HTMLElement>('.qf__row, .qf__field, .qf__btn, .qf__note').forEach(el => { el.hidden = true; });
+        (window as any).gtag?.('event', 'form_submit', {
+          event_category: 'contact',
+          event_label: form.closest('section')?.id || 'form',
+          service: (form.elements.namedItem('service') as HTMLSelectElement).value,
+        });
+      } catch {
+        status.textContent = `Something went wrong sending that. Call or text ${PHONE} and Adam will take it from there.`;
+        status.classList.add('is-error');
+        status.hidden = false;
+        btn.disabled = false;
+      }
+    });
+  });
+</script>

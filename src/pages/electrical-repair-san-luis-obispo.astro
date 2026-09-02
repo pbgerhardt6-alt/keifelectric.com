@@ -3,6 +3,7 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import ReviewBadges from '../components/ui/ReviewBadges.astro';
+import QuoteForm from '../components/ui/QuoteForm.astro';
 
 const title = 'Electrical Repair San Luis Obispo | Troubleshooting & Diagnosis';
 const description = 'Flickering lights, tripping breakers, dead outlets: root cause diagnosis, not just a bandaid. Flat diagnostic fee. Owner-operated by Adam Keif. Serving SLO County.';
@@ -294,7 +295,7 @@ const faqSchema = {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
                 Call (805) 286-0477
               </a>
-              <a class="btn btn--outline-light btn--lg" href="mailto:adam@keifelectric.com?subject=Electrical%20repair%20quote%20request">Email a quote request</a>
+              <a class="btn btn--outline-light btn--lg" href="sms:+18052860477">Text (805) 286-0477</a>
             </div>
           </div>
           <div class="page-cta__card">
@@ -305,6 +306,7 @@ const faqSchema = {
               <span>Liability insured</span>
               <span>Mon–Fri, 9am–5pm</span>
             </div>
+            <QuoteForm />
           </div>
         </div>
       </div>
