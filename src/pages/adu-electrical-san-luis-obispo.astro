@@ -40,27 +40,27 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: "Can my existing electrical service handle an ADU?",
+      name: "Can my existing panel and service handle an ADU?",
       acceptedAnswer: { '@type': 'Answer', text: "That is the first question to answer, and it is worth answering before the plans are final. An ADU is a complete dwelling: kitchen circuits, bathroom GFCI protection, heating and cooling, laundry, and its own load. I run a load calculation on the existing service and tell you whether it carries the unit as-is, needs an upgrade first, or the ADU needs its own service." },
     },
     {
       '@type': 'Question',
-      name: "Does an ADU need its own electric meter?",
-      acceptedAnswer: { '@type': 'Answer', text: "Not always, and it is worth checking early because it affects cost and schedule. State law bars a local agency from requiring a separate utility connection or meter for an ADU in some circumstances, but the utility has its own requirements, and those often turn on whether the unit is detached, attached, or a conversion. I confirm the requirement with PG&E and the local building department for your specific project rather than assuming." },
+      name: "Does an ADU need its own electrical meter?",
+      acceptedAnswer: { '@type': 'Answer', text: "Not always, and it is worth checking early because it affects cost and schedule. California law limits when a local agency can require a separate utility connection or meter for a qualifying ADU, and the utility applies its own requirements, which often turn on whether the unit is detached, attached, or a conversion of existing space. I confirm the requirement with PG&E and the local building department for your specific project rather than assuming." },
     },
     {
       '@type': 'Question',
-      name: "When should the electrician get involved in an ADU build?",
+      name: "When should an electrician be involved in an ADU project?",
       acceptedAnswer: { '@type': 'Answer', text: "Earlier than most people expect. A load calculation and the subpanel-or-separate-service decision belong in the design phase, because both can change the drawings, the budget, and the utility timeline. Bringing me in at rough-in means those questions get answered when it is expensive to change the answer." },
     },
     {
       '@type': 'Question',
-      name: "Do you wire pre-reviewed and prefab ADUs?",
-      acceptedAnswer: { '@type': 'Answer', text: "Yes. San Luis Obispo County offers pre-reviewed ADU plan sets, and prefab and modular units are common here too. The unit itself may arrive largely wired, but the site work is still a project: the feeder from the house or a new service, trenching, the disconnect, grounding, and tying it into a panel that can actually carry it." },
+      name: "Can you wire a prefab or modular ADU?",
+      acceptedAnswer: { '@type': 'Answer', text: "Yes, and pre-reviewed plan sets too. San Luis Obispo County offers pre-reviewed ADU designs, and prefab and modular units are common here. The unit itself may arrive largely wired, but the site work is still a project: the feeder from the house or a new service, trenching, the disconnect, grounding, and tying it into a panel that can actually carry it." },
     },
     {
       '@type': 'Question',
-      name: "Do you work with general contractors and ADU builders?",
+      name: "Do you work with ADU contractors and owner-builders?",
       acceptedAnswer: { '@type': 'Answer', text: "Yes, regularly. I sub for contractors and owner-builders on ADUs across SLO County, from full rough-in through finish trim, coordinated to your schedule. If you build ADUs and want an electrician who quotes the job and then shows up to do it, call me." },
     },
   ],
@@ -116,7 +116,7 @@ const faqSchema = {
             <img class="svc-hero__avatar" src="/assets/adam-keif.jpg" alt="" width="112" height="112" loading="eager" />
             <p class="svc-hero__owner-text"><strong>Adam Keif, owner.</strong> Reads every request and calls back the same business day.</p>
           </div>
-          <p class="svc-hero__fact"><strong>Load check first</strong> Before the plans are final</p>
+          <p class="svc-hero__fact"><strong>Load check first</strong> Know what your service can support before the plans are final.</p>
           <QuoteForm title="Request a free estimate" variant="hero" />
         </aside>
       </div>
@@ -132,7 +132,7 @@ const faqSchema = {
           <li><strong>The feeder and the trench.</strong> For a detached unit, power has to physically get there. Feeder sized for the load and the distance, conduit or direct burial, trench depth to code, and a disconnect where it belongs.</li>
           <li><strong>A panel upgrade, when the numbers say so.</strong> Adding a dwelling is frequently what pushes an older service past what it can carry. <a href="/electrical-panel-upgrade-san-luis-obispo" class="inline-link">Panel upgrades</a>.</li>
           <li><strong>Full interior wiring, rough-in to trim.</strong> Kitchen circuits, bathroom GFCI protection, heating and cooling, laundry, smoke and carbon monoxide detection, lighting, and exterior fixtures. A whole house worth of circuits in a few hundred square feet.</li>
-          <li><strong>Title 24 and electric-ready items.</strong> Current energy code pushes new dwellings toward all-electric readiness, which means planning conduit and capacity for things like an EV charger and a future battery even when they are not being installed today. <a href="/ev-charger-installation-san-luis-obispo" class="inline-link">EV charger installation</a>.</li>
+          <li><strong>Title 24 and electric-ready requirements.</strong> New ADUs carry energy-code requirements that can affect the electrical design, including electric-ready and battery-storage-ready provisions. I account for those when planning the service, the panel, and the wiring, so the system is not designed around yesterday’s load.</li>
           <li><strong>Permits and inspection.</strong> Pulled and scheduled as part of the job, through the City or the County depending on where the property sits.</li>
         </ul>
       </div>
@@ -141,7 +141,8 @@ const faqSchema = {
     <section class="content-section content-section--alt" aria-labelledby="power-title">
       <div class="container container--prose">
         <h2 id="power-title" class="section-title">Subpanel or a separate meter?</h2>
-        <p>This is the question worth settling first, because it drives the budget and the schedule more than any other electrical decision on an ADU.</p>
+        <p>This is one of the first electrical decisions worth settling, because it can affect the budget, the drawings, the permit, and the utility timeline.</p>
+        <p><strong>Attached or detached, the question is the same:</strong> what does the unit require, and can the existing service support it? A detached unit adds a feeder and a trench to get power across the property. An attached unit or a conversion of existing space skips that, but can bring its own constraints depending on how the space was wired and where the service enters.</p>
         <h3 class="sub-title">Running off the existing service</h3>
         <p>If the existing service has capacity, the cleanest answer is usually a subpanel in the ADU, fed from the main house. One utility account, no new meter, and the work stays on your property and your schedule. The constraint is capacity: a load calculation has to show the existing service can carry the house and the new dwelling together. On a property still running an older, smaller service, it often cannot, and then a panel upgrade comes first.</p>
         <h3 class="sub-title">Giving the ADU its own service</h3>
@@ -154,16 +155,16 @@ const faqSchema = {
     <section class="content-section" aria-labelledby="rules-title">
       <div class="container container--prose">
         <h2 id="rules-title" class="section-title">California opened ADUs up. The service still has to carry it.</h2>
-        <p>The rules have moved a long way in a few years, and San Luis Obispo County has moved with them. The County adopted updated ADU regulations in June 2025, with the inland regulations taking effect that July and the coastal zone regulations pending certification by the Coastal Commission. The update raised how many ADUs a parcel can have, and the County now offers pre-reviewed ADU plan sets to shorten the design and review step. Cities in the county, including San Luis Obispo itself, run their own ADU rules, so what applies to you depends on which side of a city line your property is on.</p>
-        <p>Rules are not my department, and your designer, builder, or planner is the right person for them. Confirm the current requirements with the jurisdiction that will issue your permit before you rely on anything you read, here or anywhere else.</p>
-        <p>What I will say is the part that has not changed. Zoning tells you whether you may build the unit. It does not tell you whether the wire in the ground can carry it. Two properties on the same street, both approved for an ADU, can have completely different electrical scopes and costs depending on the age and size of the existing service. That gap is where I am useful, and it is worth closing before the design is locked.</p>
+        <p>California and San Luis Obispo County have made ADUs easier to build in several ways, and the County updated its ADU regulations in 2025. None of that tells you whether a given property’s electrical service can support the unit.</p>
+        <p>Two properties on the same street, both approved for an ADU, can have completely different electrical scopes and costs depending on the age and size of the existing service. That gap is where I am useful, and it is worth closing before the design is locked.</p>
+        <p>Your designer, builder, or planner is the right person for zoning and ADU requirements, and you should confirm the current rules with the jurisdiction that will issue the permit. My job is to work out what the electrical system needs to make the approved design work.</p>
       </div>
     </section>
 
     <section class="content-section content-section--alt" aria-labelledby="gc-title">
       <div class="container container--prose">
         <h2 id="gc-title" class="section-title">For contractors and owner-builders</h2>
-        <p>A good share of my ADU work is as a sub. If you build ADUs, here is how I work and what makes the electrical go smoothly.</p>
+        <p>I also work as a sub for ADU contractors and owner-builders. If you build ADUs, here is how I work and what makes the electrical go smoothly.</p>
         <p><strong>Bring me in during design, not at rough-in.</strong> The load calculation and the service decision belong on the drawings. When they get answered late, the fix is either a panel upgrade nobody budgeted for or a utility application that holds up the schedule.</p>
         <p><strong>What I need from you.</strong> The plan set, the appliance and mechanical schedule, and whether the unit is intended to be separately metered. From that I can give you a real number instead of an allowance.</p>
         <p><strong>What you get.</strong> One person who quotes the job and then does it. Rough-in coordinated to your framing schedule, trim when you are ready for it, permits pulled and inspections scheduled, and a panel left labeled so the final walkthrough is not an argument. If the schedule slips, you tell me directly. See <a href="/new-construction-electrical-san-luis-obispo" class="inline-link">new construction &amp; remodels</a> for how I handle full builds.</p>
@@ -175,7 +176,7 @@ const faqSchema = {
         <h2 id="howiwork-title" class="section-title">How I work</h2>
         <p>You call or send a quote request with whatever you have, even if it is just an idea and an address. For an ADU I will come out and look at the existing service at no cost, because that visit is what makes the rest of the numbers real.</p>
         <p>You get a written quote before any work begins. Flat-rate where possible, no add-ons you did not agree to.</p>
-        <p>Permit requirements depend on the work and on the jurisdiction. ADU wiring, new services, and panel upgrades require permits, and those go through the city where the property sits or through San Luis Obispo County Planning &amp; Building for unincorporated areas. I pull the permit and handle the inspection when one is required.</p>
+        <p>Permit requirements depend on the work and the jurisdiction. ADU wiring, new services, and panel upgrades commonly require permits, and those go through the city where the property sits or through San Luis Obispo County Planning &amp; Building for unincorporated areas. When the work requires a permit, I pull it and handle the inspection.</p>
       </div>
     </section>
 
@@ -205,23 +206,23 @@ const faqSchema = {
           </aside>
           <div class="faq-list">
             <details class="faq-item" open>
-              <summary class="faq-item__btn"><span>Can my existing electrical service handle an ADU?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <summary class="faq-item__btn"><span>Can my existing panel and service handle an ADU?</span><span class="faq-icon" aria-hidden="true"></span></summary>
               <div class="faq-item__body"><p>That is the first question to answer, and it is worth answering before the plans are final. An ADU is a complete dwelling: kitchen circuits, bathroom GFCI protection, heating and cooling, laundry, and its own load. I run a load calculation on the existing service and tell you whether it carries the unit as-is, needs an upgrade first, or the ADU needs its own service.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Does an ADU need its own electric meter?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Not always, and it is worth checking early because it affects cost and schedule. State law bars a local agency from requiring a separate utility connection or meter for an ADU in some circumstances, but the utility has its own requirements, and those often turn on whether the unit is detached, attached, or a conversion. I confirm the requirement with PG&amp;E and the local building department for your specific project rather than assuming.</p></div>
+              <summary class="faq-item__btn"><span>Does an ADU need its own electrical meter?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Not always, and it is worth checking early because it affects cost and schedule. California law limits when a local agency can require a separate utility connection or meter for a qualifying ADU, and the utility applies its own requirements, which often turn on whether the unit is detached, attached, or a conversion of existing space. I confirm the requirement with PG&amp;E and the local building department for your specific project rather than assuming.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>When should the electrician get involved in an ADU build?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <summary class="faq-item__btn"><span>When should an electrician be involved in an ADU project?</span><span class="faq-icon" aria-hidden="true"></span></summary>
               <div class="faq-item__body"><p>Earlier than most people expect. A load calculation and the subpanel-or-separate-service decision belong in the design phase, because both can change the drawings, the budget, and the utility timeline. Bringing me in at rough-in means those questions get answered when it is expensive to change the answer.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Do you wire pre-reviewed and prefab ADUs?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes. San Luis Obispo County offers pre-reviewed ADU plan sets, and prefab and modular units are common here too. The unit itself may arrive largely wired, but the site work is still a project: the feeder from the house or a new service, trenching, the disconnect, grounding, and tying it into a panel that can actually carry it.</p></div>
+              <summary class="faq-item__btn"><span>Can you wire a prefab or modular ADU?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Yes, and pre-reviewed plan sets too. San Luis Obispo County offers pre-reviewed ADU designs, and prefab and modular units are common here. The unit itself may arrive largely wired, but the site work is still a project: the feeder from the house or a new service, trenching, the disconnect, grounding, and tying it into a panel that can actually carry it.</p></div>
             </details>
             <details class="faq-item">
-              <summary class="faq-item__btn"><span>Do you work with general contractors and ADU builders?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+              <summary class="faq-item__btn"><span>Do you work with ADU contractors and owner-builders?</span><span class="faq-icon" aria-hidden="true"></span></summary>
               <div class="faq-item__body"><p>Yes, regularly. I sub for contractors and owner-builders on ADUs across SLO County, from full rough-in through finish trim, coordinated to your schedule. If you build ADUs and want an electrician who quotes the job and then shows up to do it, call me.</p></div>
             </details>
           </div>
@@ -293,7 +294,8 @@ const faqSchema = {
   .svc-hero__avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: 50% 12%; flex: none; border: 2px solid var(--ke-bone); box-shadow: 0 0 0 1px var(--border-1); }
   .svc-hero__owner-text { margin: 0; font-size: 14px; line-height: 1.45; color: var(--fg-2); }
   .svc-hero__owner-text strong { color: var(--ke-ink); }
-  .svc-hero__fact { display: inline-flex; gap: 6px; align-items: baseline; margin: -4px 0 16px; padding: 7px 11px; background: var(--ke-bone); border-radius: var(--radius-2); font-size: 13px; color: var(--fg-2); }
+  .svc-hero__fact { display: block; margin: -4px 0 16px; padding: 9px 12px; background: var(--ke-bone); border-radius: var(--radius-2); font-size: 13px; line-height: 1.45; color: var(--fg-2); }
+  .svc-hero__fact strong { margin-right: 4px; }
   .svc-hero__fact strong { color: var(--ke-ink); font-weight: 700; }
   @media (prefers-reduced-motion: no-preference) {
     .svc-hero__eyebrow, .svc-hero__line, .svc-hero__place, .svc-hero__sub, .svc-hero__ctas, .svc-hero__trust, .svc-hero__card { opacity: 0; animation: heroIn 0.8s var(--ease-emph) forwards; }
