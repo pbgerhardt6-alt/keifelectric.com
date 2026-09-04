@@ -101,10 +101,6 @@ const faqSchema = {
     <section class="svc-hero" id="top" aria-labelledby="page-h1">
       <div class="svc-hero__inner container">
         <div class="svc-hero__copy">
-          <p class="svc-hero__eyebrow">
-            <svg class="svc-hero__spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z"/></svg>
-            New Construction &amp; Remodels
-          </p>
           <h1 id="page-h1" class="svc-hero__title">
             <span class="svc-hero__line">New construction</span>
             <span class="svc-hero__line svc-hero__line--accent">&amp; remodels<span class="svc-hero__dot" aria-hidden="true"></span></span>
@@ -229,7 +225,6 @@ const faqSchema = {
       <div class="container">
         <div class="faq-inner">
           <aside class="faq-sidebar">
-            <span class="eyebrow">Questions</span>
             <h2 id="faq-title" class="faq-sidebar__title">New construction FAQ</h2>
             <p>Have something else? Call and ask.</p>
             <a href="tel:+18052860477" class="btn-link">
@@ -275,7 +270,6 @@ const faqSchema = {
       <div class="container">
         <div class="page-cta__inner">
           <div class="page-cta__copy">
-            <span class="eyebrow eyebrow--amber">Building or remodeling?</span>
             <h2 id="cta-title" class="page-cta__title"><span class="page-cta__call">Call</span><a class="page-cta__num" href="tel:+18052860477">(805) 286-0477</a></h2>
             <p class="page-cta__lead">Send the plans or the scope and I will get you a number and a schedule that works with your GC.</p>
             <a class="page-cta__alt" href="sms:+18052860477">Or text me at the same number.</a>
@@ -320,8 +314,6 @@ const faqSchema = {
   .svc-hero { position: relative; background: var(--ke-bone); overflow: hidden; padding: 72px 0 88px; }
   .svc-hero::before { content: ''; position: absolute; top: -25%; right: -12%; width: 62%; height: 130%; background: radial-gradient(closest-side, rgba(243, 152, 31, 0.12), transparent 72%); pointer-events: none; }
   .svc-hero__inner { position: relative; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
-  .svc-hero__eyebrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ke-clay); margin-bottom: 18px; }
-  .svc-hero__spark { width: 15px; height: 15px; color: var(--ke-orange); }
   .svc-hero__title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(38px, 4.4vw, 62px); line-height: 1.04; letter-spacing: -0.025em; color: var(--ke-ink); margin: 0; }
   .svc-hero__line { display: block; }
   .svc-hero__line--accent { color: var(--ke-orange); }
@@ -338,8 +330,7 @@ const faqSchema = {
   .svc-hero__fact { display: inline-flex; gap: 6px; align-items: baseline; margin: -4px 0 16px; padding: 7px 11px; background: var(--ke-bone); border-radius: var(--radius-2); font-size: 13px; color: var(--fg-2); }
   .svc-hero__fact strong { color: var(--ke-ink); font-weight: 700; }
   @media (prefers-reduced-motion: no-preference) {
-    .svc-hero__eyebrow, .svc-hero__line, .svc-hero__place, .svc-hero__sub, .svc-hero__ctas, .svc-hero__trust, .svc-hero__card { opacity: 0; animation: heroIn 0.8s var(--ease-emph) forwards; }
-    .svc-hero__eyebrow { animation-delay: 0.05s; }
+    .svc-hero__line, .svc-hero__place, .svc-hero__sub, .svc-hero__ctas, .svc-hero__trust, .svc-hero__card { opacity: 0; animation: heroIn 0.8s var(--ease-emph) forwards; }
     .svc-hero__line:nth-child(1) { animation-delay: 0.13s; }
     .svc-hero__line:nth-child(2) { animation-delay: 0.21s; }
     .svc-hero__place { animation-delay: 0.29s; }
@@ -387,8 +378,6 @@ const faqSchema = {
   .faq-sidebar { position: sticky; top: 96px; }
   .faq-sidebar__title { font-family: var(--font-sans); font-weight: 900; font-size: clamp(28px, 3vw, 40px); letter-spacing: -0.02em; line-height: 1.1; color: var(--ke-ink); margin: 10px 0 14px; }
   .faq-sidebar p { font-size: 15px; color: var(--fg-2); margin-bottom: 20px; }
-  .eyebrow { font-family: var(--font-sans); font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ke-orange); display: inline-block; }
-  .eyebrow--amber { color: var(--ke-amber); }
   .faq-list { display: flex; flex-direction: column; border-top: 1px solid var(--border-1); }
   .faq-item { border-bottom: 1px solid var(--border-1); }
   .faq-item__btn { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; cursor: pointer; font-size: 16px; font-weight: 600; color: var(--ke-ink); list-style: none; user-select: none; }
