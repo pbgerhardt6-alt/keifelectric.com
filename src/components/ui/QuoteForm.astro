@@ -23,7 +23,6 @@ const services = [
   <input type="hidden" name="access_key" value={ACCESS_KEY} />
   <input type="hidden" name="subject" value="Quote request from keifelectric.com" />
   <input type="hidden" name="from_name" value="Keif Electric website" />
-  <input type="hidden" name="ccemail" value="peter@offsite-growth.com" />
   <input type="hidden" name="page" value={Astro.url.pathname} />
   <input type="checkbox" name="botcheck" class="qf__hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
@@ -125,11 +124,17 @@ const services = [
           event_label: form.closest('section')?.id || 'form',
           service: (form.elements.namedItem('service') as HTMLSelectElement).value,
         });
-      } catch {
+      } catch (err) {
+        console.error('[QuoteForm] submit failed:', err);
         status.textContent = `Something went wrong sending that. Call or text ${PHONE} and Adam will take it from there.`;
         status.classList.add('is-error');
         status.hidden = false;
         btn.disabled = false;
+        (window as any).gtag?.('event', 'form_error', {
+          event_category: 'contact',
+          event_label: form.closest('section')?.id || 'form',
+          reason: err instanceof Error ? err.message : 'unknown',
+        });
       }
     });
   });
