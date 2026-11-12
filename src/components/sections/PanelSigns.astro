@@ -1,0 +1,73 @@
+---
+// Dark two-column band: panel warning signs, CTA, and a real job photo.
+const signs = [
+  'Your breakers trip regularly, or the panel feels warm or buzzes',
+  'You have a fuse box or an older panel brand with known reliability issues',
+  "You're adding a major electrical load: EV charger, heat pump, air conditioning, hot tub, solar, battery backup, or a remodel",
+  'Your insurance company or PG&E flagged your panel',
+  "Your home still runs on a 100-amp service and you're out of room",
+  'The panel is 25 to 30-plus years old and has never been touched',
+];
+---
+
+<section class="signs" aria-labelledby="signs-title">
+  <div class="signs__inner container">
+    <div class="signs__copy">
+      <h2 id="signs-title" class="signs__title">Signs you need a panel upgrade or replacement</h2>
+      <ul class="signs__list">
+        {signs.map((s) => (
+          <li>
+            <span class="signs__check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            {s}
+          </li>
+        ))}
+      </ul>
+      <p class="signs__note">If a couple of those sound familiar, it's worth a look before it becomes a bigger problem.</p>
+      <div class="signs__ctas">
+        <a class="btn btn--primary" href="#contact">Get a panel evaluation</a>
+        <a class="signs__more" href="/electrical-panel-upgrade-san-luis-obispo">Panel upgrade costs and details &rarr;</a>
+      </div>
+    </div>
+    <figure class="signs__media">
+      <img src="/assets/electrical-panel-upgrade-atascadero.jpg" alt="Electrical panel installed by Keif Electric, with every breaker labeled" width="900" height="1200" loading="lazy" decoding="async" />
+    </figure>
+  </div>
+</section>
+
+<style>
+  .container { max-width: var(--max); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+
+  .signs { background: var(--ke-ink); color: var(--ke-bone); padding: 104px 0; }
+  .signs__inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: 64px; align-items: center; }
+  .signs__title { font-family: var(--font-sans); font-weight: 900; font-size: clamp(34px, 4vw, 54px); letter-spacing: -0.02em; line-height: 1.04; color: var(--ke-bone); margin: 0 0 28px; padding-bottom: 18px; position: relative; }
+  .signs__title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 56px; height: 3px; border-radius: 2px; background: var(--ke-orange); }
+  .signs__list { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 14px; }
+  .signs__list li { display: flex; gap: 14px; align-items: flex-start; font-size: 16px; line-height: 1.5; color: rgba(246, 241, 232, 0.82); }
+  .signs__check { flex: none; width: 24px; height: 24px; border-radius: 6px; background: rgba(243, 152, 31, 0.14); color: var(--ke-orange); display: grid; place-items: center; }
+  .signs__check svg { width: 14px; height: 14px; }
+  .signs__note { font-size: 15px; line-height: 1.6; color: rgba(246, 241, 232, 0.65); margin: 0 0 28px; max-width: 52ch; }
+  .signs__title { max-width: 16ch; }
+  .signs__ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+  .signs__more { color: var(--ke-bone); font-weight: 600; font-size: 15px; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(246, 241, 232, 0.4); }
+  .signs__more:hover { text-decoration-color: var(--ke-bone); }
+  .signs__media { margin: 0; border-radius: var(--radius-4); overflow: hidden; aspect-ratio: 4 / 5; max-height: 620px; justify-self: end; width: 100%; max-width: 480px; box-shadow: var(--shadow-3); }
+  .signs__media img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
+
+  .btn { font-family: var(--font-sans); font-weight: 600; font-size: 16px; padding: 16px 22px; border-radius: var(--radius-3); border: 1px solid transparent; display: inline-flex; align-items: center; justify-content: center; line-height: 1; min-height: 54px; text-decoration: none; white-space: nowrap; transition: background var(--dur-1) var(--ease-out), transform var(--dur-1) var(--ease-out); }
+  .btn--primary { background: var(--ke-orange-text); color: #fff; }
+  .btn--primary:hover { background: var(--ke-orange-dark); }
+  .btn--primary:active { transform: translateY(1px); }
+
+  @media (max-width: 860px) {
+    .signs { padding: 64px 0; }
+    .signs__inner { grid-template-columns: 1fr; gap: 40px; }
+    .signs__media { justify-self: stretch; max-width: none; aspect-ratio: 4 / 3; }
+  }
+  @media (max-width: 560px) {
+    .signs__ctas { flex-direction: column; align-items: stretch; }
+    .btn { width: 100%; }
+    .signs__more { text-align: center; }
+  }
+</style>
