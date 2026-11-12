@@ -13,9 +13,9 @@ export const siteContent = {
 
   // Real review platform data for the above-the-fold trust badges.
   // Verify counts against the live GBP before editing; do not round up.
-  // Last synced from Google Business Profile: 2026-09-01 (5.0, 5 reviews).
+  // Last synced from Google Business Profile: 2026-11-11 (5.0, 6 reviews).
   reviewBadges: {
-    google: { rating: '5.0', count: 5, url: 'https://www.google.com/maps/place/?q=place_id:ChIJAzUvNBrJbAoRN4kXIKD9uEk' },
+    google: { rating: '5.0', count: 6, url: 'https://www.google.com/maps/place/?q=place_id:ChIJAzUvNBrJbAoRN4kXIKD9uEk' },
     yelp: { rating: '5.0', count: 1, url: 'https://www.yelp.com/biz/keif-electric-san-luis-obispo' },
   },
 
@@ -129,14 +129,32 @@ export const siteContent = {
   // Profile. Never fabricate, trim or reword. The only edits permitted
   // are obvious typo fixes that do not change meaning (Jay L.'s card
   // fixes "all my issue" -> "issues" and "Very though" -> "Very thorough").
-  // Last synced 2026-09-01: 5 Google reviews, 5.0 average. One of the
-  // five (Brady B.) is a star rating with no written text, so it counts
+  // Last synced 2026-11-11: 6 Google reviews, 5.0 average. One of the
+  // six (Brady B.) is a star rating with no written text, so it counts
   // toward the badge total but has no card here.
   // `location` is optional and set only when the reviewer names the city
   // in their own review. Leave it out rather than guessing.
   // Shape: { name, location?, service, source: 'Google'|'Yelp', rating,
   //          text, avatar (initials), avatarBg: ''|'bg-amber'|'bg-orange' }
   reviews: [
+    {
+      name: 'Lindsey R.',
+      service: 'Can light install',
+      source: 'Google',
+      rating: 5,
+      text: 'Did a great job installing can lights in our lobby area, very reasonably priced, and even came on a day that we were closed so that the lobby wouldn\u2019t be a mess during business hours.',
+      avatar: 'LR',
+      avatarBg: 'bg-amber',
+    },
+    {
+      name: 'Dar J.',
+      service: 'Display cabinet lighting',
+      source: 'Google',
+      rating: 5,
+      text: 'Adam did an excellent job lighting my glass display cabinets. First figuring out what would be cost effective to do the best lighting. He cleans his work areas before he leaves each time. Also he is very polite & easy to work with. I highly recommend him for difficult lighting projects.',
+      avatar: 'DJ',
+      avatarBg: 'bg-orange',
+    },
     {
       name: 'Peter G.',
       location: 'Los Osos',
