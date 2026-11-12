@@ -127,8 +127,9 @@ export const siteContent = {
 
   // Real customer reviews only, pulled from the live Google Business
   // Profile. Never fabricate, trim or reword. The only edits permitted
-  // are obvious typo fixes that do not change meaning (Jay L.'s card
-  // fixes "all my issue" -> "issues" and "Very though" -> "Very thorough").
+  // are obvious typo fixes that do not change meaning.
+  // Jay L.'s card was removed 2026-11-11: his review is no longer on
+  // Google or Yelp (checked both, including Yelp's not-recommended list).
   // Last synced 2026-11-11: 6 Google reviews, 5.0 average. One of the
   // six (Brady B.) is a star rating with no written text, so it counts
   // toward the badge total but has no card here.
@@ -173,15 +174,6 @@ export const siteContent = {
       text: 'Adam came over and quickly repaired the wonky light switch in our bathroom. The work was meticulous, and the bathroom looks great!!! I highly recommend Adam Keif and Keif Electric. In the future, I won\u2019t hesitate to ask him again. (Great price, too)',
       avatar: 'CR',
       avatarBg: 'bg-amber',
-    },
-    {
-      name: 'Jay L.',
-      service: 'Lighting & EV charger',
-      source: 'Google',
-      rating: 5,
-      text: 'Contacted Adam regarding upgrading kitchen can lights, countertop lights, installing a prewired EV charger and repairing a malfunctioning electric cooktop. He was upfront with his estimates and worked through all my issues. Very thorough. Wouldn\u2019t hesitate to use him again.',
-      avatar: 'JL',
-      avatarBg: 'bg-orange',
     },
     {
       name: 'Barry P.',
