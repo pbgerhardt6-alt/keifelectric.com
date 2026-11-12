@@ -44,6 +44,35 @@ const breadcrumbSchema = {
   ],
 };
 
+// Each step restates something this page already commits to; nothing new.
+const processSteps = [
+  {
+    name: 'Call or text',
+    text: 'Adam reads every request and calls back the same business day.',
+    icon: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>',
+  },
+  {
+    name: 'Assessment',
+    text: 'Send a photo of your panel or book an on-site look.',
+    icon: '<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>',
+  },
+  {
+    name: 'Written quote',
+    text: 'One written price, permit and utility work included.',
+    icon: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/>',
+  },
+  {
+    name: 'Permit and PG&E',
+    text: 'Adam pulls the permit and schedules the disconnect and reconnect.',
+    icon: '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/>',
+  },
+  {
+    name: 'Install and inspection',
+    text: 'Usually a one-day install, every circuit labeled, signed off to code.',
+    icon: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/>',
+  },
+];
+
 // One list drives both the visible FAQ and the FAQPage schema, so the two
 // cannot drift apart. Answers that get quoted on their own name the business,
 // because an AI engine lifting a single answer loses the page around it.
@@ -148,19 +177,24 @@ const faqSchema = {
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="signs-title">
-      <div class="container container--prose">
-        <h2 id="signs-title" class="section-title">Signs you need a panel upgrade or replacement</h2>
-        <p class="lead-copy">You might need a service upgrade or panel replacement if:</p>
-        <ul class="feature-list">
-          <li>Your breakers trip regularly, or the panel feels warm or buzzes</li>
-          <li>You have a fuse box or an older panel brand with known reliability issues</li>
-          <li>You're adding a major electrical load: EV charger, heat pump, air conditioning, hot tub, solar, battery backup, or a remodel</li>
-          <li>Your insurance company or PG&amp;E flagged your panel</li>
-          <li>Your home still runs on a 100-amp service and you're out of room</li>
-          <li>The panel is 25 to 30-plus years old and has never been touched</li>
-        </ul>
-        <p>If a couple of those sound familiar, it's worth a look before it becomes a bigger problem.</p>
+    <section class="signs" aria-labelledby="signs-title">
+      <div class="signs__inner container">
+        <div class="signs__copy">
+          <h2 id="signs-title" class="signs__title">Signs you need a panel upgrade or replacement</h2>
+          <ul class="signs__list">
+            <li><span class="signs__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Your breakers trip regularly, or the panel feels warm or buzzes</li>
+            <li><span class="signs__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>You have a fuse box or an older panel brand with known reliability issues</li>
+            <li><span class="signs__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>You're adding a major electrical load: EV charger, heat pump, air conditioning, hot tub, solar, battery backup, or a remodel</li>
+            <li><span class="signs__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Your insurance company or PG&amp;E flagged your panel</li>
+            <li><span class="signs__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Your home still runs on a 100-amp service and you're out of room</li>
+            <li><span class="signs__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>The panel is 25 to 30-plus years old and has never been touched</li>
+          </ul>
+          <p class="signs__note">If a couple of those sound familiar, it's worth a look before it becomes a bigger problem.</p>
+          <a class="btn btn--primary btn--lg" href="#contact">Get a panel evaluation</a>
+        </div>
+        <figure class="signs__media">
+          <img src="/assets/electrical-panel-upgrade-atascadero.jpg" alt="Electrical panel installed by Keif Electric, with every breaker labeled" width="900" height="1200" loading="lazy" decoding="async" />
+        </figure>
       </div>
     </section>
 
@@ -226,6 +260,25 @@ const faqSchema = {
         <p>A service upgrade always requires a permit. Many upgrades also require coordination with PG&amp;E, especially when the service equipment or meter connection changes, depending on the existing service and property setup.</p>
         <p>On every Keif Electric panel upgrade, I pull the permit, schedule the utility disconnect and reconnect, coordinate the inspection, and make sure the new panel is signed off to code. I'll explain what to expect from PG&amp;E before we start so there are no scheduling surprises.</p>
         <p>Unpermitted electrical work can void your homeowner's insurance and create problems at resale. This part isn't optional and I don't cut corners on it.</p>
+      </div>
+    </section>
+
+    <section class="process" aria-labelledby="process-title">
+      <div class="container">
+        <h2 id="process-title" class="process__title">How a Keif Electric panel upgrade works</h2>
+        <p class="process__sub">One electrician from the first call to the final inspection.</p>
+        <ol class="process__steps">
+          {processSteps.map((step, i) => (
+            <li class:list={['process__step', { 'process__step--first': i === 0 }]}>
+              <span class="process__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={step.icon} />
+                <span class="process__num">{i + 1}</span>
+              </span>
+              <h3 class="process__name">{step.name}</h3>
+              <p class="process__text">{step.text}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
 
@@ -392,6 +445,48 @@ const faqSchema = {
 
   .cta-link { display: inline-flex; align-items: center; gap: 6px; color: var(--ke-orange); font-weight: 600; font-size: 15px; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color var(--dur-1) var(--ease-out); margin-top: 8px; }
   .cta-link:hover { border-bottom-color: var(--ke-orange); }
+
+  .signs { background: var(--ke-ink); color: var(--ke-bone); padding: 88px 0; }
+  .signs__inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: 64px; align-items: center; }
+  .signs__title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(26px, 3.2vw, 38px); letter-spacing: -0.02em; line-height: 1.12; color: var(--ke-bone); margin: 0 0 28px; padding-bottom: 18px; position: relative; }
+  .signs__title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 56px; height: 3px; border-radius: 2px; background: var(--ke-orange); }
+  .signs__list { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 14px; }
+  .signs__list li { display: flex; gap: 14px; align-items: flex-start; font-size: 16px; line-height: 1.5; color: rgba(246, 241, 232, 0.82); }
+  .signs__check { flex: none; width: 24px; height: 24px; border-radius: 6px; background: rgba(243, 152, 31, 0.14); color: var(--ke-orange); display: grid; place-items: center; }
+  .signs__check svg { width: 14px; height: 14px; }
+  .signs__note { font-size: 15px; line-height: 1.6; color: rgba(246, 241, 232, 0.65); margin: 0 0 28px; max-width: 52ch; }
+  .signs__media { margin: 0; border-radius: var(--radius-4); overflow: hidden; aspect-ratio: 4 / 5; max-height: 620px; justify-self: end; width: 100%; max-width: 480px; box-shadow: var(--shadow-3); }
+  .signs__media img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
+  @media (max-width: 860px) {
+    .signs { padding: 56px 0; }
+    .signs__inner { grid-template-columns: 1fr; gap: 40px; }
+    .signs__media { justify-self: stretch; max-width: none; aspect-ratio: 4 / 3; }
+  }
+
+  .process { background: var(--ke-sand); padding: 88px 0; text-align: center; }
+  .process__title { font-family: var(--font-sans); font-weight: 800; font-size: clamp(26px, 3.2vw, 38px); letter-spacing: -0.02em; line-height: 1.12; color: var(--ke-ink); margin: 0 0 12px; padding-top: 22px; position: relative; }
+  .process__title::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 56px; height: 3px; border-radius: 2px; background: var(--ke-orange); }
+  .process__sub { font-size: 16px; color: var(--fg-2); margin: 0 0 48px; }
+  .process__steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; position: relative; }
+  .process__steps::before { content: ''; position: absolute; top: 30px; left: 10%; right: 10%; height: 2px; background: var(--border-1); }
+  .process__step { position: relative; display: flex; flex-direction: column; align-items: center; }
+  .process__icon { position: relative; width: 60px; height: 60px; border-radius: 50%; background: #fff; border: 1px solid var(--border-1); color: var(--ke-orange-text); display: grid; place-items: center; margin-bottom: 18px; }
+  .process__icon svg { width: 22px; height: 22px; }
+  .process__step--first .process__icon { background: var(--ke-orange); border-color: var(--ke-orange); color: #fff; box-shadow: 0 8px 20px rgba(243, 152, 31, 0.35); }
+  .process__num { position: absolute; top: -6px; right: -8px; min-width: 24px; height: 24px; padding: 0 6px; border-radius: 12px; background: var(--ke-ink); color: var(--ke-bone); font-size: 12px; font-weight: 700; line-height: 24px; }
+  .process__name { font-family: var(--font-sans); font-size: 16px; font-weight: 700; color: var(--ke-ink); margin: 0 0 6px; }
+  .process__text { font-size: 14px; line-height: 1.5; color: var(--fg-2); margin: 0; max-width: 22ch; }
+  @media (max-width: 860px) {
+    .process { padding: 56px 0; text-align: left; }
+    .process__title::before { left: 0; transform: none; }
+    .process__sub { margin-bottom: 32px; }
+    .process__steps { grid-template-columns: 1fr; gap: 28px; }
+    .process__steps::before { top: 30px; bottom: 30px; left: 29px; right: auto; width: 2px; height: auto; }
+    .process__step { display: grid; grid-template-columns: 60px 1fr; column-gap: 18px; align-items: center; }
+    .process__icon { grid-row: span 2; margin: 0; }
+    .process__name { margin: 0; align-self: end; }
+    .process__text { max-width: none; align-self: start; }
+  }
 
   .why-section { background: var(--ke-ink); color: var(--ke-bone); padding: 80px 0; }
   .why-section .section-title { color: var(--ke-bone); }
