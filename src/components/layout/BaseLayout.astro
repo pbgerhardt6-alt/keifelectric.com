@@ -106,6 +106,9 @@ const faqSchema = {
           "postalCode": "93401",
           "addressCountry": "US"
         },
+        "sameAs": [
+          "https://www.google.com/maps/place/?q=place_id:ChIJAzUvNBrJbAoRN4kXIKD9uEk"
+        ],
         "telephone": "+18052860477",
         "email": "adam@keifelectric.com",
         "openingHours": "Mo-Fr 09:00-17:00",
@@ -120,10 +123,14 @@ const faqSchema = {
           "Santa Margarita", "Arroyo Grande", "Santa Maria",
           "Morro Bay", "Los Osos", "Cayucos", "Cambria", "Pismo Beach"
         ],
+        "founder": { "@id": "https://keifelectric.com/#adam-keif" },
         "employee": {
           "@type": "Person",
+          "@id": "https://keifelectric.com/#adam-keif",
           "name": "Adam Keif",
           "jobTitle": "Owner, Licensed Electrician",
+          "image": "https://keifelectric.com/assets/adam-keif.jpg",
+          "worksFor": { "@id": "https://keifelectric.com/#business" },
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "San Luis Obispo",

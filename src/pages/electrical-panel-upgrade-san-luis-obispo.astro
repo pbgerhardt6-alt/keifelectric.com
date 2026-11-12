@@ -22,6 +22,16 @@ const serviceSchema = {
     name: 'San Luis Obispo County, CA',
   },
   serviceType: 'Electrical Panel Upgrade',
+  // Matches the visible "$3,500 to $5,500" range on this page.
+  offers: {
+    '@type': 'Offer',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      minPrice: 3500,
+      maxPrice: 5500,
+      priceCurrency: 'USD',
+    },
+  },
 };
 
 const breadcrumbSchema = {
@@ -34,56 +44,56 @@ const breadcrumbSchema = {
   ],
 };
 
+// One list drives both the visible FAQ and the FAQPage schema, so the two
+// cannot drift apart. Answers that get quoted on their own name the business,
+// because an AI engine lifting a single answer loses the page around it.
+const faqs = [
+  {
+    q: 'How much does a 200-amp panel upgrade cost?',
+    a: 'A typical 100-amp to 200-amp residential panel upgrade in SLO County runs $3,500 to $5,500 depending on your current service, wiring condition, and whether the meter or mast needs work. Keif Electric gives you a written quote before anything starts.',
+  },
+  {
+    q: "What's the difference between a panel upgrade and a panel replacement?",
+    a: "An upgrade increases your service capacity, for example 100 amps to 200 amps. A replacement swaps an old or unsafe panel for a modern, code-compliant one at the same capacity. Some jobs are both. I'll tell you which yours is.",
+  },
+  {
+    q: 'What size panel should I upgrade to?',
+    a: "Most homeowners upgrade from 100 amps to 200 amps, which provides enough capacity for modern loads like EV chargers, heat pumps, and updated appliances. The right size depends on your home's actual usage and what you're planning to add.",
+  },
+  {
+    q: 'Do I need a permit to upgrade my electrical panel?',
+    a: 'Yes. Service upgrades require a permit and typically PG&E coordination for the disconnect and reconnect. On a Keif Electric panel upgrade, the permit, the utility process, and the inspection are all handled for you.',
+  },
+  {
+    q: 'Does PG&E need to be involved in a panel upgrade?',
+    a: 'Often yes, especially when the service equipment or meter connection changes. Keif Electric handles that coordination and explains what to expect before work begins.',
+  },
+  {
+    q: 'Can you replace a Federal Pacific or Zinsco panel?',
+    a: "Yes. Keif Electric replaces Federal Pacific and Zinsco panels in SLO County. I'll evaluate your panel's condition and your home's needs and walk you through whether replacement makes sense and what it involves.",
+  },
+  {
+    q: 'Do I need to upgrade my panel to install an EV charger?',
+    a: "Sometimes. Older 100-amp panels often can't handle a Level 2 charger's load. Keif Electric checks capacity before quoting, and if an upgrade is needed, quotes the panel and the charger together.",
+  },
+  {
+    q: 'How long does a panel upgrade take?',
+    a: "Most standard upgrades are a one-day job, though power is off for part of it and utility coordination can affect scheduling. I'll give you a realistic timeline with the quote.",
+  },
+  {
+    q: 'What areas do you serve for panel upgrades?',
+    a: 'Keif Electric does panel upgrades in San Luis Obispo, Atascadero, Paso Robles, and surrounding SLO County. Not sure I reach you? Call and ask.',
+  },
+];
+
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'How much does a 200-amp panel upgrade cost?',
-      acceptedAnswer: { '@type': 'Answer', text: 'A typical 100-amp to 200-amp residential panel upgrade in SLO County runs $3,500 to $5,500 depending on your current service, wiring condition, and whether the meter or mast needs work. You get a written quote before anything starts.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What\'s the difference between a panel upgrade and a panel replacement?',
-      acceptedAnswer: { '@type': 'Answer', text: 'An upgrade increases your service capacity, for example 100 amps to 200 amps. A replacement swaps an old or unsafe panel for a modern, code-compliant one at the same capacity. Some jobs are both. I\'ll tell you which yours is.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What size panel should I upgrade to?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Most homeowners upgrade from 100 amps to 200 amps, which provides enough capacity for modern loads like EV chargers, heat pumps, and updated appliances. The right size depends on your home\'s actual usage and what you\'re planning to add.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do I need a permit to upgrade my electrical panel?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Service upgrades require a permit and typically PG&E coordination for the disconnect and reconnect. I handle the permit, utility process, and inspection.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Does PG&E need to be involved in a panel upgrade?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Often yes, especially when the service equipment or meter connection changes. I handle that coordination and explain what to expect before work begins.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can you replace a Federal Pacific or Zinsco panel?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. I\'ll evaluate your panel\'s condition and your home\'s needs and walk you through whether replacement makes sense and what it involves.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do I need to upgrade my panel to install an EV charger?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Sometimes. Older 100-amp panels often can\'t handle a Level 2 charger\'s load. I check capacity before quoting, and if an upgrade is needed I\'ll quote both together.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'How long does a panel upgrade take?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Most standard upgrades are a one-day job, though power is off for part of it and utility coordination can affect scheduling. I\'ll give you a realistic timeline with the quote.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What areas do you serve for panel upgrades?',
-      acceptedAnswer: { '@type': 'Answer', text: 'San Luis Obispo, Atascadero, Paso Robles, and surrounding SLO County. Not sure I reach you? Call and ask.' },
-    },
-  ],
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
 };
 ---
 
@@ -116,7 +126,7 @@ const faqSchema = {
             <span class="svc-hero__line svc-hero__line--accent">&amp; replacements<span class="svc-hero__dot" aria-hidden="true"></span></span>
             <span class="svc-hero__place">in San Luis Obispo County</span>
           </h1>
-          <p class="svc-hero__sub">100-amp to 200-amp panel upgrades, replacements, and service upgrades for older homes, remodels, EV chargers, and new electrical loads. Permitted, inspected, and installed by owner Adam Keif.</p>
+          <p class="svc-hero__sub">Keif Electric is a licensed electrician in San Luis Obispo County that upgrades and replaces home electrical panels, from 100-amp to 200-amp service. Owner Adam Keif does every install himself, with the permit, PG&amp;E coordination, and inspection included.</p>
           <div class="svc-hero__ctas">
             <a class="btn btn--primary btn--lg" href="tel:+18052860477">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
@@ -214,7 +224,7 @@ const faqSchema = {
       <div class="container container--prose">
         <h2 id="permits-title" class="section-title">Permits, PG&amp;E, and utility coordination</h2>
         <p>A service upgrade always requires a permit. Many upgrades also require coordination with PG&amp;E, especially when the service equipment or meter connection changes, depending on the existing service and property setup.</p>
-        <p>I pull the permit, schedule the utility disconnect and reconnect, coordinate the inspection, and make sure the new panel is signed off to code. I'll explain what to expect from PG&amp;E before we start so there are no scheduling surprises.</p>
+        <p>On every Keif Electric panel upgrade, I pull the permit, schedule the utility disconnect and reconnect, coordinate the inspection, and make sure the new panel is signed off to code. I'll explain what to expect from PG&amp;E before we start so there are no scheduling surprises.</p>
         <p>Unpermitted electrical work can void your homeowner's insurance and create problems at resale. This part isn't optional and I don't cut corners on it.</p>
       </div>
     </section>
@@ -239,9 +249,15 @@ const faqSchema = {
       </div>
     </section>
 
-    <section class="proof-placeholder" aria-label="Recent panel work">
+    <section class="proof" aria-label="Recent panel work">
       <div class="container">
-        <p class="proof-placeholder__label">Recent panel work: photos coming soon</p>
+        <figure class="proof__figure">
+          <picture>
+            <source srcset="/assets/adam-keif-labeling-panel-san-luis-obispo.avif" type="image/avif" />
+            <img class="proof__img" src="/assets/adam-keif-labeling-panel-san-luis-obispo.jpg" alt="Keif Electric owner Adam Keif hand-labeling a breaker on a residential electrical panel" width="952" height="954" loading="lazy" decoding="async" />
+          </picture>
+          <figcaption class="proof__caption">Adam Keif labeling every circuit before the panel cover goes back on.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -257,42 +273,12 @@ const faqSchema = {
             </a>
           </aside>
           <div class="faq-list">
-            <details class="faq-item" open>
-              <summary class="faq-item__btn"><span>How much does a 200-amp panel upgrade cost?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>A typical 100-amp to 200-amp residential panel upgrade in SLO County runs $3,500 to $5,500 depending on your current service, wiring condition, and whether the meter or mast needs work. You get a written quote before anything starts.</p></div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-item__btn"><span>What's the difference between a panel upgrade and a panel replacement?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>An upgrade increases your service capacity, for example 100 amps to 200 amps. A replacement swaps an old or unsafe panel for a modern, code-compliant one at the same capacity. Some jobs are both. I'll tell you which yours is.</p></div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-item__btn"><span>What size panel should I upgrade to?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Most homeowners upgrade from 100 amps to 200 amps, which provides enough capacity for modern loads like EV chargers, heat pumps, and updated appliances. The right size depends on your home's actual usage and what you're planning to add.</p></div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-item__btn"><span>Do I need a permit to upgrade my electrical panel?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes. Service upgrades require a permit and typically PG&amp;E coordination for the disconnect and reconnect. I handle the permit, utility process, and inspection.</p></div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-item__btn"><span>Does PG&amp;E need to be involved in a panel upgrade?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Often yes, especially when the service equipment or meter connection changes. I handle that coordination and explain what to expect before work begins.</p></div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-item__btn"><span>Can you replace a Federal Pacific or Zinsco panel?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Yes. I'll evaluate your panel's condition and your home's needs and walk you through whether replacement makes sense and what it involves.</p></div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-item__btn"><span>Do I need to upgrade my panel to install an EV charger?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Sometimes. Older 100-amp panels often can't handle a Level 2 charger's load. I check capacity before quoting, and if an upgrade is needed I'll quote both together.</p></div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-item__btn"><span>How long does a panel upgrade take?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>Most standard upgrades are a one-day job, though power is off for part of it and utility coordination can affect scheduling. I'll give you a realistic timeline with the quote.</p></div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-item__btn"><span>What areas do you serve for panel upgrades?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-              <div class="faq-item__body"><p>San Luis Obispo, Atascadero, Paso Robles, and surrounding SLO County. Not sure I reach you? Call and ask.</p></div>
-            </details>
+            {faqs.map(({ q, a }, i) => (
+              <details class="faq-item" open={i === 0}>
+                <summary class="faq-item__btn"><span>{q}</span><span class="faq-icon" aria-hidden="true"></span></summary>
+                <div class="faq-item__body"><p>{a}</p></div>
+              </details>
+            ))}
           </div>
         </div>
       </div>
@@ -328,7 +314,7 @@ const faqSchema = {
     <style>
       .content-section .container--prose,
       .why-section .container--prose,
-      .proof-placeholder .container,
+      .proof .container,
       .faq-inner,
     </style>
   </noscript>
@@ -372,7 +358,7 @@ const faqSchema = {
     .svc-hero__ctas { animation-delay: 0.45s; }
     .svc-hero__trust { animation-delay: 0.53s; }
     .svc-hero__card { animation-delay: 0.22s; animation-duration: 1s; }
-    .content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease-emph), transform 0.7s var(--ease-emph); }
+    .content-section .container--prose, .why-section .container--prose, .proof .container, .faq-inner { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease-emph), transform 0.7s var(--ease-emph); }
     .is-in { opacity: 1 !important; transform: none !important; }
   }
   @keyframes heroIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
@@ -414,8 +400,10 @@ const faqSchema = {
   .why-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 2px; background: var(--ke-orange); }
   .why-list li strong { color: var(--ke-bone); }
 
-  .proof-placeholder { background: var(--ke-sand); border-top: 1px solid var(--border-1); border-bottom: 1px solid var(--border-1); padding: 40px 0; text-align: center; }
-  .proof-placeholder__label { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ke-stone); }
+  .proof { background: var(--ke-sand); border-top: 1px solid var(--border-1); border-bottom: 1px solid var(--border-1); padding: 64px 0; text-align: center; }
+  .proof__figure { margin: 0 auto; max-width: 560px; }
+  .proof__img { width: 100%; height: auto; border-radius: var(--radius-4); box-shadow: var(--shadow-3); border: 1px solid var(--border-1); display: block; }
+  .proof__caption { margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--fg-2); letter-spacing: 0.01em; }
 
   .faq-section { background: var(--ke-bone); padding: 100px 0; }
   .faq-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: flex-start; }
@@ -474,7 +462,7 @@ const faqSchema = {
   const mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
   if (mq.matches && 'IntersectionObserver' in window) {
     const els = document.querySelectorAll(
-      '.content-section .container--prose, .why-section .container--prose, .proof-placeholder .container, .faq-inner'
+      '.content-section .container--prose, .why-section .container--prose, .proof .container, .faq-inner'
     );
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
